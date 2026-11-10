@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "species": "magikarp",
+ "name": "Magikarp",
+ "source": "hand",
+ "types": [
+  "water"
+ ],
+ "base": {
+  "hp": 20,
+  "atk": 10,
+  "def": 55,
+  "spa": 15,
+  "spd": 20,
+  "spe": 80
+ },
+ "hitbox": {
+  "width": 0.8,
+  "height": 0.8,
+  "base_scale": 1
+ },
+ "moves": [
+  {
+   "id": "tackle",
+   "name": "Tackle",
+   "type": "normal",
+   "category": "physical",
+   "power": 40,
+   "shape": "dash",
+   "cooldown": 0.5,
+   "energy": 0,
+   "range": 4,
+   "width": 1.6,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit"
+  },
+  {
+   "id": "bounce",
+   "name": "Bounce",
+   "type": "flying",
+   "category": "physical",
+   "power": 85,
+   "shape": "dash",
+   "cooldown": 1.77,
+   "energy": 8,
+   "range": 4,
+   "width": 1.6,
+   "windup": 0.28,
+   "anim": "physical",
+   "particle": "minecraft:cloud"
+  },
+  {
+   "id": "flail",
+   "name": "Flail",
+   "type": "normal",
+   "category": "physical",
+   "power": 100,
+   "shape": "burst",
+   "cooldown": 2.08,
+   "energy": 9,
+   "range": 5.5,
+   "width": 5.5,
+   "windup": 0.33,
+   "anim": "physical",
+   "particle": "minecraft:crit"
+  },
+  {
+   "id": "hydropump",
+   "name": "Hydro Pump",
+   "type": "water",
+   "category": "special",
+   "power": 110,
+   "shape": "beam",
+   "cooldown": 2.3,
+   "energy": 10,
+   "range": 21.0,
+   "width": 1.73,
+   "windup": 0.37,
+   "anim": "special",
+   "particle": "minecraft:splash"
+  }
+ ]
+}

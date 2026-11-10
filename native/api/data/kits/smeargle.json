@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "species": "smeargle",
+ "name": "Smeargle",
+ "source": "hand",
+ "types": [
+  "normal"
+ ],
+ "base": {
+  "hp": 55,
+  "atk": 20,
+  "def": 35,
+  "spa": 20,
+  "spd": 45,
+  "spe": 75
+ },
+ "hitbox": {
+  "width": 0.8,
+  "height": 1.8,
+  "base_scale": 0.6
+ },
+ "moves": [
+  {
+   "id": "swift",
+   "name": "Swift",
+   "type": "normal",
+   "category": "special",
+   "power": 60,
+   "shape": "burst",
+   "cooldown": 0.5,
+   "energy": 0,
+   "range": 4.5,
+   "width": 4.5,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:crit"
+  },
+  {
+   "id": "extremespeed",
+   "name": "Extreme Speed",
+   "type": "normal",
+   "category": "physical",
+   "power": 80,
+   "shape": "dash",
+   "cooldown": 1.68,
+   "energy": 8,
+   "range": 5.5,
+   "width": 1.6,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit"
+  },
+  {
+   "id": "flamethrower",
+   "name": "Flamethrower",
+   "type": "fire",
+   "category": "special",
+   "power": 90,
+   "shape": "beam",
+   "cooldown": 1.88,
+   "energy": 8,
+   "range": 19.0,
+   "width": 1.6,
+   "windup": 0.3,
+   "anim": "special",
+   "particle": "minecraft:flame"
+  },
+  {
+   "id": "boomburst",
+   "name": "Boomburst",
+   "type": "normal",
+   "category": "special",
+   "power": 140,
+   "shape": "burst",
+   "cooldown": 2.92,
+   "energy": 12,
+   "range": 6.5,
+   "width": 6.5,
+   "windup": 0.47,
+   "anim": "special",
+   "particle": "minecraft:crit"
+  }
+ ]
+}

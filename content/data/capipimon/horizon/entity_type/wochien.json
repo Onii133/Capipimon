@@ -1,0 +1,7 @@
+{
+  "template": "minecraft:villager",
+  "attributes": {
+    "minecraft:max_health": 85.0,
+    "minecraft:movement_speed": 0.5
+  }
+}

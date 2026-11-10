@@ -1,0 +1,95 @@
+{
+ "schema": 1,
+ "species": "marshtomp",
+ "name": "Marshtomp",
+ "source": "hand",
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base": {
+  "atk": 85,
+  "def": 70,
+  "hp": 70,
+  "spa": 60,
+  "spd": 70,
+  "spe": 50
+ },
+ "hitbox": {
+  "base_scale": 0.7,
+  "height": 1.4,
+  "width": 0.9
+ },
+ "moves": [
+  {
+   "id": "headbutt",
+   "name": "Headbutt",
+   "type": "normal",
+   "category": "physical",
+   "power": 34,
+   "shape": "beam",
+   "range": 3.0,
+   "width": 1.0,
+   "cooldown": 0.7,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit",
+   "form": "cone",
+   "cone": 90.0,
+   "tele": 0.0
+  },
+  {
+   "id": "sig:f_dig2",
+   "name": "Dig",
+   "type": "ground",
+   "category": "physical",
+   "power": 60,
+   "shape": "burst",
+   "range": 3.5,
+   "width": 3.5,
+   "cooldown": 9.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:poof"
+  },
+  {
+   "id": "mudslap",
+   "name": "Mud-Slap",
+   "type": "ground",
+   "category": "special",
+   "power": 64,
+   "shape": "beam",
+   "range": 6.0,
+   "width": 1.0,
+   "cooldown": 6.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:poof",
+   "form": "cone",
+   "cone": 80.0,
+   "slow": [
+    0.65,
+    2.0
+   ]
+  },
+  {
+   "id": "sig:f_quake1",
+   "name": "Earthquake",
+   "type": "ground",
+   "category": "physical",
+   "power": 100,
+   "shape": "burst",
+   "range": 6.0,
+   "width": 6.0,
+   "cooldown": 12.0,
+   "energy": 45,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:poof",
+   "ground_wave": true
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+# Capipimon models: draws Cobblemon (Bedrock/Blockbench) creature models on Horizon mobs.
+# Build: horizon-launcher native-build <this folder> --instance capipimon-dev --trust-native-code
+[mod]
+id = "capipimon_models"
+version = "0.1.0"
+
+[compatibility]
+horizon_revision = "66f3981f522b24c250b21523a70080965b940424"
+
+[api]
+path = "api"
+
+# GDD 3.1 while a Pokémon: third-person camera, no inventory, no hotbar number keys (frame.rs).
+[[injection]]
+id = "frame"
+hook = "frame"
+hook_version = 1
+kind = "HEAD"
+helper = "frame.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
+
+# Q is a move while a Pokémon, so it doesn't drop the held item (api: inject_capipimon_models_drop).
+[[injection]]
+id = "drop"
+target = "horizon_client::game::remote::Game<'_>::remote_drop"
+kind = "HEAD"
+trait_method = "drop"
+cancellable = true
+bindings = [{ name = "all", ty = "bool", value = "all" }]
+
+# F doesn't swap hands while a Pokémon (api: inject_capipimon_models_swap_hands).
+[[injection]]
+id = "swap-hands"
+target = "horizon_client::game::remote::Game<'_>::remote_swap_hands"
+kind = "HEAD"
+trait_method = "swap_hands"
+cancellable = true
+bindings = []
+
+# No splash text on the title screen (self-contained: seasonal splashes ignore the resource list).
+[[injection]]
+id = "no-splash"
+target = "horizon_client::title::Title::with_user"
+kind = "HEAD"
+helper = "no_splash.rs"
+bindings = [{ name = "title", ty = "&mut crate::title::Title", value = "&mut self" }]
+
+# Copies the generated content pack (tools/package/build_packages.py) beside the built game.
+[[crate]]
+id = "content_pack"
+path = "content_pack"
+
+[[post_build]]
+crate = "content_pack"
+bin = "install_pack"
+args = []
+
+# The private server marker mod (server-marker/, never published). When it's in the build folder Horizon turns on the
+# cargo feature `capipimon_server`, which compiles in the server code (src/server/). Players never have it.
+[dependencies]
+capipimon_server = { version = "^0.1", optional = true }

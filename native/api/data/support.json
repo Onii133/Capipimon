@@ -1,0 +1,2529 @@
+{
+ "moves": [
+  {
+   "id": "acidarmor",
+   "name": "Acid Armor",
+   "type": "poison",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "agility",
+   "name": "Agility",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "amnesia",
+   "name": "Amnesia",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "aromatherapy",
+   "name": "Aromatherapy",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 8.0,
+   "cooldown": 13.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "allies"
+   }
+  },
+  {
+   "id": "autotomize",
+   "name": "Autotomize",
+   "type": "steel",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "babydolleyes",
+   "name": "Baby-Doll Eyes",
+   "type": "fairy",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 7.5,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "barrier",
+   "name": "Barrier",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "bulkup",
+   "name": "Bulk Up",
+   "type": "fighting",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "calmmind",
+   "name": "Calm Mind",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "charge",
+   "name": "Charge",
+   "type": "electric",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 9.5,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "charm",
+   "name": "Charm",
+   "type": "fairy",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "coil",
+   "name": "Coil",
+   "type": "poison",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "confide",
+   "name": "Confide",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 7.5,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "confuseray",
+   "name": "Confuse Ray",
+   "type": "ghost",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "cosmicpower",
+   "name": "Cosmic Power",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "cottonguard",
+   "name": "Cotton Guard",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 12.5,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "cottonspore",
+   "name": "Cotton Spore",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 7.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "cone",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   },
+   "cone": 70.0
+  },
+  {
+   "id": "darkvoid",
+   "name": "Dark Void",
+   "type": "dark",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 7.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "cone",
+   "tele": 0.5,
+   "support": {
+    "target": "foe"
+   },
+   "cone": 70.0
+  },
+  {
+   "id": "defensecurl",
+   "name": "Defense Curl",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 9.5,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "dragondance",
+   "name": "Dragon Dance",
+   "type": "dragon",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "eerieimpulse",
+   "name": "Eerie Impulse",
+   "type": "electric",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "faketears",
+   "name": "Fake Tears",
+   "type": "dark",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "featherdance",
+   "name": "Feather Dance",
+   "type": "flying",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "flatter",
+   "name": "Flatter",
+   "type": "dark",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "floralhealing",
+   "name": "Floral Healing",
+   "type": "fairy",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 16.0,
+   "width": 1.6,
+   "cooldown": 14.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "ally"
+   }
+  },
+  {
+   "id": "geomancy",
+   "name": "Geomancy",
+   "type": "fairy",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 12.5,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "glare",
+   "name": "Glare",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "grasswhistle",
+   "name": "Grass Whistle",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "growl",
+   "name": "Growl",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 7.0,
+   "width": 1.0,
+   "cooldown": 7.5,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "cone",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   },
+   "cone": 70.0
+  },
+  {
+   "id": "growth",
+   "name": "Growth",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "harden",
+   "name": "Harden",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 9.5,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "healbell",
+   "name": "Heal Bell",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 8.0,
+   "cooldown": 13.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "allies"
+   }
+  },
+  {
+   "id": "healorder",
+   "name": "Heal Order",
+   "type": "bug",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "healpulse",
+   "name": "Heal Pulse",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 16.0,
+   "width": 1.6,
+   "cooldown": 14.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "ally"
+   }
+  },
+  {
+   "id": "honeclaws",
+   "name": "Hone Claws",
+   "type": "dark",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 9.5,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "howl",
+   "name": "Howl",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 8.0,
+   "cooldown": 13.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "allies"
+   }
+  },
+  {
+   "id": "hypnosis",
+   "name": "Hypnosis",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "irondefense",
+   "name": "Iron Defense",
+   "type": "steel",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "junglehealing",
+   "name": "Jungle Healing",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 8.0,
+   "cooldown": 14.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.5,
+   "support": {
+    "target": "allies"
+   }
+  },
+  {
+   "id": "leer",
+   "name": "Leer",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 7.0,
+   "width": 1.0,
+   "cooldown": 7.5,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "cone",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   },
+   "cone": 70.0
+  },
+  {
+   "id": "lifedew",
+   "name": "Life Dew",
+   "type": "water",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 8.0,
+   "cooldown": 14.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.5,
+   "support": {
+    "target": "allies"
+   }
+  },
+  {
+   "id": "lovelykiss",
+   "name": "Lovely Kiss",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "lunarblessing",
+   "name": "Lunar Blessing",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 8.0,
+   "cooldown": 14.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.5,
+   "support": {
+    "target": "allies"
+   }
+  },
+  {
+   "id": "meditate",
+   "name": "Meditate",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 9.5,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "metalsound",
+   "name": "Metal Sound",
+   "type": "steel",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "milkdrink",
+   "name": "Milk Drink",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "moonlight",
+   "name": "Moonlight",
+   "type": "fairy",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "morningsun",
+   "name": "Morning Sun",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "nastyplot",
+   "name": "Nasty Plot",
+   "type": "dark",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "playnice",
+   "name": "Play Nice",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 7.5,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "poisongas",
+   "name": "Poison Gas",
+   "type": "poison",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 7.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "cone",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   },
+   "cone": 70.0
+  },
+  {
+   "id": "poisonpowder",
+   "name": "Poison Powder",
+   "type": "poison",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "quiverdance",
+   "name": "Quiver Dance",
+   "type": "bug",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 12.5,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "recover",
+   "name": "Recover",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "refresh",
+   "name": "Refresh",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.2,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "rest",
+   "name": "Rest",
+   "type": "psychic",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.6,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "rockpolish",
+   "name": "Rock Polish",
+   "type": "rock",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "roost",
+   "name": "Roost",
+   "type": "flying",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "scaryface",
+   "name": "Scary Face",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "screech",
+   "name": "Screech",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "sharpen",
+   "name": "Sharpen",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 9.5,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "shellsmash",
+   "name": "Shell Smash",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 12.5,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "shiftgear",
+   "name": "Shift Gear",
+   "type": "steel",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 12.5,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "shoreup",
+   "name": "Shore Up",
+   "type": "ground",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "sing",
+   "name": "Sing",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "slackoff",
+   "name": "Slack Off",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "sleeppowder",
+   "name": "Sleep Powder",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "softboiled",
+   "name": "Soft-Boiled",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "spore",
+   "name": "Spore",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "stringshot",
+   "name": "String Shot",
+   "type": "bug",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 7.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "cone",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   },
+   "cone": 70.0
+  },
+  {
+   "id": "stunspore",
+   "name": "Stun Spore",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "supersonic",
+   "name": "Supersonic",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "swagger",
+   "name": "Swagger",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "sweetkiss",
+   "name": "Sweet Kiss",
+   "type": "fairy",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "swordsdance",
+   "name": "Swords Dance",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "synthesis",
+   "name": "Synthesis",
+   "type": "grass",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 13.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "tailwhip",
+   "name": "Tail Whip",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 7.0,
+   "width": 1.0,
+   "cooldown": 7.5,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "cone",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   },
+   "cone": 70.0
+  },
+  {
+   "id": "tarshot",
+   "name": "Tar Shot",
+   "type": "rock",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 7.5,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "tearfullook",
+   "name": "Tearful Look",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.25,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "teeterdance",
+   "name": "Teeter Dance",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 7.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "cone",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   },
+   "cone": 70.0
+  },
+  {
+   "id": "thunderwave",
+   "name": "Thunder Wave",
+   "type": "electric",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "toxic",
+   "name": "Toxic",
+   "type": "poison",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "willowisp",
+   "name": "Will-O-Wisp",
+   "type": "fire",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.35,
+   "support": {
+    "target": "foe"
+   }
+  },
+  {
+   "id": "wish",
+   "name": "Wish",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 8.0,
+   "cooldown": 14.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:happy_villager",
+   "form": "burst",
+   "tele": 0.5,
+   "support": {
+    "target": "allies"
+   }
+  },
+  {
+   "id": "withdraw",
+   "name": "Withdraw",
+   "type": "water",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 9.5,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "workup",
+   "name": "Work Up",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "burst",
+   "range": 1.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
+  },
+  {
+   "id": "yawn",
+   "name": "Yawn",
+   "type": "normal",
+   "category": "special",
+   "power": 0,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 1.0,
+   "cooldown": 14.0,
+   "energy": 35,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant",
+   "form": "beam",
+   "tele": 0.5,
+   "support": {
+    "target": "foe"
+   }
+  }
+ ],
+ "roles": {
+  "aegislash": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "swordsdance"
+  },
+  "alakazam": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "calmmind"
+  },
+  "alomomola": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "amoonguss": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "spore"
+  },
+  "ampharos": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "thunderwave"
+  },
+  "audino": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "azumarill": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "charm"
+  },
+  "azurill": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "charm"
+  },
+  "baltoy": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "cosmicpower"
+  },
+  "bayleef": {
+   "role": "healer",
+   "slot": 2,
+   "move": "synthesis"
+  },
+  "beautifly": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "stunspore"
+  },
+  "bellossom": {
+   "role": "healer",
+   "slot": 2,
+   "move": "moonlight"
+  },
+  "bidoof": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "swordsdance"
+  },
+  "binacle": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "shellsmash"
+  },
+  "blissey": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "breloom": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "spore"
+  },
+  "bronzor": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "hypnosis"
+  },
+  "butterfree": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "carbink": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "rockpolish"
+  },
+  "chansey": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "chikorita": {
+   "role": "healer",
+   "slot": 2,
+   "move": "synthesis"
+  },
+  "chinchou": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "thunderwave"
+  },
+  "clauncher": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "swordsdance"
+  },
+  "claydol": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "cosmicpower"
+  },
+  "clefable": {
+   "role": "healer",
+   "slot": 2,
+   "move": "lifedew"
+  },
+  "clefairy": {
+   "role": "healer",
+   "slot": 2,
+   "move": "lifedew"
+  },
+  "clodsire": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "yawn"
+  },
+  "cloyster": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "shellsmash"
+  },
+  "comfey": {
+   "role": "healer",
+   "slot": 2,
+   "move": "floralhealing"
+  },
+  "corsola": {
+   "role": "healer",
+   "slot": 2,
+   "move": "lifedew"
+  },
+  "cottonee": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "stunspore"
+  },
+  "cresselia": {
+   "role": "healer",
+   "slot": 2,
+   "move": "lunarblessing"
+  },
+  "cubone": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "growl"
+  },
+  "diancie": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "rockpolish"
+  },
+  "dragonite": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "dragondance"
+  },
+  "drowzee": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "poisongas"
+  },
+  "ducklett": {
+   "role": "healer",
+   "slot": 2,
+   "move": "roost"
+  },
+  "dunsparce": {
+   "role": "healer",
+   "slot": 2,
+   "move": "roost"
+  },
+  "dusclops": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "willowisp"
+  },
+  "duskull": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "willowisp"
+  },
+  "dustox": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "toxic"
+  },
+  "eevee": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "growl"
+  },
+  "exeggcute": {
+   "role": "healer",
+   "slot": 2,
+   "move": "synthesis"
+  },
+  "ferroseed": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "irondefense"
+  },
+  "flabebe": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "floette": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "florges": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "foongus": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "spore"
+  },
+  "gallade": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "swordsdance"
+  },
+  "gardevoir": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "gastly": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "hypnosis"
+  },
+  "gengar": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "hypnosis"
+  },
+  "gloom": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "gossifleur": {
+   "role": "healer",
+   "slot": 2,
+   "move": "synthesis"
+  },
+  "grimmsnarl": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "faketears"
+  },
+  "gulpin": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "poisongas"
+  },
+  "gyarados": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "dragondance"
+  },
+  "hatenna": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "hatterene": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "hattrem": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "haunter": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "hypnosis"
+  },
+  "hoothoot": {
+   "role": "healer",
+   "slot": 2,
+   "move": "roost"
+  },
+  "hoppip": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "hypno": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "poisongas"
+  },
+  "impidimp": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "faketears"
+  },
+  "jolteon": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "thunderwave"
+  },
+  "jumpluff": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "jynx": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "lovelykiss"
+  },
+  "kingler": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "swordsdance"
+  },
+  "kirlia": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "klink": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "metalsound"
+  },
+  "krokorok": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "scaryface"
+  },
+  "krookodile": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "scaryface"
+  },
+  "lapras": {
+   "role": "healer",
+   "slot": 2,
+   "move": "lifedew"
+  },
+  "larvesta": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "amnesia"
+  },
+  "ledian": {
+   "role": "healer",
+   "slot": 2,
+   "move": "roost"
+  },
+  "ledyba": {
+   "role": "healer",
+   "slot": 2,
+   "move": "roost"
+  },
+  "liepard": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "growl"
+  },
+  "lucario": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "calmmind"
+  },
+  "luvdisc": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "mandibuzz": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "toxic"
+  },
+  "mantine": {
+   "role": "healer",
+   "slot": 2,
+   "move": "roost"
+  },
+  "mareanie": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "toxic"
+  },
+  "marill": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "charm"
+  },
+  "medicham": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "workup"
+  },
+  "meditite": {
+   "role": "healer",
+   "slot": 2,
+   "move": "recover"
+  },
+  "meowth": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "screech"
+  },
+  "mightyena": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "scaryface"
+  },
+  "miltank": {
+   "role": "healer",
+   "slot": 2,
+   "move": "milkdrink"
+  },
+  "morgrem": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "faketears"
+  },
+  "nacli": {
+   "role": "healer",
+   "slot": 2,
+   "move": "recover"
+  },
+  "naclstack": {
+   "role": "healer",
+   "slot": 2,
+   "move": "recover"
+  },
+  "nidoranf": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "toxic"
+  },
+  "nidorina": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "toxic"
+  },
+  "oddish": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "onix": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "rockpolish"
+  },
+  "orbeetle": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "hypnosis"
+  },
+  "pachirisu": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "thunderwave"
+  },
+  "paras": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "spore"
+  },
+  "parasect": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "spore"
+  },
+  "pecharunt": {
+   "role": "healer",
+   "slot": 2,
+   "move": "recover"
+  },
+  "persian": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "screech"
+  },
+  "phanpy": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "charm"
+  },
+  "poochyena": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "scaryface"
+  },
+  "probopass": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "irondefense"
+  },
+  "purrloin": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "growl"
+  },
+  "pyukumuku": {
+   "role": "healer",
+   "slot": 2,
+   "move": "recover"
+  },
+  "ralts": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "registeel": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "amnesia"
+  },
+  "rowlet": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "featherdance"
+  },
+  "sableye": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "leer"
+  },
+  "sandile": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "scaryface"
+  },
+  "scizor": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "swordsdance"
+  },
+  "screamtail": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "seedot": {
+   "role": "healer",
+   "slot": 2,
+   "move": "synthesis"
+  },
+  "seel": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "charm"
+  },
+  "servine": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "coil"
+  },
+  "shellos": {
+   "role": "healer",
+   "slot": 2,
+   "move": "recover"
+  },
+  "shelmet": {
+   "role": "healer",
+   "slot": 2,
+   "move": "recover"
+  },
+  "shroomish": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "spore"
+  },
+  "shuckle": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "shellsmash"
+  },
+  "skiploom": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "skorupi": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "scaryface"
+  },
+  "slowpoke": {
+   "role": "healer",
+   "slot": 2,
+   "move": "healpulse"
+  },
+  "smoochum": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sing"
+  },
+  "snivy": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "coil"
+  },
+  "spinda": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "teeterdance"
+  },
+  "spritzee": {
+   "role": "healer",
+   "slot": 2,
+   "move": "aromatherapy"
+  },
+  "steelix": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "autotomize"
+  },
+  "steenee": {
+   "role": "healer",
+   "slot": 2,
+   "move": "aromatherapy"
+  },
+  "sunkern": {
+   "role": "healer",
+   "slot": 2,
+   "move": "synthesis"
+  },
+  "swalot": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "poisongas"
+  },
+  "swirlix": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "tentacool": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "acidarmor"
+  },
+  "terapagos": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "rockpolish"
+  },
+  "tinkatink": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "flatter"
+  },
+  "tinkatuff": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "flatter"
+  },
+  "toedscool": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "spore"
+  },
+  "togekiss": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "togepi": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "togetic": {
+   "role": "healer",
+   "slot": 2,
+   "move": "wish"
+  },
+  "toxapex": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "toxic"
+  },
+  "tropius": {
+   "role": "healer",
+   "slot": 2,
+   "move": "synthesis"
+  },
+  "trubbish": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "poisongas"
+  },
+  "umbreon": {
+   "role": "healer",
+   "slot": 2,
+   "move": "moonlight"
+  },
+  "venomoth": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "venonat": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "vileplume": {
+   "role": "spreader",
+   "slot": 2,
+   "move": "sleeppowder"
+  },
+  "volcarona": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "quiverdance"
+  },
+  "vullaby": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "irondefense"
+  },
+  "whirlipede": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "agility"
+  },
+  "wishiwashi": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "tearfullook"
+  },
+  "wooloo": {
+   "role": "buffer",
+   "slot": 2,
+   "move": "cottonguard"
+  },
+  "yamper": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "charm"
+  },
+  "zigzagoon": {
+   "role": "hexer",
+   "slot": 2,
+   "move": "growl"
+  }
+ }
+}

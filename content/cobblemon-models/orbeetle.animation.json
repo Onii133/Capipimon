@@ -1,0 +1,647 @@
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.orbeetle.ground_idle": {
+   "loop": true,
+   "bones": {
+    "body": {
+     "rotation": [
+      "7.5+math.sin(q.anim_time*90*10/5-60)*1",
+      0,
+      "0+math.sin(q.anim_time*90*8/4-0)*1"
+     ],
+     "position": [
+      "0+math.sin(q.anim_time *90 *1- 60 )*1",
+      "-6-math.sin(q.anim_time*90*1-0)*1",
+      0
+     ]
+    },
+    "leg1": {
+     "rotation": [
+      -25.25766,
+      -11.2531,
+      -22.47096
+     ],
+     "position": [
+      5,
+      4,
+      -6
+     ]
+    },
+    "leg_part1": {
+     "rotation": [
+      -27.5,
+      0,
+      0
+     ],
+     "position": [
+      0,
+      0,
+      -5
+     ]
+    },
+    "leg2": {
+     "rotation": [
+      -25.25766,
+      11.2531,
+      22.47096
+     ],
+     "position": [
+      -5,
+      4,
+      -6
+     ]
+    },
+    "leg_part2": {
+     "rotation": [
+      -27.5,
+      0,
+      0
+     ],
+     "position": [
+      0,
+      0,
+      -5
+     ]
+    },
+    "torso": {
+     "rotation": [
+      17.5,
+      0,
+      0
+     ],
+     "position": [
+      0,
+      4,
+      5
+     ]
+    },
+    "caparons": {
+     "rotation": [
+      -12.5,
+      0,
+      0
+     ],
+     "position": [
+      0,
+      0,
+      -8
+     ]
+    },
+    "hand1": {
+     "rotation": [
+      6.1656,
+      21.9734,
+      "40.5336+math.sin(q.anim_time*90*1+0)*1"
+     ],
+     "position": [
+      -12,
+      10,
+      4
+     ]
+    },
+    "hand_part1": {
+     "rotation": [
+      6.8817,
+      24.09293,
+      16.47027
+     ],
+     "position": [
+      -7,
+      4,
+      7
+     ]
+    },
+    "nail1": {
+     "rotation": [
+      0,
+      0,
+      12.5
+     ],
+     "position": [
+      -6,
+      4,
+      0
+     ]
+    },
+    "hand2": {
+     "rotation": [
+      6.1656,
+      -21.9734,
+      "-40.5336+math.sin(q.anim_time*90*1+0)*1"
+     ],
+     "position": [
+      12,
+      10,
+      4
+     ]
+    },
+    "hand_part2": {
+     "rotation": [
+      6.8817,
+      -24.09293,
+      -16.47027
+     ],
+     "position": [
+      7,
+      4,
+      7
+     ]
+    },
+    "nail2": {
+     "rotation": [
+      0,
+      0,
+      -12.5
+     ],
+     "position": [
+      6,
+      4,
+      0
+     ]
+    },
+    "head": {
+     "rotation": [
+      "-12.5+math.sin(q.anim_time*90*2-60)*1",
+      0,
+      0
+     ]
+    },
+    "legs": {
+     "position": [
+      0,
+      3,
+      0
+     ]
+    },
+    "torso_part": {
+     "rotation": [
+      -25,
+      0,
+      0
+     ],
+     "position": [
+      0,
+      0,
+      -1
+     ]
+    },
+    "torso_mini": {
+     "rotation": [
+      22.5,
+      0,
+      0
+     ]
+    }
+   }
+  },
+  "animation.orbeetle.ground_walk": {
+   "loop": true,
+   "bones": {
+    "body": {
+     "rotation": [
+      "7.5+math.sin(q.anim_time*90*10/5-60)*1",
+      0,
+      "0+math.sin(q.anim_time*90*8/4-0)*1"
+     ],
+     "position": [
+      "0+math.sin(q.anim_time *90 *1- 60 )*1",
+      "-4-math.sin(q.anim_time*90*1-0)*1",
+      0
+     ]
+    },
+    "leg1": {
+     "rotation": [
+      19.74234,
+      -11.2531,
+      -22.47096
+     ],
+     "position": [
+      4,
+      2,
+      6
+     ]
+    },
+    "leg_part1": {
+     "rotation": [
+      -27.5,
+      0,
+      0
+     ],
+     "position": [
+      0,
+      0,
+      -5
+     ]
+    },
+    "leg2": {
+     "rotation": [
+      19.74234,
+      11.2531,
+      22.47096
+     ],
+     "position": [
+      -4,
+      2,
+      6
+     ]
+    },
+    "leg_part2": {
+     "rotation": [
+      -27.5,
+      0,
+      0
+     ],
+     "position": [
+      0,
+      0,
+      -5
+     ]
+    },
+    "torso": {
+     "rotation": [
+      "25+math.sin(q.anim_time*90*4-170)*1",
+      0,
+      0
+     ],
+     "position": [
+      0,
+      4,
+      8
+     ]
+    },
+    "caparons": {
+     "rotation": [
+      -20,
+      0,
+      0
+     ],
+     "position": [
+      0,
+      3,
+      -12
+     ]
+    },
+    "bone": {
+     "rotation": [
+      0,
+      0,
+      0
+     ]
+    },
+    "hand1": {
+     "rotation": [
+      5.71631,
+      -0.40898,
+      "38.178+math.sin(q.anim_time*90*1+0)*1"
+     ],
+     "position": [
+      -12,
+      11,
+      2
+     ]
+    },
+    "hand_part1": {
+     "rotation": [
+      6.8817,
+      24.09293,
+      16.47027
+     ],
+     "position": [
+      -7,
+      4,
+      7
+     ]
+    },
+    "nail1": {
+     "rotation": [
+      0,
+      0,
+      12.5
+     ],
+     "position": [
+      -6,
+      4,
+      0
+     ]
+    },
+    "hand2": {
+     "rotation": [
+      5.71631,
+      0.40898,
+      "-38.178+math.sin(q.anim_time*90*1+0)*1"
+     ],
+     "position": [
+      12,
+      11,
+      2
+     ]
+    },
+    "hand_part2": {
+     "rotation": [
+      6.8817,
+      -24.09293,
+      -16.47027
+     ],
+     "position": [
+      7,
+      4,
+      7
+     ]
+    },
+    "nail2": {
+     "rotation": [
+      0,
+      0,
+      -12.5
+     ],
+     "position": [
+      6,
+      4,
+      0
+     ]
+    },
+    "head": {
+     "rotation": [
+      "-12.5+math.sin(q.anim_time*90*4+90)*2",
+      0,
+      0
+     ]
+    },
+    "bone2": {
+     "rotation": [
+      0,
+      0,
+      0
+     ]
+    },
+    "hands": {
+     "position": [
+      0,
+      -1,
+      0
+     ]
+    },
+    "legs": {
+     "position": [
+      0,
+      3,
+      0
+     ]
+    }
+   }
+  },
+  "animation.orbeetle.blink": {
+   "animation_length": 0.2083,
+   "bones": {
+    "eye1": {
+     "position": {
+      "0.0": [
+       -1,
+       0,
+       1
+      ],
+      "0.2083": {
+       "pre": [
+        -1,
+        0,
+        1
+       ],
+       "post": [
+        0,
+        0,
+        0
+       ]
+      }
+     }
+    },
+    "eye2": {
+     "position": {
+      "0.0": [
+       1,
+       0,
+       1
+      ],
+      "0.2083": {
+       "pre": [
+        1,
+        0,
+        1
+       ],
+       "post": [
+        0,
+        0,
+        0
+       ]
+      }
+     }
+    }
+   }
+  },
+  "animation.orbeetle.cry": {
+   "animation_length": 0.75,
+   "bones": {
+    "head": {
+     "rotation": {
+      "0.0": [
+       0,
+       0,
+       0
+      ],
+      "0.0417": [
+       -5,
+       0,
+       0
+      ],
+      "0.2083": [
+       2.5,
+       0,
+       0
+      ],
+      "0.2917": [
+       -2.5,
+       0,
+       0
+      ],
+      "0.375": [
+       2.5,
+       0,
+       0
+      ],
+      "0.4583": [
+       -2.5,
+       0,
+       0
+      ],
+      "0.625": [
+       2.5,
+       0,
+       0
+      ],
+      "0.75": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "sound_effects": {
+    "0.0833": {
+     "effect": "pokemon.orbeetle.cry"
+    }
+   }
+  },
+  "animation.orbeetle.recoil": {
+   "animation_length": 0.6667,
+   "bones": {
+    "torso": {
+     "rotation": {
+      "0.0": [
+       0,
+       0,
+       0
+      ],
+      "0.0417": [
+       -5,
+       0,
+       0
+      ],
+      "0.25": [
+       -0.83,
+       0,
+       0
+      ],
+      "0.6667": [
+       0,
+       0,
+       0
+      ]
+     },
+     "position": {
+      "0.0": [
+       0,
+       0,
+       0
+      ],
+      "0.0417": [
+       0,
+       0,
+       -2
+      ],
+      "0.25": [
+       0,
+       0,
+       -0.33
+      ],
+      "0.6667": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "hand1": {
+     "rotation": {
+      "0.0": [
+       0,
+       0,
+       0
+      ],
+      "0.0417": [
+       0,
+       -5,
+       0
+      ],
+      "0.6667": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "hand2": {
+     "rotation": {
+      "0.0": [
+       0,
+       0,
+       0
+      ],
+      "0.0417": [
+       0,
+       5,
+       0
+      ],
+      "0.6667": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "head": {
+     "rotation": {
+      "0.0": [
+       0,
+       0,
+       0
+      ],
+      "0.0417": [
+       -5,
+       0,
+       0
+      ],
+      "0.25": [
+       -2.5,
+       0,
+       0
+      ],
+      "0.6667": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "eye1": {
+     "position": {
+      "0.0": [
+       0,
+       0,
+       0
+      ],
+      "0.0417": [
+       -1,
+       0,
+       1
+      ],
+      "0.6667": [
+       0,
+       0,
+       0
+      ]
+     }
+    },
+    "eye2": {
+     "position": {
+      "0.0": [
+       0,
+       0,
+       0
+      ],
+      "0.0417": [
+       1,
+       0,
+       1
+      ],
+      "0.6667": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   }
+  }
+ }
+}

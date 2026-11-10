@@ -1,0 +1,13 @@
+[package]
+name = "mod-capipimon_models"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# The launcher points this at the Horizon source it builds the game from. Other
+# dependencies must be crates and versions in Horizon's Cargo.lock.
+horizon-client = { git = "https://github.com/horizon-rust/horizon", rev = "66f3981f522b24c250b21523a70080965b940424" }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+glam = "=0.30.10"
+log = "=0.4.34"

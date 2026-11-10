@@ -1,0 +1,108 @@
+{
+ "schema": 1,
+ "species": "raichu",
+ "name": "Raichu",
+ "source": "hand",
+ "types": [
+  "electric"
+ ],
+ "base": {
+  "atk": 90,
+  "def": 55,
+  "hp": 60,
+  "spa": 90,
+  "spd": 80,
+  "spe": 110
+ },
+ "hitbox": {
+  "base_scale": 0.75,
+  "height": 1.5,
+  "width": 0.8
+ },
+ "moves": [
+  {
+   "id": "thundershock",
+   "name": "Thunder Shock",
+   "type": "electric",
+   "category": "special",
+   "power": 30,
+   "shape": "beam",
+   "range": 3.0,
+   "width": 1.0,
+   "cooldown": 0.4,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "cone",
+   "cone": 70.0,
+   "tele": 0.0
+  },
+  {
+   "id": "quickattack",
+   "name": "Quick Attack",
+   "type": "normal",
+   "category": "physical",
+   "power": 56,
+   "shape": "dash",
+   "range": 8.0,
+   "width": 1.6,
+   "cooldown": 6.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit",
+   "form": "dash",
+   "tele": 0.0,
+   "charges": 2
+  },
+  {
+   "id": "thunderbolt",
+   "name": "Thunderbolt",
+   "type": "electric",
+   "category": "special",
+   "power": 110,
+   "shape": "beam",
+   "range": 32.0,
+   "width": 0.8,
+   "cooldown": 4.5,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "beam"
+  },
+  {
+   "id": "sig:f_electroweb2",
+   "name": "Electroweb",
+   "type": "electric",
+   "category": "special",
+   "power": 100,
+   "shape": "beam",
+   "range": 10.0,
+   "width": 1.0,
+   "cooldown": 10.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "beam"
+  }
+ ],
+ "ultimate": {
+  "id": "sig:f_risingvoltage",
+  "name": "Rising Voltage",
+  "type": "electric",
+  "category": "special",
+  "power": 40,
+  "shape": "burst",
+  "range": 3.0,
+  "width": 3.0,
+  "cooldown": 75.0,
+  "energy": 0,
+  "windup": 0.0,
+  "anim": "special",
+  "particle": "minecraft:electric_spark",
+  "tele": 0.0
+ }
+}

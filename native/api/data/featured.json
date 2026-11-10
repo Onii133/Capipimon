@@ -1,0 +1,638 @@
+{
+ "version": 1,
+ "species": {
+  "f_electroweb1": {
+   "move": {
+    "id": "sig:f_electroweb1",
+    "name": "Electroweb",
+    "type": "electric",
+    "category": "special",
+    "power": 80,
+    "shape": "beam",
+    "range": 9.0,
+    "width": 1.0,
+    "cooldown": 11.0,
+    "energy": 40,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:electric_spark",
+    "form": "beam"
+   },
+   "form": "beam",
+   "mech": [
+    "tether"
+   ],
+   "motif": "web",
+   "rgb2": [
+    0.95,
+    0.9,
+    0.35
+   ],
+   "grand": false,
+   "base": 0.3,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_electroweb2": {
+   "move": {
+    "id": "sig:f_electroweb2",
+    "name": "Electroweb",
+    "type": "electric",
+    "category": "special",
+    "power": 100,
+    "shape": "beam",
+    "range": 10.0,
+    "width": 1.0,
+    "cooldown": 10.0,
+    "energy": 40,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:electric_spark",
+    "form": "beam"
+   },
+   "form": "beam",
+   "mech": [
+    "tether"
+   ],
+   "motif": "web",
+   "rgb2": [
+    0.95,
+    0.9,
+    0.35
+   ],
+   "grand": false,
+   "base": 0.3,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_risingvoltage": {
+   "move": {
+    "id": "sig:f_risingvoltage",
+    "name": "Rising Voltage",
+    "type": "electric",
+    "category": "special",
+    "power": 40,
+    "shape": "burst",
+    "range": 3.0,
+    "width": 3.0,
+    "cooldown": 75.0,
+    "energy": 0,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:electric_spark",
+    "tele": 0.0
+   },
+   "form": "burst",
+   "mech": [
+    "voltage"
+   ],
+   "motif": "spiral",
+   "rgb2": [
+    1.0,
+    0.95,
+    0.4
+   ],
+   "grand": true,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_dig1": {
+   "move": {
+    "id": "sig:f_dig1",
+    "name": "Dig",
+    "type": "ground",
+    "category": "physical",
+    "power": 50,
+    "shape": "burst",
+    "range": 3.0,
+    "width": 3.0,
+    "cooldown": 10.0,
+    "energy": 30,
+    "windup": 0.0,
+    "anim": "physical",
+    "particle": "minecraft:poof"
+   },
+   "form": "burst",
+   "mech": [
+    "vanish",
+    "launch"
+   ],
+   "motif": "quake",
+   "rgb2": [
+    0.65,
+    0.5,
+    0.3
+   ],
+   "grand": false,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_dig2": {
+   "move": {
+    "id": "sig:f_dig2",
+    "name": "Dig",
+    "type": "ground",
+    "category": "physical",
+    "power": 60,
+    "shape": "burst",
+    "range": 3.5,
+    "width": 3.5,
+    "cooldown": 9.0,
+    "energy": 30,
+    "windup": 0.0,
+    "anim": "physical",
+    "particle": "minecraft:poof"
+   },
+   "form": "burst",
+   "mech": [
+    "vanish",
+    "launch"
+   ],
+   "motif": "quake",
+   "rgb2": [
+    0.65,
+    0.5,
+    0.3
+   ],
+   "grand": false,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_quake1": {
+   "move": {
+    "id": "sig:f_quake1",
+    "name": "Earthquake",
+    "type": "ground",
+    "category": "physical",
+    "power": 100,
+    "shape": "burst",
+    "range": 6.0,
+    "width": 6.0,
+    "cooldown": 12.0,
+    "energy": 45,
+    "windup": 0.0,
+    "anim": "physical",
+    "particle": "minecraft:poof",
+    "ground_wave": true
+   },
+   "form": "burst",
+   "mech": [
+    "stun"
+   ],
+   "motif": "quake",
+   "rgb2": [
+    0.7,
+    0.55,
+    0.3
+   ],
+   "grand": false,
+   "base": 0.35,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_dig3": {
+   "move": {
+    "id": "sig:f_dig3",
+    "name": "Dig",
+    "type": "ground",
+    "category": "physical",
+    "power": 70,
+    "shape": "burst",
+    "range": 4.0,
+    "width": 4.0,
+    "cooldown": 8.0,
+    "energy": 30,
+    "windup": 0.0,
+    "anim": "physical",
+    "particle": "minecraft:poof"
+   },
+   "form": "burst",
+   "mech": [
+    "vanish",
+    "launch"
+   ],
+   "motif": "quake",
+   "rgb2": [
+    0.65,
+    0.5,
+    0.3
+   ],
+   "grand": false,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_quake2": {
+   "move": {
+    "id": "sig:f_quake2",
+    "name": "Earthquake",
+    "type": "ground",
+    "category": "physical",
+    "power": 120,
+    "shape": "burst",
+    "range": 7.0,
+    "width": 7.0,
+    "cooldown": 11.0,
+    "energy": 45,
+    "windup": 0.0,
+    "anim": "physical",
+    "particle": "minecraft:poof",
+    "ground_wave": true
+   },
+   "form": "burst",
+   "mech": [
+    "stun"
+   ],
+   "motif": "quake",
+   "rgb2": [
+    0.7,
+    0.55,
+    0.3
+   ],
+   "grand": false,
+   "base": 0.35,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_hydrocannon": {
+   "move": {
+    "id": "sig:f_hydrocannon",
+    "name": "Hydro Cannon",
+    "type": "water",
+    "category": "special",
+    "power": 180,
+    "shape": "beam",
+    "range": 20.0,
+    "width": 3.0,
+    "cooldown": 80.0,
+    "energy": 0,
+    "windup": 0.6,
+    "anim": "special",
+    "particle": "minecraft:splash",
+    "form": "beam",
+    "tele": 0.6
+   },
+   "form": "beam",
+   "mech": [
+    "launch",
+    "zone",
+    "strip",
+    "slow"
+   ],
+   "motif": "goo",
+   "rgb2": [
+    0.55,
+    0.42,
+    0.25
+   ],
+   "grand": true,
+   "base": 0.6,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_soak1": {
+   "move": {
+    "id": "sig:f_soak1",
+    "name": "Soak",
+    "type": "water",
+    "category": "special",
+    "power": 20,
+    "shape": "beam",
+    "range": 14.0,
+    "width": 4.0,
+    "cooldown": 8.0,
+    "energy": 25,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:splash"
+   },
+   "form": "ground",
+   "mech": [
+    "zone",
+    "slow"
+   ],
+   "motif": "bubbles",
+   "rgb2": [
+    0.5,
+    0.8,
+    1.0
+   ],
+   "grand": false,
+   "base": 0.2,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_soak2": {
+   "move": {
+    "id": "sig:f_soak2",
+    "name": "Soak",
+    "type": "water",
+    "category": "special",
+    "power": 28,
+    "shape": "beam",
+    "range": 14.0,
+    "width": 4.666666666666667,
+    "cooldown": 8.0,
+    "energy": 25,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:splash"
+   },
+   "form": "ground",
+   "mech": [
+    "zone",
+    "slow"
+   ],
+   "motif": "bubbles",
+   "rgb2": [
+    0.5,
+    0.8,
+    1.0
+   ],
+   "grand": false,
+   "base": 0.2,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_pump1": {
+   "move": {
+    "id": "sig:f_pump1",
+    "name": "Hydro Pump",
+    "type": "water",
+    "category": "special",
+    "power": 120,
+    "shape": "beam",
+    "range": 18.0,
+    "width": 1.0,
+    "cooldown": 9.0,
+    "energy": 40,
+    "windup": 0.4,
+    "anim": "special",
+    "particle": "minecraft:splash",
+    "form": "beam",
+    "tele": 0.4,
+    "busy": 1.5
+   },
+   "form": "beam",
+   "mech": [
+    "multi"
+   ],
+   "motif": "bubbles",
+   "rgb2": [
+    0.6,
+    0.85,
+    1.0
+   ],
+   "grand": false,
+   "base": 0.4,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_soak3": {
+   "move": {
+    "id": "sig:f_soak3",
+    "name": "Soak",
+    "type": "water",
+    "category": "special",
+    "power": 36,
+    "shape": "beam",
+    "range": 14.0,
+    "width": 5.333333333333333,
+    "cooldown": 7.0,
+    "energy": 25,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:splash"
+   },
+   "form": "ground",
+   "mech": [
+    "zone",
+    "slow"
+   ],
+   "motif": "bubbles",
+   "rgb2": [
+    0.5,
+    0.8,
+    1.0
+   ],
+   "grand": false,
+   "base": 0.2,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_pump2": {
+   "move": {
+    "id": "sig:f_pump2",
+    "name": "Hydro Pump",
+    "type": "water",
+    "category": "special",
+    "power": 150,
+    "shape": "beam",
+    "range": 20.0,
+    "width": 1.0,
+    "cooldown": 9.0,
+    "energy": 40,
+    "windup": 0.4,
+    "anim": "special",
+    "particle": "minecraft:splash",
+    "form": "beam",
+    "tele": 0.4,
+    "busy": 1.5
+   },
+   "form": "beam",
+   "mech": [
+    "multi"
+   ],
+   "motif": "bubbles",
+   "rgb2": [
+    0.6,
+    0.85,
+    1.0
+   ],
+   "grand": false,
+   "base": 0.4,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_raindance": {
+   "move": {
+    "id": "sig:f_raindance",
+    "name": "Rain Dance",
+    "type": "water",
+    "category": "special",
+    "power": 140,
+    "shape": "burst",
+    "range": 8.0,
+    "width": 8.0,
+    "cooldown": 75.0,
+    "energy": 0,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:splash",
+    "tele": 0.0
+   },
+   "form": "burst",
+   "mech": [
+    "field",
+    "zone",
+    "rain"
+   ],
+   "motif": "bubbles",
+   "rgb2": [
+    0.5,
+    0.75,
+    1.0
+   ],
+   "grand": true,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_fly1": {
+   "move": {
+    "id": "sig:f_fly1",
+    "name": "Fly",
+    "type": "flying",
+    "category": "physical",
+    "power": 1.0,
+    "shape": "dash",
+    "range": 12.0,
+    "width": 2.0,
+    "cooldown": 8.0,
+    "energy": 25,
+    "windup": 0.0,
+    "anim": "physical",
+    "particle": "minecraft:cloud",
+    "form": "dash",
+    "tele": 0.0
+   },
+   "form": "dash",
+   "mech": [
+    "fly"
+   ],
+   "motif": "feathers",
+   "rgb2": [
+    0.95,
+    0.95,
+    1.0
+   ],
+   "grand": false,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0,
+   "dash": {
+    "dist": 12.0,
+    "up": 12.0,
+    "aim": "full"
+   }
+  },
+  "f_thunderstorm": {
+   "move": {
+    "id": "sig:f_thunderstorm",
+    "name": "Thunderstorm",
+    "type": "electric",
+    "category": "special",
+    "power": 1.0,
+    "shape": "burst",
+    "range": 3.0,
+    "width": 3.0,
+    "cooldown": 90.0,
+    "energy": 0,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:electric_spark",
+    "tele": 0.0
+   },
+   "form": "burst",
+   "mech": [
+    "storm"
+   ],
+   "motif": "pillar",
+   "rgb2": [
+    0.9,
+    0.9,
+    0.3
+   ],
+   "grand": true,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0
+  },
+  "f_fly2": {
+   "move": {
+    "id": "sig:f_fly2",
+    "name": "Fly",
+    "type": "flying",
+    "category": "physical",
+    "power": 1.0,
+    "shape": "dash",
+    "range": 12.0,
+    "width": 2.0,
+    "cooldown": 8.0,
+    "energy": 25,
+    "windup": 0.0,
+    "anim": "physical",
+    "particle": "minecraft:cloud",
+    "form": "dash",
+    "tele": 0.0
+   },
+   "form": "dash",
+   "mech": [
+    "fly"
+   ],
+   "motif": "feathers",
+   "rgb2": [
+    0.95,
+    0.95,
+    1.0
+   ],
+   "grand": false,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0,
+   "dash": {
+    "dist": 12.0,
+    "up": 12.0,
+    "aim": "full"
+   }
+  },
+  "f_tempest": {
+   "move": {
+    "id": "sig:f_tempest",
+    "name": "Tempest",
+    "type": "flying",
+    "category": "special",
+    "power": 80,
+    "shape": "burst",
+    "range": 14.0,
+    "width": 14.0,
+    "cooldown": 90.0,
+    "energy": 0,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:cloud",
+    "tele": 0.0
+   },
+   "form": "burst",
+   "mech": [
+    "field",
+    "zone",
+    "slow",
+    "tempest"
+   ],
+   "motif": "vortex",
+   "rgb2": [
+    0.7,
+    0.8,
+    1.0
+   ],
+   "grand": true,
+   "base": 0.0,
+   "prio": 0,
+   "flags": 0
+  }
+ }
+}

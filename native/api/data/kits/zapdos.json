@@ -1,0 +1,110 @@
+{
+ "schema": 1,
+ "species": "zapdos",
+ "name": "Zapdos",
+ "source": "hand",
+ "types": [
+  "electric",
+  "flying"
+ ],
+ "base": {
+  "atk": 90,
+  "def": 85,
+  "hp": 90,
+  "spa": 125,
+  "spd": 90,
+  "spe": 100
+ },
+ "hitbox": {
+  "base_scale": 1,
+  "height": 2.5,
+  "width": 1.75
+ },
+ "moves": [
+  {
+   "id": "drillpeck",
+   "name": "Drill Peck",
+   "type": "flying",
+   "category": "physical",
+   "power": 50,
+   "shape": "beam",
+   "range": 5.0,
+   "width": 1.0,
+   "cooldown": 0.7,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:cloud",
+   "form": "cone",
+   "cone": 60.0,
+   "tele": 0.0
+  },
+  {
+   "id": "sig:f_fly1",
+   "name": "Fly",
+   "type": "flying",
+   "category": "physical",
+   "power": 1.0,
+   "shape": "dash",
+   "range": 12.0,
+   "width": 2.0,
+   "cooldown": 8.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:cloud",
+   "form": "dash",
+   "tele": 0.0
+  },
+  {
+   "id": "thunder",
+   "name": "Thunder",
+   "type": "electric",
+   "category": "special",
+   "power": 120,
+   "shape": "beam",
+   "range": 28.0,
+   "width": 4.0,
+   "cooldown": 6.0,
+   "energy": 35,
+   "windup": 0.6,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "ground",
+   "tele": 0.6
+  },
+  {
+   "id": "discharge",
+   "name": "Discharge",
+   "type": "electric",
+   "category": "special",
+   "power": 80,
+   "shape": "burst",
+   "range": 8.0,
+   "width": 8.0,
+   "cooldown": 12.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "burst"
+  }
+ ],
+ "ultimate": {
+  "id": "sig:f_thunderstorm",
+  "name": "Thunderstorm",
+  "type": "electric",
+  "category": "special",
+  "power": 1.0,
+  "shape": "burst",
+  "range": 3.0,
+  "width": 3.0,
+  "cooldown": 90.0,
+  "energy": 0,
+  "windup": 0.0,
+  "anim": "special",
+  "particle": "minecraft:electric_spark",
+  "tele": 0.0
+ },
+ "fixed_speed": 6.0
+}

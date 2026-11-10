@@ -1,0 +1,164 @@
+{
+ "schema": 1,
+ "sets": [
+  {
+   "name": "OriginS",
+   "items": [
+    "hat.pippa_ears",
+    "hat.evil_rabbit_ears",
+    "hat.lia_look",
+    "hat.lia_clips",
+    "hat.pippa_look",
+    "hat.pippa_slippers",
+    "hat.tenma_fox_ears",
+    "hat.tenma_look",
+    "hat.tenma_hood",
+    "hat.uruka_bear_ears",
+    "hat.uruka_look",
+    "hat.nasa_horns",
+    "hat.nasa_galaxy_hood",
+    "hat.nasa_look",
+    "hat.iori_headdress",
+    "hat.iori_antlers",
+    "hat.iori_look",
+    "hat.michiru_witch_hat",
+    "hat.michiru_look"
+   ]
+  },
+  {
+   "name": "ALiAS",
+   "items": [
+    "hat.shiina_bow",
+    "hat.shiina_scissors",
+    "hat.shiina_look",
+    "hat.erina_halo",
+    "hat.erina_buns",
+    "hat.erina_look",
+    "hat.remilia_horns",
+    "hat.remilia_wings",
+    "hat.remilia_look",
+    "hat.panko_ears",
+    "hat.panko_beret",
+    "hat.panko_look",
+    "hat.rie_halo",
+    "hat.rie_puff",
+    "hat.rie_look",
+    "hat.rie_ribbons",
+    "hat.airi_wolf_ears",
+    "hat.airi_officer_cap",
+    "hat.airi_look"
+   ]
+  },
+  {
+   "name": "Euphoria",
+   "items": [
+    "hat.runie_tiara",
+    "hat.runie_wings",
+    "hat.runie_scroll",
+    "hat.runie_look",
+    "hat.muyu_horns",
+    "hat.muyu_buns",
+    "hat.muyu_look",
+    "hat.eimi_ears",
+    "hat.eimi_scrunchie",
+    "hat.eimi_look"
+   ]
+  },
+  {
+   "name": "Invaders",
+   "items": [
+    "hat.lumi_orbit_buns",
+    "hat.lumi_star_clip",
+    "hat.lumi_look",
+    "hat.ember_look",
+    "hat.ember_pin_band",
+    "hat.ember_clip",
+    "hat.dizzy_rose_bonnet",
+    "hat.dizzy_look",
+    "hat.dizzy_red_rose",
+    "hat.jelly_star_antennae",
+    "hat.jelly_frill",
+    "hat.jelly_look",
+    "hat.clio_beret",
+    "hat.clio_quill",
+    "hat.clio_look",
+    "hat.mari_fishbowl_crown",
+    "hat.mari_bow",
+    "hat.mari_look",
+    "hat.sleepy_moon_cap",
+    "hat.sleepy_look",
+    "hat.sleepy_elf_ears"
+   ]
+  },
+  {
+   "name": "KALEiDO",
+   "items": [
+    "hat.loki_ornament",
+    "hat.loki_snake",
+    "hat.loki_look",
+    "hat.loki_tassels",
+    "hat.pico_ears",
+    "hat.pico_bows",
+    "hat.pico_look",
+    "hat.yuu_look"
+   ]
+  },
+  {
+   "name": "SAGA",
+   "items": [
+    "hat.malice_tiara",
+    "hat.malice_look",
+    "hat.malice_bonnet",
+    "hat.nitya_chick",
+    "hat.nitya_bows",
+    "hat.nitya_bat",
+    "hat.nitya_look",
+    "hat.nitya_jester",
+    "hat.wilhelmina_frost_rose",
+    "hat.wilhelmina_sword",
+    "hat.wilhelmina_look",
+    "hat.wilhelmina_bunny",
+    "hat.bibi_puppy_ears",
+    "hat.bibi_maid_band",
+    "hat.bibi_spoon",
+    "hat.bibi_look",
+    "hat.bibi_lion_mane",
+    "hat.sinon_ribbons",
+    "hat.sinon_veil",
+    "hat.sinon_circlet",
+    "hat.sinon_look"
+   ]
+  },
+  {
+   "name": "Phase HQ",
+   "items": [
+    "hat.sakana",
+    "hat.sakana_ceo",
+    "hat.aiko_horns",
+    "hat.nikki_beret",
+    "hat.tofu_block"
+   ]
+  },
+  {
+   "name": "Classics",
+   "items": [
+    "hat.bow",
+    "hat.beanie",
+    "hat.party_hat",
+    "hat.chef_hat",
+    "hat.cowboy_hat",
+    "hat.graduation_cap",
+    "hat.top_hat",
+    "hat.witch_hat",
+    "hat.santa_hat",
+    "hat.viking_helmet",
+    "hat.flower_crown",
+    "hat.crown",
+    "hat.halo",
+    "hat.dex_cap",
+    "hat.dex_book",
+    "hat.dex_laurel"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "species": "ditto",
+ "name": "Ditto",
+ "source": "hand",
+ "types": [
+  "normal"
+ ],
+ "base": {
+  "hp": 48,
+  "atk": 48,
+  "def": 48,
+  "spa": 48,
+  "spd": 48,
+  "spe": 48
+ },
+ "hitbox": {
+  "width": 0.75,
+  "height": 0.75,
+  "base_scale": 0.8
+ },
+ "moves": [
+  {
+   "id": "tackle",
+   "name": "Tackle",
+   "type": "normal",
+   "category": "physical",
+   "power": 40,
+   "shape": "dash",
+   "cooldown": 0.6,
+   "energy": 0,
+   "range": 4,
+   "width": 1.6,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit"
+  },
+  {
+   "id": "hypervoice",
+   "name": "Hyper Voice",
+   "type": "normal",
+   "category": "special",
+   "power": 90,
+   "shape": "burst",
+   "cooldown": 4.46,
+   "energy": 18,
+   "range": 5.25,
+   "width": 5.25,
+   "windup": 0.3,
+   "anim": "special",
+   "particle": "minecraft:crit"
+  },
+  {
+   "id": "triattack",
+   "name": "Tri Attack",
+   "type": "normal",
+   "category": "special",
+   "power": 80,
+   "shape": "beam",
+   "cooldown": 3.99,
+   "energy": 18,
+   "range": 18.0,
+   "width": 1.53,
+   "windup": 0.27,
+   "anim": "special",
+   "particle": "minecraft:crit"
+  },
+  {
+   "id": "lastresort",
+   "name": "Last Resort",
+   "type": "normal",
+   "category": "physical",
+   "power": 140,
+   "shape": "dash",
+   "cooldown": 6.96,
+   "energy": 30,
+   "range": 4,
+   "width": 1.6,
+   "windup": 0.47,
+   "anim": "physical",
+   "particle": "minecraft:crit"
+  }
+ ]
+}

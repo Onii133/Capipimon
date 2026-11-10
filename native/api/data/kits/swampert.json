@@ -1,0 +1,112 @@
+{
+ "schema": 1,
+ "species": "swampert",
+ "name": "Swampert",
+ "source": "hand",
+ "types": [
+  "water",
+  "ground"
+ ],
+ "base": {
+  "atk": 110,
+  "def": 90,
+  "hp": 100,
+  "spa": 85,
+  "spd": 90,
+  "spe": 60
+ },
+ "hitbox": {
+  "base_scale": 0.8,
+  "height": 2,
+  "width": 1.6
+ },
+ "moves": [
+  {
+   "id": "headbutt",
+   "name": "Headbutt",
+   "type": "normal",
+   "category": "physical",
+   "power": 42,
+   "shape": "beam",
+   "range": 3.5,
+   "width": 1.0,
+   "cooldown": 0.7,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit",
+   "form": "cone",
+   "cone": 90.0,
+   "tele": 0.0
+  },
+  {
+   "id": "sig:f_dig3",
+   "name": "Dig",
+   "type": "ground",
+   "category": "physical",
+   "power": 70,
+   "shape": "burst",
+   "range": 4.0,
+   "width": 4.0,
+   "cooldown": 8.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:poof"
+  },
+  {
+   "id": "mudslap",
+   "name": "Mud-Slap",
+   "type": "ground",
+   "category": "special",
+   "power": 76,
+   "shape": "beam",
+   "range": 6.0,
+   "width": 1.0,
+   "cooldown": 5.5,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:poof",
+   "form": "cone",
+   "cone": 80.0,
+   "slow": [
+    0.6,
+    2.0
+   ]
+  },
+  {
+   "id": "sig:f_quake2",
+   "name": "Earthquake",
+   "type": "ground",
+   "category": "physical",
+   "power": 120,
+   "shape": "burst",
+   "range": 7.0,
+   "width": 7.0,
+   "cooldown": 11.0,
+   "energy": 45,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:poof",
+   "ground_wave": true
+  }
+ ],
+ "ultimate": {
+  "id": "sig:f_hydrocannon",
+  "name": "Hydro Cannon",
+  "type": "water",
+  "category": "special",
+  "power": 180,
+  "shape": "beam",
+  "range": 20.0,
+  "width": 3.0,
+  "cooldown": 80.0,
+  "energy": 0,
+  "windup": 0.6,
+  "anim": "special",
+  "particle": "minecraft:splash",
+  "form": "beam",
+  "tele": 0.6
+ }
+}

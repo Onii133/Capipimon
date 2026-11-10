@@ -1,0 +1,143 @@
+{
+ "format_version": "1.12.0",
+ "minecraft:geometry": [
+  {
+   "description": {
+    "identifier": "geometry.hat_nitya_bows",
+    "texture_width": 32,
+    "texture_height": 32,
+    "visible_bounds_width": 3,
+    "visible_bounds_height": 3,
+    "visible_bounds_offset": [
+     0,
+     1,
+     0
+    ]
+   },
+   "bones": [
+    {
+     "name": "hat",
+     "pivot": [
+      0,
+      0,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -5.0,
+        0.0,
+        -1.5
+       ],
+       "size": [
+        10.0,
+        1.0,
+        3.0
+       ],
+       "uv": [
+        0,
+        0
+       ]
+      },
+      {
+       "origin": [
+        -7.5,
+        0.0,
+        -0.5
+       ],
+       "size": [
+        2.0,
+        3.0,
+        1.0
+       ],
+       "uv": [
+        26,
+        0
+       ]
+      },
+      {
+       "origin": [
+        -3.5,
+        0.0,
+        -0.5
+       ],
+       "size": [
+        2.0,
+        3.0,
+        1.0
+       ],
+       "uv": [
+        0,
+        4
+       ]
+      },
+      {
+       "origin": [
+        -5.5,
+        0.5,
+        -1.0
+       ],
+       "size": [
+        2.0,
+        2.0,
+        1.0
+       ],
+       "uv": [
+        18,
+        4
+       ]
+      },
+      {
+       "origin": [
+        1.5,
+        0.0,
+        -0.5
+       ],
+       "size": [
+        2.0,
+        3.0,
+        1.0
+       ],
+       "uv": [
+        6,
+        4
+       ]
+      },
+      {
+       "origin": [
+        5.5,
+        0.0,
+        -0.5
+       ],
+       "size": [
+        2.0,
+        3.0,
+        1.0
+       ],
+       "uv": [
+        12,
+        4
+       ]
+      },
+      {
+       "origin": [
+        3.5,
+        0.5,
+        -1.0
+       ],
+       "size": [
+        2.0,
+        2.0,
+        1.0
+       ],
+       "uv": [
+        24,
+        4
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

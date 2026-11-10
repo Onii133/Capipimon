@@ -1,0 +1,6925 @@
+[
+{
+"id": "abomasnow",
+"name": "Abomasnow",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "abra",
+"name": "Abra",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "absol",
+"name": "Absol",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "accelgor",
+"name": "Accelgor",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "aegislash",
+"name": "Aegislash",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "aerodactyl",
+"name": "Aerodactyl",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "aggron",
+"name": "Aggron",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "aipom",
+"name": "Aipom",
+"scale": 0.68,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "alakazam",
+"name": "Alakazam",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "alcremie",
+"name": "Alcremie",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "alomomola",
+"name": "Alomomola",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "altaria",
+"name": "Altaria",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "amaura",
+"name": "Amaura",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ambipom",
+"name": "Ambipom",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "amoonguss",
+"name": "Amoonguss",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "ampharos",
+"name": "Ampharos",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "annihilape",
+"name": "Annihilape",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "anorith",
+"name": "Anorith",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "appletun",
+"name": "Appletun",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "applin",
+"name": "Applin",
+"scale": 0.6,
+"idle": "ground_idle_placeholder",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "araquanid",
+"name": "Araquanid",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "arbok",
+"name": "Arbok",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "arboliva",
+"name": "Arboliva",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "arcanine",
+"name": "Arcanine",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "arceus",
+"name": "Arceus",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "archaludon",
+"name": "Archaludon",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "archen",
+"name": "Archen",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "archeops",
+"name": "Archeops",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "arctibax",
+"name": "Arctibax",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "arctovish",
+"name": "Arctovish",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "arctozolt",
+"name": "Arctozolt",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ariados",
+"name": "Ariados",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "armaldo",
+"name": "Armaldo",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "armarouge",
+"name": "Armarouge",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "aromatisse",
+"name": "Aromatisse",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "aron",
+"name": "Aron",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "arrokuda",
+"name": "Arrokuda",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "articuno",
+"name": "Articuno",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "audino",
+"name": "Audino",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "aurorus",
+"name": "Aurorus",
+"scale": 1.25,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "avalugg",
+"name": "Avalugg",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "axew",
+"name": "Axew",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "azelf",
+"name": "Azelf",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "azumarill",
+"name": "Azumarill",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "azurill",
+"name": "Azurill",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "bagon",
+"name": "Bagon",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "baltoy",
+"name": "Baltoy",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "banette",
+"name": "Banette",
+"scale": 1.0,
+"idle": "ground_idle_placeholder",
+"walk": ""
+},
+{
+"id": "barbaracle",
+"name": "Barbaracle",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "barboach",
+"name": "Barboach",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "barraskewda",
+"name": "Barraskewda",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "basculegion",
+"name": "Basculegion",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "basculin",
+"name": "Basculin",
+"scale": 0.8,
+"idle": "water_idle",
+"walk": ""
+},
+{
+"id": "bastiodon",
+"name": "Bastiodon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "baxcalibur",
+"name": "Baxcalibur",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bayleef",
+"name": "Bayleef",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "beartic",
+"name": "Beartic",
+"scale": 1.3,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "beautifly",
+"name": "Beautifly",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "fly_overlay"
+},
+{
+"id": "beedrill",
+"name": "Beedrill",
+"scale": 0.9,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "beheeyem",
+"name": "Beheeyem",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "beldum",
+"name": "Beldum",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bellibolt",
+"name": "Bellibolt",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bellossom",
+"name": "Bellossom",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bellsprout",
+"name": "Bellsprout",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bergmite",
+"name": "Bergmite",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bewear",
+"name": "Bewear",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bibarel",
+"name": "Bibarel",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "bidoof",
+"name": "Bidoof",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "binacle",
+"name": "Binacle",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "bisharp",
+"name": "Bisharp",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "blastoise",
+"name": "Blastoise",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "blaziken",
+"name": "Blaziken",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "blipbug",
+"name": "Blipbug",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "blissey",
+"name": "Blissey",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "blitzle",
+"name": "Blitzle",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "boldore",
+"name": "Boldore",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "boltund",
+"name": "Boltund",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bombirdier",
+"name": "Bombirdier",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bonsly",
+"name": "Bonsly",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bouffalant",
+"name": "Bouffalant",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bounsweet",
+"name": "Bounsweet",
+"scale": 0.8,
+"idle": "",
+"walk": ""
+},
+{
+"id": "braixen",
+"name": "Braixen",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "brambleghast",
+"name": "Brambleghast",
+"scale": 1.0,
+"idle": "ground_idle_placeholder",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "bramblin",
+"name": "Bramblin",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk_WIP_V1"
+},
+{
+"id": "braviary",
+"name": "Braviary",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "breloom",
+"name": "Breloom",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "brionne",
+"name": "Brionne",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bronzong",
+"name": "Bronzong",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bronzor",
+"name": "Bronzor",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "brutebonnet",
+"name": "Brute Bonnet",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "bruxish",
+"name": "Bruxish",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "budew",
+"name": "Budew",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "buizel",
+"name": "Buizel",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bulbasaur",
+"name": "Bulbasaur",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "buneary",
+"name": "Buneary",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "bunnelby",
+"name": "Bunnelby",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "burmy",
+"name": "Burmy",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "butterfree",
+"name": "Butterfree",
+"scale": 0.6,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "buzzwole",
+"name": "Buzzwole",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cacnea",
+"name": "Cacnea",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cacturne",
+"name": "Cacturne",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "camerupt",
+"name": "Camerupt",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "capsakid",
+"name": "Capsakid",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "carbink",
+"name": "Carbink",
+"scale": 0.75,
+"idle": "air_idle",
+"walk": "air_walk"
+},
+{
+"id": "carkol",
+"name": "Carkol",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "carnivine",
+"name": "Carnivine",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "carracosta",
+"name": "Carracosta",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "carvanha",
+"name": "Carvanha",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "cascoon",
+"name": "Cascoon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "caterpie",
+"name": "Caterpie",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "celebi",
+"name": "Celebi",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "centiskorch",
+"name": "Centiskorch",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ceruledge",
+"name": "Ceruledge",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cetitan",
+"name": "Cetitan",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cetoddle",
+"name": "Cetoddle",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chandelure",
+"name": "Chandelure",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chansey",
+"name": "Chansey",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "charcadet",
+"name": "Charcadet",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "charizard",
+"name": "Charizard",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "charjabug",
+"name": "Charjabug",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "charmander",
+"name": "Charmander",
+"scale": 0.625,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "charmeleon",
+"name": "Charmeleon",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chatot",
+"name": "Chatot",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "cherrim",
+"name": "Cherrim",
+"scale": 0.8,
+"idle": "ground_idle_placeholder",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "cherubi",
+"name": "Cherubi",
+"scale": 0.75,
+"idle": "ground_idle_placeholder",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "chesnaught",
+"name": "Chesnaught",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "chespin",
+"name": "Chespin",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chewtle",
+"name": "Chewtle",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "chikorita",
+"name": "Chikorita",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chimchar",
+"name": "Chimchar",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chimecho",
+"name": "Chimecho",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chinchou",
+"name": "Chinchou",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chingling",
+"name": "Chingling",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "chiyu",
+"name": "Chi-Yu",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cinccino",
+"name": "Cinccino",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "cinderace",
+"name": "Cinderace",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "clamperl",
+"name": "Clamperl",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "clauncher",
+"name": "Clauncher",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "clawitzer",
+"name": "Clawitzer",
+"scale": 0.9,
+"idle": "water_idle",
+"walk": ""
+},
+{
+"id": "claydol",
+"name": "Claydol",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "clefable",
+"name": "Clefable",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "clefairy",
+"name": "Clefairy",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cleffa",
+"name": "Cleffa",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "clobbopus",
+"name": "Clobbopus",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "clodsire",
+"name": "Clodsire",
+"scale": 1.15,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "cloyster",
+"name": "Cloyster",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "coalossal",
+"name": "Coalossal",
+"scale": 1.25,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "cobalion",
+"name": "Cobalion",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cofagrigus",
+"name": "Cofagrigus",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "combee",
+"name": "Combee",
+"scale": 0.6,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "combusken",
+"name": "Combusken",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "comfey",
+"name": "Comfey",
+"scale": 0.37,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "conkeldurr",
+"name": "Conkeldurr",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "copperajah",
+"name": "Copperajah",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "corphish",
+"name": "Corphish",
+"scale": 0.75,
+"idle": "ground_idle_placeholder",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "corsola",
+"name": "Corsola",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "corviknight",
+"name": "Corviknight",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "corvisquire",
+"name": "Corvisquire",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cosmoem",
+"name": "Cosmoem",
+"scale": 0.15,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cosmog",
+"name": "Cosmog",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cottonee",
+"name": "Cottonee",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "crabominable",
+"name": "Crabominable",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "crabrawler",
+"name": "Crabrawler",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cradily",
+"name": "Cradily",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cramorant",
+"name": "Cramorant",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "cranidos",
+"name": "Cranidos",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "crawdaunt",
+"name": "Crawdaunt",
+"scale": 1.0,
+"idle": "ground_idle_placeholder",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "cresselia",
+"name": "Cresselia",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "croagunk",
+"name": "Croagunk",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "crobat",
+"name": "Crobat",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "crocalor",
+"name": "Crocalor",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "croconaw",
+"name": "Croconaw",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "crustle",
+"name": "Crustle",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cryogonal",
+"name": "Cryogonal",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cubchoo",
+"name": "Cubchoo",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "cubone",
+"name": "Cubone",
+"scale": 0.7,
+"idle": "idle",
+"walk": ""
+},
+{
+"id": "cufant",
+"name": "Cufant",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cursola",
+"name": "Cursola",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cutiefly",
+"name": "Cutiefly",
+"scale": 0.375,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cyclizar",
+"name": "Cyclizar",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "cyndaquil",
+"name": "Cyndaquil",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dachsbun",
+"name": "Dachsbun",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "darmanitan",
+"name": "Darmanitan",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dartrix",
+"name": "Dartrix",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "darumaka",
+"name": "Darumaka",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "decidueye",
+"name": "Decidueye",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "dedenne",
+"name": "Dedenne",
+"scale": 0.35,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "deerling",
+"name": "Deerling",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "deino",
+"name": "Deino",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "delcatty",
+"name": "Delcatty",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "delibird",
+"name": "Delibird",
+"scale": 0.63,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "delphox",
+"name": "Delphox",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dewgong",
+"name": "Dewgong",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dewott",
+"name": "Dewott",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dewpider",
+"name": "Dewpider",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "dhelmise",
+"name": "Dhelmise",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dialga",
+"name": "Dialga",
+"scale": 1.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "diancie",
+"name": "Diancie",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "air_walk"
+},
+{
+"id": "diggersby",
+"name": "Diggersby",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "diglett",
+"name": "Diglett",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dipplin",
+"name": "Dipplin",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "ditto",
+"name": "Ditto",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dodrio",
+"name": "Dodrio",
+"scale": 1.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "doduo",
+"name": "Doduo",
+"scale": 1.3,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dolliv",
+"name": "Dolliv",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "dondozo",
+"name": "Dondozo",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "donphan",
+"name": "Donphan",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dottler",
+"name": "Dottler",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "doublade",
+"name": "Doublade",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dracovish",
+"name": "Dracovish",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dracozolt",
+"name": "Dracozolt",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dragalge",
+"name": "Dragalge",
+"scale": 1.0,
+"idle": "water_idle",
+"walk": ""
+},
+{
+"id": "dragapult",
+"name": "Dragapult",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dragonair",
+"name": "Dragonair",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dragonite",
+"name": "Dragonite",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drakloak",
+"name": "Drakloak",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drampa",
+"name": "Drampa",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drapion",
+"name": "Drapion",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "dratini",
+"name": "Dratini",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drednaw",
+"name": "Drednaw",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "dreepy",
+"name": "Dreepy",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drifblim",
+"name": "Drifblim",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drifloon",
+"name": "Drifloon",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drilbur",
+"name": "Drilbur",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drizzile",
+"name": "Drizzile",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "drowzee",
+"name": "Drowzee",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "druddigon",
+"name": "Druddigon",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "dubwool",
+"name": "Dubwool",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ducklett",
+"name": "Ducklett",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "dudunsparce",
+"name": "Dudunsparce",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dugtrio",
+"name": "Dugtrio",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dunsparce",
+"name": "Dunsparce",
+"scale": 1.25,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "duosion",
+"name": "Duosion",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "duraludon",
+"name": "Duraludon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "durant",
+"name": "Durant",
+"scale": 0.7,
+"idle": "",
+"walk": "ground_walk"
+},
+{
+"id": "dusclops",
+"name": "Dusclops",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dusknoir",
+"name": "Dusknoir",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "duskull",
+"name": "Duskull",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "dustox",
+"name": "Dustox",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "fly_overlay"
+},
+{
+"id": "dwebble",
+"name": "Dwebble",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "eelektrik",
+"name": "Eelektrik",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "eelektross",
+"name": "Eelektross",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "eevee",
+"name": "Eevee",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "eiscue",
+"name": "Eiscue",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ekans",
+"name": "Ekans",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "eldegoss",
+"name": "Eldegoss",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "electabuzz",
+"name": "Electabuzz",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "electivire",
+"name": "Electivire",
+"scale": 1.35,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "electrike",
+"name": "Electrike",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "electrode",
+"name": "Electrode",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "elekid",
+"name": "Elekid",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "elgyem",
+"name": "Elgyem",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "emboar",
+"name": "Emboar",
+"scale": 1.15,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "emolga",
+"name": "Emolga",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "empoleon",
+"name": "Empoleon",
+"scale": 0.8,
+"idle": "battle_idle_old",
+"walk": "ground_walk_old"
+},
+{
+"id": "enamorus",
+"name": "Enamorus",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "escavalier",
+"name": "Escavalier",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "espathra",
+"name": "Espathra",
+"scale": 0.87,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "espeon",
+"name": "Espeon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "espurr",
+"name": "Espurr",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "eternatus",
+"name": "Eternatus",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "excadrill",
+"name": "Excadrill",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "exeggcute",
+"name": "Exeggcute",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "exeggutor",
+"name": "Exeggutor",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "exploud",
+"name": "Exploud",
+"scale": 1.1,
+"idle": "idle",
+"walk": ""
+},
+{
+"id": "falinks",
+"name": "Falinks",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "farfetchd",
+"name": "Farfetch’d",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "farigiraf",
+"name": "Farigiraf",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "fearow",
+"name": "Fearow",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "feebas",
+"name": "Feebas",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "fennekin",
+"name": "Fennekin",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "feraligatr",
+"name": "Feraligatr",
+"scale": 1.05,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ferroseed",
+"name": "Ferroseed",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ferrothorn",
+"name": "Ferrothorn",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "fezandipiti",
+"name": "Fezandipiti",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "fidough",
+"name": "Fidough",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "finizen",
+"name": "Finizen",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "finneon",
+"name": "Finneon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "flaaffy",
+"name": "Flaaffy",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "flabebe",
+"name": "Flabebe",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "flamigo",
+"name": "Flamigo",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "flapple",
+"name": "Flapple",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "flareon",
+"name": "Flareon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "fletchinder",
+"name": "Fletchinder",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "fletchling",
+"name": "Fletchling",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "flittle",
+"name": "Flittle",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "floatzel",
+"name": "Floatzel",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "floette",
+"name": "Floette",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "floragato",
+"name": "Floragato",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "florges",
+"name": "Florges",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "fluttermane",
+"name": "Flutter Mane",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "flygon",
+"name": "Flygon",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "fomantis",
+"name": "Fomantis",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "foongus",
+"name": "Foongus",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "forretress",
+"name": "Forretress",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "fraxure",
+"name": "Fraxure",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "frigibax",
+"name": "Frigibax",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "frillish",
+"name": "Frillish",
+"scale": 1.1,
+"idle": "water_idle",
+"walk": ""
+},
+{
+"id": "froakie",
+"name": "Froakie",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "frogadier",
+"name": "Frogadier",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "froslass",
+"name": "Froslass",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "frosmoth",
+"name": "Frosmoth",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "fuecoco",
+"name": "Fuecoco",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "furfrou",
+"name": "Furfrou",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "furret",
+"name": "Furret",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gabite",
+"name": "Gabite",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gallade",
+"name": "Gallade",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "galvantula",
+"name": "Galvantula",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "garbodor",
+"name": "Garbodor",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "garchomp",
+"name": "Garchomp",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gardevoir",
+"name": "Gardevoir",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "garganacl",
+"name": "Garganacl",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gastly",
+"name": "Gastly",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gastrodon",
+"name": "Gastrodon",
+"scale": 0.62,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gengar",
+"name": "Gengar",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "geodude",
+"name": "Geodude",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gholdengo",
+"name": "Gholdengo",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gible",
+"name": "Gible",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gigalith",
+"name": "Gigalith",
+"scale": 1.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gimmighoul",
+"name": "Gimmighoul",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "girafarig",
+"name": "Girafarig",
+"scale": 1.05,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "giratina",
+"name": "Giratina",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "glaceon",
+"name": "Glaceon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "glalie",
+"name": "Glalie",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "glameow",
+"name": "Glameow",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "gligar",
+"name": "Gligar",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "glimmet",
+"name": "Glimmet",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "glimmora",
+"name": "Glimmora",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gliscor",
+"name": "Gliscor",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "gloom",
+"name": "Gloom",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gogoat",
+"name": "Gogoat",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "golbat",
+"name": "Golbat",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "goldeen",
+"name": "Goldeen",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "golduck",
+"name": "Golduck",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "golem",
+"name": "Golem",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "golett",
+"name": "Golett",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "golisopod",
+"name": "Golisopod",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "golurk",
+"name": "Golurk",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "goodra",
+"name": "Goodra",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "goomy",
+"name": "Goomy",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gorebyss",
+"name": "Gorebyss",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "gossifleur",
+"name": "Gossifleur",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gothita",
+"name": "Gothita",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "gothitelle",
+"name": "Gothitelle",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "gothorita",
+"name": "Gothorita",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "gougingfire",
+"name": "Gouging Fire",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gourgeist",
+"name": "Gourgeist",
+"scale": 0.57,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "grafaiai",
+"name": "Grafaiai",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "granbull",
+"name": "Granbull",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "grapploct",
+"name": "Grapploct",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "graveler",
+"name": "Graveler",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "greattusk",
+"name": "Great Tusk",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "greavard",
+"name": "Greavard",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "greedent",
+"name": "Greedent",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "greninja",
+"name": "Greninja",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "grimer",
+"name": "Grimer",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "grimmsnarl",
+"name": "Grimmsnarl",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "grookey",
+"name": "Grookey",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "grotle",
+"name": "Grotle",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "groudon",
+"name": "Groudon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "grovyle",
+"name": "Grovyle",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "growlithe",
+"name": "Growlithe",
+"scale": 0.75,
+"idle": "idle",
+"walk": ""
+},
+{
+"id": "grubbin",
+"name": "Grubbin",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "grumpig",
+"name": "Grumpig",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "gulpin",
+"name": "Gulpin",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gumshoos",
+"name": "Gumshoos",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gurdurr",
+"name": "Gurdurr",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "guzzlord",
+"name": "Guzzlord",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "gyarados",
+"name": "Gyarados",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hakamoo",
+"name": "Hakamo-o",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "happiny",
+"name": "Happiny",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hariyama",
+"name": "Hariyama",
+"scale": 1.3,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "hatenna",
+"name": "Hatenna",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "hatterene",
+"name": "Hatterene",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "hattrem",
+"name": "Hattrem",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "haunter",
+"name": "Haunter",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "hawlucha",
+"name": "Hawlucha",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "haxorus",
+"name": "Haxorus",
+"scale": 1.0,
+"idle": "ground_idle_placeholder",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "heatmor",
+"name": "Heatmor",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "heatran",
+"name": "Heatran",
+"scale": 1.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "heliolisk",
+"name": "Heliolisk",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "helioptile",
+"name": "Helioptile",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "heracross",
+"name": "Heracross",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "herdier",
+"name": "Herdier",
+"scale": 0.65,
+"idle": "",
+"walk": ""
+},
+{
+"id": "hippopotas",
+"name": "Hippopotas",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hippowdon",
+"name": "Hippowdon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hitmonchan",
+"name": "Hitmonchan",
+"scale": 1.05,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hitmonlee",
+"name": "Hitmonlee",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hitmontop",
+"name": "Hitmontop",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "honchkrow",
+"name": "Honchkrow",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "honedge",
+"name": "Honedge",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hooh",
+"name": "Ho-Oh",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "hoopa",
+"name": "Hoopa",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hoothoot",
+"name": "Hoothoot",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hoppip",
+"name": "Hoppip",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "horsea",
+"name": "Horsea",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "houndoom",
+"name": "Houndoom",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "houndour",
+"name": "Houndour",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "houndstone",
+"name": "Houndstone",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "huntail",
+"name": "Huntail",
+"scale": 1.15,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "hydrapple",
+"name": "Hydrapple",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "hydreigon",
+"name": "Hydreigon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "hypno",
+"name": "Hypno",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "igglybuff",
+"name": "Igglybuff",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "illumise",
+"name": "Illumise",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "impidimp",
+"name": "Impidimp",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "incineroar",
+"name": "Incineroar",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "indeedee",
+"name": "Indeedee",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "infernape",
+"name": "Infernape",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "inkay",
+"name": "Inkay",
+"scale": 0.7,
+"idle": "water_idle",
+"walk": ""
+},
+{
+"id": "inteleon",
+"name": "Inteleon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ironleaves",
+"name": "Iron Leaves",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ironmoth",
+"name": "Iron Moth",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ironvaliant",
+"name": "Iron Valiant",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ivysaur",
+"name": "Ivysaur",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "jangmoo",
+"name": "Jangmo-o",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "jellicent",
+"name": "Jellicent",
+"scale": 1.0,
+"idle": "battle_idle",
+"walk": ""
+},
+{
+"id": "jigglypuff",
+"name": "Jigglypuff",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "jirachi",
+"name": "Jirachi",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "jolteon",
+"name": "Jolteon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "joltik",
+"name": "Joltik",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "jumpluff",
+"name": "Jumpluff",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "jynx",
+"name": "Jynx",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "kabuto",
+"name": "Kabuto",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kabutops",
+"name": "Kabutops",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kadabra",
+"name": "Kadabra",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kakuna",
+"name": "Kakuna",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "kangaskhan",
+"name": "Kangaskhan",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "karrablast",
+"name": "Karrablast",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "kartana",
+"name": "Kartana",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kecleon",
+"name": "Kecleon",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "keldeo",
+"name": "Keldeo",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kilowattrel",
+"name": "Kilowattrel",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kingambit",
+"name": "Kingambit",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "kingdra",
+"name": "Kingdra",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "kingler",
+"name": "Kingler",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kirlia",
+"name": "Kirlia",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "klang",
+"name": "Klang",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "klawf",
+"name": "Klawf",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "kleavor",
+"name": "Kleavor",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "klefki",
+"name": "Klefki",
+"scale": 0.35,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "klink",
+"name": "Klink",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "klinklang",
+"name": "Klinklang",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "koffing",
+"name": "Koffing",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "komala",
+"name": "Komala",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "kommoo",
+"name": "Kommo-o",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "krabby",
+"name": "Krabby",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kricketot",
+"name": "Kricketot",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kricketune",
+"name": "Kricketune",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "krokorok",
+"name": "Krokorok",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "krookodile",
+"name": "Krookodile",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kubfu",
+"name": "Kubfu",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kyogre",
+"name": "Kyogre",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "kyurem",
+"name": "Kyurem",
+"scale": 1.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lairon",
+"name": "Lairon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "lampent",
+"name": "Lampent",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "landorus",
+"name": "Landorus",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lanturn",
+"name": "Lanturn",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lapras",
+"name": "Lapras",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "larvesta",
+"name": "Larvesta",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "larvitar",
+"name": "Larvitar",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "latias",
+"name": "Latias",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "latios",
+"name": "Latios",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "leafeon",
+"name": "Leafeon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "leavanny",
+"name": "Leavanny",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lechonk",
+"name": "Lechonk",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ledian",
+"name": "Ledian",
+"scale": 0.875,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ledyba",
+"name": "Ledyba",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lickilicky",
+"name": "Lickilicky",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lickitung",
+"name": "Lickitung",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "liepard",
+"name": "Liepard",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lileep",
+"name": "Lileep",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lilligant",
+"name": "Lilligant",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "lillipup",
+"name": "Lillipup",
+"scale": 0.6,
+"idle": "",
+"walk": ""
+},
+{
+"id": "linoone",
+"name": "Linoone",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "litleo",
+"name": "Litleo",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "litten",
+"name": "Litten",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "litwick",
+"name": "Litwick",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lokix",
+"name": "Lokix",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "lombre",
+"name": "Lombre",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lopunny",
+"name": "Lopunny",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lotad",
+"name": "Lotad",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "loudred",
+"name": "Loudred",
+"scale": 0.9,
+"idle": "idle",
+"walk": ""
+},
+{
+"id": "lucario",
+"name": "Lucario",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ludicolo",
+"name": "Ludicolo",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lugia",
+"name": "Lugia",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "lumineon",
+"name": "Lumineon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lunala",
+"name": "Lunala",
+"scale": 1.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lunatone",
+"name": "Lunatone",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "lurantis",
+"name": "Lurantis",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "luvdisc",
+"name": "Luvdisc",
+"scale": 1.15,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "luxio",
+"name": "Luxio",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "luxray",
+"name": "Luxray",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "lycanroc",
+"name": "Lycanroc",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mabosstiff",
+"name": "Mabosstiff",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "machamp",
+"name": "Machamp",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "machoke",
+"name": "Machoke",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "machop",
+"name": "Machop",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "magby",
+"name": "Magby",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "magcargo",
+"name": "Magcargo",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "magearna",
+"name": "Magearna",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "magikarp",
+"name": "Magikarp",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "magmar",
+"name": "Magmar",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "magmortar",
+"name": "Magmortar",
+"scale": 1.175,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "magnemite",
+"name": "Magnemite",
+"scale": 0.9,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "magneton",
+"name": "Magneton",
+"scale": 0.9,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "magnezone",
+"name": "Magnezone",
+"scale": 1.0,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "makuhita",
+"name": "Makuhita",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "malamar",
+"name": "Malamar",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mamoswine",
+"name": "Mamoswine",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mandibuzz",
+"name": "Mandibuzz",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "manectric",
+"name": "Manectric",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mankey",
+"name": "Mankey",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mantine",
+"name": "Mantine",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mantyke",
+"name": "Mantyke",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "maractus",
+"name": "Maractus",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mareanie",
+"name": "Mareanie",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mareep",
+"name": "Mareep",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "marill",
+"name": "Marill",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "marowak",
+"name": "Marowak",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "marshadow",
+"name": "Marshadow",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "marshtomp",
+"name": "Marshtomp",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "maschiff",
+"name": "Maschiff",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "masquerain",
+"name": "Masquerain",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "maushold",
+"name": "Maushold",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mawile",
+"name": "Mawile",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "medicham",
+"name": "Medicham",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "meditite",
+"name": "Meditite",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "meganium",
+"name": "Meganium",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "melmetal",
+"name": "Melmetal",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "meloetta",
+"name": "Meloetta",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "meltan",
+"name": "Meltan",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "meowscarada",
+"name": "Meowscarada",
+"scale": 0.67,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "meowstic",
+"name": "Meowstic",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "meowth",
+"name": "Meowth",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mesprit",
+"name": "Mesprit",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "metagross",
+"name": "Metagross",
+"scale": 1.3,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "metang",
+"name": "Metang",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "metapod",
+"name": "Metapod",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mew",
+"name": "Mew",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mewtwo",
+"name": "Mewtwo",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mienfoo",
+"name": "Mienfoo",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mienshao",
+"name": "Mienshao",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mightyena",
+"name": "Mightyena",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "milcery",
+"name": "Milcery",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "milotic",
+"name": "Milotic",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "miltank",
+"name": "Miltank",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mimejr",
+"name": "Mime Jr.",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mimikyu",
+"name": "Mimikyu",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "minccino",
+"name": "Minccino",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "minior",
+"name": "Minior",
+"scale": 0.75,
+"idle": "ground_idle_core",
+"walk": ""
+},
+{
+"id": "minun",
+"name": "Minun",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "misdreavus",
+"name": "Misdreavus",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mismagius",
+"name": "Mismagius",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "moltres",
+"name": "Moltres",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "monferno",
+"name": "Monferno",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "morelull",
+"name": "Morelull",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "morgrem",
+"name": "Morgrem",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "morpeko",
+"name": "Morpeko",
+"scale": 0.37,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mothim",
+"name": "Mothim",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mrmime",
+"name": "Mr. Mime",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mrrime",
+"name": "Mr. Rime",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mudbray",
+"name": "Mudbray",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "mudkip",
+"name": "Mudkip",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "mudsdale",
+"name": "Mudsdale",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "muk",
+"name": "Muk",
+"scale": 1.35,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "munchlax",
+"name": "Munchlax",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "munkidori",
+"name": "Munkidori",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "munna",
+"name": "Munna",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "murkrow",
+"name": "Murkrow",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "musharna",
+"name": "Musharna",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "nacli",
+"name": "Nacli",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "naclstack",
+"name": "Naclstack",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "naganadel",
+"name": "Naganadel",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "natu",
+"name": "Natu",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "necrozma",
+"name": "Necrozma",
+"scale": 1.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "nickit",
+"name": "Nickit",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "nidoking",
+"name": "Nidoking",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "nidoqueen",
+"name": "Nidoqueen",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "nidoranf",
+"name": "Nidoran-F",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "nidoranm",
+"name": "Nidoran-M",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "nidorina",
+"name": "Nidorina",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "nidorino",
+"name": "Nidorino",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "nincada",
+"name": "Nincada",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ninetales",
+"name": "Ninetales",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "ninjask",
+"name": "Ninjask",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "noctowl",
+"name": "Noctowl",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "noibat",
+"name": "Noibat",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "noivern",
+"name": "Noivern",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "nosepass",
+"name": "Nosepass",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "numel",
+"name": "Numel",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "nuzleaf",
+"name": "Nuzleaf",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "nymble",
+"name": "Nymble",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "obstagoon",
+"name": "Obstagoon",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "octillery",
+"name": "Octillery",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "oddish",
+"name": "Oddish",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "oinkologne",
+"name": "Oinkologne",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "okidogi",
+"name": "Okidogi",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "omanyte",
+"name": "Omanyte",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "omastar",
+"name": "Omastar",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "onix",
+"name": "Onix",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "oranguru",
+"name": "Oranguru",
+"scale": 1.0,
+"idle": "pose",
+"walk": "pose"
+},
+{
+"id": "orbeetle",
+"name": "Orbeetle",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "orthworm",
+"name": "Orthworm",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "oshawott",
+"name": "Oshawott",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "overqwil",
+"name": "Overqwil",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pachirisu",
+"name": "Pachirisu",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "palafin",
+"name": "Palafin",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "palkia",
+"name": "Palkia",
+"scale": 1.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "palossand",
+"name": "Palossand",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "palpitoad",
+"name": "Palpitoad",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pancham",
+"name": "Pancham",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pangoro",
+"name": "Pangoro",
+"scale": 1.25,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "panpour",
+"name": "Panpour",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pansage",
+"name": "Pansage",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pansear",
+"name": "Pansear",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "paras",
+"name": "Paras",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "parasect",
+"name": "Parasect",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "passimian",
+"name": "Passimian",
+"scale": 1.0,
+"idle": "pose",
+"walk": "pose"
+},
+{
+"id": "patrat",
+"name": "Patrat",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pawmi",
+"name": "Pawmi",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pawmo",
+"name": "Pawmo",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pawmot",
+"name": "Pawmot",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pawniard",
+"name": "Pawniard",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pelipper",
+"name": "Pelipper",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "perrserker",
+"name": "Perrserker",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "persian",
+"name": "Persian",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "petilil",
+"name": "Petilil",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "phanpy",
+"name": "Phanpy",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "phantump",
+"name": "Phantump",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pheromosa",
+"name": "Pheromosa",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pichu",
+"name": "Pichu",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pidgeot",
+"name": "Pidgeot",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pidgeotto",
+"name": "Pidgeotto",
+"scale": 1.05,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pidgey",
+"name": "Pidgey",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pidove",
+"name": "Pidove",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pignite",
+"name": "Pignite",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pikachu",
+"name": "Pikachu",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pikipek",
+"name": "Pikipek",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "piloswine",
+"name": "Piloswine",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pincurchin",
+"name": "Pincurchin",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pineco",
+"name": "Pineco",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pinsir",
+"name": "Pinsir",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "piplup",
+"name": "Piplup",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "plusle",
+"name": "Plusle",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "poipole",
+"name": "Poipole",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "politoed",
+"name": "Politoed",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "test_walk"
+},
+{
+"id": "poliwag",
+"name": "Poliwag",
+"scale": 0.8,
+"idle": "ground_idle_placeholder",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "poliwhirl",
+"name": "Poliwhirl",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "poliwrath",
+"name": "Poliwrath",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "poltchageist",
+"name": "Poltchageist",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "polteageist",
+"name": "Polteageist",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "ponyta",
+"name": "Ponyta",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "poochyena",
+"name": "Poochyena",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "popplio",
+"name": "Popplio",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "porygon",
+"name": "Porygon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "porygon2",
+"name": "Porygon2",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "porygonz",
+"name": "Porygon-Z",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "primarina",
+"name": "Primarina",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "primeape",
+"name": "Primeape",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "prinplup",
+"name": "Prinplup",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "probopass",
+"name": "Probopass",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "psyduck",
+"name": "Psyduck",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pumpkaboo",
+"name": "Pumpkaboo",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "pupitar",
+"name": "Pupitar",
+"scale": 0.75,
+"idle": "",
+"walk": ""
+},
+{
+"id": "purrloin",
+"name": "Purrloin",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "purugly",
+"name": "Purugly",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pyroar",
+"name": "Pyroar",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "pyukumuku",
+"name": "Pyukumuku",
+"scale": 0.75,
+"idle": "",
+"walk": ""
+},
+{
+"id": "quagsire",
+"name": "Quagsire",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "quaquaval",
+"name": "Quaquaval",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "quaxly",
+"name": "Quaxly",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "quaxwell",
+"name": "Quaxwell",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "quilava",
+"name": "Quilava",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "quilladin",
+"name": "Quilladin",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "qwilfish",
+"name": "Qwilfish",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "raboot",
+"name": "Raboot",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rabsca",
+"name": "Rabsca",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "raichu",
+"name": "Raichu",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ralts",
+"name": "Ralts",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rampardos",
+"name": "Rampardos",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rapidash",
+"name": "Rapidash",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "raticate",
+"name": "Raticate",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rattata",
+"name": "Rattata",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rayquaza",
+"name": "Rayquaza",
+"scale": 1.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "regice",
+"name": "Regice",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "regidrago",
+"name": "Regidrago",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "regieleki",
+"name": "Regieleki",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "regigigas",
+"name": "Regigigas",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "regirock",
+"name": "Regirock",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "registeel",
+"name": "Registeel",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "relicanth",
+"name": "Relicanth",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rellor",
+"name": "Rellor",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "remoraid",
+"name": "Remoraid",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "reshiram",
+"name": "Reshiram",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "reuniclus",
+"name": "Reuniclus",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "revavroom",
+"name": "Revavroom",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rhydon",
+"name": "Rhydon",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rhyhorn",
+"name": "Rhyhorn",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rhyperior",
+"name": "Rhyperior",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ribombee",
+"name": "Ribombee",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rillaboom",
+"name": "Rillaboom",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "riolu",
+"name": "Riolu",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "roaringmoon",
+"name": "Roaring Moon",
+"scale": 1.0,
+"idle": "battle_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rockruff",
+"name": "Rockruff",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "roggenrola",
+"name": "Roggenrola",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rolycoly",
+"name": "Rolycoly",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk_wip"
+},
+{
+"id": "rookidee",
+"name": "Rookidee",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "roselia",
+"name": "Roselia",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "roserade",
+"name": "Roserade",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "rotom",
+"name": "Rotom",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "rowlet",
+"name": "Rowlet",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "flying_idle"
+},
+{
+"id": "rufflet",
+"name": "Rufflet",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "runerigus",
+"name": "Runerigus",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sableye",
+"name": "Sableye",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "salamence",
+"name": "Salamence",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "salandit",
+"name": "Salandit",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "salazzle",
+"name": "Salazzle",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "samurott",
+"name": "Samurott",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sandaconda",
+"name": "Sandaconda",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sandile",
+"name": "Sandile",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sandshrew",
+"name": "Sandshrew",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sandslash",
+"name": "Sandslash",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sandygast",
+"name": "Sandygast",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sandyshocks",
+"name": "Sandy Shocks",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sawk",
+"name": "Sawk",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sawsbuck",
+"name": "Sawsbuck",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "scatterbug",
+"name": "Scatterbug",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sceptile",
+"name": "Sceptile",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "scizor",
+"name": "Scizor",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "scolipede",
+"name": "Scolipede",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "scorbunny",
+"name": "Scorbunny",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "scovillain",
+"name": "Scovillain",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "scrafty",
+"name": "Scrafty",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "scraggy",
+"name": "Scraggy",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "scyther",
+"name": "Scyther",
+"scale": 0.72,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "seadra",
+"name": "Seadra",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "seaking",
+"name": "Seaking",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sealeo",
+"name": "Sealeo",
+"scale": 1.35,
+"idle": "ground_idle1",
+"walk": ""
+},
+{
+"id": "seedot",
+"name": "Seedot",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "seel",
+"name": "Seel",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "seismitoad",
+"name": "Seismitoad",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sentret",
+"name": "Sentret",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "serperior",
+"name": "Serperior",
+"scale": 1.15,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "servine",
+"name": "Servine",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "seviper",
+"name": "Seviper",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sewaddle",
+"name": "Sewaddle",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sharpedo",
+"name": "Sharpedo",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shedinja",
+"name": "Shedinja",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shelgon",
+"name": "Shelgon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shellder",
+"name": "Shellder",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shellos",
+"name": "Shellos",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shelmet",
+"name": "Shelmet",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "shieldon",
+"name": "Shieldon",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shiftry",
+"name": "Shiftry",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "shiinotic",
+"name": "Shiinotic",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "shinx",
+"name": "Shinx",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "shroodle",
+"name": "Shroodle",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shroomish",
+"name": "Shroomish",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shuckle",
+"name": "Shuckle",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "shuppet",
+"name": "Shuppet",
+"scale": 0.6,
+"idle": "ground_idle_placeholder",
+"walk": ""
+},
+{
+"id": "sigilyph",
+"name": "Sigilyph",
+"scale": 0.85,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "silcoon",
+"name": "Silcoon",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "silicobra",
+"name": "Silicobra",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "silvally",
+"name": "Silvally",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "simipour",
+"name": "Simipour",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "simisage",
+"name": "Simisage",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "simisear",
+"name": "Simisear",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sinistcha",
+"name": "Sinistcha",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sinistea",
+"name": "Sinistea",
+"scale": 0.65,
+"idle": "ground_idle_placeholder",
+"walk": ""
+},
+{
+"id": "sirfetchd",
+"name": "Sirfetch’d",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sizzlipede",
+"name": "Sizzlipede",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "skarmory",
+"name": "Skarmory",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "skeledirge",
+"name": "Skeledirge",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "skiddo",
+"name": "Skiddo",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "skiploom",
+"name": "Skiploom",
+"scale": 1.05,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "skitty",
+"name": "Skitty",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "skorupi",
+"name": "Skorupi",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "skrelp",
+"name": "Skrelp",
+"scale": 0.7,
+"idle": "water_idle",
+"walk": ""
+},
+{
+"id": "skuntank",
+"name": "Skuntank",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "skwovet",
+"name": "Skwovet",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "slaking",
+"name": "Slaking",
+"scale": 1.25,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "slakoth",
+"name": "Slakoth",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sliggoo",
+"name": "Sliggoo",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "slowbro",
+"name": "Slowbro",
+"scale": 1.3,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "slowking",
+"name": "Slowking",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "slowpoke",
+"name": "Slowpoke",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "slugma",
+"name": "Slugma",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "slurpuff",
+"name": "Slurpuff",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "smeargle",
+"name": "Smeargle",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "smoliv",
+"name": "Smoliv",
+"scale": 0.45,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "smoochum",
+"name": "Smoochum",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sneasel",
+"name": "Sneasel",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sneasler",
+"name": "Sneasler",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "snivy",
+"name": "Snivy",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "snom",
+"name": "Snom",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "snorlax",
+"name": "Snorlax",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "snorunt",
+"name": "Snorunt",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "snover",
+"name": "Snover",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "snubbull",
+"name": "Snubbull",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sobble",
+"name": "Sobble",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "solgaleo",
+"name": "Solgaleo",
+"scale": 1.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "solosis",
+"name": "Solosis",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "solrock",
+"name": "Solrock",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "spearow",
+"name": "Spearow",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "spewpa",
+"name": "Spewpa",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "spheal",
+"name": "Spheal",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk_placeholder"
+},
+{
+"id": "spidops",
+"name": "Spidops",
+"scale": 0.45,
+"idle": "idle",
+"walk": ""
+},
+{
+"id": "spinarak",
+"name": "Spinarak",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "spinda",
+"name": "Spinda",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "spiritomb",
+"name": "Spiritomb",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "spoink",
+"name": "Spoink",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sprigatito",
+"name": "Sprigatito",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "spritzee",
+"name": "Spritzee",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "squawkabilly",
+"name": "Squawkabilly",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "squirtle",
+"name": "Squirtle",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "stakataka",
+"name": "Stakataka",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "stantler",
+"name": "Stantler",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "staraptor",
+"name": "Staraptor",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "staravia",
+"name": "Staravia",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "starly",
+"name": "Starly",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "starmie",
+"name": "Starmie",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "staryu",
+"name": "Staryu",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "steelix",
+"name": "Steelix",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "steenee",
+"name": "Steenee",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "stonjourner",
+"name": "Stonjourner",
+"scale": 1.25,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "stoutland",
+"name": "Stoutland",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "stufful",
+"name": "Stufful",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "stunfisk",
+"name": "Stunfisk",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "stunky",
+"name": "Stunky",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "sudowoodo",
+"name": "Sudowoodo",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sunflora",
+"name": "Sunflora",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "sunkern",
+"name": "Sunkern",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "surskit",
+"name": "Surskit",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "swablu",
+"name": "Swablu",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "swadloon",
+"name": "Swadloon",
+"scale": 0.67,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "swalot",
+"name": "Swalot",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "swampert",
+"name": "Swampert",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "swanna",
+"name": "Swanna",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "swellow",
+"name": "Swellow",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "swinub",
+"name": "Swinub",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "swirlix",
+"name": "Swirlix",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "swoobat",
+"name": "Swoobat",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "sylveon",
+"name": "Sylveon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tadbulb",
+"name": "Tadbulb",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "taillow",
+"name": "Taillow",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "talonflame",
+"name": "Talonflame",
+"scale": 0.725,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tandemaus",
+"name": "Tandemaus",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tangela",
+"name": "Tangela",
+"scale": 1.5,
+"idle": "",
+"walk": ""
+},
+{
+"id": "tangrowth",
+"name": "Tangrowth",
+"scale": 2.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tapubulu",
+"name": "Tapu Bulu",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tapufini",
+"name": "Tapu Fini",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tapukoko",
+"name": "Tapu Koko",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tapulele",
+"name": "Tapu Lele",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tarountula",
+"name": "Tarountula",
+"scale": 0.33,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tatsugiri",
+"name": "Tatsugiri",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tauros",
+"name": "Tauros",
+"scale": 1.3,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "teddiursa",
+"name": "Teddiursa",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tentacool",
+"name": "Tentacool",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tentacruel",
+"name": "Tentacruel",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tepig",
+"name": "Tepig",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "thievul",
+"name": "Thievul",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "throh",
+"name": "Throh",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "thundurus",
+"name": "Thundurus",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "thwackey",
+"name": "Thwackey",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "timburr",
+"name": "Timburr",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tinglu",
+"name": "Ting-Lu",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tinkatink",
+"name": "Tinkatink",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tinkaton",
+"name": "Tinkaton",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tinkatuff",
+"name": "Tinkatuff",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tirtouga",
+"name": "Tirtouga",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "toedscool",
+"name": "Toedscool",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "toedscruel",
+"name": "Toedscruel",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "togedemaru",
+"name": "Togedemaru",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "togekiss",
+"name": "Togekiss",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "togepi",
+"name": "Togepi",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "togetic",
+"name": "Togetic",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "torchic",
+"name": "Torchic",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "torkoal",
+"name": "Torkoal",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tornadus",
+"name": "Tornadus",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "torracat",
+"name": "Torracat",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "torterra",
+"name": "Torterra",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "totodile",
+"name": "Totodile",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "toucannon",
+"name": "Toucannon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "toxapex",
+"name": "Toxapex",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "toxel",
+"name": "Toxel",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "toxicroak",
+"name": "Toxicroak",
+"scale": 0.86,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "toxtricity",
+"name": "Toxtricity",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tranquill",
+"name": "Tranquill",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "trapinch",
+"name": "Trapinch",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "treecko",
+"name": "Treecko",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "trevenant",
+"name": "Trevenant",
+"scale": 1.3,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tropius",
+"name": "Tropius",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "trubbish",
+"name": "Trubbish",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "trumbeak",
+"name": "Trumbeak",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tsareena",
+"name": "Tsareena",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "turtonator",
+"name": "Turtonator",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "turtwig",
+"name": "Turtwig",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tympole",
+"name": "Tympole",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "tynamo",
+"name": "Tynamo",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "typenull",
+"name": "Type: Null",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "typhlosion",
+"name": "Typhlosion",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tyranitar",
+"name": "Tyranitar",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tyrantrum",
+"name": "Tyrantrum",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tyrogue",
+"name": "Tyrogue",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "tyrunt",
+"name": "Tyrunt",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "umbreon",
+"name": "Umbreon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "unfezant",
+"name": "Unfezant",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "unown",
+"name": "Unown",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ursaluna",
+"name": "Ursaluna",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "ursaring",
+"name": "Ursaring",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "urshifu",
+"name": "Urshifu",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "uxie",
+"name": "Uxie",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "vanillish",
+"name": "Vanillish",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "vanillite",
+"name": "Vanillite",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "vanilluxe",
+"name": "Vanilluxe",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "vaporeon",
+"name": "Vaporeon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "varoom",
+"name": "Varoom",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "veluza",
+"name": "Veluza",
+"scale": 1.0,
+"idle": "water_idle",
+"walk": ""
+},
+{
+"id": "venipede",
+"name": "Venipede",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "venomoth",
+"name": "Venomoth",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "venonat",
+"name": "Venonat",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "venusaur",
+"name": "Venusaur",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "vespiquen",
+"name": "Vespiquen",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "vibrava",
+"name": "Vibrava",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "victini",
+"name": "Victini",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "victreebel",
+"name": "Victreebel",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "vigoroth",
+"name": "Vigoroth",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "vikavolt",
+"name": "Vikavolt",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "vileplume",
+"name": "Vileplume",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "virizion",
+"name": "Virizion",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "vivillon",
+"name": "Vivillon",
+"scale": 0.7,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "volbeat",
+"name": "Volbeat",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "volcanion",
+"name": "Volcanion",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_idle"
+},
+{
+"id": "volcarona",
+"name": "Volcarona",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "voltorb",
+"name": "Voltorb",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "vullaby",
+"name": "Vullaby",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "vulpix",
+"name": "Vulpix",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wailmer",
+"name": "Wailmer",
+"scale": 1.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wailord",
+"name": "Wailord",
+"scale": 2.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "walkingwake",
+"name": "Walking Wake",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "walrein",
+"name": "Walrein",
+"scale": 1.25,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "wartortle",
+"name": "Wartortle",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "watchog",
+"name": "Watchog",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wattrel",
+"name": "Wattrel",
+"scale": 0.55,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "weavile",
+"name": "Weavile",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "weedle",
+"name": "Weedle",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "weepinbell",
+"name": "Weepinbell",
+"scale": 1.1,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "weezing",
+"name": "Weezing",
+"scale": 1.2,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "whimsicott",
+"name": "Whimsicott",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "whirlipede",
+"name": "Whirlipede",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "whiscash",
+"name": "Whiscash",
+"scale": 1.0,
+"idle": "water_idle",
+"walk": ""
+},
+{
+"id": "whismur",
+"name": "Whismur",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "wigglytuff",
+"name": "Wigglytuff",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "wiglett",
+"name": "Wiglett",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "wimpod",
+"name": "Wimpod",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wingull",
+"name": "Wingull",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wishiwashi",
+"name": "Wishiwashi",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wobbuffet",
+"name": "Wobbuffet",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wochien",
+"name": "Wo-Chien",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "woobat",
+"name": "Woobat",
+"scale": 0.7,
+"idle": "air_idle",
+"walk": "air_fly"
+},
+{
+"id": "wooloo",
+"name": "Wooloo",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wooper",
+"name": "Wooper",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "wormadam",
+"name": "Wormadam",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "wugtrio",
+"name": "Wugtrio",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "wurmple",
+"name": "Wurmple",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "wynaut",
+"name": "Wynaut",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "wyrdeer",
+"name": "Wyrdeer",
+"scale": 1.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "xatu",
+"name": "Xatu",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "xerneas",
+"name": "Xerneas",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "yamask",
+"name": "Yamask",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "yamper",
+"name": "Yamper",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "yanma",
+"name": "Yanma",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "yanmega",
+"name": "Yanmega",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "yungoos",
+"name": "Yungoos",
+"scale": 0.4,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "yveltal",
+"name": "Yveltal",
+"scale": 1.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zacian",
+"name": "Zacian",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zamazenta",
+"name": "Zamazenta",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zangoose",
+"name": "Zangoose",
+"scale": 0.85,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "zapdos",
+"name": "Zapdos",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "air_fly"
+},
+{
+"id": "zarude",
+"name": "Zarude",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "zebstrika",
+"name": "Zebstrika",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zekrom",
+"name": "Zekrom",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zeraora",
+"name": "Zeraora",
+"scale": 0.7,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zigzagoon",
+"name": "Zigzagoon",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zoroark",
+"name": "Zoroark",
+"scale": 0.65,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zorua",
+"name": "Zorua",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": ""
+},
+{
+"id": "zubat",
+"name": "Zubat",
+"scale": 0.8,
+"idle": "ground_idle",
+"walk": "ground_walk"
+},
+{
+"id": "zweilous",
+"name": "Zweilous",
+"scale": 0.75,
+"idle": "ground_idle",
+"walk": "ground_walk_WIP"
+}
+]

@@ -1,0 +1,14 @@
+{
+  "_about": "The emote wheel (B), what the client draws. Free for everyone, never sold or locked. `anims` are tried in order on the player's Cobblemon model; `motion` is the made-up whole-body move used when the model has none of them. `loop` emotes last until the player moves, casts or is hurt. The server's half (sounds, particles, high-five rules) is data/server/emotes.json.",
+  "emotes": [
+    {"id": "wave", "label": "Wave", "bubble": "Hi!", "anims": ["happy", "pose", "cry"], "motion": "hop", "secs": 2.0},
+    {"id": "gg", "label": "GG", "bubble": "GG", "anims": ["happy", "pose"], "motion": "bow", "secs": 2.0},
+    {"id": "love", "label": "Love", "bubble": "<3", "anims": ["happy"], "motion": "sway", "secs": 2.5},
+    {"id": "laugh", "label": "Laugh", "bubble": "Haha", "anims": ["happy", "quirk"], "motion": "shake", "secs": 2.0},
+    {"id": "roar", "label": "Roar", "bubble": "!!", "anims": ["cry", "battle_cry", "angry"], "motion": "rear", "secs": 2.0},
+    {"id": "huh", "label": "Huh?", "bubble": "?", "anims": ["surprised", "shock", "unamused", "sad"], "motion": "tilt", "secs": 2.0},
+    {"id": "dance", "label": "Dance", "bubble": "La~", "anims": ["happy", "quirk"], "motion": "dance", "secs": 0.0, "loop": true},
+    {"id": "sleep", "label": "Sleep", "bubble": "zZz", "anims": ["sleep"], "motion": "lie", "secs": 0.0, "loop": true}
+  ],
+  "highfive": {"label": "High five!", "bubble": "High five!"}
+}

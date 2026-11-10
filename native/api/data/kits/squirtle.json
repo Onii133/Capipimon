@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "species": "squirtle",
+ "name": "Squirtle",
+ "source": "hand",
+ "types": [
+  "water"
+ ],
+ "base": {
+  "atk": 48,
+  "def": 65,
+  "hp": 44,
+  "spa": 50,
+  "spd": 64,
+  "spe": 43
+ },
+ "hitbox": {
+  "base_scale": 0.7,
+  "height": 1.2,
+  "width": 0.7
+ },
+ "moves": [
+  {
+   "id": "bubble",
+   "name": "Bubble",
+   "type": "water",
+   "category": "special",
+   "power": 18,
+   "shape": "beam",
+   "range": 20.0,
+   "width": 0.6,
+   "cooldown": 0.6,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:splash",
+   "form": "beam",
+   "tele": 0.0
+  },
+  {
+   "id": "rapidspin",
+   "name": "Rapid Spin",
+   "type": "normal",
+   "category": "physical",
+   "power": 30,
+   "shape": "dash",
+   "range": 5.0,
+   "width": 3.3,
+   "cooldown": 7.0,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit",
+   "form": "dash",
+   "tele": 0.0
+  },
+  {
+   "id": "sig:f_soak1",
+   "name": "Soak",
+   "type": "water",
+   "category": "special",
+   "power": 20,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 4.0,
+   "cooldown": 8.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:splash"
+  }
+ ]
+}

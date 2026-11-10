@@ -1,0 +1,76 @@
+{
+ "schema": 1,
+ "species": "pichu",
+ "name": "Pichu",
+ "source": "hand",
+ "types": [
+  "electric"
+ ],
+ "base": {
+  "atk": 40,
+  "def": 15,
+  "hp": 20,
+  "spa": 35,
+  "spd": 35,
+  "spe": 60
+ },
+ "hitbox": {
+  "base_scale": 0.4,
+  "height": 0.9,
+  "width": 0.6
+ },
+ "moves": [
+  {
+   "id": "thundershock",
+   "name": "Thunder Shock",
+   "type": "electric",
+   "category": "special",
+   "power": 18,
+   "shape": "beam",
+   "range": 2.5,
+   "width": 1.0,
+   "cooldown": 0.45,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "cone",
+   "cone": 60.0,
+   "tele": 0.0
+  },
+  {
+   "id": "quickattack",
+   "name": "Quick Attack",
+   "type": "normal",
+   "category": "physical",
+   "power": 40,
+   "shape": "dash",
+   "range": 6.0,
+   "width": 1.6,
+   "cooldown": 6.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit",
+   "form": "dash",
+   "tele": 0.0,
+   "charges": 1
+  },
+  {
+   "id": "shockwave",
+   "name": "Shock Wave",
+   "type": "electric",
+   "category": "special",
+   "power": 70,
+   "shape": "beam",
+   "range": 24.0,
+   "width": 0.8,
+   "cooldown": 5.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "beam"
+  }
+ ]
+}

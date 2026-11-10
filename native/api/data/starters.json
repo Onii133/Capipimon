@@ -1,0 +1,188 @@
+[
+ {
+  "species": "bulbasaur",
+  "pool": "game",
+  "role": "ranged",
+  "featured": true
+ },
+ {
+  "species": "charmander",
+  "pool": "game",
+  "role": "ranged",
+  "featured": true
+ },
+ {
+  "species": "squirtle",
+  "pool": "game",
+  "role": "tanky",
+  "featured": true
+ },
+ {
+  "species": "chikorita",
+  "pool": "game",
+  "role": "tanky",
+  "featured": true
+ },
+ {
+  "species": "cyndaquil",
+  "pool": "game",
+  "role": "ranged",
+  "featured": true
+ },
+ {
+  "species": "totodile",
+  "pool": "game",
+  "role": "support",
+  "featured": true
+ },
+ {
+  "species": "treecko",
+  "pool": "game",
+  "role": "ranged",
+  "featured": false
+ },
+ {
+  "species": "torchic",
+  "pool": "game",
+  "role": "ranged",
+  "featured": false
+ },
+ {
+  "species": "mudkip",
+  "pool": "game",
+  "role": "support",
+  "featured": false
+ },
+ {
+  "species": "turtwig",
+  "pool": "game",
+  "role": "tanky",
+  "featured": false
+ },
+ {
+  "species": "chimchar",
+  "pool": "game",
+  "role": "fast",
+  "featured": false
+ },
+ {
+  "species": "piplup",
+  "pool": "game",
+  "role": "ranged",
+  "featured": false
+ },
+ {
+  "species": "snivy",
+  "pool": "game",
+  "role": "fast",
+  "featured": false
+ },
+ {
+  "species": "tepig",
+  "pool": "game",
+  "role": "support",
+  "featured": false
+ },
+ {
+  "species": "oshawott",
+  "pool": "game",
+  "role": "ranged",
+  "featured": false
+ },
+ {
+  "species": "chespin",
+  "pool": "game",
+  "role": "tanky",
+  "featured": false
+ },
+ {
+  "species": "fennekin",
+  "pool": "game",
+  "role": "ranged",
+  "featured": false
+ },
+ {
+  "species": "froakie",
+  "pool": "game",
+  "role": "ranged",
+  "featured": false
+ },
+ {
+  "species": "rowlet",
+  "pool": "game",
+  "role": "tanky",
+  "featured": false
+ },
+ {
+  "species": "litten",
+  "pool": "game",
+  "role": "fast",
+  "featured": false
+ },
+ {
+  "species": "popplio",
+  "pool": "game",
+  "role": "ranged",
+  "featured": false
+ },
+ {
+  "species": "grookey",
+  "pool": "game",
+  "role": "fast",
+  "featured": false
+ },
+ {
+  "species": "scorbunny",
+  "pool": "game",
+  "role": "support",
+  "featured": false
+ },
+ {
+  "species": "sobble",
+  "pool": "game",
+  "role": "ranged",
+  "featured": false
+ },
+ {
+  "species": "sprigatito",
+  "pool": "game",
+  "role": "ranged",
+  "featured": true
+ },
+ {
+  "species": "fuecoco",
+  "pool": "game",
+  "role": "tanky",
+  "featured": true
+ },
+ {
+  "species": "quaxly",
+  "pool": "game",
+  "role": "support",
+  "featured": true
+ },
+ {
+  "species": "pichu",
+  "pool": "fan",
+  "role": "fast",
+  "featured": true
+ },
+ {
+  "species": "gastly",
+  "pool": "fan",
+  "role": "ranged",
+  "featured": true
+ },
+ {
+  "species": "eevee",
+  "pool": "fan",
+  "role": "fast",
+  "featured": false
+ },
+ {
+  "species": "buneary",
+  "pool": "pippa",
+  "role": "fast",
+  "featured": false
+ }
+]

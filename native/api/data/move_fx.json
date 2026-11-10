@@ -1,0 +1,2072 @@
+{
+"accelerock": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 5.5,
+"up": 2
+},
+"prio": 1
+},
+"acid": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"acidspray": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"acrobatics": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"aerialace": {
+"arch": "Melee",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"aeroblast": {
+"arch": "Beam",
+"base": 0.5,
+"prio": 0,
+"spec": true
+},
+"aircutter": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"shape": "cone",
+"spec": true
+},
+"airslash": {
+"arch": "Projectile",
+"base": 0.35,
+"flinch": 0.3,
+"prio": 0,
+"spec": true
+},
+"alluringvoice": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0
+},
+"ancientpower": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"aquacutter": {
+"arch": "Projectile",
+"base": 0.233,
+"prio": 0
+},
+"aquajet": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 6.5,
+"up": 4
+},
+"prio": 1,
+"spec": true
+},
+"aquatail": {
+"arch": "Melee",
+"base": 0.5,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"armthrust": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"assurance": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"astonish": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.3,
+"prio": 0,
+"spec": true
+},
+"attackorder": {
+"arch": "Projectile",
+"base": 0.3,
+"prio": 0
+},
+"aurasphere": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0
+},
+"aurawheel": {
+"arch": "Projectile",
+"base": 0.367,
+"prio": 0
+},
+"avalanche": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": -4
+},
+"barbbarrage": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"beakblast": {
+"arch": "Projectile",
+"base": 0.333,
+"prio": -3
+},
+"bind": {
+"arch": "Lunge",
+"base": 0.35,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"bite": {
+"arch": "Melee",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.3,
+"prio": 0,
+"spec": true
+},
+"bleakwindstorm": {
+"arch": "AoE",
+"base": 0.733,
+"prio": 0
+},
+"blizzard": {
+"arch": "Cone",
+"base": 0.967,
+"prio": 0,
+"shape": "cone",
+"spec": true
+},
+"blueflare": {
+"arch": "Projectile",
+"base": 0.733,
+"prio": 0
+},
+"bonemerang": {
+"arch": "Projectile",
+"base": 0.367,
+"prio": 0
+},
+"boomburst": {
+"arch": "AoE",
+"base": 0.467,
+"prio": 0
+},
+"bounce": {
+"arch": "Vanish",
+"base": 0.58,
+"dash": {
+"aim": "3d",
+"dist": 10,
+"up": 6
+},
+"prio": 0,
+"spec": true
+},
+"branchpoke": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"breakingswipe": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0
+},
+"brine": {
+"arch": "Projectile",
+"base": 0.217,
+"prio": 0,
+"spec": true
+},
+"brutalswing": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0
+},
+"bubble": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"bubblebeam": {
+"arch": "Projectile",
+"base": 0.217,
+"prio": 0,
+"spec": true
+},
+"bugbite": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"bugbuzz": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"shape": "cone",
+"spec": true
+},
+"bulldoze": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0,
+"spec": true
+},
+"bulletpunch": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 6.5,
+"up": 4
+},
+"prio": 1,
+"spec": true
+},
+"burningjealousy": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0
+},
+"chargebeam": {
+"arch": "Projectile",
+"base": 0.367,
+"prio": 0
+},
+"circlethrow": {
+"arch": "Lunge",
+"base": 0.4,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": -6
+},
+"clamp": {
+"arch": "Lunge",
+"base": 0.417,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"clangingscales": {
+"arch": "AoE",
+"base": 0.367,
+"prio": 0
+},
+"clearsmog": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"confusion": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"counter": {
+"arch": "AoE",
+"base": 0.35,
+"prio": -5
+},
+"covet": {
+"arch": "Melee",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"crabhammer": {
+"arch": "Lunge",
+"base": 0.533,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"crosspoison": {
+"arch": "Lunge",
+"base": 0.233,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"darkpulse": {
+"arch": "Projectile",
+"base": 0.267,
+"flinch": 0.2,
+"prio": 0,
+"spec": true
+},
+"dazzlinggleam": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"shape": "cone",
+"spec": true
+},
+"diamondstorm": {
+"arch": "AoE",
+"base": 0.433,
+"prio": 0
+},
+"disarmingvoice": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0
+},
+"discharge": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0,
+"spec": true
+},
+"doublekick": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"doubleslap": {
+"arch": "Lunge",
+"base": 0.35,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"doubleteam": {
+"arch": "Self-Buff",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"dragonbreath": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"dragonclaw": {
+"arch": "Melee",
+"base": 0.267,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"dragondarts": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"dragonpulse": {
+"arch": "Projectile",
+"base": 0.283,
+"prio": 0,
+"spec": true
+},
+"dragonrush": {
+"arch": "Lunge",
+"base": 0.833,
+"dash": {
+"aim": "3d",
+"dist": 8,
+"up": 3
+},
+"flinch": 0.2,
+"prio": 0,
+"spec": true
+},
+"dragontail": {
+"arch": "Melee",
+"base": 0.4,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": -6,
+"spec": true
+},
+"drainingkiss": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"drainpunch": {
+"arch": "Lunge",
+"base": 0.25,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"drillpeck": {
+"arch": "Cone",
+"base": 0.25,
+"prio": 0,
+"spec": true
+},
+"drillrun": {
+"arch": "Lunge",
+"base": 0.367,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"drumbeating": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0
+},
+"dualwingbeat": {
+"arch": "Lunge",
+"base": 0.333,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"dynamaxcannon": {
+"arch": "Projectile",
+"base": 0.333,
+"prio": 0
+},
+"earthpower": {
+"arch": "Projectile",
+"base": 0.3,
+"prio": 0
+},
+"earthquake": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0,
+"spec": true
+},
+"eggbomb": {
+"arch": "Projectile",
+"base": 0.833,
+"prio": 0
+},
+"electroweb": {
+"arch": "Trap",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"ember": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"energyball": {
+"arch": "Projectile",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"extrasensory": {
+"arch": "Projectile",
+"base": 0.267,
+"flinch": 0.1,
+"prio": 0,
+"shape": "ground",
+"spec": true
+},
+"extremespeed": {
+"arch": "Lunge",
+"base": 0.267,
+"dash": {
+"aim": "full",
+"dist": 8,
+"up": 8
+},
+"prio": 2,
+"spec": true
+},
+"facade": {
+"arch": "Lunge",
+"base": 0.233,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"fairywind": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"fakeout": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 5.5,
+"up": 2
+},
+"flinch": 1.0,
+"prio": 3,
+"spec": true
+},
+"falseswipe": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"feint": {
+"arch": "Lunge",
+"base": 0.2,
+"prio": 2,
+"spec": true
+},
+"feintattack": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"fellstinger": {
+"arch": "Melee",
+"base": 0.167,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"fireblast": {
+"arch": "Projectile",
+"base": 0.667,
+"prio": 0,
+"spec": true
+},
+"firefang": {
+"arch": "Melee",
+"base": 0.317,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.1,
+"prio": 0,
+"spec": true
+},
+"firepunch": {
+"arch": "Melee",
+"base": 0.25,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"firespin": {
+"arch": "Trap",
+"base": 0.417,
+"prio": 0,
+"spec": true
+},
+"flail": {
+"arch": "Melee",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"flamecharge": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 6,
+"up": 3
+},
+"prio": 0,
+"spec": true
+},
+"flamethrower": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"flamewheel": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"flashcannon": {
+"arch": "Beam",
+"base": 0.5,
+"prio": 0,
+"spec": true
+},
+"flipturn": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"focusblast": {
+"arch": "Projectile",
+"base": 1.0,
+"prio": 0,
+"spec": true
+},
+"forcepalm": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"foulplay": {
+"arch": "Melee",
+"base": 0.317,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"furyattack": {
+"arch": "Melee",
+"base": 0.35,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"furyswipes": {
+"arch": "Melee",
+"base": 0.46,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"fusionbolt": {
+"arch": "Projectile",
+"base": 0.333,
+"prio": 0
+},
+"futuresight": {
+"arch": "Ground Target",
+"base": 0.5,
+"prio": 0,
+"shape": "ground",
+"spec": true
+},
+"geargrind": {
+"arch": "Lunge",
+"base": 0.467,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"gigatonhammer": {
+"arch": "Projectile",
+"base": 0.533,
+"prio": 0
+},
+"glaiverush": {
+"arch": "Lunge",
+"base": 0.4,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"grassyglide": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "ground",
+"dist": 6,
+"up": 0
+},
+"prio": 0,
+"spec": true
+},
+"gravapple": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0
+},
+"gunkshot": {
+"arch": "Projectile",
+"base": 0.8,
+"prio": 0,
+"spec": true
+},
+"gust": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"headbutt": {
+"arch": "Lunge",
+"base": 0.233,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.3,
+"prio": 0,
+"spec": true
+},
+"heartstamp": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.3,
+"prio": 0
+},
+"heatwave": {
+"arch": "Cone",
+"base": 0.517,
+"prio": 0,
+"spec": true
+},
+"hex": {
+"arch": "Projectile",
+"base": 0.217,
+"prio": 0,
+"spec": true
+},
+"hiddenpower": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"highhorsepower": {
+"arch": "Lunge",
+"base": 0.417,
+"dash": {
+"aim": "ground",
+"dist": 5,
+"up": 0
+},
+"prio": 0,
+"spec": true
+},
+"hornattack": {
+"arch": "Lunge",
+"base": 0.217,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"hurricane": {
+"arch": "Ground Target",
+"base": 0.967,
+"prio": 0,
+"spec": true
+},
+"hydropump": {
+"arch": "Beam",
+"base": 0.4,
+"prio": 0,
+"spec": true
+},
+"hypervoice": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"shape": "cone",
+"spec": true
+},
+"icebeam": {
+"arch": "Beam",
+"base": 0.5,
+"prio": 0,
+"spec": true
+},
+"icefang": {
+"arch": "Melee",
+"base": 0.317,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.1,
+"prio": 0,
+"spec": true
+},
+"iceshard": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 1,
+"spec": true
+},
+"iciclecrash": {
+"arch": "Ground Target",
+"base": 0.5,
+"flinch": 0.3,
+"prio": 0,
+"shape": "ground",
+"spec": true
+},
+"icywind": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"shape": "cone",
+"spec": true
+},
+"inferno": {
+"arch": "Projectile",
+"base": 1.333,
+"prio": 0,
+"spec": true
+},
+"infestation": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"ironhead": {
+"arch": "Lunge",
+"base": 0.267,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.3,
+"prio": 0
+},
+"irontail": {
+"arch": "Melee",
+"base": 0.833,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"ivycudgel": {
+"arch": "Projectile",
+"base": 0.333,
+"prio": 0
+},
+"jetpunch": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 5.5,
+"up": 2
+},
+"prio": 1
+},
+"judgment": {
+"arch": "Projectile",
+"base": 0.333,
+"prio": 0
+},
+"karatechop": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"knockoff": {
+"arch": "Lunge",
+"base": 0.217,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"lashout": {
+"arch": "Lunge",
+"base": 0.25,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"lastresort": {
+"arch": "Lunge",
+"base": 0.467,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"lastrespects": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"leafage": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"leafblade": {
+"arch": "Lunge",
+"base": 0.3,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"leechlife": {
+"arch": "Lunge",
+"base": 0.267,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"lick": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"liquidation": {
+"arch": "Lunge",
+"base": 0.283,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"lunge": {
+"arch": "Lunge",
+"base": 0.267,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"lusterpurge": {
+"arch": "Projectile",
+"base": 0.317,
+"prio": 0
+},
+"machpunch": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 6.5,
+"up": 4
+},
+"prio": 1,
+"spec": true
+},
+"magicalleaf": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"magmastorm": {
+"arch": "Projectile",
+"base": 0.833,
+"prio": 0
+},
+"magnetbomb": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"matchagotcha": {
+"arch": "AoE",
+"base": 0.467,
+"prio": 0
+},
+"megadrain": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"megahorn": {
+"arch": "Lunge",
+"base": 0.7,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"metalclaw": {
+"arch": "Melee",
+"base": 0.267,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"meteormash": {
+"arch": "Lunge",
+"base": 0.5,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"minimize": {
+"arch": "Self-Buff",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"mirrorcoat": {
+"arch": "Shield",
+"base": 0.0,
+"prio": -5,
+"spec": true
+},
+"mirrorshot": {
+"arch": "Projectile",
+"base": 0.517,
+"prio": 0
+},
+"mistball": {
+"arch": "Projectile",
+"base": 0.317,
+"prio": 0
+},
+"moonblast": {
+"arch": "Projectile",
+"base": 0.317,
+"prio": 0,
+"spec": true
+},
+"moongeistbeam": {
+"arch": "Projectile",
+"base": 0.333,
+"prio": 0
+},
+"muddywater": {
+"arch": "Cone",
+"base": 0.6,
+"prio": 0,
+"spec": true
+},
+"mudshot": {
+"arch": "Projectile",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"mudslap": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"mysticalfire": {
+"arch": "Projectile",
+"base": 0.25,
+"prio": 0
+},
+"needlearm": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.3,
+"prio": 0
+},
+"nightdaze": {
+"arch": "Projectile",
+"base": 0.383,
+"prio": 0
+},
+"nightslash": {
+"arch": "Lunge",
+"base": 0.233,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"nuzzle": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"ominouswind": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"originpulse": {
+"arch": "AoE",
+"base": 0.667,
+"prio": 0
+},
+"paraboliccharge": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0
+},
+"payback": {
+"arch": "Melee",
+"base": 0.167,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"payday": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"peck": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"petalblizzard": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0,
+"spec": true
+},
+"petaldance": {
+"arch": "Melee",
+"base": 0.4,
+"prio": 0,
+"spec": true
+},
+"photongeyser": {
+"arch": "Projectile",
+"base": 0.333,
+"prio": 0
+},
+"pinmissile": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"playrough": {
+"arch": "Melee",
+"base": 0.5,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"pluck": {
+"arch": "Melee",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"poisonfang": {
+"arch": "Melee",
+"base": 0.167,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"poisonsting": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"poisontail": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"pollenpuff": {
+"arch": "Projectile",
+"base": 0.3,
+"prio": 0
+},
+"pound": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"powdersnow": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0
+},
+"powergem": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0
+},
+"powerwhip": {
+"arch": "Melee",
+"base": 0.7,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"precipiceblades": {
+"arch": "AoE",
+"base": 0.7,
+"prio": 0
+},
+"psybeam": {
+"arch": "Projectile",
+"base": 0.217,
+"prio": 0
+},
+"psychic": {
+"arch": "Ground Target",
+"base": 0.5,
+"prio": 0,
+"shape": "ground",
+"spec": true
+},
+"psychocut": {
+"arch": "Projectile",
+"base": 0.233,
+"prio": 0
+},
+"psystrike": {
+"arch": "Projectile",
+"base": 0.333,
+"prio": 0
+},
+"pursuit": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"pyroball": {
+"arch": "Projectile",
+"base": 0.6,
+"prio": 0
+},
+"quickattack": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 7,
+"up": 4
+},
+"prio": 1,
+"spec": true
+},
+"rapidspin": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "ground",
+"dist": 5,
+"up": 0
+},
+"prio": 0,
+"spec": true
+},
+"razorleaf": {
+"arch": "Projectile",
+"base": 0.283,
+"prio": 0,
+"spec": true
+},
+"revenge": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": -4
+},
+"risingvoltage": {
+"arch": "Projectile",
+"base": 0.233,
+"prio": 0
+},
+"roar": {
+"arch": "Cone",
+"base": 0.3,
+"prio": -6,
+"shape": "cone",
+"spec": true
+},
+"rockslide": {
+"arch": "Ground Target",
+"base": 0.5,
+"flinch": 0.3,
+"prio": 0,
+"spec": true
+},
+"rocksmash": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"rockthrow": {
+"arch": "Projectile",
+"base": 0.367,
+"prio": 0,
+"spec": true
+},
+"rocktomb": {
+"arch": "Projectile",
+"base": 0.3,
+"prio": 0
+},
+"sacredfire": {
+"arch": "Projectile",
+"base": 0.433,
+"prio": 0
+},
+"sandtomb": {
+"arch": "Projectile",
+"base": 0.417,
+"prio": 0
+},
+"scaleshot": {
+"arch": "Projectile",
+"base": 0.283,
+"prio": 0
+},
+"scorchingsands": {
+"arch": "Projectile",
+"base": 0.233,
+"prio": 0
+},
+"scratch": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"searingshot": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0
+},
+"secretpower": {
+"arch": "Projectile",
+"base": 0.233,
+"prio": 0,
+"spec": true
+},
+"seedbomb": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0,
+"spec": true
+},
+"shadowball": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0,
+"spec": true
+},
+"shadowclaw": {
+"arch": "Lunge",
+"base": 0.233,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"shadowpunch": {
+"arch": "Melee",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"shadowsneak": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "ground",
+"dist": 6,
+"up": 0
+},
+"prio": 1,
+"spec": true
+},
+"shockwave": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"signalbeam": {
+"arch": "Projectile",
+"base": 0.25,
+"prio": 0
+},
+"silverwind": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"skittersmack": {
+"arch": "Lunge",
+"base": 0.433,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"slash": {
+"arch": "Melee",
+"base": 0.233,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"sludgebomb": {
+"arch": "Projectile",
+"base": 0.3,
+"prio": 0
+},
+"sludgewave": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0,
+"spec": true
+},
+"smackdown": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"smog": {
+"arch": "Projectile",
+"base": 0.7,
+"prio": 0,
+"spec": true
+},
+"snarl": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"snore": {
+"arch": "Cone",
+"base": 0.3,
+"flinch": 0.3,
+"prio": 0,
+"spec": true
+},
+"spark": {
+"arch": "Lunge",
+"base": 0.217,
+"dash": {
+"aim": "3d",
+"dist": 6,
+"up": 4
+},
+"prio": 0,
+"spec": true
+},
+"sparklingaria": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0
+},
+"springtidestorm": {
+"arch": "AoE",
+"base": 0.733,
+"prio": 0
+},
+"steamroller": {
+"arch": "Lunge",
+"base": 0.217,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.3,
+"prio": 0
+},
+"stomp": {
+"arch": "Lunge",
+"base": 0.217,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.3,
+"prio": 0,
+"spec": true
+},
+"stompingtantrum": {
+"arch": "Lunge",
+"base": 0.25,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"stoneedge": {
+"arch": "Ground Target",
+"base": 0.733,
+"prio": 0,
+"spec": true
+},
+"strugglebug": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"shape": "cone",
+"spec": true
+},
+"surf": {
+"arch": "AoE",
+"base": 0.35,
+"prio": 0,
+"spec": true
+},
+"swift": {
+"arch": "Cone",
+"base": 0.3,
+"prio": 0,
+"shape": "cone",
+"spec": true
+},
+"tachyoncutter": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"tackle": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 3,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"terablast": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0,
+"spec": true
+},
+"terastarstorm": {
+"arch": "Projectile",
+"base": 0.4,
+"prio": 0
+},
+"terrainpulse": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"thrash": {
+"arch": "Melee",
+"base": 0.4,
+"prio": 0,
+"spec": true
+},
+"thunder": {
+"arch": "Ground Target",
+"base": 0.967,
+"prio": 0,
+"spec": true
+},
+"thunderbolt": {
+"arch": "Projectile",
+"base": 0.3,
+"prio": 0,
+"spec": true
+},
+"thunderfang": {
+"arch": "Melee",
+"base": 0.317,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.1,
+"prio": 0,
+"spec": true
+},
+"thunderpunch": {
+"arch": "Melee",
+"base": 0.25,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"thundershock": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"triattack": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0
+},
+"tripleaxel": {
+"arch": "Lunge",
+"base": 0.267,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"twineedle": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0
+},
+"twister": {
+"arch": "Cone",
+"base": 0.3,
+"flinch": 0.2,
+"prio": 0,
+"spec": true
+},
+"uturn": {
+"arch": "Lunge",
+"base": 0.233,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"vacuumwave": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 1
+},
+"venoshock": {
+"arch": "Projectile",
+"base": 0.217,
+"prio": 0
+},
+"vinewhip": {
+"arch": "Melee",
+"base": 0.15,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"visegrip": {
+"arch": "Lunge",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"voltswitch": {
+"arch": "Projectile",
+"base": 0.233,
+"prio": 0,
+"spec": true
+},
+"wakeupslap": {
+"arch": "Lunge",
+"base": 0.233,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"waterfall": {
+"arch": "Lunge",
+"base": 0.267,
+"dash": {
+"aim": "3d",
+"dist": 6,
+"up": 3
+},
+"flinch": 0.2,
+"prio": 0,
+"spec": true
+},
+"watergun": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"waterpledge": {
+"arch": "Projectile",
+"base": 0.267,
+"prio": 0
+},
+"waterpulse": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"watershuriken": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 1
+},
+"weatherball": {
+"arch": "Projectile",
+"base": 0.2,
+"prio": 0,
+"spec": true
+},
+"whirlpool": {
+"arch": "Trap",
+"base": 0.417,
+"prio": 0,
+"spec": true
+},
+"whirlwind": {
+"arch": "Cone",
+"base": 0.3,
+"prio": -6,
+"shape": "cone",
+"spec": true
+},
+"wildboltstorm": {
+"arch": "AoE",
+"base": 0.733,
+"prio": 0
+},
+"wingattack": {
+"arch": "Melee",
+"base": 0.2,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0,
+"spec": true
+},
+"xscissor": {
+"arch": "Lunge",
+"base": 0.267,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"prio": 0
+},
+"zapcannon": {
+"arch": "Projectile",
+"base": 1.4,
+"prio": 0,
+"spec": true
+},
+"zenheadbutt": {
+"arch": "Lunge",
+"base": 0.467,
+"dash": {
+"aim": "3d",
+"dist": 4,
+"up": 2
+},
+"flinch": 0.2,
+"prio": 0
+}
+}

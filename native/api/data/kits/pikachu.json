@@ -1,0 +1,92 @@
+{
+ "schema": 1,
+ "species": "pikachu",
+ "name": "Pikachu",
+ "source": "hand",
+ "types": [
+  "electric"
+ ],
+ "base": {
+  "hp": 35,
+  "atk": 55,
+  "def": 40,
+  "spa": 50,
+  "spd": 50,
+  "spe": 90
+ },
+ "hitbox": {
+  "width": 0.7,
+  "height": 1.3,
+  "base_scale": 0.5
+ },
+ "moves": [
+  {
+   "id": "thundershock",
+   "name": "Thunder Shock",
+   "type": "electric",
+   "category": "special",
+   "power": 24,
+   "shape": "beam",
+   "range": 3.0,
+   "width": 1.0,
+   "cooldown": 0.45,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "cone",
+   "cone": 60.0,
+   "tele": 0.0
+  },
+  {
+   "id": "quickattack",
+   "name": "Quick Attack",
+   "type": "normal",
+   "category": "physical",
+   "power": 48,
+   "shape": "dash",
+   "range": 7.0,
+   "width": 1.6,
+   "cooldown": 7.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit",
+   "form": "dash",
+   "tele": 0.0,
+   "charges": 2
+  },
+  {
+   "id": "thunderbolt",
+   "name": "Thunderbolt",
+   "type": "electric",
+   "category": "special",
+   "power": 90,
+   "shape": "beam",
+   "range": 28.0,
+   "width": 0.8,
+   "cooldown": 5.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "beam"
+  },
+  {
+   "id": "sig:f_electroweb1",
+   "name": "Electroweb",
+   "type": "electric",
+   "category": "special",
+   "power": 80,
+   "shape": "beam",
+   "range": 9.0,
+   "width": 1.0,
+   "cooldown": 11.0,
+   "energy": 40,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:electric_spark",
+   "form": "beam"
+  }
+ ]
+}

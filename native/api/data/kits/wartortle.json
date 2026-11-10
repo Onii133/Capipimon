@@ -1,0 +1,91 @@
+{
+ "schema": 1,
+ "species": "wartortle",
+ "name": "Wartortle",
+ "source": "hand",
+ "types": [
+  "water"
+ ],
+ "base": {
+  "atk": 63,
+  "def": 80,
+  "hp": 59,
+  "spa": 65,
+  "spd": 80,
+  "spe": 58
+ },
+ "hitbox": {
+  "base_scale": 0.75,
+  "height": 1.3,
+  "width": 0.8
+ },
+ "moves": [
+  {
+   "id": "bubble",
+   "name": "Bubble",
+   "type": "water",
+   "category": "special",
+   "power": 24,
+   "shape": "beam",
+   "range": 22.0,
+   "width": 0.6,
+   "cooldown": 0.55,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:splash",
+   "form": "beam",
+   "tele": 0.0
+  },
+  {
+   "id": "rapidspin",
+   "name": "Rapid Spin",
+   "type": "normal",
+   "category": "physical",
+   "power": 40,
+   "shape": "dash",
+   "range": 6.0,
+   "width": 3.3,
+   "cooldown": 6.0,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit",
+   "form": "dash",
+   "tele": 0.0
+  },
+  {
+   "id": "sig:f_soak2",
+   "name": "Soak",
+   "type": "water",
+   "category": "special",
+   "power": 28,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 4.666666666666667,
+   "cooldown": 8.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:splash"
+  },
+  {
+   "id": "sig:f_pump1",
+   "name": "Hydro Pump",
+   "type": "water",
+   "category": "special",
+   "power": 120,
+   "shape": "beam",
+   "range": 18.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 40,
+   "windup": 0.4,
+   "anim": "special",
+   "particle": "minecraft:splash",
+   "form": "beam",
+   "tele": 0.4,
+   "busy": 1.5
+  }
+ ]
+}

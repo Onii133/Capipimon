@@ -1,0 +1,107 @@
+{
+ "schema": 1,
+ "species": "blastoise",
+ "name": "Blastoise",
+ "source": "hand",
+ "types": [
+  "water"
+ ],
+ "base": {
+  "atk": 83,
+  "def": 100,
+  "hp": 79,
+  "spa": 85,
+  "spd": 105,
+  "spe": 78
+ },
+ "hitbox": {
+  "base_scale": 0.9,
+  "height": 3,
+  "width": 1.8
+ },
+ "moves": [
+  {
+   "id": "bubble",
+   "name": "Bubble",
+   "type": "water",
+   "category": "special",
+   "power": 30,
+   "shape": "beam",
+   "range": 24.0,
+   "width": 0.6,
+   "cooldown": 0.5,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:splash",
+   "form": "beam",
+   "tele": 0.0
+  },
+  {
+   "id": "rapidspin",
+   "name": "Rapid Spin",
+   "type": "normal",
+   "category": "physical",
+   "power": 50,
+   "shape": "dash",
+   "range": 7.0,
+   "width": 3.3,
+   "cooldown": 6.0,
+   "energy": 20,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:crit",
+   "form": "dash",
+   "tele": 0.0
+  },
+  {
+   "id": "sig:f_soak3",
+   "name": "Soak",
+   "type": "water",
+   "category": "special",
+   "power": 36,
+   "shape": "beam",
+   "range": 14.0,
+   "width": 5.333333333333333,
+   "cooldown": 7.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:splash"
+  },
+  {
+   "id": "sig:f_pump2",
+   "name": "Hydro Pump",
+   "type": "water",
+   "category": "special",
+   "power": 150,
+   "shape": "beam",
+   "range": 20.0,
+   "width": 1.0,
+   "cooldown": 9.0,
+   "energy": 40,
+   "windup": 0.4,
+   "anim": "special",
+   "particle": "minecraft:splash",
+   "form": "beam",
+   "tele": 0.4,
+   "busy": 1.5
+  }
+ ],
+ "ultimate": {
+  "id": "sig:f_raindance",
+  "name": "Rain Dance",
+  "type": "water",
+  "category": "special",
+  "power": 140,
+  "shape": "burst",
+  "range": 8.0,
+  "width": 8.0,
+  "cooldown": 75.0,
+  "energy": 0,
+  "windup": 0.0,
+  "anim": "special",
+  "particle": "minecraft:splash",
+  "tele": 0.0
+ }
+}

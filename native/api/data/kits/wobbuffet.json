@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "species": "wobbuffet",
+ "name": "Wobbuffet",
+ "source": "hand",
+ "types": [
+  "psychic"
+ ],
+ "base": {
+  "hp": 190,
+  "atk": 33,
+  "def": 58,
+  "spa": 33,
+  "spd": 58,
+  "spe": 33
+ },
+ "hitbox": {
+  "width": 0.75,
+  "height": 1.55,
+  "base_scale": 1
+ },
+ "moves": [
+  {
+   "id": "confusion",
+   "name": "Confusion",
+   "type": "psychic",
+   "category": "special",
+   "power": 120,
+   "shape": "beam",
+   "cooldown": 1.08,
+   "energy": 0,
+   "range": 14,
+   "width": 1.8,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:enchant"
+  },
+  {
+   "id": "counter",
+   "name": "Counter",
+   "type": "fighting",
+   "category": "physical",
+   "power": 200,
+   "shape": "burst",
+   "cooldown": 9.05,
+   "energy": 32,
+   "range": 6.5,
+   "width": 6.5,
+   "windup": 0.5,
+   "anim": "physical",
+   "particle": "minecraft:crit"
+  },
+  {
+   "id": "mirrorcoat",
+   "name": "Mirror Coat",
+   "type": "psychic",
+   "category": "special",
+   "power": 200,
+   "shape": "burst",
+   "cooldown": 9.05,
+   "energy": 32,
+   "range": 6.5,
+   "width": 6.5,
+   "windup": 0.5,
+   "anim": "special",
+   "particle": "minecraft:enchant"
+  },
+  {
+   "id": "psychic",
+   "name": "Psychic",
+   "type": "psychic",
+   "category": "special",
+   "power": 160,
+   "shape": "beam",
+   "cooldown": 7.2,
+   "energy": 30,
+   "range": 24,
+   "width": 2.07,
+   "windup": 0.5,
+   "anim": "special",
+   "particle": "minecraft:enchant"
+  }
+ ]
+}

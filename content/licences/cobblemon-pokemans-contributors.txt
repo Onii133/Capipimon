@@ -1,0 +1,9 @@
+Pokemans Pack (Tontra), https://modrinth.com/project/cobblemon-pokemans, CC-BY-NC-4.0.
+Contributor credits, copied from the project page on 2026-11-06:
+
+The Chads who did stuff:
+- Frank: My boy saved me from hours of pain by teaching me the ancient art of "looking animations" and rotational axis functionality
+- GhostUser: Shinies for Eternatus, hoopa, Zekrom and Urshifu
+- Shippou: Shiny textures for groudon and kyogre (v1)
+- Ryqx: Fix on Kubfu which gave it textures (finding misnamed files for v6.23, cheers bro)
+- Bisharp by Blaze Hydroxide (thanks!:))

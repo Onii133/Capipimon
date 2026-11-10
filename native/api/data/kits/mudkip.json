@@ -1,0 +1,77 @@
+{
+ "schema": 1,
+ "species": "mudkip",
+ "name": "Mudkip",
+ "source": "hand",
+ "types": [
+  "water"
+ ],
+ "base": {
+  "atk": 70,
+  "def": 50,
+  "hp": 50,
+  "spa": 50,
+  "spd": 50,
+  "spe": 40
+ },
+ "hitbox": {
+  "base_scale": 0.7,
+  "height": 0.8,
+  "width": 0.9
+ },
+ "moves": [
+  {
+   "id": "mudshot",
+   "name": "Mud Shot",
+   "type": "ground",
+   "category": "special",
+   "power": 22,
+   "shape": "beam",
+   "range": 12.0,
+   "width": 1.0,
+   "cooldown": 0.8,
+   "energy": 0,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:poof",
+   "form": "beam",
+   "tele": 0.0
+  },
+  {
+   "id": "sig:f_dig1",
+   "name": "Dig",
+   "type": "ground",
+   "category": "physical",
+   "power": 50,
+   "shape": "burst",
+   "range": 3.0,
+   "width": 3.0,
+   "cooldown": 10.0,
+   "energy": 30,
+   "windup": 0.0,
+   "anim": "physical",
+   "particle": "minecraft:poof"
+  },
+  {
+   "id": "mudslap",
+   "name": "Mud-Slap",
+   "type": "ground",
+   "category": "special",
+   "power": 50,
+   "shape": "beam",
+   "range": 5.0,
+   "width": 1.0,
+   "cooldown": 6.0,
+   "energy": 25,
+   "windup": 0.0,
+   "anim": "special",
+   "particle": "minecraft:poof",
+   "form": "cone",
+   "cone": 70.0,
+   "slow": [
+    0.7,
+    2.0
+   ]
+  }
+ ]
+}
