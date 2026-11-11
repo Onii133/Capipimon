@@ -1,6 +1,6 @@
 id = "capipimon"
 name = "Capipimon"
-version = "0.1.0"
+version = "0.1.1"
 description = "Capipimon creatures: entity types and textures (models are drawn by the capipimon_models native mod)."
 authors = ["Capippalist Trade Guild"]
 api = "0.2"

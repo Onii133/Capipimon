@@ -2,7 +2,7 @@
 # Build: horizon-launcher native-build <this folder> --instance capipimon-dev --trust-native-code
 [mod]
 id = "capipimon_models"
-version = "0.1.0"
+version = "0.1.1"
 
 [compatibility]
 horizon_revision = "66f3981f522b24c250b21523a70080965b940424"

@@ -267,7 +267,7 @@ pub fn heard(host: &mut dyn Host, f: &[&str]) {
 fn note(f: &[&str]) -> Option<String> {
     match f {
         ["status", name, kind, secs, value, ..] => {
-            let secs = secs.parse::<f32>().unwrap_or(0.0).clamp(0.0, 30.0);
+            let secs = crate::play::finite_secs(secs, 30.0);
             let v = value.parse::<f32>().unwrap_or(0.0);
             let mut c = SIGC.lock().unwrap();
             c.st.entry(name.to_string()).or_default().insert(kind.to_string(), (Instant::now() + std::time::Duration::from_secs_f32(secs), v));

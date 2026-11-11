@@ -19,6 +19,12 @@ change of them must be shared under the same licence.
 | Model library: the `content/cobblemon-models/*.geo.json` / `*.animation.json` files of every species not listed under add-on packs, and their textures | Cobblemon team | CC BY-NC 3.0 Unported (full text: `content/licences/cobblemon-models.txt`) | https://gitlab.com/cable-mc/cobblemon |
 | Species data (base stats, types, hitboxes, learnsets) used to generate `native/api/data/kits_auto.json` | Cobblemon team | MPL-2.0 | https://gitlab.com/cable-mc/cobblemon |
 
+## Changes to Cobblemon textures (adaptations)
+
+The palette variants `<species>_p3.png`, `<species>_p4.png` and `<species>_p5.png` in `content/assets/capipimon/textures/entity/` are **modified versions** of Cobblemon textures: recolours (palette remaps) of the original textures of Blastoise, Buneary, Lopunny, Lugia, Marshtomp, Mudkip, Pichu, Raichu, Squirtle, Swampert, Wartortle and Zapdos, 36 files in all. Only the colours were changed, by the Capippalist Trade Guild for Capipimon.
+
+Original work: the Cobblemon team, https://gitlab.com/cable-mc/cobblemon, under CC BY-NC 3.0 Unported (full text: `content/licences/cobblemon-models.txt`; in the packaged files it is `licences/cobblemon-models.txt`, in the folder beside the `credits/` folder that holds this file). The recolours are shared under the same licence, are non-commercial, and are not made or endorsed by the Cobblemon team. Other changes to Cobblemon files are listed in `content/CREDITS.md` (in the packaged files: `credits/credits-changes.md`).
+
 ## Add-on packs
 
 | Pack | Author | Licence | Source | Species | Licence file |

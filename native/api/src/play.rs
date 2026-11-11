@@ -110,6 +110,12 @@ pub const CHANNEL: &str = "capipimon:play";
 /// The wire version shared by the public client and the private server. Bump it whenever a message changes shape;
 /// the server refuses clients on another version (`proto` / `hello`, docs/CLIENT_SERVER_SPLIT.md).
 pub const PROTOCOL: u32 = 2;
+
+/// Seconds a server message gives, clamped to `0..=max`. Anything that isn't a finite number (NaN, inf, junk) is 0, so
+/// building a `Duration` from it can't panic.
+pub(crate) fn finite_secs(text: &str, max: f32) -> f32 {
+    text.parse::<f32>().ok().filter(|s| s.is_finite()).unwrap_or(0.0).clamp(0.0, max)
+}
 /// How long a cast animation plays on the client.
 pub const CAST_ANIM_SECS: f32 = 0.6;
 
@@ -915,7 +921,7 @@ pub fn net_from_server(host: &mut dyn Host, event: &mut NetFromServerEvent<'_>) 
                 }
             }
             if c.my_name.as_deref() == Some(*name) {
-                let secs = rest.get(2).and_then(|s| s.parse::<f32>().ok());
+                let secs = rest.get(2).and_then(|s| s.parse::<f32>().ok()).filter(|t| t.is_finite());
                 c.charge_until = match (rest.first(), secs) {
                     (Some(&"-"), _) | (_, None) => None,
                     (_, Some(t)) => Some(Instant::now() + std::time::Duration::from_secs_f32(t.clamp(0.0, 5.0))),
@@ -924,7 +930,7 @@ pub fn net_from_server(host: &mut dyn Host, event: &mut NetFromServerEvent<'_>) 
         }
         // push <x> <y> <z>: the server moves this player (a dash's exit momentum, a knockback).
         ["storm", name, secs, ..] => {
-            let s = secs.parse::<f32>().unwrap_or(0.0).clamp(0.0, 30.0);
+            let s = finite_secs(secs, 30.0);
             c.storm = Some((name.to_string(), Instant::now() + std::time::Duration::from_secs_f32(s)));
         }
         ["wanted", names] => {
@@ -1566,6 +1572,20 @@ fn hud_moves(host: &mut dyn Host, b: &mut HudBatch, me: &Me, moves: &[(usize, &M
             let kw2 = host.text_width(&kind);
             host.text(b, &kind, [x + cw - 4.0 - kw2, y0 + 15.0], type_color(&m.kind), true);
         }
+    }
+}
+
+#[cfg(test)]
+mod review_fixes {
+    #[test]
+    fn server_seconds_are_finite_and_clamped() {
+        for junk in ["NaN", "nan", "inf", "-inf", "x", ""] {
+            assert_eq!(super::finite_secs(junk, 30.0), 0.0, "{junk}");
+            let _ = std::time::Duration::from_secs_f32(super::finite_secs(junk, 30.0));
+        }
+        assert_eq!(super::finite_secs("99", 30.0), 30.0);
+        assert_eq!(super::finite_secs("-4", 30.0), 0.0);
+        assert_eq!(super::finite_secs("2.5", 5.0), 2.5);
     }
 }
 

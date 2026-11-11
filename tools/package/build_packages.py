@@ -81,6 +81,7 @@ def licence_files():
            for rel in files_under(os.path.join(CONTENT, "licences"))}
     out["credits/credits.md"] = read(os.path.join(ROOT, "CREDITS.md"))
     out["credits/credits-addons.md"] = read(os.path.join(CONTENT, "CREDITS-ADDONS.md"))
+    out["credits/credits-changes.md"] = read(os.path.join(CONTENT, "CREDITS.md"))
     return out
 
 

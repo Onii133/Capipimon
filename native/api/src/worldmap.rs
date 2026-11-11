@@ -48,7 +48,8 @@ fn numbers<const N: usize>(parts: &[&str]) -> Option<[f32; N]> {
         return None;
     }
     for (o, p) in out.iter_mut().zip(parts) {
-        *o = p.parse().ok()?;
+        // NaN or inf would reach f32::clamp as a bound and panic, so a message holding one is dropped.
+        *o = p.parse::<f32>().ok().filter(|v| v.is_finite())?;
     }
     Some(out)
 }
@@ -192,6 +193,13 @@ fn centred(host: &mut dyn Host, b: &mut HudBatch, t: &str, x: f32, y: f32, colou
 }
 
 /// Draws the map if it's open; true when it did.
+/// Where an area's title is centred: over its area, kept inside the map. A title wider than the map is centred on it
+/// (clamping to reversed bounds would panic).
+fn label_x(want: f32, half: f32, mx: f32, side: f32) -> f32 {
+    let (lo, hi) = (mx + half + 2.0, mx + side - half - 2.0);
+    if lo <= hi { want.clamp(lo, hi) } else { mx + side / 2.0 }
+}
+
 pub fn hud(host: &mut dyn Host, b: &mut HudBatch) -> bool {
     let guard = VIEW.lock().unwrap();
     let Some(v) = guard.as_ref() else { return false };
@@ -228,7 +236,7 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) -> bool {
     for a in &v.areas {
         let (x0, y0, x1, y1) = (px(a.b[0]), pz(a.b[1]), px(a.b[2]), pz(a.b[3]));
         let half = host.text_width(&a.title) / 2.0;
-        let cx = ((x0 + x1) / 2.0).clamp(mx + half + 2.0, mx + side - half - 2.0);
+        let cx = label_x((x0 + x1) / 2.0, half, mx, side);
         // Quadrant names sit toward the middle of the map, clear of the weather circles near its edges.
         let (y, colour) = match a.kind {
             'a' | 'b' => (y1 - 11.0, 0xF0F4F8),
@@ -304,3 +312,21 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) -> bool {
     true
 }
 
+#[cfg(test)]
+mod review_fixes {
+    use super::*;
+
+    #[test]
+    fn non_finite_numbers_are_dropped() {
+        assert!(numbers::<2>(&["NaN", "1"]).is_none());
+        assert!(numbers::<2>(&["1", "inf"]).is_none());
+        assert_eq!(numbers::<2>(&["1.5", "-2"]), Some([1.5, -2.0]));
+    }
+
+    #[test]
+    fn a_title_wider_than_the_map_is_centred() {
+        assert_eq!(label_x(10.0, 80.0, 100.0, 60.0), 130.0);
+        assert_eq!(label_x(500.0, 10.0, 100.0, 200.0), 288.0);
+        assert_eq!(label_x(150.0, 10.0, 100.0, 200.0), 150.0);
+    }
+}
