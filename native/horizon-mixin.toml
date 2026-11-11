@@ -19,23 +19,23 @@ kind = "HEAD"
 helper = "frame.rs"
 bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
 
-# Q is a move while a Pokémon, so it doesn't drop the held item (api: inject_capipimon_models_drop).
+# Q is a move while a Pokémon, so it doesn't drop the held item (drop.rs).
 [[injection]]
 id = "drop"
 target = "horizon_client::game::remote::Game<'_>::remote_drop"
 kind = "HEAD"
-trait_method = "drop"
 cancellable = true
-bindings = [{ name = "all", ty = "bool", value = "all" }]
+helper = "drop.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
 
-# F doesn't swap hands while a Pokémon (api: inject_capipimon_models_swap_hands).
+# F doesn't swap hands while a Pokémon (swap_hands.rs).
 [[injection]]
 id = "swap-hands"
 target = "horizon_client::game::remote::Game<'_>::remote_swap_hands"
 kind = "HEAD"
-trait_method = "swap_hands"
 cancellable = true
-bindings = []
+helper = "swap_hands.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
 
 # No splash text on the title screen (self-contained: seasonal splashes ignore the resource list).
 [[injection]]

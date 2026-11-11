@@ -18,8 +18,8 @@ pub mod standin;
 use play::cosmetics;
 use bedrock::{Animation, Model};
 use horizon_client::mod_api::{
-    AttackEntityEvent, CameraShakeEvent, ClientDisconnectingEvent, GuiLayerPreEvent, CommandEvent, FrameEvent, InjectCapipimonModelsDropEvent,
-    InjectCapipimonModelsSwapHandsEvent, MovementInputEvent, PlayerItemHeldEvent, PlayerPickItemEvent, RenderHooks, VisualsEvent, WheelEvent,
+    AttackEntityEvent, CameraShakeEvent, ClientDisconnectingEvent, GuiLayerPreEvent, CommandEvent, FrameEvent,
+    MovementInputEvent, PlayerItemHeldEvent, PlayerPickItemEvent, RenderHooks, VisualsEvent, WheelEvent,
     CameraDistanceEvent, CameraPoseEvent, Flow, Hooks, Host, HudEvent, KeyEvent, LivingIncomingDamageEvent,
     MobSubmitEvent, InteractionKeyEvent, NetFromClientEvent, NetFromServerEvent, PerformCommandEvent, PlayerDiedEvent,
     PlayerLoggedInEvent, PlayerLoggedOutEvent, PlayerRenderListenedEvent, PlayerRespawnedEvent, PlayerSubmitEvent,
@@ -528,16 +528,6 @@ impl Hooks for Mod {
     /// A Pokémon has no hotbar to scroll.
     fn wheel(&self, host: &mut dyn Host, _event: &mut WheelEvent) -> Flow {
         if host.playing() && play::is_pokemon() { Flow::Cancel } else { Flow::Continue }
-    }
-
-    /// Q is a move while a Pokémon, so it doesn't drop the held item (`remote_drop`, trait injection).
-    fn inject_capipimon_models_drop(&self, _event: &mut InjectCapipimonModelsDropEvent) -> Flow {
-        if play::is_pokemon() { Flow::Cancel } else { Flow::Continue }
-    }
-
-    /// F doesn't swap hands while a Pokémon (`remote_swap_hands`; the server refuses it too).
-    fn inject_capipimon_models_swap_hands(&self, _event: &mut InjectCapipimonModelsSwapHandsEvent) -> Flow {
-        if play::is_pokemon() { Flow::Cancel } else { Flow::Continue }
     }
 
     #[cfg(feature = "capipimon_server")]
