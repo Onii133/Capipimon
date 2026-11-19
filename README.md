@@ -2,57 +2,50 @@
 
 **NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**
 
-Become a Pokémon and fight other players in Minecraft. Capipimon is a free, fan-made PvP mod for
-[Horizon](https://github.com/horizon-rust/horizon), with move kits, guard and dodge, and hundreds of creatures drawn
-from community Cobblemon-format models.
+Become a Pokémon and fight other players in Minecraft. Capipimon is a free, fan-made PvP game with move kits, guard
+and dodge, and hundreds of creatures drawn from community Cobblemon-format models. Our mascot is the capipi, a pink
+plush bunny.
 
-You need a Microsoft account that owns Minecraft: Java Edition.
+You need a Microsoft account that owns Minecraft: Java Edition, and a Windows PC (64-bit).
 
-## What you need
+## Get Capipimon
 
-- The [Horizon launcher](https://github.com/horizon-rust/horizon), for now. Capipimon Launcher, our own launcher, is
-  coming (see below).
-- Minecraft 26.3, which needs your own copy of the game.
-- Time for the first build: usually 10 to 30 minutes, depending on your PC. Later launches don't rebuild.
+1. Go to the [latest release](https://github.com/Onii133/capipimon/releases/latest) and download
+   **Capipimon.Launcher.Setup.exe**.
+2. Run it. It installs for your Windows user only, no administrator rights needed.
+3. Sign in with the Microsoft account that owns Minecraft: Java Edition. You enter a short code at microsoft.com/link,
+   so we never see your password. Capipimon's Microsoft sign-in is approved by Mojang.
+4. The launcher downloads Capipimon and Minecraft's own game files, then you're ready to play. Updates install
+   themselves the next time you open the launcher.
 
-## Install
+Windows may show "Windows protected your PC" the first time, because the launcher isn't code-signed yet. Click
+**More info**, then **Run anyway**. Code signing is on the way (see below).
 
-Capipimon is two listings on the Horizon launcher's Mods page. **You need both, in the same instance.** One alone
-won't work.
+## Is it safe?
 
-1. Install **Capipimon** (`capipimon_models`), the game code. It's a native mod, so the launcher asks you to trust it.
-   Native mods run with the same access to your computer as the game.
-2. Install **Capipimon Content** (`capipimon`), the textures and creature data.
-3. Build and play. The launcher downloads what it needs and compiles the mod on your PC.
+- Every release comes with `SHA256SUMS`, the checksums of each file, and `SHA256SUMS.sig`, a signature made with
+  Capipimon's release key. The launcher checks every download against them and refuses anything that doesn't match.
+- Minecraft's game files come straight from Mojang's servers for your account. We don't redistribute them.
+- Coming soon: VirusTotal scan links on each release, and code signing as **Capippalist Trade Guild**, so Windows
+  knows who made the launcher.
 
-From a terminal, the same steps are:
+## Join the server
+
+For now, the Capipimon server is at:
 
 ```
-horizon-launcher mods install capipimon_models --source horizon
-horizon-launcher mods install capipimon --source horizon
-horizon-launcher native-build --trust-native-code
+chords-render.tun.ply.gg:39890
 ```
 
-Keep both listings on the same version. A server refuses players whose content doesn't match its own.
+This address is temporary and only for playing before the stream launch. It will change, and the new one will be
+posted here.
 
-## Capipimon Launcher (coming soon)
+In the game, open **Multiplayer**, add a server with that address, and join.
 
-Capipimon Launcher will be released as **Capipimon Launcher Setup.exe** on this repository's
-[releases page](https://github.com/Onii133/capipimon/releases). It installs without administrator rights, and it:
+The server has a whitelist, so ask Onii to add your Minecraft name before you try. It's also being updated to the
+newest Capipimon right now, so if you can't get in, it may be restarting: try again a little later.
 
-- signs you in with your own Microsoft account (you enter a code at microsoft.com/link; we never see your password),
-- checks that the account owns Minecraft: Java Edition before it lets you play,
-- downloads Minecraft's game files from Mojang's own servers for your account. We don't redistribute them,
-- installs and updates Capipimon from this repository's releases. Every release is signed, and the launcher refuses
-  one that isn't.
-
-## Playing
-
-Capipimon is multiplayer, and no server address comes with it. You'll need the address of a Capipimon server from
-whoever runs it, and that server may have a whitelist. Every player needs their own Minecraft: Java Edition account.
-
-This is the client: it draws the creatures, effects and HUD and sends your controls. The game rules run on the
-Capipimon server, which isn't public, so single player and LAN worlds don't do anything with this mod alone.
+Capipimon is multiplayer only. The game rules run on the server, so single player and LAN worlds don't do anything.
 
 ## Who runs Capipimon
 
@@ -76,23 +69,21 @@ can't be bought with real money.
 
 ## What's in this repository
 
-| Folder | Listing | What it is |
-| --- | --- | --- |
-| `native/` | Capipimon | The Rust source for the client. |
-| `content/` | Both | Entity types, textures, language files, the model library and the licence texts. |
-| `tools/package/` | Both | `build_packages.py`, which builds the listing files from this repository. |
+This repository holds the Capipimon client: the part that runs on your PC and draws the creatures, effects and HUD.
+The server isn't public.
 
-Capipimon is built against Horizon commit `66f3981f522b24c250b21523a70080965b940424`, pinned in
-`native/horizon-mixin.toml`. The launcher fetches that version when it builds the mod.
-
-To build the listing files yourself, with Python 3.10 or newer: `python tools/package/build_packages.py --out <folder>`.
+| Folder | What it is |
+| --- | --- |
+| `native/` | The Rust source for the client. |
+| `content/` | Entity types, textures, language files, the model library and the licence texts. |
+| `tools/package/` | `build_packages.py`, which builds the client package from this repository. |
 
 ## Credits and licences
 
 Capipimon's own code is licensed under GPL-3.0-only. See [LICENSE](LICENSE).
 
-Capipimon's engine is based on Horizon engine commit 66f3981, and Capipimon Launcher on Horizon launcher 0.2.68. Both
-are MIT-licensed versions from before Horizon's switch to LGPL.
+Capipimon's engine and launcher started from MIT-licensed versions of Horizon (engine commit 66f3981, launcher
+0.2.68). Thank you to its authors.
 
 The models, animations and textures come from Cobblemon and many community add-on packs. Each keeps its own licence
 and credit, listed in [CREDITS.md](CREDITS.md), with the licence texts in `content/licences/`. Several of them are
