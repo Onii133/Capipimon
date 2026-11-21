@@ -18,6 +18,7 @@ change of them must be shared under the same licence.
 | --- | --- | --- | --- |
 | Model library: the `content/cobblemon-models/*.geo.json` / `*.animation.json` files of every species not listed under add-on packs, and their textures | Cobblemon team | CC BY-NC 3.0 Unported (full text: `content/licences/cobblemon-models.txt`) | https://gitlab.com/cable-mc/cobblemon |
 | Species data (base stats, types, hitboxes, learnsets) used to generate `native/api/data/kits_auto.json` | Cobblemon team | MPL-2.0 | https://gitlab.com/cable-mc/cobblemon |
+| Pokémon cries: `content/assets/capipimon/sounds/cries/*.ogg` (most of them; the rest come from CobbleCats and MundialMons, listed in `content/licences/cobblemon-cries-sources.txt`) | Audio from the Pokémon games (© Nintendo, Creatures Inc., GAME FREAK inc.), as packaged by the Cobblemon team | Not covered by any Cobblemon licence; included by the owner's decision, non-commercial (see `content/licences/cobblemon-cries.txt`) | https://gitlab.com/cable-mc/cobblemon |
 
 ## Changes to Cobblemon textures (adaptations)
 
@@ -36,7 +37,7 @@ Original work: the Cobblemon team, https://gitlab.com/cable-mc/cobblemon, under 
 | LackingMons | IZetyXX / BeeZy | MPL-2.0 | https://modrinth.com/project/lackingmons | Arctibax, Baxcalibur, Flutter Mane, Frigibax, Iron Valiant, Mandibuzz, Pawmi, Pawmo, Pawmot, Vullaby | `lackingmons.txt` |
 | Legendary Encounters | Legendary Encounters authors | MIT | https://modrinth.com/project/legendary-encounters-cobblemon | Meloetta | `legendary-encounters-cobblemon.txt` |
 | Monkeymons | Monkeymons authors | MIT | https://modrinth.com/project/monkeymons | Oranguru, Passimian | `monkeymons.txt` |
-| MundialMons | MundialMons authors | MIT | https://modrinth.com/project/mundialmons | Blipbug, Dottler, Gulpin, Orbeetle, Swalot | `mundialmons.txt` |
+| MundialMons | MundialMons authors | MIT | https://modrinth.com/project/mundialmons | Blipbug, Dottler, Gulpin, Orbeetle, Swalot; cries for 14 species (see `cobblemon-cries-sources.txt`) | `mundialmons.txt` |
 | MysticMons | iMystxc | MIT | https://modrinth.com/project/mysticmons | Azelf, Buzzwole, Celebi, Cosmoem, Cosmog, Dialga, Giratina, Guzzlord, Jirachi, Landorus, Lunala, Magearna, Marshadow, Mesprit, Necrozma, Palkia, Pheromosa, Solgaleo, Stakataka, Tapu Bulu, Tapu Fini, Tapu Koko, Tapu Lele, Thundurus, Tornadus, Uxie, Yveltal | `mysticmons.txt` |
 | OdysseyMons | BifeSalgado | GPL-3.0-only | https://modrinth.com/project/odysseymons | Iron Moth | `odysseymons.txt` |
 | Pigeon's Poke Pack | El Pigeon | CC BY-SA 4.0 | https://modrinth.com/project/pigeons-poke-pack | Volcanion | `pigeons-poke-pack.txt` (full text) |
@@ -44,7 +45,7 @@ Original work: the Cobblemon team, https://gitlab.com/cable-mc/cobblemon, under 
 | SaltMons | SaltMons authors | MPL-2.0 | https://modrinth.com/project/saltmons | Heatran, Kyurem, Melmetal, Meltan | `saltmons.txt` |
 | TDmon | DiEn | MIT | https://modrinth.com/project/tdmon | Victini | `tdmon.txt` |
 | The Jewel Pokémon | NetImmerse | MIT | https://modrinth.com/project/the-jewel-pokmon-cobblemon | Diancie | `the-jewel-pokmon-cobblemon.txt` |
-| CobbleCats 1.6 | Raspix (model, textures, animations, code); Knights of the Round Bagel (1.6 model); samysay21 (animations); Treynami (code); Ndraey (support) | MIT | https://modrinth.com/datapack/cobble-cats | Zeraora (changes listed in `content/CREDITS.md`) | — |
+| CobbleCats 1.6 | Raspix (model, textures, animations, code); Knights of the Round Bagel (1.6 model); samysay21 (animations); Treynami (code); Ndraey (support) | MIT | https://modrinth.com/datapack/cobble-cats | Zeraora (changes listed in `content/CREDITS.md`); cries for 9 species (see `cobblemon-cries-sources.txt`) | — |
 
 ## Code and data
 

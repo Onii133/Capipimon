@@ -34,8 +34,7 @@
    "windup": 0.0,
    "anim": "special",
    "particle": "minecraft:poof",
-   "form": "beam",
-   "tele": 0.0
+   "form": "beam"
   },
   {
    "id": "sig:f_dig1",

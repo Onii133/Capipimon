@@ -35,8 +35,7 @@
    "anim": "special",
    "particle": "minecraft:electric_spark",
    "form": "cone",
-   "cone": 60.0,
-   "tele": 0.0
+   "cone": 60.0
   },
   {
    "id": "quickattack",
@@ -53,7 +52,6 @@
    "anim": "physical",
    "particle": "minecraft:crit",
    "form": "dash",
-   "tele": 0.0,
    "charges": 1
   },
   {

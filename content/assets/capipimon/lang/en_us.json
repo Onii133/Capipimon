@@ -83,5 +83,7 @@
  "entity.capipimon.zamazenta": "Zamazenta",
  "entity.capipimon.zekrom": "Zekrom",
  "entity.capipimon.zeraora": "Zeraora",
- "entity.capipimon.pikachu": "Pikachu"
+ "entity.capipimon.pikachu": "Pikachu",
+ "item.capipimon.capsule": "Capsule",
+ "entity.capipimon.capsule": "Capsule"
 }

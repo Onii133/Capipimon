@@ -47,6 +47,16 @@ fn capipimon_models_frame(game: &mut crate::game::Game<'_>) {
         }
     }
     if s.frames % 10 == 1 {
+        // The Tab menu's Chat row asks for the chat here: T and Enter don't open it any more
+        // (`inject_capipimon_models_chat_open` cancels `open_chat_method`), and this doesn't go
+        // through that method.
+        let chat = format!("chat-{}", std::process::id());
+        if crate::mod_api::Host::setting(&*game, "capipimon_models", &chat).as_deref() == Some("open") {
+            crate::mod_api::Host::set_setting(&*game, "capipimon_models", &chat, "");
+            if game.screen == crate::game::Screen::Playing {
+                game.open_chat("", false);
+            }
+        }
         let key = format!("view-{}", std::process::id());
         let view = crate::mod_api::Host::setting(&*game, "capipimon_models", &key);
         // Step height for this form. Re-applied if it drifts: a respawn makes a new player.

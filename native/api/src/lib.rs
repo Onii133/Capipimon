@@ -10,17 +10,22 @@ pub mod fx;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/lab.rs"]
 pub mod lab;
+#[cfg(feature = "capipimon_server")]
+#[cfg(feature = "capipimon_dev_mcp")]
+#[path = "server/mcp.rs"]
+pub mod mcp;
 pub mod molang;
 pub mod pack;
 pub mod play;
+pub mod portraits;
 pub mod standin;
 
 use play::cosmetics;
 use bedrock::{Animation, Model};
 use horizon_client::mod_api::{
-    AttackEntityEvent, CameraShakeEvent, ClientDisconnectingEvent, GuiLayerPreEvent, CommandEvent, FrameEvent,
+    AttackEntityEvent, CameraShakeEvent, ClientDisconnectingEvent, GuiLayerPreEvent, GuiRenderPostEvent, InputKeyEvent, CommandEvent, FrameEvent, InjectCapipimonModelsChatOpenEvent,
     MovementInputEvent, PlayerItemHeldEvent, PlayerPickItemEvent, RenderHooks, VisualsEvent, WheelEvent,
-    CameraDistanceEvent, CameraPoseEvent, Flow, Hooks, Host, HudEvent, KeyEvent, LivingIncomingDamageEvent,
+    CameraDistanceEvent, CameraPoseEvent, EntityJoinLevelEvent, Flow, Hooks, Host, HudEvent, KeyEvent, LivingIncomingDamageEvent,
     MobSubmitEvent, InteractionKeyEvent, NetFromClientEvent, NetFromServerEvent, PerformCommandEvent, PlayerDiedEvent,
     PlayerLoggedInEvent, PlayerLoggedOutEvent, PlayerRenderListenedEvent, PlayerRespawnedEvent, PlayerSubmitEvent,
     PlayerChatEvent, PlayerSwapHandsEvent, RegisterCommandsEvent, RenderHandEvent, RenderNameTagEvent, RightClickBlockEvent, ServerTickEvent,
@@ -43,6 +48,8 @@ struct Creature {
     model: Model,
     idle: Option<Animation>,
     walk: Option<Animation>,
+    /// In the air: `air_fly`, else `air_idle` (a winged Pokémon flying, a bird NPC off the ground).
+    fly: Option<Animation>,
     /// Everything else (cast animations such as `physical` and `special`).
     extra: HashMap<String, Animation>,
     /// A made-up walk cycle (`Model::gait`) when there's no walk animation.
@@ -51,25 +58,77 @@ struct Creature {
     rig: standin::Rig,
     /// How far the model reaches out from its middle at rest, unscaled blocks: auras ring this.
     radius: f32,
+    /// How tall the model stands at rest, unscaled blocks.
+    height: f32,
+    /// It has a ground idle: it stands on the ground unless it is flying (`fly`).
+    grounded: bool,
+    /// A made-up wing beat for a `fly` animation that holds its wings still (`Model::flap`).
+    flap: Vec<(usize, glam::Vec3)>,
 }
 
-fn build(geo: &str, anim: &str, idle: &str, walk: &str) -> Result<Creature, String> {
+/// Wing beats a second for a made-up flap: slow and big-bird-like.
+const FLAP_HZ: f32 = 1.2;
+
+impl Creature {
+    /// `anim`'s pose at `time` (with the made-up gait swung by `swing`, if any) and only the wing
+    /// set that fits: spread while flying (or for a model that only flies), tucked otherwise.
+    fn pose(&self, anim: Option<&Animation>, time: f32, extra: &[(usize, glam::Vec3)], swing: f32) -> Vec<glam::Mat4> {
+        let flying = anim.is_some_and(|a| self.fly.as_ref().is_some_and(|f| std::ptr::eq(a, f)));
+        // Flying on a still pose: the wings beat on top of it.
+        let mut pose = if flying && extra.is_empty() && !self.flap.is_empty() {
+            self.model.pose_with(anim, time, &self.flap, (time * std::f32::consts::TAU * FLAP_HZ).sin())
+        } else {
+            self.model.pose_with(anim, time, extra, swing)
+        };
+        if self.model.has_wing_sets() {
+            self.model.hide_wings(&mut pose, anim, !self.grounded || flying);
+        }
+        pose
+    }
+}
+
+fn build(species: &str, geo: &str, anim: &str, idle: &str, walk: &str) -> Result<Creature, String> {
     let model = Model::parse(geo)?;
-    let mut anims = Animation::parse_all(anim)?;
+    let mut anims = Animation::parse_for(anim, species)?;
+    // A battle stance for an idle (the Cyndaquil line, whose flames burn only in battle): the walk
+    // keeps them burning. What the calm idle shrinks (the flames, down to embers) the walk shrinks
+    // the same way, so those bones' scale and offset come off the walk.
+    if idle == "battle_idle" {
+        let calm: Vec<String> = anims.get("ground_idle").map(|a| a.bones.iter().filter(|(_, t)| t.scale.is_some()).map(|(b, _)| b.clone()).collect()).unwrap_or_default();
+        for name in ["ground_walk", "ground_run"] {
+            if let Some(w) = anims.get_mut(name) {
+                for b in &calm {
+                    if let Some(t) = w.bones.get_mut(b) {
+                        t.scale = None;
+                        t.position = None;
+                    }
+                }
+            }
+        }
+    }
     // The named animation, else the nearest one the file has (a walk-less model may still run,
     // fly or swim; an idle-less one may still have a battle stance), else nothing.
+    // A model that stands on the ground walks on it: an air or water animation (Moltres' index walk
+    // is `air_fly`) or its own idle (Volcanion) is no walk, so it gets the made-up gait over its idle
+    // and keeps the air animation for flying. Only a model with no ground idle swims or flies about.
+    let grounded = anims.contains_key("ground_idle");
+    let off_ground = |n: &str| n.starts_with("air_") || n.starts_with("water_");
+    let walk = if walk == idle || (grounded && off_ground(walk)) { "" } else { walk };
     let mut first = |names: &[&str]| names.iter().find_map(|n| anims.remove(*n));
     let idle = first(&[idle, "ground_idle", "battle_idle", "air_idle", "water_idle"]);
-    let walk = first(&[walk, "ground_walk", "ground_run", "air_fly", "water_swim"]);
+    let walk = first(&[walk, "ground_walk", "ground_run"]).or_else(|| if grounded { None } else { first(&["air_fly", "water_swim"]) });
+    let fly = first(&["air_fly", "air_idle"]);
     let gait = if walk.is_none() { model.gait() } else { Vec::new() };
     let rig = standin::Rig::of(&model);
-    let mut radius = 0.0f32;
+    let (mut radius, mut height) = (0.0f32, 0.0f32);
     model.emit(&model.pose(None, 0.0), 1.0, |corners, _| {
         for p in corners {
             radius = radius.max(p[0].abs()).max(p[2].abs());
+            height = height.max(p[1]);
         }
     });
-    Ok(Creature { model, idle, walk, extra: anims, gait, rig, radius })
+    let flap = fly.as_ref().map(|f| model.flap(f)).unwrap_or_default();
+    Ok(Creature { model, idle, walk, fly, extra: anims, gait, rig, radius, height, grounded, flap })
 }
 
 // ---------------------------------------------------------------- the model library
@@ -136,7 +195,7 @@ fn cobblemon(host: &dyn Host, species: &str) -> Option<&'static Cobbled> {
     let spawned = std::thread::Builder::new().name("capipimon model load".into()).spawn(move || {
         let read = |ext: &str| pack::read(&dir, &format!("cobblemon-models/{species}.{ext}.json"));
         let made = read("geo").zip(read("animation")).and_then(|(geo, anim)| {
-            let creature = build(&geo, &anim, &idle, &walk)
+            let creature = build(&species, &geo, &anim, &idle, &walk)
                 .map_err(|err| log::error!("capipimon_models: cobblemon {species} failed to load: {err}"))
                 .ok()?;
             let c: &'static Cobbled = Box::leak(Box::new(Cobbled { sprite: format!("capipimon:entity/{species}"), scale, creature }));
@@ -170,11 +229,24 @@ fn draw_creature(
     walking: bool,
     hat: Option<(&str, &str)>,
 ) -> usize {
+    draw_creature_posed(host, draw, (sprite, scale, c), anim, time, walking, hat).0
+}
+
+/// `draw_creature`, also giving back the bone pose it drew with.
+fn draw_creature_posed(
+    host: &dyn Host,
+    draw: &mut horizon_client::mod_api::BlockEntityDraw,
+    (sprite, scale, c): (&str, f32, &Creature),
+    anim: Option<&Animation>,
+    time: f32,
+    walking: bool,
+    hat: Option<(&str, &str)>,
+) -> (usize, Vec<glam::Mat4>) {
     // Walking without a walk animation: the made-up gait over the idle, about 1.6 steps a second.
     let pose = if walking && c.walk.is_none() && !c.gait.is_empty() {
-        c.model.pose_with(anim, time, &c.gait, (time * std::f32::consts::TAU * 1.6).sin())
+        c.pose(anim, time, &c.gait, (time * std::f32::consts::TAU * 1.6).sin())
     } else {
-        c.model.pose(anim, time)
+        c.pose(anim, time, &[], 0.0)
     };
     let mut drew = 0usize;
     c.model.emit(&pose, scale, |corners, uv| {
@@ -182,8 +254,71 @@ fn draw_creature(
             drew += 1;
         }
     });
+    draw_layers(host, draw, sprite, &c.model, &pose, scale, time);
     if let Some((id, species)) = hat {
         cosmetics::draw::hat(host, draw, id, species, &c.model, &pose, scale);
+    }
+    (drew, pose)
+}
+
+/// One of Cobblemon's texture layers over a species' base texture (`tools/art/cobblemon_layers.py`):
+/// Ponyta's fire, Moltres' flame glow, Pikachu's cheeks. Frames cycle at `fps` when there are several.
+#[derive(serde::Deserialize)]
+struct Layer {
+    emissive: bool,
+    frames: Vec<String>,
+    #[serde(default)]
+    fps: Option<f32>,
+}
+
+/// `layers.json`: species -> "normal" / "shiny" -> its layers, drawn in order. Empty if the file isn't there.
+fn cobblemon_layers(host: &dyn Host) -> &'static HashMap<String, HashMap<String, Vec<Layer>>> {
+    static LAYERS: OnceLock<HashMap<String, HashMap<String, Vec<Layer>>>> = OnceLock::new();
+    LAYERS.get_or_init(|| {
+        let text = pack::read(&content_folder(host), "cobblemon-models/layers.json").unwrap_or_default();
+        serde_json::from_str(&text).unwrap_or_default()
+    })
+}
+
+/// The species and whether its shiny layers apply, for a creature sprite: `capipimon:entity/ponyta`,
+/// `..._shiny`, or a palette skin `..._p2` (a recolour: its shiny's layers).
+fn layer_key(sprite: &str) -> Option<(&str, bool)> {
+    let name = sprite.strip_prefix("capipimon:entity/")?;
+    if let Some(base) = name.strip_suffix("_shiny") {
+        return Some((base, true));
+    }
+    match skin_base(name) {
+        Some(base) => Some((base, true)),
+        None => Some((name, false)),
+    }
+}
+
+/// Full-bright light for an emissive layer (sky and block light 15), as Cobblemon's emissive render types.
+const FULL_BRIGHT: u32 = 240 | (240 << 8);
+
+/// Draws the texture layers over a creature already drawn with `sprite` in `pose`: each one the
+/// frame for `time`, full bright when emissive. Returns the quads drawn.
+fn draw_layers(host: &dyn Host, draw: &mut horizon_client::mod_api::BlockEntityDraw, sprite: &str, model: &Model, pose: &[glam::Mat4], scale: f32, time: f32) -> usize {
+    let Some((species, shiny)) = layer_key(sprite) else { return 0 };
+    let Some(kinds) = cobblemon_layers(host).get(species) else { return 0 };
+    let Some(layers) = (if shiny { kinds.get("shiny").or_else(|| kinds.get("normal")) } else { kinds.get("normal") }) else { return 0 };
+    let mut drew = 0;
+    for layer in layers {
+        let n = layer.frames.len();
+        if n == 0 {
+            continue;
+        }
+        let frame = &layer.frames[(time.max(0.0) * layer.fps.unwrap_or(10.0)) as usize % n];
+        let light = draw.light;
+        if layer.emissive {
+            draw.light = FULL_BRIGHT;
+        }
+        model.emit_layer(pose, scale, |corners, uv| {
+            if host.draw_quad(draw, frame, corners, uv, 0xFF_FFFF) {
+                drew += 1;
+            }
+        });
+        draw.light = light;
     }
     drew
 }
@@ -200,6 +335,33 @@ fn sprite_quad(host: &dyn Host, draw: &mut horizon_client::mod_api::BlockEntityD
     let sprite = shiny.as_deref().unwrap_or(sprite);
     (shiny.is_some() && host.draw_quad(draw, sprite, corners, uv, 0xFF_FFFF))
         || sprite.strip_suffix("_shiny").is_some_and(|normal| host.draw_quad(draw, normal, corners, uv, 0xFF_FFFF))
+}
+
+/// Whether a vanilla HUD layer is cancelled. A Pokémon has no hotbar, hearts or item names, and
+/// photo mode wants a clean screen. Tab opens only the Capipimon menu (GDD 3.1), so the player list
+/// is cancelled while Tab is held, the only time it would show, and never otherwise (photo mode
+/// too): Horizon stores finished skin downloads and gives other players and the talent NPC
+/// mannequins their skins only while that layer runs, so cancelling it always left them Steve.
+fn layer_cancelled(layer: &str, tab_held: bool, photo: bool, pokemon: bool) -> bool {
+    // `effects`: the vanilla icons, e.g. the Speed effect a fast Pokémon always has (`move_speed`).
+    const HIDDEN: [&str; 6] = [
+        "minecraft:effects",
+        "minecraft:hotbar",
+        "minecraft:player_health",
+        "minecraft:contextual_info_bar",
+        "minecraft:selected_item_name",
+        "minecraft:vehicle_health",
+    ];
+    if layer == "minecraft:tab_list" {
+        return tab_held;
+    }
+    photo || (pokemon && HIDDEN.contains(&layer))
+}
+
+/// Tab counts as held for the player list only in play: a screen that eats Tab's release must not
+/// leave the list cancelled under it (`play::forget_tab` clears the key itself).
+fn tab_held(down: &[String], playing: bool) -> bool {
+    playing && down.iter().any(|k| k == play::TAB)
 }
 
 /// The species of a `<species>_p<tier>` palette skin sprite.
@@ -246,6 +408,7 @@ fn draw_name_tag(host: &dyn Host, draw: &mut horizon_client::mod_api::BlockEntit
 /// battle box players have over their heads.
 fn draw_npc(host: &dyn Host, draw: &mut horizon_client::mod_api::BlockEntityDraw, mob: &horizon_client::mod_api::NativeMobRender<'_>, species: &str) -> Flow {
     let Some(m) = model_of(host, species) else { return Flow::Continue };
+    fx::trainer::note_npc(mob.id, play::kit(species).map_or(1.0, |k| k.body));
     let c = m.2;
     let time = mob.age / 20.0;
     let view = play::npc_view(mob.id);
@@ -259,8 +422,11 @@ fn draw_npc(host: &dyn Host, draw: &mut horizon_client::mod_api::BlockEntityDraw
         .map(|(a, e, w)| (a == "special", *e, *w))
         .filter(|&(sp, e, w)| e < standin::secs(sp, w))
         .map(|(sp, e, w)| c.rig.pose(sp, standin::amount(sp, e, w)));
+    // A winged NPC off the ground (a shrine legendary taking off) flies.
+    let aloft = !mob.on_ground && c.fly.is_some() && play::flight::winged(species);
     let anim = match named {
         Some(a) => Some(a),
+        None if aloft => c.fly.as_ref(),
         None if moving => c.walk.as_ref().or(c.idle.as_ref()),
         None => c.idle.as_ref(),
     };
@@ -285,14 +451,18 @@ fn draw_npc(host: &dyn Host, draw: &mut horizon_client::mod_api::BlockEntityDraw
         if p.squash != 0.0 {
             draw.scale([1.0 - p.squash / 2.0, 1.0 + p.squash, 1.0 - p.squash]);
         }
-        let pose = c.model.pose_with(c.idle.as_ref(), time, &p.offsets, 1.0);
+        let pose = c.pose(c.idle.as_ref(), time, &p.offsets, 1.0);
         c.model.emit(&pose, m.1, |corners, uv| {
             sprite_quad(host, draw, m.0, corners, uv);
         });
+        draw_layers(host, draw, m.0, &c.model, &pose, m.1, time);
     } else {
-        draw_creature(host, draw, m, anim, time, moving && named.is_none(), None);
+        draw_creature(host, draw, m, anim, time, moving && !aloft && named.is_none(), None);
     }
     draw.pop();
+    if mob.death_time == 0 && play::npc_alpha(mob.id) {
+        cosmetics::draw::alpha_aura(host, draw, mob, body * size, (body * size * 0.45).clamp(0.6, 2.5));
+    }
     if let Some(v) = view.filter(|_| mob.death_time == 0) {
         let name = play::kit(species).map_or(species.to_string(), |k| k.name.clone());
         draw_plate(host, draw, &name, None, Some((v.level, v.hp, v.max)), None, 10.0, mob.body_yaw, body * size);
@@ -458,6 +628,7 @@ impl Hooks for Mod {
     /// reads: third person while a Pokémon, the player's own view back afterwards.
     fn frame(&self, host: &mut dyn Host, _event: &mut FrameEvent) {
         fx::frame(host);
+        play::menus_tick(host);
         cosmetics::install(&*host);
         // No player for 5 s of real time (single player closed its world, where
         // `client_disconnecting` doesn't fire): this client isn't a Pokémon any more either.
@@ -521,18 +692,55 @@ impl Hooks for Mod {
         }
     }
 
-    fn movement_input(&self, _host: &dyn Host, event: &mut MovementInputEvent) {
-        play::movement_input(event);
+    fn movement_input(&self, host: &dyn Host, event: &mut MovementInputEvent) {
+        play::movement_input(host, event);
     }
 
-    /// A Pokémon has no hotbar to scroll.
-    fn wheel(&self, host: &mut dyn Host, _event: &mut WheelEvent) -> Flow {
+    /// A Pokémon has no hotbar to scroll. In the wardrobe the wheel zooms its camera.
+    fn wheel(&self, host: &mut dyn Host, event: &mut WheelEvent) -> Flow {
+        if cosmetics::draw::is_open() {
+            cosmetics::draw::zoom_by(event.steps);
+            return Flow::Cancel;
+        }
         if host.playing() && play::is_pokemon() { Flow::Cancel } else { Flow::Continue }
+    }
+
+    /// T opens the chat again (Onii 2026-11-20), unless a Capipimon menu is up: the Capipidex uses
+    /// T. Enter and a controller's chat button still don't (Onii 2026-11-13). `/` opens it with the
+    /// slash typed, and the Tab menu's Chat row opens it empty (`frame.rs`, which doesn't go through
+    /// `open_chat_method`). An empty `prefix` is a chat opened by T, Enter or a controller.
+    fn inject_capipimon_models_chat_open(&self, event: &mut InjectCapipimonModelsChatOpenEvent<'_>) -> Flow {
+        if !event.prefix.is_empty() || chat_key::t_opens() { Flow::Continue } else { Flow::Cancel }
+    }
+
+    /// Server: a trainer's thrown ball is a snowball, and what it meets is heard here.
+    #[cfg(feature = "capipimon_server")]
+    fn hears_projectile_impacts(&self, _host: &dyn Host, event: &mut horizon_client::mod_api::HearsProjectileImpactsEvent) {
+        if play::onboard::catch::balls_flying() {
+            event.hears = true;
+        }
+    }
+
+    /// Server: a trainer's seat takes its own rider only.
+    #[cfg(feature = "capipimon_server")]
+    fn entity_mount(&self, _host: &mut dyn Host, event: &mut horizon_client::mod_api::EntityMountEvent<'_>) -> Flow {
+        if play::onboard::catch::seat_mount(event) { Flow::Cancel } else { Flow::Continue }
+    }
+
+    #[cfg(feature = "capipimon_server")]
+    fn projectile_impact(&self, _host: &mut dyn Host, event: &mut horizon_client::mod_api::ProjectileImpactEvent<'_>) -> Flow {
+        if play::onboard::catch::ball_impact(event) { Flow::Cancel } else { Flow::Continue }
     }
 
     #[cfg(feature = "capipimon_server")]
     fn living_incoming_damage(&self, event: &mut LivingIncomingDamageEvent<'_>) -> Flow {
         if play::incoming_damage(event) { Flow::Cancel } else { Flow::Continue }
+    }
+
+    /// Server: an elytra glide started or ended (flight, `play::flight`).
+    #[cfg(feature = "capipimon_server")]
+    fn entity_toggle_glide(&self, _host: &mut dyn Host, event: &mut horizon_client::mod_api::EntityToggleGlideEvent<'_>) {
+        play::heard_glide(event.player, event.gliding);
     }
 
     #[cfg(feature = "capipimon_server")]
@@ -553,6 +761,12 @@ impl Hooks for Mod {
     #[cfg(feature = "capipimon_server")]
     fn player_logged_out(&self, _host: &mut dyn Host, event: &mut PlayerLoggedOutEvent<'_>) {
         play::heard_logged_out(event.player);
+    }
+
+    /// Server: a wild or PvE NPC body coming back with its chunk stays out (`play::keep_out_reloaded`).
+    #[cfg(feature = "capipimon_server")]
+    fn entity_join_level(&self, host: &mut dyn Host, event: &mut EntityJoinLevelEvent<'_>) -> Flow {
+        if play::keep_out_reloaded(host, event.entity, event.loaded_from_disk) { Flow::Cancel } else { Flow::Continue }
     }
 
     /// Server: a Pokémon player's melee swing does nothing (only moves deal damage).
@@ -607,6 +821,40 @@ impl Hooks for Mod {
     /// The attack key (left click) is a Pokémon's basic attack (slot 1), not a punch or a block break.
     /// Fires again each tick it's held on a block; the move's cooldown paces that.
     fn interaction_key(&self, host: &mut dyn Host, event: &mut InteractionKeyEvent<'_>) -> Flow {
+        // The Tab menu takes clicks while it's open: left accepts, right goes back (GDD 3.1).
+        if play::onboard::hub::is_open() {
+            let _ = if event.button == 0 { play::onboard::hub::click(host) } else { play::onboard::hub::right_click(host) };
+            event.swing_hand = false;
+            return Flow::Cancel;
+        }
+        // Photo mode: no casts, swings or clicks; the shot is what matters.
+        if play::onboard::photo::on() {
+            event.swing_hand = false;
+            return Flow::Cancel;
+        }
+        // Left click accepts in the PC, like Space (design/CONTROLS.md).
+        if event.button == 0 && play::onboard::pc::is_open() {
+            if play::onboard::hub::fresh_click() {
+                play::onboard::pc::key(host, "key.keyboard.space");
+            }
+            event.swing_hand = false;
+            return Flow::Cancel;
+        }
+        // Right click on any other Capipimon screen goes back, like X (GDD 3.1).
+        if event.button != 0 && play::onboard::screen_open() {
+            play::onboard::back_click(host);
+            event.swing_hand = false;
+            return Flow::Cancel;
+        }
+        // No attack (or punch, or block use) while a menu is up (play-test #8).
+        if play::onboard::menus::any_open() {
+            event.swing_hand = false;
+            return Flow::Cancel;
+        }
+        // A trainer's left click is her Swat; the arm swings as for any punch.
+        if event.button == 0 && play::onboard::catch::swat_click(host) {
+            return Flow::Cancel;
+        }
         if event.button == 0 && play::left_click(host) {
             event.swing_hand = false;
             Flow::Cancel
@@ -667,8 +915,12 @@ impl Hooks for Mod {
             return Flow::Cancel;
         }
         // Caught in a capsule (GDD 6.2): a red-and-white ball while it struggles.
+        // Caught in a capsule (GDD 6.2): it is inside the ball the effects pass draws
+        // (`fx_trainer.rs`). Without that pass, a red egg stands in for the ball.
         if play::onboard::catch::balled(event.who.name) {
-            draw_egg(host, &mut *event.draw, 0xE0_3030, None, 0.8);
+            if fx::pass_off() {
+                draw_egg(host, &mut *event.draw, 0xE0_3030, None, 0.8);
+            }
             return Flow::Cancel;
         }
         let Some((species, cast)) = play::look_of(event.who.name, event.who.local) else { return Flow::Continue };
@@ -676,6 +928,13 @@ impl Hooks for Mod {
         let photo_pose = if event.who.local { play::onboard::photo::pose() } else { None };
         let cast = if photo_pose.is_some() { None } else { cast };
         let Some(m) = model_of(host, &species) else { return Flow::Continue };
+        // A Mega (Prestige 2, `/prestige mega`): the model `<species>_<form>` in place of the species' own,
+        // and only this species' Mega: `looks` can be a few seconds behind a change of species.
+        // It is a look only, so the kit, hitbox and moves stay the species'. Until it has loaded, or on a
+        // client whose content has no such model, the species is drawn as usual.
+        let mega_id = play::mega_of(event.who.name).filter(|id| id.strip_prefix(species.as_str()).is_some_and(|form| form.starts_with('_')));
+        let mega = mega_id.as_deref().and_then(|id| model_of(host, id).map(|m| (id, m)));
+        let (model_id, m) = mega.unwrap_or((species.as_str(), m));
         // Shiny (`/capi become <species> shiny`, `/capi shiny on`): the `_shiny` texture.
         let shiny_sprite = play::shiny_of(event.who.name).then(|| match play::skin_of(event.who.name) {
             0 => format!("{}_shiny", m.0),
@@ -684,8 +943,11 @@ impl Hooks for Mod {
         let m: (&str, f32, &Creature) = (shiny_sprite.as_deref().unwrap_or(m.0), m.1, m.2);
         let c = m.2;
         let mob = event.player;
+        // Flying (`play::flight`): its air animation while off the ground.
+        let flying = !mob.on_ground && play::flight::flying(event.who.name) && c.fly.is_some();
         let anim = match cast.as_deref().and_then(|a| c.extra.get(a)) {
             Some(a) => Some(a),
+            None if flying => c.fly.as_ref(),
             None if mob.walk_speed > 0.1 => c.walk.as_ref().or(c.idle.as_ref()),
             None => c.idle.as_ref(),
         };
@@ -718,7 +980,7 @@ impl Hooks for Mod {
             Some(special) => Some((c.rig.pose(special, 1.0), 0.0)),
             None => standin,
         };
-        let walking = cast.is_none() && standin.is_none() && mob.walk_speed > 0.1;
+        let walking = cast.is_none() && standin.is_none() && !flying && mob.walk_speed > 0.1;
         // An emote (emotes.rs), only while no cast, wind-up or roll is playing: its animation if
         // the model has one, else a made-up motion of the whole body.
         let emote = (cast.is_none() && standin.is_none() && roll.is_none()).then(|| emotes::playing(event.who.name, mob.walk_speed > 0.1, event.who.local)).flatten();
@@ -726,7 +988,7 @@ impl Hooks for Mod {
         let emote_motion = emote.as_ref().filter(|e| emote_anim.is_none() || (e.looping && !emote_anim.is_some_and(|a| a.looping))).map(|e| emotes::motion(e.motion, e.t, e.secs));
         // What this player wears (visual only: nothing here reaches hitboxes or moves).
         let worn = cosmetics::draw::worn_by(event.who.name, event.who.local);
-        let hat = worn.as_ref().and_then(|w| w.hat.as_deref()).map(|id| (id, species.as_str()));
+        let hat = worn.as_ref().and_then(|w| w.hat.as_deref()).map(|id| (id, model_id));
         // Minimize: drawn smaller, standing on the same spot.
         let size = play::size_of(event.who.name);
         if size != 1.0 {
@@ -746,35 +1008,37 @@ impl Hooks for Mod {
             if p.squash != 0.0 {
                 event.draw.scale([1.0 - p.squash / 2.0, 1.0 + p.squash, 1.0 - p.squash]);
             }
-            let pose = c.model.pose_with(c.idle.as_ref(), mob.age / 20.0, &p.offsets, 1.0);
+            let pose = c.pose(c.idle.as_ref(), mob.age / 20.0, &p.offsets, 1.0);
             let mut drew = 0usize;
             c.model.emit(&pose, m.1, |corners, uv| {
                 if sprite_quad(host, &mut *event.draw, m.0, corners, uv) {
                     drew += 1;
                 }
             });
+            draw_layers(host, &mut *event.draw, m.0, &c.model, &pose, m.1, mob.age / 20.0);
             if let Some((id, sp)) = hat {
                 cosmetics::draw::hat(host, &mut *event.draw, id, sp, &c.model, &pose, m.1);
             }
             event.draw.pop();
-            drew
+            (drew, pose)
         } else if let (Some(e), Some(a)) = (&emote, emote_anim) {
             if let Some(mo) = emote_motion {
                 emotes::push_motion(&mut *event.draw, mo, play::kit(&species).map_or(1.0, |k| k.body));
             }
-            let drew = draw_creature(host, &mut *event.draw, m, Some(a), e.t, false, hat);
+            let drew = draw_creature_posed(host, &mut *event.draw, m, Some(a), e.t, false, hat);
             if emote_motion.is_some() {
                 event.draw.pop();
             }
             drew
         } else if let Some(mo) = emote_motion {
             emotes::push_motion(&mut *event.draw, mo, play::kit(&species).map_or(1.0, |k| k.body));
-            let drew = draw_creature(host, &mut *event.draw, m, anim, mob.age / 20.0, walking, hat);
+            let drew = draw_creature_posed(host, &mut *event.draw, m, anim, mob.age / 20.0, walking, hat);
             event.draw.pop();
             drew
         } else {
-            draw_creature(host, &mut *event.draw, m, anim, mob.age / 20.0, walking, hat)
+            draw_creature_posed(host, &mut *event.draw, m, anim, mob.age / 20.0, walking, hat)
         };
+        let (drawn, pose) = drawn;
         if size != 1.0 {
             event.draw.pop();
         }
@@ -784,9 +1048,19 @@ impl Hooks for Mod {
         if drawn == 0 {
             return Flow::Continue;
         }
-        let (height, radius) = (play::kit(&species).map_or(1.0, |k| k.body) * size, c.radius * m.1 * size);
+        // A Mega can stand taller than its species: what sits over the head goes over the taller of the two.
+        let body = play::kit(&species).map_or(1.0, |k| k.body);
+        let body = if mega.is_some() { body.max(c.height * m.1) } else { body };
+        let (height, radius) = (body * size, c.radius * m.1 * size);
+        if event.who.local {
+            let to = glam::Mat4::from_scale(glam::Vec3::splat(size)) * bedrock::Model::to_mob(m.1);
+            cosmetics::draw::note_local(model_id, &c.model, &pose, to, height, radius, mob.body_yaw, hat.map(|h| h.0));
+        }
         if let Some(w) = &worn {
-            cosmetics::draw::particles(host, &mut *event.draw, w, event.who.name, height, radius, mob, true);
+            cosmetics::draw::particles(host, &mut *event.draw, w, event.who.name, height, radius, mob, true, event.who.local);
+        }
+        if event.who.local {
+            cosmetics::draw::capsule_trail(host, &mut *event.draw, mob);
         }
         // Double Team: copies to the left, right and behind, a little out of step with it. They
         // wear what the real one wears, or the cosmetics would give the trick away.
@@ -803,12 +1077,12 @@ impl Hooks for Mod {
                 if let Some(w) = &worn {
                     event.draw.push();
                     event.draw.translate(*at);
-                    cosmetics::draw::particles(host, &mut *event.draw, w, event.who.name, height, radius, mob, false);
+                    cosmetics::draw::particles(host, &mut *event.draw, w, event.who.name, height, radius, mob, false, event.who.local);
                     event.draw.pop();
                 }
             }
         }
-        let top = play::kit(&species).map_or(1.0, |k| k.body) * size;
+        let top = height;
         if !event.who.local {
             draw_name_tag(host, &mut *event.draw, event.who.name, mob.body_yaw, top);
         }
@@ -861,6 +1135,8 @@ impl Hooks for Mod {
     #[cfg(feature = "capipimon_server")]
     fn server_tick(&self, host: &mut dyn Host, event: &mut ServerTickEvent<'_>) {
         play::server_tick(host, event);
+        #[cfg(feature = "capipimon_dev_mcp")]
+        mcp::server_tick(host, event);
     }
 
     fn key(&self, host: &mut dyn Host, event: &mut KeyEvent<'_>) {
@@ -890,23 +1166,39 @@ impl Hooks for Mod {
         }
     }
 
-    fn gui_layer_pre(&self, _host: &mut dyn Host, event: &mut GuiLayerPreEvent<'_>) -> Flow {
-        const HIDDEN: [&str; 5] = [
-            "minecraft:hotbar",
-            "minecraft:player_health",
-            "minecraft:contextual_info_bar",
-            "minecraft:selected_item_name",
-            "minecraft:vehicle_health",
-        ];
-        // Photo mode: a clean screen, whatever the layer.
-        if play::onboard::photo::on() {
-            return Flow::Cancel;
+    fn gui_layer_pre(&self, host: &mut dyn Host, event: &mut GuiLayerPreEvent<'_>) -> Flow {
+        let tab_held = tab_held(&play::CLIENT.lock().unwrap().down, host.playing());
+        // A Pokémon and a trainer each have their own HUD in place of the hotbar and hearts.
+        let (photo, pokemon) = (play::onboard::photo::on(), play::is_pokemon() || play::onboard::catch::trainer_hud());
+        if layer_cancelled(event.layer, tab_held, photo, pokemon) { Flow::Cancel } else { Flow::Continue }
+    }
+
+    /// Every real window key event, whatever screen took it: a Tab release here is one `key`
+    /// may never hear (`play::forget_tab`).
+    fn input_key(&self, host: &mut dyn Host, event: &mut InputKeyEvent<'_>) {
+        use horizon_client::mod_api::winit::{event::ElementState, keyboard::{KeyCode, PhysicalKey}};
+        let released = event.event.state == ElementState::Released;
+        if !released {
+            chat_key::pressed(event.event.physical_key == PhysicalKey::Code(KeyCode::KeyT));
         }
-        if HIDDEN.contains(&event.layer) && play::is_pokemon() { Flow::Cancel } else { Flow::Continue }
+        play::tab_released(released && event.event.physical_key == PhysicalKey::Code(KeyCode::Tab));
+        // Same for Shift: a release the escape menu ate left guard stuck on.
+        if released && matches!(event.event.physical_key, PhysicalKey::Code(KeyCode::ShiftLeft | KeyCode::ShiftRight)) {
+            play::shift_released(host);
+        }
+    }
+
+    /// Once a GUI frame, F1 and menus too: losing focus forgets a held Tab (`play::forget_tab`).
+    fn gui_render_post(&self, _host: &dyn Host, event: &mut GuiRenderPostEvent<'_>) {
+        play::focus_seen(event.focused);
     }
 
     fn mob_submit(&self, host: &dyn Host, event: &mut MobSubmitEvent<'_>) -> Flow {
         let mob = event.mob;
+        // An NPC Pokémon inside a ball (`fx_trainer.rs` draws the ball).
+        if play::onboard::catch::balled_mob(mob.id) && !fx::pass_off() {
+            return Flow::Cancel;
+        }
         // Onboarding carriers named `capi:<species>`: a Hatchery pedestal (an egg with the
         // species turning over it) or the Meadow's Wild Wooloo (just the species).
         if let Some(species) = mob.custom_name.and_then(|n| n.trim().strip_prefix("capi:")) {
@@ -944,12 +1236,14 @@ impl Hooks for Mod {
         let Some((sprite, scale, c)) = mob.kind.strip_prefix("capipimon:").and_then(|species| model_of(host, species)) else {
             return Flow::Continue;
         };
-        let anim = if mob.walk_speed > 0.1 { c.walk.as_ref().or(c.idle.as_ref()) } else { c.idle.as_ref() };
+        // A winged NPC off the ground flies; on it, it stands and walks.
+        let aloft = !mob.on_ground && c.fly.is_some() && mob.kind.strip_prefix("capipimon:").is_some_and(play::flight::winged);
+        let anim = if aloft { c.fly.as_ref() } else if mob.walk_speed > 0.1 { c.walk.as_ref().or(c.idle.as_ref()) } else { c.idle.as_ref() };
         let time = mob.age / 20.0;
-        let pose = if mob.walk_speed > 0.1 && c.walk.is_none() && !c.gait.is_empty() {
-            c.model.pose_with(anim, time, &c.gait, (time * std::f32::consts::TAU * 1.6).sin())
+        let pose = if !aloft && mob.walk_speed > 0.1 && c.walk.is_none() && !c.gait.is_empty() {
+            c.pose(anim, time, &c.gait, (time * std::f32::consts::TAU * 1.6).sin())
         } else {
-            c.model.pose(anim, time)
+            c.pose(anim, time, &[], 0.0)
         };
         let mut drew = 0usize;
         let draw = &mut *event.draw;
@@ -958,6 +1252,7 @@ impl Hooks for Mod {
                 drew += 1;
             }
         });
+        draw_layers(host, draw, sprite, &c.model, &pose, scale, time);
         static TOLD: AtomicBool = AtomicBool::new(false);
         if !TOLD.swap(true, Ordering::Relaxed) {
             log::info!("capipimon_models: drew {} for mob {}: {drew} quads", mob.kind, mob.id);
@@ -970,5 +1265,125 @@ impl Hooks for Mod {
             return Flow::Continue;
         }
         Flow::Cancel
+    }
+}
+
+#[cfg(test)]
+mod texture_layer_tests {
+    use super::*;
+
+    #[test]
+    fn layers_follow_the_sprite() {
+        assert_eq!(layer_key("capipimon:entity/ponyta"), Some(("ponyta", false)));
+        assert_eq!(layer_key("capipimon:entity/ponyta_shiny"), Some(("ponyta", true)));
+        assert_eq!(layer_key("capipimon:entity/pikachu_p2"), Some(("pikachu", true)));
+        assert_eq!(layer_key("capipimon:entity/porygon2"), Some(("porygon2", false)));
+        assert_eq!(layer_key("minecraft:entity/pig"), None);
+    }
+
+    #[test]
+    fn the_layer_table_parses_and_names_real_sprites() {
+        let Ok(dir) = std::env::var("CAPI_TEST_CONTENT_DIR") else { return };
+        let dir = std::path::PathBuf::from(dir);
+        let text = std::fs::read_to_string(dir.join("cobblemon-models/layers.json")).unwrap();
+        let table: HashMap<String, HashMap<String, Vec<Layer>>> = serde_json::from_str(&text).unwrap();
+        // Onii, 2026-11-20: Ponyta, Quilava and Moltres were missing their flames.
+        for sp in ["ponyta", "quilava", "moltres"] {
+            assert!(table.get(sp).and_then(|k| k.get("normal")).is_some_and(|l| !l.is_empty()), "{sp}");
+        }
+        assert!(table["ponyta"]["normal"][0].frames.len() > 1, "Ponyta's fire is animated");
+        for (sp, kinds) in &table {
+            for l in kinds.values().flatten() {
+                for f in &l.frames {
+                    let name = f.strip_prefix("capipimon:entity/").unwrap();
+                    assert!(dir.join(format!("assets/capipimon/textures/entity/{name}.png")).exists(), "{sp}: {f}");
+                }
+            }
+        }
+    }
+}
+
+#[cfg(test)]
+mod layer_tests {
+    use super::{layer_cancelled, tab_held};
+    use crate::play::{TAB, forget_tab};
+
+    const LIST: &str = "minecraft:tab_list";
+
+    #[test]
+    fn the_player_list_runs_unless_tab_is_held() {
+        // It must run in play and in photo mode, or no remote skin or NPC skin is ever stored.
+        for (photo, pokemon) in [(false, false), (false, true), (true, false), (true, true)] {
+            assert!(!layer_cancelled(LIST, false, photo, pokemon), "list cancelled with Tab up (photo {photo}, pokemon {pokemon})");
+            assert!(layer_cancelled(LIST, true, photo, pokemon), "vanilla list shown under the Capipimon menu (photo {photo}, pokemon {pokemon})");
+        }
+    }
+
+    fn held() -> Vec<String> {
+        vec!["key.keyboard.w".to_string(), TAB.to_string()]
+    }
+
+    /// The list is cancelled after these, from a held Tab.
+    fn list_cancelled_after(released: bool, was_focused: bool, focused: bool, playing: bool) -> bool {
+        let mut down = held();
+        forget_tab(&mut down, released, was_focused, focused);
+        assert!(down.iter().any(|k| k == "key.keyboard.w"), "only Tab is forgotten");
+        layer_cancelled(LIST, tab_held(&down, playing), false, true)
+    }
+
+    #[test]
+    fn a_held_tab_cancels_the_list_in_play_only() {
+        assert!(list_cancelled_after(false, true, true, true), "Tab held in play: the Capipimon menu, no vanilla list");
+        assert!(!list_cancelled_after(false, true, true, false), "a screen is open: the list runs under it");
+    }
+
+    #[test]
+    fn a_tab_release_a_screen_ate_or_lost_focus_lets_the_list_run_again() {
+        assert!(!list_cancelled_after(true, true, true, true), "a real Tab release a screen ate");
+        assert!(!list_cancelled_after(false, true, false, true), "the window lost focus with Tab down");
+    }
+
+    #[test]
+    fn a_window_that_never_had_focus_keeps_its_tab() {
+        // A test bot's offscreen window is never focused; its Tab holds are real.
+        assert!(list_cancelled_after(false, false, false, true));
+        assert!(list_cancelled_after(false, false, true, true), "gaining focus forgets nothing");
+    }
+
+    #[test]
+    fn other_layers_keep_their_rules() {
+        assert!(layer_cancelled("minecraft:hotbar", false, false, true));
+        assert!(!layer_cancelled("minecraft:hotbar", false, false, false));
+        assert!(layer_cancelled("minecraft:chat", false, true, false), "photo mode keeps a clean screen");
+        assert!(!layer_cancelled("minecraft:chat", true, false, true));
+    }
+}
+
+/// Which key last went down, so the chat hook can tell T from Enter (its event doesn't say).
+mod chat_key {
+    use std::sync::atomic::{AtomicBool, Ordering};
+
+    static LAST_WAS_T: AtomicBool = AtomicBool::new(false);
+
+    pub fn pressed(is_t: bool) {
+        LAST_WAS_T.store(is_t, Ordering::Relaxed);
+    }
+
+    /// The chat opening now came from T, and no Capipimon menu is using T.
+    pub fn t_opens() -> bool {
+        LAST_WAS_T.swap(false, Ordering::Relaxed) && !crate::play::onboard::menus::any_open()
+    }
+
+    #[cfg(test)]
+    mod tests {
+        #[test]
+        fn t_opens_chat_but_enter_does_not() {
+            let _g = crate::play::onboard::menus::test_lock();
+            super::pressed(true);
+            assert!(super::t_opens(), "T opens the chat");
+            assert!(!super::t_opens(), "once per press");
+            super::pressed(false);
+            assert!(!super::t_opens(), "Enter (or any other key) doesn't");
+        }
     }
 }

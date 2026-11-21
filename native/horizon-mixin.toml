@@ -2,10 +2,11 @@
 # Build: horizon-launcher native-build <this folder> --instance capipimon-dev --trust-native-code
 [mod]
 id = "capipimon_models"
-version = "0.1.1"
+version = "0.1.0"
 
 [compatibility]
-horizon_revision = "66f3981f522b24c250b21523a70080965b940424"
+# Engine commit f40e3b7 (Capipimon fork of the last MIT Horizon 59dff1a: capipi branding, capipi loading scene, title logo), kept in our private fork Onii133/capipimon-engine.
+horizon_revision = "f40e3b7e0d5e96da89a47c446843849f3b8650cc"
 
 [api]
 path = "api"
@@ -37,6 +38,16 @@ cancellable = true
 helper = "swap_hands.rs"
 bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
 
+# T and Enter don't open the chat (Onii 2026-11-13: the mod uses them); `/` still does, with the
+# slash typed (api: inject_capipimon_models_chat_open). The Tab menu's Chat row opens it in frame.rs.
+[[injection]]
+id = "chat-open"
+target = "horizon_client::game::chat::Game<'_>::open_chat_method"
+kind = "HEAD"
+trait_method = "chat_open"
+cancellable = true
+bindings = [{ name = "prefix", ty = "&str", value = "prefix" }]
+
 # No splash text on the title screen (self-contained: seasonal splashes ignore the resource list).
 [[injection]]
 id = "no-splash"
@@ -59,3 +70,5 @@ args = []
 # cargo feature `capipimon_server`, which compiles in the server code (src/server/). Players never have it.
 [dependencies]
 capipimon_server = { version = "^0.1", optional = true }
+# A private dev-only marker (never published, never in a player or live build).
+capipimon_dev_mcp = { version = "^0.1", optional = true }

@@ -497,6 +497,14 @@
 "walk": "ground_walk"
 },
 {
+"id": "blastoise_mega",
+"name": "Mega Blastoise",
+"scale": 0.9,
+"idle": "ground_idle",
+"walk": "ground_walk",
+"mega_of": "blastoise"
+},
+{
 "id": "blaziken",
 "name": "Blaziken",
 "scale": 0.8,
@@ -831,6 +839,22 @@
 "scale": 1.0,
 "idle": "ground_idle",
 "walk": "ground_walk"
+},
+{
+"id": "charizard_megax",
+"name": "Mega Charizard X",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk",
+"mega_of": "charizard"
+},
+{
+"id": "charizard_megay",
+"name": "Mega Charizard Y",
+"scale": 1.0,
+"idle": "ground_idle",
+"walk": "ground_walk",
+"mega_of": "charizard"
 },
 {
 "id": "charjabug",
@@ -1263,7 +1287,7 @@
 "id": "cyndaquil",
 "name": "Cyndaquil",
 "scale": 0.5,
-"idle": "ground_idle",
+"idle": "battle_idle",
 "walk": "ground_walk"
 },
 {
@@ -2203,6 +2227,14 @@
 "scale": 0.95,
 "idle": "ground_idle",
 "walk": "air_fly"
+},
+{
+"id": "gengar_mega",
+"name": "Mega Gengar",
+"scale": 0.95,
+"idle": "ground_idle",
+"walk": "air_fly",
+"mega_of": "gengar"
 },
 {
 "id": "geodude",
@@ -3367,6 +3399,14 @@
 "walk": "ground_walk"
 },
 {
+"id": "lopunny_mega",
+"name": "Mega Lopunny",
+"scale": 0.5,
+"idle": "ground_idle",
+"walk": "ground_walk",
+"mega_of": "lopunny"
+},
+{
 "id": "lotad",
 "name": "Lotad",
 "scale": 0.9,
@@ -3386,6 +3426,14 @@
 "scale": 0.6,
 "idle": "ground_idle",
 "walk": "ground_walk"
+},
+{
+"id": "lucario_mega",
+"name": "Mega Lucario",
+"scale": 0.6,
+"idle": "ground_idle",
+"walk": "ground_walk",
+"mega_of": "lucario"
 },
 {
 "id": "ludicolo",
@@ -4714,7 +4762,7 @@
 "id": "quilava",
 "name": "Quilava",
 "scale": 0.7,
-"idle": "ground_idle",
+"idle": "battle_idle",
 "walk": "ground_walk"
 },
 {
@@ -6309,6 +6357,13 @@
 {
 "id": "typhlosion",
 "name": "Typhlosion",
+"scale": 0.65,
+"idle": "battle_idle",
+"walk": "ground_walk"
+},
+{
+"id": "typhlosionhisui",
+"name": "Hisuian Typhlosion",
 "scale": 0.65,
 "idle": "ground_idle",
 "walk": "ground_walk"

@@ -37,10 +37,19 @@ const FAKE_OUT_TICKS: u64 = 60;
 /// A cone's half angle (spec cones: Swift, Hyper Voice, Blizzard, Icy Wind, Air Cutter, ...).
 const CONE_HALF_DEG: f64 = 30.0;
 
-const DODGE_COOLDOWN: f32 = 3.0;
+/// What a dodge roll costs in PP. There is no cooldown: PP is the limit, so a roll competes with moves
+/// and guarding for the same bar. Four in a row empty a full bar; at rest one comes back every 2 s.
+pub const DODGE_COST: f32 = 25.0;
+/// A new roll can't start until the last one's tumble has played out.
+const DODGE_LOCK: f32 = ROLL_SECS;
+
+/// Whether a roll may start with this much PP and this much of the last roll left to play.
+fn can_dodge(energy: f32, lock: f32) -> bool {
+    lock <= 0.0 && energy >= DODGE_COST
+}
 
 /// The move keys, slot by slot.
-const SLOT_KEYS: [&str; 6] = ["LMB", "Q", "E", "R", "C", "F"];
+const SLOT_KEYS: [&str; 6] = ["LMB", "Q", "E", "R", "", "Z"];
 
 fn dir(yaw: f32, pitch: f32) -> [f64; 3] {
     let (y, p) = (f64::from(yaw).to_radians(), f64::from(pitch).to_radians());
@@ -70,12 +79,23 @@ pub mod onboard;
 pub use onboard::progress;
 pub use onboard::cosmetics;
 
+/// Flight: winged Pokémon take off with a double-tapped Space and glide the vanilla elytra way.
+#[path = "flight.rs"]
+pub mod flight;
+
 /// Signature moves (slot C), their statuses, and Ditto's Transform.
 #[path = "sig.rs"]
 pub mod sig;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/status.rs"]
 pub mod status;
+#[cfg(feature = "capipimon_server")]
+#[path = "server/rewind.rs"]
+mod rewind;
+/// Balance log: one line per PvP knock-out (server/balance.rs).
+#[cfg(feature = "capipimon_server")]
+#[path = "server/balance.rs"]
+mod balance;
 #[path = "ultimate.rs"]
 pub mod ultimate;
 /// Support moves: buffs, debuffs, status shots, heals, drain, and support specialists.
@@ -90,6 +110,10 @@ pub mod automod;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/emotes.rs"]
 pub mod emotes_srv;
+/// Pokémon cries (content sounds), on emotes and hatching.
+#[cfg(feature = "capipimon_server")]
+#[path = "server/cries.rs"]
+pub mod cries;
 
 /// Talent NPCs as player models in their own skins.
 #[cfg(feature = "capipimon_server")]
@@ -105,6 +129,11 @@ pub mod prof;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/stream.rs"]
 pub mod stream;
+
+/// Every `/capiadmin` and `/capi` usage, declared for the chat's command tree and completion.
+#[cfg(feature = "capipimon_server")]
+#[path = "server/commands.rs"]
+pub mod commands;
 
 pub const CHANNEL: &str = "capipimon:play";
 /// The wire version shared by the public client and the private server. Bump it whenever a message changes shape;
@@ -249,7 +278,7 @@ struct KitFile {
     base: Base,
     hitbox: Hitbox,
     moves: Vec<Move>,
-    /// A featured kit's own Ultimate (F).
+    /// A featured kit's own Z-Move (Z).
     #[serde(default)]
     ultimate: Option<Move>,
     /// Legendaries (GDD 8.2): HP and blocks a second that don't depend on level.
@@ -316,6 +345,7 @@ const HAND_KITS: &[&str] = &[
     include_str!("../data/kits/smeargle.json"),
     include_str!("../data/kits/ditto.json"),
     include_str!("../data/kits/magikarp.json"),
+    include_str!("../data/kits/typhlosionhisui.json"),
 ];
 #[cfg(not(feature = "capipimon_server"))]
 const AUTO_KITS: &str = include_str!("../data/kits_auto.json");
@@ -472,6 +502,10 @@ pub fn behaviour_moves() -> &'static [Move] {
 
 /// A move `/capi learn` can teach, by id or name ("Petal Dance", "petal-dance", "petaldance").
 pub fn learn_move(name: &str) -> Option<&'static Move> {
+    // A species' signature move (`sig:<species>`) sits in its move pool like any other move.
+    if let Some(s) = name.strip_prefix("sig:").and_then(sig::signature) {
+        return Some(&s.mv);
+    }
     let id: String = name.chars().filter(char::is_ascii_alphanumeric).collect::<String>().to_ascii_lowercase();
     learnable().get(&id)
 }
@@ -539,6 +573,8 @@ pub const BEAM_FROM: f64 = 0.6;
 pub struct Me {
     /// A two-charge move's first use: its slot and when.
     pub second: Option<(usize, Instant)>,
+    /// A dodge roll this client predicted (double tap) that the server may not have confirmed yet.
+    pub rolled: Option<Instant>,
     pub species: String,
     pub level: u32,
     pub hp: f32,
@@ -551,8 +587,13 @@ pub struct Me {
     pub predicted: [Option<Instant>; 6],
     /// Guarding (Shift), as the server last said.
     pub guard: bool,
-    /// Seconds until the next dodge roll, as of `at`.
+    /// Seconds left of the dodge roll playing (no new roll until it ends), as of `at`.
     pub dodge_cd: f32,
+    /// Carries a Z-Crystal, so the Z-Move can be cast. A server older than Z-Crystals never says:
+    /// its Z-Moves need none.
+    pub zcrystal: bool,
+    /// Gliding (`flight`), as the server last said: the bar drains between updates.
+    pub gliding: bool,
 }
 
 impl Me {
@@ -561,7 +602,9 @@ impl Me {
     }
 
     pub fn energy_now(&self) -> f32 {
-        (self.energy + ENERGY_REGEN * self.at.elapsed().as_secs_f32()).min(100.0)
+        // Gliding takes PP (the server's `flight`) instead of giving it back.
+        let rate = if self.gliding { -flight::GLIDE_PP_PER_SEC } else { ENERGY_REGEN };
+        (self.energy + rate * self.at.elapsed().as_secs_f32()).clamp(0.0, 100.0)
     }
 }
 
@@ -582,6 +625,8 @@ pub struct Client {
     pub species_by_name: HashMap<String, String>,
     /// Name -> (prestige total, palette skin tier), from `looks`.
     pub looks: HashMap<String, (u32, u32)>,
+    /// Name -> the Mega model the player is drawn as (`charizard_megax`), from the fourth field of `looks`.
+    pub megas: HashMap<String, String>,
     /// Players the server says are shiny (`shiny <name> 1|0`).
     pub shiny: HashSet<String>,
     pub me: Option<Me>,
@@ -607,6 +652,8 @@ pub struct Client {
     pub npcs: HashMap<u32, NpcView>,
     /// NPCs drawn bigger than their species (Alphas): entity id -> size.
     pub npc_sizes: HashMap<u32, f32>,
+    /// Alphas (`npcalpha`): drawn with an aura.
+    pub npc_alphas: HashSet<u32>,
     /// This client's own move winding up, until when (it moves at 60% and can't cast another).
     pub charge_until: Option<Instant>,
     /// `/capi learn`: move ids in place of the kit's, slot by slot.
@@ -632,14 +679,40 @@ impl Client {
         if slot == 5 {
             return ultimate::of(species);
         }
-        if slot == 4 || sig::plain_ditto(species) {
-            return if sig::plain_ditto(species) { Some(&sig::transform_sig().mv) } else { sig::signature(species).map(|s| &s.mv) };
+        // An untransformed Ditto has Transform only. Nobody else has a slot 4: the signature move
+        // is in the move pool and goes on LMB, Q, E or R like any other move.
+        if sig::plain_ditto(species) {
+            return Some(&sig::transform_sig().mv);
+        }
+        if slot == 4 {
+            return None;
         }
         match self.learned.get(slot) {
             Some(Some(id)) => learn_move(id),
             _ => kit(species).and_then(|k| k.moves.get(slot)),
         }
     }
+}
+
+/// `looks`' list, `name:total:skin[:mega],...`: the totals and skins, and the Mega models of those who have one.
+/// The Mega field is optional, so a server from before Megas still parses.
+fn parse_looks(list: &str) -> (HashMap<String, (u32, u32)>, HashMap<String, String>) {
+    let (mut looks, mut megas) = (HashMap::new(), HashMap::new());
+    for e in list.split(',') {
+        let mut f = e.split(':');
+        let (Some(name), Some(total), Some(skin)) = (f.next(), f.next().and_then(|n| n.parse().ok()), f.next().and_then(|n| n.parse().ok())) else { continue };
+        looks.insert(name.to_string(), (total, skin));
+        // Only a plain id: it names a model.
+        if let Some(model) = f.next().filter(|m| !m.is_empty() && m.len() <= 48 && m.bytes().all(|b| b.is_ascii_lowercase() || b.is_ascii_digit() || b == b'_')) {
+            megas.insert(name.to_string(), model.to_string());
+        }
+    }
+    (looks, megas)
+}
+
+/// The Mega model this player is drawn as (`charizard_megax`), if the server says it is one.
+pub fn mega_of(name: &str) -> Option<String> {
+    CLIENT.lock().unwrap().megas.get(name).cloned()
 }
 
 /// The palette skin this player is drawn with (0 = none).
@@ -737,6 +810,10 @@ pub fn npc_size(id: u32) -> f32 {
     CLIENT.lock().unwrap().npc_sizes.get(&id).copied().unwrap_or(1.0)
 }
 
+pub fn npc_alpha(id: u32) -> bool {
+    CLIENT.lock().unwrap().npc_alphas.contains(&id)
+}
+
 pub fn npc_view(id: u32) -> Option<NpcView> {
     CLIENT.lock().unwrap().npcs.get(&id).copied()
 }
@@ -777,8 +854,11 @@ fn parse_state(f: &[&str]) -> Option<Me> {
         at: Instant::now(),
         predicted: [None; 6],
         second: None,
+        rolled: None,
         guard: rest.first() == Some(&"1"),
         dodge_cd: rest.get(1).map_or(0.0, |s| n(s)),
+        zcrystal: rest.get(4) != Some(&"0"),
+        gliding: false,
     })
 }
 
@@ -796,10 +876,20 @@ pub fn net_from_server(host: &mut dyn Host, event: &mut NetFromServerEvent<'_>) 
         let _ = host.net_send_to_server(CHANNEL, format!("hello	{PROTOCOL}").as_bytes());
         return;
     }
+    if let ["ping", seq] = f.as_slice() {
+        // Answered at once: the server times the round trip.
+        let _ = host.net_send_to_server(CHANNEL, format!("pong	{seq}").as_bytes());
+        return;
+    }
     sig::heard(host, &f);
     onboard::guide::hello(host, &f);
     onboard::launch_ui::hello(host, &f);
     if onboard::heard(&f) {
+        // A menu this line opened may have closed a server one: tell the server now.
+        onboard::menus::flush(host);
+        return;
+    }
+    if flight::heard(host, &f) {
         return;
     }
     let mut c = CLIENT.lock().unwrap();
@@ -819,13 +909,9 @@ pub fn net_from_server(host: &mut dyn Host, event: &mut NetFromServerEvent<'_>) 
             }
         }
         ["looks", list] => {
-            c.looks = list
-                .split(',')
-                .filter_map(|e| {
-                    let mut f = e.split(':');
-                    Some((f.next()?.to_string(), (f.next()?.parse().ok()?, f.next()?.parse().ok()?)))
-                })
-                .collect();
+            let (looks, megas) = parse_looks(list);
+            c.looks = looks;
+            c.megas = megas;
         }
         ["shiny", name, on] => {
             if *on == "1" {
@@ -856,6 +942,7 @@ pub fn net_from_server(host: &mut dyn Host, event: &mut NetFromServerEvent<'_>) 
         // A prefix: later servers may add fields on the end.
         ["state", _, _, _, _, _, _, _, _, _, ..] => {
             let Some(mut me) = parse_state(&f) else { return };
+            me.gliding = c.my_name.as_deref().is_some_and(flight::gliding);
             // Keep a fresh prediction over a state packet the server sent before it saw the cast.
             if let Some(old) = &c.me {
                 for i in 0..6 {
@@ -866,6 +953,12 @@ pub fn net_from_server(host: &mut dyn Host, event: &mut NetFromServerEvent<'_>) 
                         }
                         me.predicted[i] = Some(t);
                     }
+                }
+                // The same for a roll: its PP stays spent and its lock stays on.
+                if let Some(t) = old.rolled.filter(|t| t.elapsed().as_secs_f32() < PREDICT_SECS) {
+                    me.energy = me.energy.min(old.energy_now());
+                    me.dodge_cd = me.dodge_cd.max(old.dodge_cd - old.at.elapsed().as_secs_f32());
+                    me.rolled = Some(t);
                 }
             }
             // Came out (or as another species): Fake Out's 3 s start now.
@@ -899,6 +992,9 @@ pub fn net_from_server(host: &mut dyn Host, event: &mut NetFromServerEvent<'_>) 
         }
         ["npcsizes", list, ..] => {
             c.npc_sizes = parse_npc_sizes(list);
+        }
+        ["npcalpha", list, ..] => {
+            c.npc_alphas = list.split(';').filter_map(|s| s.parse().ok()).collect();
         }
         ["plates", list, ..] => {
             c.plates.clear();
@@ -980,9 +1076,53 @@ const SPRINT_BLOCKS: f32 = 5.6;
 /// Two taps of a movement key within this long make a dodge roll.
 const DOUBLE_TAP_SECS: f32 = 0.3;
 
-/// GDD 3.1 keys for a Pokémon: LMB (see `left_click`), Q, E, R are moves 1-4 (1-4 too), Shift
-/// guards while held, and a double-tapped W, A, S or D is a dodge roll that way. C and F would
-/// is the species' signature and F the Ultimate (the server turns F into an interaction when one is on offer).
+pub const TAB: &str = "key.keyboard.tab";
+
+/// Whether the window had focus at the last GUI frame (`gui_render_post`).
+static WAS_FOCUSED: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(true);
+
+/// Tab must leave `down` when it's let go: while it's there the player list layer is cancelled,
+/// and with it every NPC and player skin (`layer_cancelled` in lib.rs). `key` doesn't always hear
+/// the release: chat, signs, books, dialogs and prompts eat it, and an unfocused window gets none.
+/// So a real Tab release (`input_key`, every window key event) forgets it, and so does losing
+/// focus (only the moment it's lost: a window that never had it, as a test bot's, keeps its keys).
+pub fn forget_tab(down: &mut Vec<String>, tab_released: bool, was_focused: bool, focused: bool) {
+    if tab_released || (was_focused && !focused) {
+        down.retain(|k| k != TAB);
+    }
+}
+
+/// `forget_tab` for a real window key event.
+pub fn tab_released(released: bool) {
+    if released {
+        forget_tab(&mut CLIENT.lock().unwrap().down, true, true, true);
+    }
+}
+
+/// A real Shift release (`input_key`, every window key event): the escape menu, chat and other
+/// screens eat it before `key` hears it, which left guard stuck on (Onii, 2026-11-20). Forget the
+/// key and drop the guard.
+pub fn shift_released(host: &mut dyn Host) {
+    let mut c = CLIENT.lock().unwrap();
+    c.down.retain(|k| !k.ends_with(".shift"));
+    if c.guard_held {
+        c.guard_held = false;
+        drop(c);
+        let _ = host.net_send_to_server(CHANNEL, b"guard	0");
+    }
+}
+
+/// `forget_tab` once a GUI frame, with the window's focus.
+pub fn focus_seen(focused: bool) {
+    let was = WAS_FOCUSED.swap(focused, std::sync::atomic::Ordering::Relaxed);
+    if was && !focused {
+        forget_tab(&mut CLIENT.lock().unwrap().down, false, was, focused);
+    }
+}
+
+/// GDD 3.1 keys for a Pokémon: LMB (see `left_click`), Q, E, R are moves 1-4, Z the Z-Move; F only
+/// interacts (`onboard::key` sends `use`), Tab only opens the menu (`hub`). Shift guards while held,
+/// and a double-tapped W, A, S or D is a dodge roll that way.
 pub fn key(host: &mut dyn Host, event: &mut KeyEvent<'_>) {
     let mut c = CLIENT.lock().unwrap();
     // A held key's repeats aren't new presses.
@@ -990,6 +1130,8 @@ pub fn key(host: &mut dyn Host, event: &mut KeyEvent<'_>) {
     if event.pressed && !repeat && host.playing() {
         drop(c);
         let taken = onboard::key(host, event.key);
+        // A held W/S on a list repeats (`menus::tick`); any other key stops that.
+        onboard::menus::pressed(event.key);
         c = CLIENT.lock().unwrap();
         if taken {
             c.down.push(event.key.to_string());
@@ -1003,12 +1145,14 @@ pub fn key(host: &mut dyn Host, event: &mut KeyEvent<'_>) {
     } else {
         c.down.retain(|k| k != event.key);
         drop(c);
+        onboard::menus::released(event.key);
         onboard::progress::key_up(host, event.key);
+        onboard::catch::key_up(host, event.key);
         c = CLIENT.lock().unwrap();
     }
     let mon = c.me.is_some();
     if matches!(event.key, "key.keyboard.left.shift" | "key.keyboard.right.shift") {
-        let on = mon && host.playing() && c.down.iter().any(|k| k.ends_with(".shift"));
+        let on = mon && host.playing() && !onboard::menus::any_open() && c.down.iter().any(|k| k.ends_with(".shift"));
         if on != c.guard_held {
             c.guard_held = on;
             drop(c);
@@ -1016,15 +1160,24 @@ pub fn key(host: &mut dyn Host, event: &mut KeyEvent<'_>) {
         }
         return;
     }
-    if !event.pressed || repeat || !mon || !host.playing() {
+    // No moves, Z-Move or dodge while a menu is up (`onboard::key` takes those keys too).
+    if !event.pressed || repeat || !mon || !host.playing() || onboard::menus::any_open() {
         return;
     }
+    // Space: a vanilla jump; a quick second one takes a winged Pokémon up (`flight`).
+    if event.key == "key.keyboard.space" {
+        let (species, me) = (c.me.as_ref().map(|m| m.species.clone()).unwrap_or_default(), c.my_name.clone());
+        drop(c);
+        flight::space(host, &species, me.as_deref());
+        return;
+    }
+    // GDD 3.1 keybinds: LMB (see `left_click`), Q, E, R are the four moves and Z the Z-Move. No other
+    // key casts (no number keys, no signature key: the signature move sits in one of the four).
     let slot = match event.key {
-        "key.keyboard.1" => Some(0),
-        "key.keyboard.2" | "key.keyboard.q" => Some(1),
-        "key.keyboard.3" | "key.keyboard.e" => Some(2),
-        "key.keyboard.4" | "key.keyboard.r" => Some(3),
-        "key.keyboard.5" | "key.keyboard.c" => Some(4),
+        "key.keyboard.q" => Some(1),
+        "key.keyboard.e" => Some(2),
+        "key.keyboard.r" => Some(3),
+        "key.keyboard.z" => Some(5),
         _ => None,
     };
     if let Some(slot) = slot {
@@ -1045,7 +1198,21 @@ pub fn key(host: &mut dyn Host, event: &mut KeyEvent<'_>) {
         return;
     }
     c.last_tap = None;
-    let ready = c.me.as_ref().is_some_and(|m| m.dodge_cd - m.at.elapsed().as_secs_f32() <= 0.0);
+    // Ask only for a roll the server will give, and take its PP off the bar at once.
+    let ready = c.me.as_mut().is_some_and(|m| {
+        let (energy, lock) = (m.energy_now(), m.dodge_cd - m.at.elapsed().as_secs_f32());
+        if !can_dodge(energy, lock) {
+            return false;
+        }
+        for i in 0..6 {
+            m.cooldown[i] = m.cooldown_now(i);
+        }
+        m.at = Instant::now();
+        m.energy = energy - DODGE_COST;
+        m.dodge_cd = DODGE_LOCK;
+        m.rolled = Some(Instant::now());
+        true
+    });
     drop(c);
     if ready {
         let _ = host.net_send_to_server(CHANNEL, format!("dodge\t{dir}").as_bytes());
@@ -1053,11 +1220,11 @@ pub fn key(host: &mut dyn Host, event: &mut KeyEvent<'_>) {
 }
 
 /// A Pokémon doesn't crouch (Shift is guard), and moves at half speed while guarding (GDD 3.1).
-pub fn movement_input(event: &mut MovementInputEvent) {
-    onboard::pc::movement_input(event);
-    onboard::tutor::movement_input(event);
-    onboard::dex::movement_input(event);
-    cosmetics::draw::movement_input(event);
+pub fn movement_input(host: &dyn Host, event: &mut MovementInputEvent) {
+    // Photo mode first: its keys fly the camera, so the Pokémon gets none of them.
+    onboard::photo::movement_input(event);
+    // Any menu up: standing still, held keys included (play-test #8).
+    onboard::menus::movement_input(event);
     onboard::catch::movement_input(event);
     let c = CLIENT.lock().unwrap();
     if c.me.is_none() {
@@ -1073,9 +1240,50 @@ pub fn movement_input(event: &mut MovementInputEvent) {
         event.strafe *= CHARGE_SLOW;
     }
     if let Some(me) = c.my_name.as_deref() {
-        let m = sig::move_mult(me) * c.me.as_ref().and_then(|m| kit(&m.species)).and_then(|k| k.fixed_speed).map_or(1.0, |v| v / SPRINT_BLOCKS);
+        let k = c.me.as_ref().and_then(|m| kit(&m.species));
+        let fixed = k.and_then(|k| k.fixed_speed).map_or(1.0, |v| v / SPRINT_BLOCKS);
+        // Size and Speed: the server's vanilla Speed effect does the steps, this trims to the value.
+        let own = k.map_or(1.0, |k| speed_trim(move_speed(k)));
+        let m = sig::move_mult(me) * fixed * own;
         event.forward *= m;
         event.strafe *= m;
+    }
+    drop(c);
+    flight::movement_input(host, &mut event.jump);
+}
+
+/// How fast a Pokémon moves against a player's normal speed (1 = 5.6 blocks a second sprinting),
+/// from its base Speed and its size: a big body covers more ground a stride. Moltres (base 90,
+/// 4 blocks tall) moves about 1.55x, Pikachu 1.1x, Snorlax (base 30, big) 1.15x, Shuckle 0.8x.
+pub fn move_speed(k: &Kit) -> f32 {
+    let stat = 0.75 + 0.5 * k.base[5].clamp(20.0, 160.0) / 100.0;
+    let size = (1.0 + 0.18 * (k.body.max(0.1) / 1.2).log2()).clamp(0.85, 1.35);
+    (stat * size).clamp(0.8, 1.7)
+}
+
+/// The vanilla Speed effect's amplifier the server gives for `mult` (each level is +20%), if any.
+pub fn speed_amp(mult: f32) -> Option<u8> {
+    (mult > 1.001).then(|| (((mult - 1.0) / 0.2).ceil() as u8).max(1) - 1)
+}
+
+/// What the client keeps of the Speed effect's boost so the total is `mult` (at most 1: input can
+/// only be scaled down).
+pub fn speed_trim(mult: f32) -> f32 {
+    let effect = speed_amp(mult).map_or(1.0, |a| 1.0 + 0.2 * f32::from(a + 1));
+    (mult / effect).min(1.0)
+}
+
+/// Each frame (`lib.rs`): menu bookkeeping (`onboard::menus::tick`). A menu opening drops the
+/// guard and a half-done double tap; closing it with Shift still held guards again.
+pub fn menus_tick(host: &mut dyn Host) {
+    let Some(open) = onboard::menus::tick(host) else { return };
+    let mut c = CLIENT.lock().unwrap();
+    c.last_tap = None;
+    let on = !open && c.me.is_some() && host.playing() && c.down.iter().any(|k| k.ends_with(".shift"));
+    if on != c.guard_held {
+        c.guard_held = on;
+        drop(c);
+        let _ = host.net_send_to_server(CHANNEL, format!("guard\t{}", u8::from(on)).as_bytes());
     }
 }
 
@@ -1083,6 +1291,7 @@ pub fn movement_input(event: &mut MovementInputEvent) {
 /// server drops a player's Pokémon when they log out, so the next world starts as a trainer.
 pub fn forget() {
     *CLIENT.lock().unwrap() = Client::default();
+    flight::forget();
     onboard::forget();
     sig::forget_client();
 }
@@ -1135,6 +1344,12 @@ fn cast_slot(host: &mut dyn Host, slot: usize) {
         return;
     }
     let Some(me) = c.me.as_mut() else { return };
+    // No Z-Crystal: nothing to predict; the server says what's missing.
+    if slot == 5 && !me.zcrystal {
+        drop(c);
+        let _ = host.net_send_to_server(CHANNEL, format!("cast\t{slot}").as_bytes());
+        return;
+    }
     // Predict only what the server will accept, so the animation never plays for a refused cast.
     let free = mv.charges > 1 && me.second.is_some_and(|(s, at)| s == slot && at.elapsed().as_secs_f32() < ultimate::SECOND_TICKS as f32 / 20.0);
     if !free && (me.cooldown_now(slot) > 0.0 || me.energy_now() < mv.energy) {
@@ -1221,7 +1436,153 @@ pub fn camera_pose(host: &dyn Host, event: &mut CameraPoseEvent<'_>) {
         Some(s) if back => shoulder(host, event, &s),
         _ => None,
     };
+    // The wardrobe's own camera; moves don't aim from it.
+    if back && wardrobe_cam(host, event) {
+        CAM.lock().unwrap().posed = None;
+        return;
+    }
+    if WARDROBE_CAM.lock().unwrap().take().is_some() {
+        WARD_ORBIT.lock().unwrap().take();
+        cosmetics::draw::reset_zoom();
+    }
     CAM.lock().unwrap().posed = posed.map(|p| (p, Instant::now()));
+}
+
+/// The view's yaw and pitch when the wardrobe camera took over: the mouse orbits it from there.
+static WARD_ORBIT: Mutex<Option<(f32, f32)>> = Mutex::new(None);
+
+/// Where a ray from `o` along `d` first meets one of `quads`, between `t0` and `t1`.
+fn first_hit(quads: &[[glam::Vec3; 4]], o: glam::Vec3, d: glam::Vec3, t0: f32, t1: f32) -> Option<f32> {
+    let tri = |a: glam::Vec3, b: glam::Vec3, c: glam::Vec3| -> Option<f32> {
+        let (e1, e2) = (b - a, c - a);
+        let p = d.cross(e2);
+        let det = e1.dot(p);
+        if det.abs() < 1e-7 {
+            return None;
+        }
+        let inv = 1.0 / det;
+        let s = o - a;
+        let u = s.dot(p) * inv;
+        if !(0.0..=1.0).contains(&u) {
+            return None;
+        }
+        let q = s.cross(e1);
+        let v = d.dot(q) * inv;
+        if v < 0.0 || u + v > 1.0 {
+            return None;
+        }
+        let t = e2.dot(q) * inv;
+        (t > t0 && t < t1).then_some(t)
+    };
+    quads.iter().filter_map(|q| [tri(q[0], q[1], q[2]), tri(q[0], q[2], q[3])].into_iter().flatten().reduce(f32::min)).reduce(f32::min)
+}
+
+/// The direction a camera at `yaw`/`pitch` looks along, as a vector.
+fn look_vec(yaw: f32, pitch: f32) -> glam::Vec3 {
+    let d = dir(yaw, pitch);
+    glam::Vec3::new(d[0] as f32, d[1] as f32, d[2] as f32)
+}
+
+/// Where the wardrobe camera was last frame (position, yaw, pitch, when), to ease toward the next.
+static WARDROBE_CAM: Mutex<Option<([f64; 3], f32, f32, Instant)>> = Mutex::new(None);
+
+/// The wardrobe open (third person): the camera turns to face the Pokémon and sets it right of
+/// centre, clear of the panel on the left. Hats frame the head with the hat on it, auras the whole
+/// body with room around it, trails from behind and above, over the ground the trail falls on.
+/// Everything framed comes from the body as drawn this frame (`cosmetics::draw::note_local`: the
+/// posed head bone, the hat's own corners, the posed body's box), so a flying idle, a long neck or
+/// a big model are framed where they really are. The camera's line to the head stays off the body
+/// (a wing, a crest): it swings round to the nearest clear angle, or comes in short of what's in
+/// the way. The mouse orbits it, the wheel zooms. It eases over from wherever it was. False when the
+/// wardrobe is shut or the body hasn't been drawn yet.
+fn wardrobe_cam(host: &dyn Host, event: &mut CameraPoseEvent<'_>) -> bool {
+    use glam::{Mat3, Vec3};
+    let Some(slot) = cosmetics::draw::framing() else { return false };
+    let Some(body) = cosmetics::draw::local_body() else { return false };
+    let Some(feet) = local_feet() else { return false };
+    let (half_w, half_h) = host.camera().map_or((1.24, 0.7), |c| {
+        let (x, y) = (c.projection[0], c.projection[5]);
+        (if x.abs() > 1e-3 { 1.0 / f64::from(x.abs()) } else { 1.24 }, if y.abs() > 1e-3 { 1.0 / f64::from(y.abs()) } else { 0.7 })
+    });
+    // How far the mouse has turned the view since the wardrobe camera took over.
+    let (dyaw, dpitch) = {
+        let mut o = WARD_ORBIT.lock().unwrap();
+        let (y0, p0) = *o.get_or_insert((event.yaw, event.pitch));
+        (((event.yaw - y0 + 540.0).rem_euclid(360.0)) - 180.0, event.pitch - p0)
+    };
+    let face = body.yaw;
+    // The body's frame to the world's turn, and back.
+    let turn = Mat3::from_rotation_y((-face).to_radians());
+    let (lo, hi) = body.body;
+    let mid = (lo + hi) * 0.5;
+    let size = hi - lo;
+    // (yaw and pitch from the body's facing, the point framed in the body's frame, the radius to fit)
+    let (base_yaw, base_pitch, focus_b, r) = match slot {
+        cosmetics::Slot::Hat => (180.0 + 25.0, 12.0, body.head, body.head_r * 1.5),
+        cosmetics::Slot::Aura => (180.0 + 30.0, 10.0, mid, size.length() * 0.5 * 0.85 + 0.35),
+        cosmetics::Slot::Trail => {
+            let back = (body.radius + 1.2).min(4.0);
+            (25.0, 32.0, Vec3::new(mid.x, lo.y + size.y * 0.3, lo.z - back + 0.6), ((size.y * 1.2).max(2.6) + 0.6) * 0.5)
+        }
+    };
+    let want_dist = ((f64::from(r) / half_h).max(f64::from(r) * 1.2 + 0.3) * f64::from(cosmetics::draw::zoom())).max(0.5) as f32;
+    // From the focus toward the camera, in the body's frame: try the asked-for angle first, then
+    // ever wider swings round the head, and take the first whose line is clear of the body.
+    let (yaw0, pitch0) = (face + base_yaw + dyaw, (base_pitch + dpitch).clamp(-35.0, 75.0));
+    // The camera also sits out to its left (below), so the line it really sees the focus along
+    // leans that way, and is longer by `lean` for the same distance.
+    let k = (0.4 * half_w) as f32;
+    let lean = (1.0 + k * k).sqrt();
+    let back_of = |y: f32, p: f32| {
+        let ly = y.to_radians();
+        turn.transpose() * ((-look_vec(y, p) + Vec3::new(ly.cos(), 0.0, ly.sin()) * k).normalize())
+    };
+    let near = match slot {
+        cosmetics::Slot::Hat => body.head_r * 1.05,
+        _ => r * 0.9,
+    };
+    const TRIES: [(f32, f32); 13] = [(0.0, 0.0), (15.0, 0.0), (-15.0, 0.0), (0.0, 15.0), (30.0, 5.0), (-30.0, 5.0), (0.0, 30.0), (45.0, 10.0), (-45.0, 10.0), (60.0, 20.0), (-60.0, 20.0), (90.0, 25.0), (-90.0, 25.0)];
+    let mut best: Option<(f32, f32, f32)> = None;
+    for (dy, dp) in TRIES {
+        let (y, p) = (yaw0 + dy, (pitch0 + dp).clamp(-35.0, 80.0));
+        match first_hit(&body.quads, focus_b, back_of(y, p), near, want_dist * lean) {
+            None => {
+                best = Some((y, p, want_dist));
+                break;
+            }
+            Some(t) if best.is_none_or(|b| t / lean > b.2) => best = Some((y, p, t / lean)),
+            Some(_) => {}
+        }
+    }
+    // Every angle stopped close in: the head sits inside a shell of the body's own (fuzz, a
+    // shell), so look through it from the asked-for angle rather than from inside it.
+    let best = best.filter(|b| b.2 >= want_dist * 0.5);
+    let (yaw, pitch, dist) = best.map_or((yaw0, pitch0, want_dist), |(y, p, t)| (y, p, if t < want_dist { (t - 0.12 / lean).max(near / lean + 0.05) } else { t }));
+    let dist = f64::from(dist);
+    let f = turn * focus_b;
+    let focus = [feet[0] + f64::from(f.x), feet[1] + f64::from(f.y), feet[2] + f64::from(f.z)];
+    let look = dir(yaw, pitch);
+    // Out to the camera's left by 40% of the half-width, so the body sits right of centre.
+    let ly = f64::from(yaw).to_radians();
+    let left = [ly.cos(), 0.0, ly.sin()];
+    let shift = dist * 0.4 * half_w;
+    let want = [focus[0] - look[0] * dist + left[0] * shift, focus[1] - look[1] * dist, focus[2] - look[2] * dist + left[2] * shift];
+    let want = clear_to(host, focus, want);
+    let mut last = WARDROBE_CAM.lock().unwrap();
+    let now = Instant::now();
+    let (pos, y, p) = match *last {
+        Some((from, fy, fp, at)) => {
+            let k = 1.0 - (-(at.elapsed().as_secs_f64().min(0.25)) * 8.0).exp();
+            let turn = ((yaw - fy + 540.0).rem_euclid(360.0)) - 180.0;
+            ([0, 1, 2].map(|i| from[i] + (want[i] - from[i]) * k), fy + turn * k as f32, fp + (pitch - fp) * k as f32)
+        }
+        None => (*event.position, event.yaw, event.pitch),
+    };
+    *last = Some((pos, y, p, now));
+    *event.position = pos;
+    event.yaw = y;
+    event.pitch = p;
+    true
 }
 
 /// While fainted, the camera orbits the trainer, looking along the player's own (mouse-driven) view.
@@ -1271,10 +1632,14 @@ fn clear_to(host: &dyn Host, a: [f64; 3], b: [f64; 3]) -> [f64; 3] {
     }
     let u = [d[0] / len, d[1] / len, d[2] / len];
     let at = |t: f64| [a[0] + u[0] * t, a[1] + u[1] * t, a[2] + u[2] * t];
+    // A start nearer the ground (or a ceiling) than the pad, as a Joltik's head is: that side's
+    // probe is solid from the first step, so it says nothing about the line; leave it out.
+    let below = !solid(host, [a[0], a[1] - PAD, a[2]]);
+    let above = !solid(host, [a[0], a[1] + PAD, a[2]]);
     let mut t = 0.0;
     while t <= len + PAD {
         let p = at(t);
-        if solid(host, p) || solid(host, [p[0], p[1] + PAD, p[2]]) || solid(host, [p[0], p[1] - PAD, p[2]]) {
+        if solid(host, p) || (above && solid(host, [p[0], p[1] + PAD, p[2]])) || (below && solid(host, [p[0], p[1] - PAD, p[2]])) {
             return at((t - PAD - STEP).clamp(0.0, len));
         }
         t += STEP;
@@ -1285,6 +1650,10 @@ fn clear_to(host: &dyn Host, a: [f64; 3], b: [f64; 3]) -> [f64; 3] {
 pub fn hud(host: &mut dyn Host, event: &mut HudEvent<'_>) {
     // Photo mode: nothing on screen but its own frame.
     if onboard::photo::hud(host, event.batch) {
+        return;
+    }
+    // The Tab menu, over everything else.
+    if onboard::hub::hud(host, event.batch) {
         return;
     }
     if onboard::guide::overlay(host, event.batch) {
@@ -1319,20 +1688,25 @@ pub fn hud(host: &mut dyn Host, event: &mut HudEvent<'_>) {
     }
     onboard::hud(host, event.batch);
     // The PC screen shows the same details: no status panel or move cards over it.
-    if onboard::pc::is_open() || onboard::tutor::is_open() || cosmetics::draw::is_open() || onboard::dex::is_open() {
+    if onboard::pc::is_open() || onboard::tutor::is_open() || cosmetics::draw::is_open() || onboard::dex::is_open() || onboard::riftmenu::is_open() || onboard::riftmenu::revealing() {
         return;
     }
-    onboard::guide::hud_prompt(host, event.batch);
-    let Some((me, moves)) = ({
+    onboard::hub::reminder(host, event);
+    let Some((me, moves, my_name)) = ({
         let c = CLIENT.lock().unwrap();
         c.me.clone().map(|me| {
-            let moves: Vec<(usize, &'static Move)> = (0..6).filter(|i| *i >= 4 || !sig::plain_ditto(&me.species)).filter_map(|i| c.slot_move(&me.species, i).map(|m| (i, m))).collect();
-            (me, moves)
+            // Moves 1 to 4 (plain Ditto: Transform alone), then the Z-Move (slot 5).
+            let moves: Vec<(usize, &'static Move)> = (0..6).filter(|i| (*i == 4) == sig::plain_ditto(&me.species) || *i == 5).filter_map(|i| c.slot_move(&me.species, i).map(|m| (i, m))).collect();
+            (me, moves, c.my_name.clone())
         })
     }) else {
+        onboard::guide::hud_prompt(host, event.batch, None);
         return;
     };
-    let Some(k) = kit(&me.species) else { return };
+    let Some(k) = kit(&me.species) else {
+        onboard::guide::hud_prompt(host, event.batch, None);
+        return;
+    };
     // Vanilla draws no crosshair in third person; over the shoulder it marks where moves aim
     // (the centre of the screen is the camera ray `aim_point` follows).
     if CAM.lock().unwrap().posed.is_some_and(|(_, at)| at.elapsed().as_secs_f32() < 0.5) {
@@ -1352,9 +1726,11 @@ pub fn hud(host: &mut dyn Host, event: &mut HudEvent<'_>) {
             }
         }
     }
-    hud_card(host, event, &me, k);
-    onboard::guide::hud_panel(host, event);
-    hud_moves(host, event.batch, &me, &moves);
+    let chips = my_name.as_deref().map_or_else(Vec::new, |n| status_chips(|kind| sig::status(n, kind).is_some()));
+    hud_card(host, event, &me, k, &chips);
+    let bar_end = hud_moves(host, event.batch, &me, &moves);
+    // What F does goes bottom right, beside the move bar (Onii's mockup).
+    onboard::guide::hud_prompt(host, event.batch, Some(bar_end.unwrap_or(0.0)));
 }
 
 /// The usual colour of each Pokémon type (RGB).
@@ -1383,7 +1759,6 @@ fn type_color(kind: &str) -> u32 {
 }
 
 const HUD_PANEL: u32 = 0xD818_1A26;
-const HUD_SLOT: u32 = 0xFF2E_3446;
 
 fn rect(host: &mut dyn Host, b: &mut HudBatch, x: f32, y: f32, w: f32, h: f32, argb: u32) {
     if w > 0.0 && h > 0.0 {
@@ -1398,20 +1773,42 @@ fn pill(host: &mut dyn Host, b: &mut HudBatch, x: f32, y: f32, w: f32, h: f32, a
     rect(host, b, x + w - 1.0, y + 1.0, 1.0, h - 2.0, argb);
 }
 
-/// A Poké Ball `r` GUI pixels in radius.
-fn ball(host: &mut dyn Host, b: &mut HudBatch, cx: f32, cy: f32, r: f32) {
-    const N: usize = 16;
-    for i in 0..N {
-        let tau = std::f32::consts::TAU;
-        let (a0, a1) = (i as f32 / N as f32 * tau, (i + 1) as f32 / N as f32 * tau);
-        let p0 = [cx + r * a0.cos(), cy + r * a0.sin()];
-        let p1 = [cx + r * a1.cos(), cy + r * a1.sin()];
-        let top = ((a0 + a1) * 0.5).sin() < 0.0;
-        host.quad(b, [[cx, cy], p0, p1, p1], if top { 0xFFE3_350D } else { 0xFFF5_F5F5 });
+/// Capipimon's emblem: the capipi, a pink plush bunny (9x9 pixel art), centred on `cx, cy` and
+/// `2 * r` GUI pixels wide. Drawn from `_work/branding/make_brand.py`'s MENU9 grid.
+fn emblem(host: &mut dyn Host, b: &mut HudBatch, cx: f32, cy: f32, r: f32) {
+    const ART: [&str; 9] = [
+        ".ooo.ooo.",
+        ".oio.oio.",
+        "oopooopoo",
+        "opxpppxpo",
+        "ocpmpmpco",
+        "obbbkbbbo",
+        "oapwhwpdo",
+        ".opwwwpo.",
+        "..ooooo..",
+    ];
+    let px = r * 2.0 / 9.0;
+    let (x0, y0) = (cx - r, cy - r);
+    for (y, row) in ART.iter().enumerate() {
+        for (x, c) in row.bytes().enumerate() {
+            let argb = match c {
+                b'a' => 0xFF72_AEE3,
+                b'b' => 0xFFEC_4F8C,
+                b'c' => 0xFFFF_95B5,
+                b'd' => 0xFFD8_7CA0,
+                b'h' => 0xFFE8_3C78,
+                b'i' => 0xFFFF_7EA9,
+                b'k' => 0xFFB2_2F67,
+                b'm' => 0xFF16_0E12,
+                b'o' => 0xFF3A_1A2C,
+                b'p' => 0xFFF6_A9C4,
+                b'w' => 0xFFD4_ECF8,
+                b'x' => 0xFF7B_3FB8,
+                _ => continue,
+            };
+            rect(host, b, x0 + x as f32 * px, y0 + y as f32 * px, px, px, argb);
+        }
     }
-    rect(host, b, cx - r, cy - 0.5, r * 2.0, 1.0, 0xFF1A_1A1A);
-    rect(host, b, cx - 1.5, cy - 1.5, 3.0, 3.0, 0xFF1A_1A1A);
-    rect(host, b, cx - 0.75, cy - 0.75, 1.5, 1.5, 0xFFF5_F5F5);
 }
 
 /// `text`, cut to fit `width` GUI pixels.
@@ -1426,19 +1823,46 @@ fn fit(host: &dyn Host, text: &str, width: f32) -> String {
     format!("{}.", t.trim_end())
 }
 
-/// Top left: the Pokémon's card. Name and level on a Poké Ball band, type badges, HP (green,
-/// yellow, red), energy, and the guard / dodge pills.
-fn hud_card(host: &mut dyn Host, event: &mut HudEvent<'_>, me: &Me, k: &Kit) {
-    let (w, h) = (160.0f32, 66.0f32);
+/// The status chips beside the type badges, games-style: (label, chip colour, text colour). Bound,
+/// Wet, stat stages and signature effects stay on the nameplate only.
+const STATUS_CHIPS: [(&str, &str, u32, u32); 7] = [
+    ("slp", "SLP", 0xFF8C_8C9C, 0xFFFFFF),
+    ("par", "PAR", 0xFFF8_D030, 0x282828),
+    ("brn", "BRN", 0xFFF0_8030, 0xFFFFFF),
+    ("frz", "FRZ", 0xFF98_D8D8, 0x282828),
+    ("psn", "PSN", 0xFFA0_40A0, 0xFFFFFF),
+    // Badly poisoned shows as PSN too, as in the games.
+    ("tox", "PSN", 0xFFA0_40A0, 0xFFFFFF),
+    ("cnf", "CNF", 0xFFE0_70B0, 0xFFFFFF),
+];
+
+/// The chips for the statuses `on` says are on now, each label once.
+fn status_chips(on: impl Fn(&str) -> bool) -> Vec<(&'static str, u32, u32)> {
+    let mut out: Vec<(&'static str, u32, u32)> = Vec::new();
+    for (kind, label, bg, ink) in STATUS_CHIPS {
+        if on(kind) && !out.iter().any(|c| c.0 == label) {
+            out.push((label, bg, ink));
+        }
+    }
+    out
+}
+
+/// Top left: the Pokémon's card. Name and level on a coloured band, type badges and any status
+/// chips, HP (green, yellow, red) and energy.
+fn hud_card(host: &mut dyn Host, event: &mut HudEvent<'_>, me: &Me, k: &Kit, chips: &[(&str, u32, u32)]) {
+    // The EXP bar shows when the server's XP line is about this Pokémon's level (it always is,
+    // except for a borrowed form such as a legend or a ranked loaner).
+    let exp = onboard::progress::exp().filter(|(lvl, _, _)| *lvl == me.level);
+    let (w, h) = (160.0f32, if exp.is_some() { 61.0f32 } else { 50.0f32 });
     let (x, y) = event.corners.place(Corner::TopLeft, w, h);
     let b = &mut *event.batch;
     pill(host, b, x, y, w, h, HUD_PANEL);
     pill(host, b, x, y, w, 13.0, 0xFFB8_2A1A);
     rect(host, b, x, y + 12.0, w, 1.0, 0x6000_0000);
-    ball(host, b, x + 7.5, y + 6.5, 5.0);
-    host.text(b, &k.name, [x + 15.0, y + 3.0], 0xFFFFFF, true);
+    emblem(host, b, x + 7.5, y + 6.5, 5.0);
     let lv = format!("Lv {}", me.level);
     let lw = host.text_width(&lv);
+    host.text(b, &fit(host, &k.name, w - 26.0 - lw), [x + 15.0, y + 3.0], 0xFFFFFF, true);
     host.text(b, &lv, [x + w - 4.0 - lw, y + 3.0], 0xFFE9A0, true);
 
     let mut tx = x + 4.0;
@@ -1449,12 +1873,15 @@ fn hud_card(host: &mut dyn Host, event: &mut HudEvent<'_>, me: &Me, k: &Kit) {
         host.text(b, &label, [tx + 3.0, y + 17.0], 0xFFFFFF, true);
         tx += tw + 9.0;
     }
-    // Support specialists wear their role.
-    if let Some(role) = &k.role {
-        let label = support::role_label(role);
+    // The Pokémon's own statuses, right after its types (as many as fit on the card).
+    for (label, bg, ink) in chips {
         let tw = host.text_width(label);
-        pill(host, b, tx, y + 16.0, tw + 6.0, 10.0, 0xFF2F_9E7A);
-        host.text(b, label, [tx + 3.0, y + 17.0], 0xFFFFFF, true);
+        if tx + tw + 6.0 > x + w - 3.0 {
+            break;
+        }
+        pill(host, b, tx, y + 16.0, tw + 6.0, 10.0, *bg);
+        host.text(b, label, [tx + 3.0, y + 17.0], *ink, *ink == 0xFFFFFF);
+        tx += tw + 9.0;
     }
 
     let frac = if me.max_hp > 0.0 { (me.hp / me.max_hp).clamp(0.0, 1.0) } else { 0.0 };
@@ -1475,80 +1902,53 @@ fn hud_card(host: &mut dyn Host, event: &mut HudEvent<'_>, me: &Me, k: &Kit) {
     host.text(b, "PP", [x + 4.0, y + 41.0], 0x8FD3FF, true);
     let (bx, bw) = (x + 18.0, w - 26.0 - hw.max(ew));
     pill(host, b, bx, y + 43.0, bw, 5.0, 0xFF26_2626);
-    rect(host, b, bx + 1.0, y + 44.0, (bw - 2.0) * ef, 3.0, 0xFF3F_A9F5);
+    // Guarding drains PP: the bar brightens while Shift is held.
+    rect(host, b, bx + 1.0, y + 44.0, (bw - 2.0) * ef, 3.0, if me.guard { 0xFFBF_E6FF } else { 0xFF3F_A9F5 });
     host.text(b, &et, [x + w - 4.0 - ew, y + 41.0], 0xFFFFFF, true);
 
-    let pw = (w - 12.0) / 2.0;
-    let (gx, py) = (x + 4.0, y + 53.0);
-    if me.guard {
-        pill(host, b, gx, py, pw, 10.0, 0xFF3F_A9F5);
-        host.text(b, "GUARDING", [gx + 4.0, py + 1.0], 0xFFFFFF, true);
-    } else {
-        pill(host, b, gx, py, pw, 10.0, HUD_SLOT);
-        host.text(b, "Shift Guard", [gx + 4.0, py + 1.0], 0xC0C8D8, true);
-    }
-    let dx = gx + pw + 4.0;
-    let cd = (me.dodge_cd - me.at.elapsed().as_secs_f32()).max(0.0);
-    pill(host, b, dx, py, pw, 10.0, HUD_SLOT);
-    if cd > 0.0 {
-        rect(host, b, dx + 1.0, py + 1.0, (pw - 2.0) * (1.0 - cd / DODGE_COOLDOWN).clamp(0.0, 1.0), 8.0, 0xFF2F_6E4A);
-        host.text(b, &format!("Dodge {cd:.1}s"), [dx + 4.0, py + 1.0], 0xC0C8D8, true);
-    } else {
-        rect(host, b, dx + 1.0, py + 1.0, pw - 2.0, 8.0, 0xFF2F_9E5A);
-        host.text(b, "2x Dodge", [dx + 4.0, py + 1.0], 0xFFFFFF, true);
+    // Pokémon-style EXP bar along the bottom edge (Onii's mockup): no second level number.
+    if let Some((_, xp, need)) = exp {
+        let f = (xp as f32 / need.max(1) as f32).clamp(0.0, 1.0);
+        host.text(b, "EXP", [x + 4.0, y + 51.0], 0x6FD0FF, true);
+        let (bx, bw) = (x + 22.0, w - 26.0);
+        rect(host, b, bx, y + 54.0, bw, 3.0, 0xFF26_2626);
+        rect(host, b, bx, y + 54.0, bw * f, 3.0, 0xFF40_C8F8);
     }
 }
 
-/// Bottom centre, where the hotbar was: one card per move with its key, name, type colour, cost,
-/// and a dark veil that shrinks as the cooldown runs out.
-fn hud_moves(host: &mut dyn Host, b: &mut HudBatch, me: &Me, moves: &[(usize, &Move)]) {
-    let n = moves.len().min(6);
-    if n == 0 {
-        return;
+/// Bottom centre, where the hotbar was: one card per move with its key, name, cost, and a dark
+/// veil that shrinks as the cooldown runs out; then the Z-crystal for the Z-Move.
+/// Returns where the bar ends on the right, when it drew.
+fn hud_moves(host: &mut dyn Host, b: &mut HudBatch, me: &Me, moves: &[(usize, &Move)]) -> Option<f32> {
+    let z = moves.iter().find(|(i, _)| *i == 5).map(|(_, m)| *m);
+    // Not fully evolved yet: a locked socket says the Z-Move comes at the final stage (Onii 2026-11-20).
+    let z_locked = z.is_none() && z_locked_for(&me.species);
+    let cards: Vec<(usize, &Move)> = moves.iter().filter(|(i, _)| *i < 5).take(4).copied().collect();
+    let n = cards.len();
+    if n == 0 && z.is_none() && !z_locked {
+        return None;
     }
     let (ch, gap) = (26.0f32, 3.0f32);
-    // Six cards don't fit at 80 wide on a small window or a big GUI scale.
-    let cw = ((b.width - 6.0 - (n - 1) as f32 * gap) / n as f32).floor().clamp(50.0, 80.0);
-    let total = n as f32 * cw + (n - 1) as f32 * gap;
+    let zw = if z.is_some() || z_locked { ch + 4.0 + gap } else { 0.0 };
+    let cw = if n == 0 { 0.0 } else { ((b.width - 6.0 - zw - (n.max(1) - 1) as f32 * gap) / n as f32).floor().clamp(50.0, 80.0) };
+    let total = n as f32 * cw + n.saturating_sub(1) as f32 * gap + zw;
     let x0 = ((b.width - total) / 2.0).floor();
     let y0 = b.height - ch - 3.0;
     let energy = me.energy_now();
-    // Statuses on this player (signature moves), in a row over the cards.
-    if let Some(name) = CLIENT.lock().ok().and_then(|c| c.my_name.clone()) {
-        let mut x = x0;
-        if sig::is_ditto(&name) {
-            let w = host.text_width("DITTO") + 6.0;
-            pill(host, b, x, y0 - 13.0, w, 10.0, 0xFFA0_60E0);
-            host.text(b, "DITTO", [x + 3.0, y0 - 12.0], 0xFFFFFF, true);
-            x += w + 3.0;
-        }
-        for (label, left, col) in sig::statuses_of(&name) {
-            let t = format!("{label} {left:.1}");
-            let w = host.text_width(&t) + 6.0;
-            pill(host, b, x, y0 - 13.0, w, 10.0, col);
-            host.text(b, &t, [x + 3.0, y0 - 12.0], 0x101010, false);
-            x += w + 3.0;
-        }
-    }
-    for (col, &(i, m)) in moves.iter().take(6).enumerate() {
+    for (col, &(i, m)) in cards.iter().enumerate() {
         let x = x0 + col as f32 * (cw + gap);
         let cd = me.cooldown_now(i);
         let afford = energy >= m.energy;
         let ready = cd <= 0.0 && afford;
         let tc = 0xFF00_0000 | type_color(&m.kind);
         pill(host, b, x, y0, cw, ch, HUD_PANEL);
-        // The signature card (C) has a gold rim so it reads as the special one.
-        if i >= 4 {
-            rect(host, b, x, y0 + ch - 1.0, cw, 1.0, 0xFFF0_C040);
-            rect(host, b, x, y0, 1.0, ch, 0xFFF0_C040);
-            rect(host, b, x + cw - 1.0, y0, 1.0, ch, 0xFFF0_C040);
-        }
         rect(host, b, x + 1.0, y0, cw - 2.0, 2.0, tc);
         if cd > 0.0 && m.cooldown > 0.0 {
             let f = (cd / m.cooldown).clamp(0.0, 1.0);
             rect(host, b, x + cw * (1.0 - f), y0 + 2.0, cw * f, ch - 2.0, 0x9000_0000);
         }
-        let key = SLOT_KEYS[i];
+        // Plain Ditto's Transform sits in slot 4 but goes out on the first key.
+        let key = SLOT_KEYS[if i == 4 { 0 } else { i }];
         let kw = host.text_width(key) + 4.0;
         pill(host, b, x + 3.0, y0 + 4.0, kw, 10.0, if ready { tc } else { 0xFF3A_3D4D });
         host.text(b, key, [x + 5.0, y0 + 5.0], 0xFFFFFF, true);
@@ -1562,16 +1962,114 @@ fn hud_moves(host: &mut dyn Host, b: &mut HudBatch, me: &Me, moves: &[(usize, &M
             (format!("{:.0} PP", m.energy), if afford { 0x8FD3FF } else { 0xFF6B6B })
         };
         host.text(b, &line, [x + 5.0, y0 + 15.0], col, true);
-        // The type's name, or its first three letters when the cost line leaves no room.
-        let room = cw - 13.0 - host.text_width(&line);
-        let mut kind = m.kind.to_uppercase();
-        if host.text_width(&kind) > room {
-            kind = kind.chars().take(3).collect();
-        }
-        if host.text_width(&kind) <= room {
-            let kw2 = host.text_width(&kind);
+        // The type, shortened to three letters as in Onii's mockup.
+        let kind: String = m.kind.to_uppercase().chars().take(3).collect();
+        let kw2 = host.text_width(&kind);
+        if cw - 13.0 - host.text_width(&line) >= kw2 {
             host.text(b, &kind, [x + cw - 4.0 - kw2, y0 + 15.0], type_color(&m.kind), true);
         }
+    }
+    if let Some(m) = z {
+        let cd = me.cooldown_now(5);
+        let fill = if m.cooldown > 0.0 { 1.0 - (cd / m.cooldown).clamp(0.0, 1.0) } else { 1.0 };
+        // Without a Z-Crystal the socket is empty: no fill, no rim.
+        let fill = if me.zcrystal { fill } else { 0.0 };
+        let ready = cd <= 0.0 && energy >= m.energy && me.zcrystal;
+        let cx = x0 + total - (ch + 4.0) / 2.0;
+        z_crystal(host, b, [cx, y0 + ch / 2.0], (ch + 4.0) / 2.0, ch / 2.0 + 1.0, fill, type_color(&m.kind), ready, false);
+    } else if z_locked {
+        let cx = x0 + total - (ch + 4.0) / 2.0;
+        z_crystal(host, b, [cx, y0 + ch / 2.0], (ch + 4.0) / 2.0, ch / 2.0 + 1.0, 0.0, 0, false, true);
+    }
+    Some(x0 + total)
+}
+
+/// Our own Z-crystal (a faceted diamond with a Z): its type colour fills it from the bottom as the
+/// cooldown runs down, and a bright rim lights when the Z-Move is ready. With no Z-Crystal held it
+/// stays an empty socket.
+/// Whether this species shows a locked Z socket: it has no Z-Move only because it can still evolve.
+fn z_locked_for(species: &str) -> bool {
+    !species.is_empty() && !onboard::progress::is_final(species) && !sig::plain_ditto(species)
+}
+
+/// `locked`: an empty socket with a padlock instead of the Z (not fully evolved yet).
+#[allow(clippy::too_many_arguments)]
+fn z_crystal(host: &mut dyn Host, b: &mut HudBatch, c: [f32; 2], rx: f32, ry: f32, fill: f32, rgb: u32, ready: bool, locked: bool) {
+    let diamond = |host: &mut dyn Host, b: &mut HudBatch, rx: f32, ry: f32, argb: u32| {
+        host.quad(b, [[c[0], c[1] - ry], [c[0] + rx, c[1]], [c[0], c[1] + ry], [c[0] - rx, c[1]]], argb);
+    };
+    let rim = if ready { 0xFFFF_F4C0 } else { 0xFF5A_5E70 };
+    diamond(host, b, rx, ry, rim);
+    let (ix, iy) = (rx - 1.5, ry - 1.5);
+    diamond(host, b, ix, iy, 0xF018_1A26);
+    let w = |y: f32| ix * (1.0 - (y - c[1]).abs() / iy).max(0.0);
+    let level = c[1] + iy - 2.0 * iy * fill.clamp(0.0, 1.0);
+    let tint = 0xFF00_0000 | rgb;
+    if fill > 0.0 {
+        // Bottom half first, then the top half once the fill passes the middle.
+        let mut bands = vec![(c[1] + iy, level.max(c[1]))];
+        if level < c[1] {
+            bands.push((c[1], level));
+        }
+        for (bot, top) in bands {
+            host.quad(b, [[c[0] - w(top), top], [c[0] + w(top), top], [c[0] + w(bot), bot], [c[0] - w(bot), bot]], tint);
+        }
+    }
+    // A lighter facet across the upper half reads as a cut gem.
+    if level < c[1] {
+        host.quad(b, [[c[0] - w(level), level], [c[0] + w(level), level], [c[0] + ix * 0.4, c[1]], [c[0] - ix * 0.4, c[1]]], 0x38FF_FFFF);
+    }
+    if locked {
+        // A padlock: a shackle (an arch of three bars) over a solid body with a keyhole.
+        let grey = 0xFFB0_B4C0;
+        rect(host, b, c[0] - 3.0, c[1] - 5.0, 1.0, 4.0, grey);
+        rect(host, b, c[0] + 2.0, c[1] - 5.0, 1.0, 4.0, grey);
+        rect(host, b, c[0] - 2.0, c[1] - 6.0, 4.0, 1.0, grey);
+        rect(host, b, c[0] - 4.0, c[1] - 1.0, 8.0, 6.0, grey);
+        rect(host, b, c[0] - 0.5, c[1] + 1.0, 1.0, 2.0, 0xFF18_1A26);
+        return;
+    }
+    let t = "Z";
+    let tw = host.text_width(t);
+    host.text(b, t, [c[0] - tw / 2.0 + 0.5, c[1] - 3.5], if ready { 0xFFFFFF } else { 0xB0B4C0 }, true);
+}
+#[cfg(test)]
+mod looks_tests {
+    use super::*;
+
+    #[test]
+    fn only_an_unevolved_pokemon_shows_a_locked_z() {
+        assert!(z_locked_for("turtwig"), "Turtwig gets its Z-Move at Torterra");
+        assert!(!z_locked_for("torterra"));
+        assert!(!z_locked_for("ditto") && !z_locked_for(""));
+    }
+
+    #[test]
+    fn status_chips_use_the_games_short_labels() {
+        let on = |list: &'static [&'static str]| move |k: &str| list.iter().any(|x| *x == k);
+        assert!(status_chips(on(&[])).is_empty());
+        let labels = |c: Vec<(&'static str, u32, u32)>| c.into_iter().map(|x| x.0).collect::<Vec<_>>();
+        assert_eq!(labels(status_chips(on(&["brn"]))), ["BRN"]);
+        assert_eq!(labels(status_chips(on(&["psn", "tox", "par"]))), ["PAR", "PSN"], "badly poisoned is PSN, once");
+        assert_eq!(labels(status_chips(on(&["tox"]))), ["PSN"]);
+        assert_eq!(labels(status_chips(on(&["slp", "frz", "cnf"]))), ["SLP", "FRZ", "CNF"]);
+        // Nameplate-only effects don't make chips.
+        assert!(status_chips(on(&["bnd", "wet", "stun", "slow", "atk"])).is_empty());
+        // Opaque chips with three-letter labels.
+        for (kind, label, bg, _) in STATUS_CHIPS {
+            assert_eq!(bg >> 24, 0xFF, "{kind}");
+            assert_eq!(label.len(), 3, "{kind}");
+        }
+    }
+
+    #[test]
+    fn looks_carry_an_optional_mega_form() {
+        let (looks, megas) = parse_looks("Ann:2:0:charizard_megax,Bob:1:0,Cy:3:3:,Dee:2:0:../x,broken");
+        assert_eq!(looks.len(), 4);
+        assert_eq!(looks["Cy"], (3, 3));
+        assert_eq!(megas.len(), 1);
+        assert_eq!(megas["Ann"], "charizard_megax");
+        assert!(parse_looks("").0.is_empty());
     }
 }
 
@@ -1588,4 +2086,3 @@ mod review_fixes {
         assert_eq!(super::finite_secs("2.5", 5.0), 2.5);
     }
 }
-

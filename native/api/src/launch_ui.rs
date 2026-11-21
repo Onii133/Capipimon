@@ -1,5 +1,6 @@
-//! Launch extras, the client half: titles over nameplates, the welcome-back card, the community
-//! goal bar and the mute list. The server decides everything; this draws what it is told.
+//! Launch extras, the client half: titles over nameplates, the welcome-back news, the community
+//! goal and the mute list. The server decides everything; this keeps what it is told. The news and
+//! the goal are a page of the Tab menu (`hub.rs`), never on the game screen (Onii, 2026-11-12).
 //!
 //! Wire (channel `capipimon:play`), server -> client:
 //! - `titles\t<name>\t<title>[\t<name>\t<title>...]`: who wears what, `-` for nothing.
@@ -14,19 +15,6 @@
 use super::*;
 
 const FEATS: &str = "feat\ttitles,welcome,goal,mute,dex";
-/// The card closes by itself after this long.
-const CARD_SECS: f32 = 40.0;
-const CARD_W: f32 = 236.0;
-const BAR_W: f32 = 150.0;
-/// The status panel and the first-steps tracker fill the top left this far across.
-const LEFT_PANELS: f32 = 166.0;
-
-/// Where something `w` wide goes on a `screen` wide screen: centred, moved right of the top-left
-/// panels on a small screen, and never off the right edge.
-fn place(screen: f32, w: f32) -> f32 {
-    (screen / 2.0 - w / 2.0).max(LEFT_PANELS).min((screen - w - 4.0).max(0.0))
-}
-
 struct Goal {
     count: u64,
     target: u64,
@@ -39,7 +27,7 @@ struct Goal {
 #[derive(Default)]
 struct View {
     titles: HashMap<String, String>,
-    card: Option<(String, Vec<String>, Instant)>,
+    card: Option<(String, Vec<String>)>,
     goal: Option<Goal>,
     muted: HashSet<u128>,
 }
@@ -68,7 +56,7 @@ pub fn heard(f: &[&str]) -> bool {
         }
         ["welcome", head, rows @ ..] => {
             let rows = rows.iter().filter(|r| r.len() > 2 && r.as_bytes()[1] == b':').take(24).map(|r| r.to_string()).collect();
-            v.card = Some((head.to_string(), rows, Instant::now()));
+            v.card = Some((head.to_string(), rows));
         }
         ["community", "-", ..] => v.goal = None,
         ["community", count, target, left, rest @ ..] => {
@@ -100,25 +88,6 @@ pub fn title_of(name: &str) -> Option<String> {
 /// Whether this client hides chat from `sender` (0: not a player).
 pub fn is_muted(sender: u128) -> bool {
     sender != 0 && VIEW.lock().unwrap().muted.contains(&sender)
-}
-
-/// [X] closes the card; a move key closes it too, and still casts.
-pub fn key(key: &str) -> bool {
-    let mut v = VIEW.lock().unwrap();
-    if v.card.is_none() {
-        return false;
-    }
-    match key {
-        "key.keyboard.x" => {
-            v.card = None;
-            true
-        }
-        "key.keyboard.1" | "key.keyboard.2" | "key.keyboard.3" | "key.keyboard.4" | "key.keyboard.5" | "key.keyboard.q" | "key.keyboard.e" | "key.keyboard.r" | "key.keyboard.c" => {
-            v.card = None;
-            false
-        }
-        _ => false,
-    }
 }
 
 /// 41200 as "41,200".
@@ -188,57 +157,29 @@ fn layout(rows: &[String], width: f32, measure: impl Fn(&str) -> f32) -> Vec<(St
     out
 }
 
-fn goal_bar(host: &mut dyn Host, b: &mut HudBatch, g: &Goal) {
+/// The community goal as one line, for the Tab menu's News page.
+pub fn goal_text() -> Option<String> {
+    let v = VIEW.lock().unwrap();
+    let g = v.goal.as_ref()?;
     let left = g.left.saturating_sub(g.at.elapsed().as_secs());
-    let bonus = g.left > 0 && left > 0;
-    let text = if bonus {
-        format!("Double XP hour  {}:{:02}", left / 60, left % 60)
-    } else if !g.note.is_empty() && g.at.elapsed().as_secs() % 8 >= 5 {
-        // What reaching it gives, every few seconds in place of the count.
-        g.note.clone()
-    } else {
-        format!("Community KOs  {} / {}", grouped(g.count), grouped(g.target))
-    };
-    let tw = host.text_width(&text);
-    let w = BAR_W.max(tw + 12.0);
-    // Under the Event Night strip when that is up.
-    let y = if event::showing() { 21.0 } else { 4.0 };
-    let x = place(b.width, w);
-    pill(host, b, x, y, w, 17.0, HUD_PANEL);
-    host.text(b, &text, [x + w / 2.0 - tw / 2.0, y + 2.5], if bonus || g.count >= g.target { 0xFFD24A } else { 0xFFFFFF }, true);
-    let frac = (g.count as f32 / g.target as f32).clamp(0.0, 1.0);
-    rect(host, b, x + 4.0, y + 12.5, w - 8.0, 2.0, 0xFF26_2626);
-    rect(host, b, x + 4.0, y + 12.5, (w - 8.0) * frac, 2.0, if frac >= 1.0 { 0xFFFF_D24A } else { 0xFF4C_D964 });
+    let mut t = format!("Community KOs  {} / {}", grouped(g.count), grouped(g.target));
+    if g.left > 0 && left > 0 {
+        t = format!("Double XP hour  {}:{:02}  ({t})", left / 60, left % 60);
+    } else if !g.note.is_empty() {
+        t = format!("{t}: {}", g.note);
+    }
+    Some(t)
 }
 
-pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
-    let mut v = VIEW.lock().unwrap();
-    if v.card.as_ref().is_some_and(|(_, _, at)| at.elapsed().as_secs_f32() > CARD_SECS) {
-        v.card = None;
-    }
-    let card = v.card.as_ref().map(|(h, r, _)| (h.clone(), r.clone()));
-    if let Some(g) = &v.goal {
-        goal_bar(host, b, g);
-    }
-    drop(v);
-    let Some((head, rows)) = card else { return };
-    // A small screen gets a narrower card, beside the status panel instead of under it.
-    let card_w = CARD_W.min(b.width - LEFT_PANELS - 4.0).max(120.0);
-    let lines = layout(&rows, card_w - 12.0, |t| host.text_width(t));
-    let body: f32 = lines.iter().map(|(_, _, gap)| 10.0 + gap).sum();
-    let h = 16.0 + body + 18.0;
-    let (x, y) = (place(b.width, card_w), 42.0f32.max(b.height * 0.12).min((b.height - h - 4.0).max(0.0)));
-    pill(host, b, x, y, card_w, h, HUD_PANEL);
-    pill(host, b, x, y, card_w, 13.0, 0xFFB8_2A1A);
-    ball(host, b, x + 8.0, y + 6.5, 4.0);
-    host.text(b, &fit(host, &head, card_w - 22.0), [x + 16.0, y + 3.0], 0xFFFFFF, true);
-    let mut ly = y + 17.0;
-    for (text, rgb, gap) in &lines {
-        ly += gap;
-        host.text(b, text, [x + 6.0, ly], *rgb, true);
-        ly += 10.0;
-    }
-    guide::keyed_centred(host, b, "[X] Close", x + card_w / 2.0, y + h - 13.0, 0xC0C8D8);
+/// The welcome-back card as lines for the News page: (text, colour, extra space above).
+pub fn news(width: f32, measure: impl Fn(&str) -> f32) -> Vec<(String, u32, f32)> {
+    let v = VIEW.lock().unwrap();
+    let Some((head, rows)) = &v.card else { return Vec::new() };
+    // The live goal line already sits above the card, so the card's copy of it would say it twice.
+    let rows: Vec<String> = rows.iter().filter(|r| v.goal.is_none() || !r.starts_with("g:")).cloned().collect();
+    let mut out = vec![(head.clone(), 0xFFE9A0, 0.0)];
+    out.extend(layout(&rows, width, measure));
+    out
 }
 
 #[cfg(test)]
@@ -272,16 +213,15 @@ mod tests {
     }
 
     #[test]
-    fn the_card_closes_on_x_and_on_a_move_key() {
+    fn the_card_waits_in_the_news_page_and_takes_no_keys() {
         let _g = LOCK.lock().unwrap();
         forget();
-        assert!(!key("key.keyboard.x"), "no card: the key is somebody else's");
+        assert!(news(200.0, |t| t.len() as f32).is_empty());
         heard(&["welcome", "Welcome back, Ann!", "q:KO 5 wild Pok\u{e9}mon (0/5)", "junk"]);
-        assert_eq!(VIEW.lock().unwrap().card.as_ref().unwrap().1.len(), 1, "rows without a kind are dropped");
-        assert!(!key("key.keyboard.q"), "the move still casts");
-        assert!(VIEW.lock().unwrap().card.is_none());
-        heard(&["welcome", "Welcome back, Ann!"]);
-        assert!(key("key.keyboard.x"));
+        let lines = news(200.0, |t| t.len() as f32);
+        assert_eq!(lines[0].0, "Welcome back, Ann!");
+        assert!(lines.iter().any(|l| l.0 == "TODAY'S QUESTS"));
+        assert_eq!(lines.iter().filter(|l| l.0.starts_with('\u{2022}')).count(), 1, "rows without a kind are dropped");
     }
 
     #[test]
@@ -294,15 +234,14 @@ mod tests {
         assert!(heard(&["community", "-"]));
         assert!(VIEW.lock().unwrap().goal.is_none());
         assert_eq!(grouped(41_200), "41,200");
-    }
-
-    #[test]
-    fn the_card_and_the_bar_keep_clear_of_the_status_panel() {
-        // A 320-wide screen (GUI scale 4 at 720p): right of the panels, inside the screen.
-        assert_eq!(place(320.0, 150.0), LEFT_PANELS);
-        assert!(place(320.0, 190.0) + 190.0 <= 320.0);
-        // A wide screen: centred.
-        assert_eq!(place(960.0, 236.0), 480.0 - 118.0);
+        assert!(heard(&["community", "41200", "50000", "0", "Double XP for an hour"]));
+        assert_eq!(goal_text().as_deref(), Some("Community KOs  41,200 / 50,000: Double XP for an hour"));
+        // The welcome card's own goal row is dropped while the live line shows, and kept without it.
+        assert!(heard(&["welcome", "Welcome back!", "g:Community KOs this week: 41,200 / 50,000", "q:A"]));
+        let has_goal = |l: &[(String, u32, f32)]| l.iter().any(|x| x.0.contains("Community KOs") || x.0 == "COMMUNITY GOAL");
+        assert!(!has_goal(&news(400.0, |t| t.len() as f32)));
+        assert!(heard(&["community", "-"]));
+        assert!(has_goal(&news(400.0, |t| t.len() as f32)));
     }
 
     #[test]

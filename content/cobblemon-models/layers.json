@@ -1,0 +1,2742 @@
+{
+ "alcremie": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/alcremie_layer_0"
+    ]
+   }
+  ]
+ },
+ "ampharos": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/ampharos_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/ampharos_layer_1"
+    ]
+   }
+  ]
+ },
+ "annihilape": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/annihilape_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/annihilape_layer_0"
+    ]
+   }
+  ]
+ },
+ "araquanid": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/araquanid_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/araquanid_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/araquanid_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/araquanid_layer_1"
+    ]
+   }
+  ]
+ },
+ "arbok": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/arbok_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/arbok_layer_1"
+    ]
+   }
+  ]
+ },
+ "archaludon": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/archaludon_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/archaludon_layer_1"
+    ]
+   }
+  ]
+ },
+ "armarouge": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 8,
+    "frames": [
+     "capipimon:entity/armarouge_layer_0",
+     "capipimon:entity/armarouge_layer_1",
+     "capipimon:entity/armarouge_layer_2",
+     "capipimon:entity/armarouge_layer_3"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 8,
+    "frames": [
+     "capipimon:entity/armarouge_layer_4",
+     "capipimon:entity/armarouge_layer_5",
+     "capipimon:entity/armarouge_layer_6",
+     "capipimon:entity/armarouge_layer_7"
+    ]
+   }
+  ]
+ },
+ "beheeyem": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/beheeyem_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/beheeyem_layer_1"
+    ]
+   }
+  ]
+ },
+ "bellibolt": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/bellibolt_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/bellibolt_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/bellibolt_layer_2"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/bellibolt_layer_1"
+    ]
+   }
+  ]
+ },
+ "braixen": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/braixen_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/braixen_layer_0"
+    ]
+   }
+  ]
+ },
+ "bronzong": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/bronzong_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/bronzong_layer_1"
+    ]
+   }
+  ]
+ },
+ "cacturne": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cacturne_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cacturne_layer_1"
+    ]
+   }
+  ]
+ },
+ "carkol": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/carkol_layer_0"
+    ]
+   }
+  ]
+ },
+ "centiskorch": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/centiskorch_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/centiskorch_layer_1"
+    ]
+   }
+  ]
+ },
+ "ceruledge": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 8,
+    "frames": [
+     "capipimon:entity/ceruledge_layer_0",
+     "capipimon:entity/ceruledge_layer_1",
+     "capipimon:entity/ceruledge_layer_2",
+     "capipimon:entity/ceruledge_layer_3",
+     "capipimon:entity/ceruledge_layer_4",
+     "capipimon:entity/ceruledge_layer_5",
+     "capipimon:entity/ceruledge_layer_6",
+     "capipimon:entity/ceruledge_layer_7"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 8,
+    "frames": [
+     "capipimon:entity/ceruledge_layer_8",
+     "capipimon:entity/ceruledge_layer_9",
+     "capipimon:entity/ceruledge_layer_10",
+     "capipimon:entity/ceruledge_layer_11",
+     "capipimon:entity/ceruledge_layer_12",
+     "capipimon:entity/ceruledge_layer_13",
+     "capipimon:entity/ceruledge_layer_14",
+     "capipimon:entity/ceruledge_layer_15"
+    ]
+   }
+  ]
+ },
+ "chandelure": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/chandelure_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/chandelure_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/chandelure_layer_2"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/chandelure_layer_3"
+    ]
+   }
+  ]
+ },
+ "charcadet": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 8,
+    "frames": [
+     "capipimon:entity/charcadet_layer_0",
+     "capipimon:entity/charcadet_layer_1",
+     "capipimon:entity/charcadet_layer_2",
+     "capipimon:entity/charcadet_layer_3"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 8,
+    "frames": [
+     "capipimon:entity/charcadet_layer_4",
+     "capipimon:entity/charcadet_layer_5",
+     "capipimon:entity/charcadet_layer_6",
+     "capipimon:entity/charcadet_layer_7"
+    ]
+   }
+  ]
+ },
+ "charizard": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/charizard_layer_0",
+     "capipimon:entity/charizard_layer_1",
+     "capipimon:entity/charizard_layer_2",
+     "capipimon:entity/charizard_layer_3"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/charizard_layer_0",
+     "capipimon:entity/charizard_layer_1",
+     "capipimon:entity/charizard_layer_2",
+     "capipimon:entity/charizard_layer_3"
+    ]
+   }
+  ]
+ },
+ "charjabug": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/charjabug_layer_0"
+    ]
+   }
+  ]
+ },
+ "charmander": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/charmander_layer_0",
+     "capipimon:entity/charmander_layer_1",
+     "capipimon:entity/charmander_layer_2",
+     "capipimon:entity/charmander_layer_3"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/charmander_layer_4",
+     "capipimon:entity/charmander_layer_5",
+     "capipimon:entity/charmander_layer_6",
+     "capipimon:entity/charmander_layer_7"
+    ]
+   }
+  ]
+ },
+ "charmeleon": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/charmeleon_layer_0",
+     "capipimon:entity/charmeleon_layer_1",
+     "capipimon:entity/charmeleon_layer_2",
+     "capipimon:entity/charmeleon_layer_3"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/charmeleon_layer_4",
+     "capipimon:entity/charmeleon_layer_5",
+     "capipimon:entity/charmeleon_layer_6",
+     "capipimon:entity/charmeleon_layer_7"
+    ]
+   }
+  ]
+ },
+ "chimchar": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/chimchar_layer_0"
+    ]
+   }
+  ]
+ },
+ "chinchou": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/chinchou_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/chinchou_layer_1"
+    ]
+   }
+  ]
+ },
+ "cinderace": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cinderace_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cinderace_layer_0"
+    ]
+   }
+  ]
+ },
+ "coalossal": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/coalossal_layer_0"
+    ]
+   }
+  ]
+ },
+ "cofagrigus": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cofagrigus_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cofagrigus_layer_0"
+    ]
+   }
+  ]
+ },
+ "crobat": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/crobat_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/crobat_layer_0"
+    ]
+   }
+  ]
+ },
+ "crocalor": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/crocalor_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/crocalor_layer_1"
+    ]
+   }
+  ]
+ },
+ "cryogonal": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cryogonal_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cryogonal_layer_1"
+    ]
+   }
+  ]
+ },
+ "cursola": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cursola_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/cursola_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cursola_layer_2"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/cursola_layer_1"
+    ]
+   }
+  ]
+ },
+ "cyndaquil": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/cyndaquil_layer_0"
+    ]
+   }
+  ]
+ },
+ "darmanitan": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/darmanitan_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/darmanitan_layer_1"
+    ]
+   }
+  ]
+ },
+ "delphox": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/delphox_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/delphox_layer_0"
+    ]
+   }
+  ]
+ },
+ "dewpider": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/dewpider_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/dewpider_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/dewpider_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/dewpider_layer_1"
+    ]
+   }
+  ]
+ },
+ "dragonair": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/dragonair_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/dragonair_layer_1"
+    ]
+   }
+  ]
+ },
+ "duosion": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/duosion_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/duosion_layer_1"
+    ]
+   }
+  ]
+ },
+ "duraludon": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/duraludon_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/duraludon_layer_1"
+    ]
+   }
+  ]
+ },
+ "dusclops": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/dusclops_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/dusclops_layer_0"
+    ]
+   }
+  ]
+ },
+ "dusknoir": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/dusknoir_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/dusknoir_layer_0"
+    ]
+   }
+  ]
+ },
+ "duskull": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/duskull_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/duskull_layer_0"
+    ]
+   }
+  ]
+ },
+ "elgyem": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/elgyem_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/elgyem_layer_1"
+    ]
+   }
+  ]
+ },
+ "emboar": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/emboar_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/emboar_layer_1"
+    ]
+   }
+  ]
+ },
+ "espathra": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/espathra_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/espathra_layer_0"
+    ]
+   }
+  ]
+ },
+ "espeon": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/espeon_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/espeon_layer_0"
+    ]
+   }
+  ]
+ },
+ "eternatus": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/eternatus_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/eternatus_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/eternatus_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/eternatus_layer_1"
+    ]
+   }
+  ]
+ },
+ "finneon": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/finneon_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/finneon_layer_1"
+    ]
+   }
+  ]
+ },
+ "flaaffy": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/flaaffy_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/flaaffy_layer_1"
+    ]
+   }
+  ]
+ },
+ "flabebe": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/flabebe_layer_0"
+    ]
+   }
+  ]
+ },
+ "floette": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/floette_layer_0"
+    ]
+   }
+  ]
+ },
+ "florges": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/florges_layer_0"
+    ]
+   }
+  ]
+ },
+ "flygon": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/flygon_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/flygon_layer_1"
+    ]
+   }
+  ]
+ },
+ "fuecoco": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/fuecoco_layer_0"
+    ]
+   }
+  ]
+ },
+ "galvantula": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/galvantula_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/galvantula_layer_1"
+    ]
+   }
+  ]
+ },
+ "garganacl": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/garganacl_layer_0"
+    ]
+   }
+  ]
+ },
+ "gengar": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/gengar_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/gengar_layer_1"
+    ]
+   }
+  ]
+ },
+ "glimmet": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/glimmet_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/glimmet_layer_0"
+    ]
+   }
+  ]
+ },
+ "glimmora": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/glimmora_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/glimmora_layer_0"
+    ]
+   }
+  ]
+ },
+ "gliscor": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/gliscor_layer_0"
+    ]
+   }
+  ]
+ },
+ "golduck": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/golduck_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/golduck_layer_0"
+    ]
+   }
+  ]
+ },
+ "golett": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/golett_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/golett_layer_1"
+    ]
+   }
+  ]
+ },
+ "golurk": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/golurk_layer_0",
+     "capipimon:entity/golurk_layer_1",
+     "capipimon:entity/golurk_layer_2"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/golurk_layer_3",
+     "capipimon:entity/golurk_layer_4",
+     "capipimon:entity/golurk_layer_5"
+    ]
+   }
+  ]
+ },
+ "gourgeist": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/gourgeist_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/gourgeist_layer_1"
+    ]
+   }
+  ]
+ },
+ "greavard": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/greavard_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/greavard_layer_0"
+    ]
+   }
+  ]
+ },
+ "greninja": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/greninja_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/greninja_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/greninja_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/greninja_layer_1"
+    ]
+   }
+  ]
+ },
+ "heatmor": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/heatmor_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/heatmor_layer_0"
+    ]
+   }
+  ]
+ },
+ "heracross": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/heracross_layer_0"
+    ]
+   }
+  ]
+ },
+ "hooh": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/hooh_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/hooh_layer_1"
+    ]
+   }
+  ]
+ },
+ "hoothoot": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/hoothoot_layer_0"
+    ]
+   }
+  ]
+ },
+ "huntail": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/huntail_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/huntail_layer_0"
+    ]
+   }
+  ]
+ },
+ "illumise": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/illumise_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/illumise_layer_1"
+    ]
+   }
+  ]
+ },
+ "incineroar": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/incineroar_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/incineroar_layer_0"
+    ]
+   }
+  ]
+ },
+ "infernape": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/infernape_layer_0"
+    ]
+   }
+  ]
+ },
+ "ironleaves": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/ironleaves_layer_0"
+    ]
+   }
+  ]
+ },
+ "joltik": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/joltik_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/joltik_layer_1"
+    ]
+   }
+  ]
+ },
+ "kilowattrel": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/kilowattrel_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/kilowattrel_layer_0"
+    ]
+   }
+  ]
+ },
+ "lampent": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/lampent_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/lampent_layer_1"
+    ]
+   }
+  ]
+ },
+ "lanturn": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/lanturn_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/lanturn_layer_1"
+    ]
+   }
+  ]
+ },
+ "litwick": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/litwick_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/litwick_layer_1"
+    ]
+   }
+  ]
+ },
+ "lokix": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/lokix_layer_0"
+    ]
+   }
+  ]
+ },
+ "lumineon": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/lumineon_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/lumineon_layer_1"
+    ]
+   }
+  ]
+ },
+ "lurantis": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/lurantis_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/lurantis_layer_1"
+    ]
+   }
+  ]
+ },
+ "luxio": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/luxio_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/luxio_layer_1"
+    ]
+   }
+  ]
+ },
+ "luxray": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/luxray_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/luxray_layer_1"
+    ]
+   }
+  ]
+ },
+ "magcargo": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/magcargo_layer_0"
+    ]
+   },
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/magcargo_layer_1",
+     "capipimon:entity/magcargo_layer_2",
+     "capipimon:entity/magcargo_layer_3",
+     "capipimon:entity/magcargo_layer_4"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/magcargo_layer_5"
+    ]
+   },
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/magcargo_layer_6",
+     "capipimon:entity/magcargo_layer_7",
+     "capipimon:entity/magcargo_layer_8",
+     "capipimon:entity/magcargo_layer_9"
+    ]
+   }
+  ]
+ },
+ "magmar": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/magmar_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/magmar_layer_1"
+    ]
+   }
+  ]
+ },
+ "magmortar": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/magmortar_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/magmortar_layer_1"
+    ]
+   }
+  ]
+ },
+ "magnezone": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/magnezone_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/magnezone_layer_1"
+    ]
+   }
+  ]
+ },
+ "mareep": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/mareep_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/mareep_layer_1"
+    ]
+   }
+  ]
+ },
+ "masquerain": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/masquerain_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/masquerain_layer_1"
+    ]
+   }
+  ]
+ },
+ "meowstic": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/meowstic_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/meowstic_layer_0"
+    ]
+   }
+  ]
+ },
+ "minior": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/minior_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/minior_layer_1"
+    ]
+   }
+  ]
+ },
+ "misdreavus": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/misdreavus_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/misdreavus_layer_0"
+    ]
+   }
+  ]
+ },
+ "mismagius": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/mismagius_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/mismagius_layer_0"
+    ]
+   }
+  ]
+ },
+ "moltres": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/moltres_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/moltres_layer_1"
+    ]
+   }
+  ]
+ },
+ "monferno": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/monferno_layer_0"
+    ]
+   }
+  ]
+ },
+ "munna": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/munna_layer_0"
+    ]
+   }
+  ]
+ },
+ "nacli": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/nacli_layer_0"
+    ]
+   }
+  ]
+ },
+ "naclstack": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/naclstack_layer_0"
+    ]
+   }
+  ]
+ },
+ "nincada": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/nincada_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/nincada_layer_1"
+    ]
+   }
+  ]
+ },
+ "noctowl": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/noctowl_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/noctowl_layer_1"
+    ]
+   }
+  ]
+ },
+ "nymble": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/nymble_layer_0"
+    ]
+   }
+  ]
+ },
+ "patrat": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/patrat_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/patrat_layer_1"
+    ]
+   }
+  ]
+ },
+ "phantump": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/phantump_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/phantump_layer_1"
+    ]
+   }
+  ]
+ },
+ "pichu": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/pichu_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/pichu_layer_1"
+    ]
+   }
+  ]
+ },
+ "pikachu": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/pikachu_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/pikachu_layer_0"
+    ]
+   }
+  ]
+ },
+ "poltchageist": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/poltchageist_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/poltchageist_layer_1"
+    ]
+   }
+  ]
+ },
+ "ponyta": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/ponyta_layer_0",
+     "capipimon:entity/ponyta_layer_1",
+     "capipimon:entity/ponyta_layer_2",
+     "capipimon:entity/ponyta_layer_3"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/ponyta_layer_4",
+     "capipimon:entity/ponyta_layer_5",
+     "capipimon:entity/ponyta_layer_6",
+     "capipimon:entity/ponyta_layer_7"
+    ]
+   }
+  ]
+ },
+ "pumpkaboo": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/pumpkaboo_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/pumpkaboo_layer_1"
+    ]
+   }
+  ]
+ },
+ "quilava": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/quilava_layer_0"
+    ]
+   }
+  ]
+ },
+ "rabsca": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/rabsca_layer_0"
+    ]
+   },
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/rabsca_layer_1"
+    ]
+   }
+  ]
+ },
+ "raichu": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/raichu_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/raichu_layer_1"
+    ]
+   }
+  ]
+ },
+ "rapidash": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/rapidash_layer_0",
+     "capipimon:entity/rapidash_layer_1",
+     "capipimon:entity/rapidash_layer_2",
+     "capipimon:entity/rapidash_layer_3"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/rapidash_layer_4",
+     "capipimon:entity/rapidash_layer_5",
+     "capipimon:entity/rapidash_layer_6",
+     "capipimon:entity/rapidash_layer_7"
+    ]
+   }
+  ]
+ },
+ "regice": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/regice_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/regice_layer_0"
+    ]
+   }
+  ]
+ },
+ "regieleki": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/regieleki_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/regieleki_layer_0"
+    ]
+   }
+  ]
+ },
+ "regigigas": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/regigigas_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/regigigas_layer_0"
+    ]
+   }
+  ]
+ },
+ "regirock": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/regirock_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/regirock_layer_0"
+    ]
+   }
+  ]
+ },
+ "registeel": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/registeel_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/registeel_layer_1"
+    ]
+   }
+  ]
+ },
+ "relicanth": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/relicanth_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/relicanth_layer_1"
+    ]
+   }
+  ]
+ },
+ "reuniclus": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/reuniclus_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/reuniclus_layer_1"
+    ]
+   }
+  ]
+ },
+ "rolycoly": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/rolycoly_layer_0"
+    ]
+   }
+  ]
+ },
+ "rotom": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/rotom_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/rotom_layer_1"
+    ]
+   }
+  ]
+ },
+ "runerigus": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/runerigus_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/runerigus_layer_1"
+    ]
+   }
+  ]
+ },
+ "sharpedo": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/sharpedo_layer_0"
+    ]
+   }
+  ]
+ },
+ "shinx": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/shinx_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/shinx_layer_1"
+    ]
+   }
+  ]
+ },
+ "sizzlipede": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/sizzlipede_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/sizzlipede_layer_1"
+    ]
+   }
+  ]
+ },
+ "skeledirge": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/skeledirge_layer_0"
+    ]
+   }
+  ]
+ },
+ "slugma": {
+  "normal": [
+   {
+    "emissive": false,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/slugma_layer_0",
+     "capipimon:entity/slugma_layer_1",
+     "capipimon:entity/slugma_layer_2",
+     "capipimon:entity/slugma_layer_3"
+    ]
+   },
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/slugma_layer_4",
+     "capipimon:entity/slugma_layer_5",
+     "capipimon:entity/slugma_layer_6",
+     "capipimon:entity/slugma_layer_7"
+    ]
+   },
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/slugma_layer_8"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/slugma_layer_9",
+     "capipimon:entity/slugma_layer_10",
+     "capipimon:entity/slugma_layer_11",
+     "capipimon:entity/slugma_layer_12"
+    ]
+   },
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/slugma_layer_13",
+     "capipimon:entity/slugma_layer_14",
+     "capipimon:entity/slugma_layer_15",
+     "capipimon:entity/slugma_layer_16"
+    ]
+   },
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/slugma_layer_17"
+    ]
+   }
+  ]
+ },
+ "smeargle": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/smeargle_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/smeargle_layer_1"
+    ]
+   }
+  ]
+ },
+ "snom": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/snom_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/snom_layer_0"
+    ]
+   }
+  ]
+ },
+ "solosis": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/solosis_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/solosis_layer_1"
+    ]
+   }
+  ]
+ },
+ "spiritomb": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/spiritomb_layer_0"
+    ]
+   },
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/spiritomb_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/spiritomb_layer_2"
+    ]
+   },
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/spiritomb_layer_3"
+    ]
+   }
+  ]
+ },
+ "spoink": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/spoink_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/spoink_layer_1"
+    ]
+   }
+  ]
+ },
+ "starmie": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/starmie_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/starmie_layer_1"
+    ]
+   }
+  ]
+ },
+ "staryu": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/staryu_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/staryu_layer_1"
+    ]
+   }
+  ]
+ },
+ "tadbulb": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/tadbulb_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/tadbulb_layer_0"
+    ]
+   }
+  ]
+ },
+ "tentacool": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/tentacool_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/tentacool_layer_1"
+    ]
+   }
+  ]
+ },
+ "tentacruel": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/tentacruel_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/tentacruel_layer_1"
+    ]
+   }
+  ]
+ },
+ "toedscruel": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/toedscruel_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/toedscruel_layer_1"
+    ]
+   }
+  ]
+ },
+ "torracat": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/torracat_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/torracat_layer_0"
+    ]
+   }
+  ]
+ },
+ "toxapex": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/toxapex_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/toxapex_layer_1"
+    ]
+   }
+  ]
+ },
+ "toxel": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/toxel_layer_0",
+     "capipimon:entity/toxel_layer_1",
+     "capipimon:entity/toxel_layer_2"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/toxel_layer_0",
+     "capipimon:entity/toxel_layer_1",
+     "capipimon:entity/toxel_layer_2"
+    ]
+   }
+  ]
+ },
+ "toxtricity": {
+  "normal": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/toxtricity_layer_0",
+     "capipimon:entity/toxtricity_layer_1"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "fps": 10,
+    "frames": [
+     "capipimon:entity/toxtricity_layer_0",
+     "capipimon:entity/toxtricity_layer_1"
+    ]
+   }
+  ]
+ },
+ "trevenant": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/trevenant_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/trevenant_layer_1"
+    ]
+   }
+  ]
+ },
+ "typhlosion": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/typhlosion_layer_0"
+    ]
+   }
+  ]
+ },
+ "umbreon": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/umbreon_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/umbreon_layer_1"
+    ]
+   }
+  ]
+ },
+ "venonat": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/venonat_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/venonat_layer_1"
+    ]
+   }
+  ]
+ },
+ "vespiquen": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/vespiquen_layer_0"
+    ]
+   }
+  ]
+ },
+ "vikavolt": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/vikavolt_layer_0"
+    ]
+   }
+  ]
+ },
+ "vivillon": {
+  "normal": [
+   {
+    "emissive": false,
+    "frames": [
+     "capipimon:entity/vivillon_layer_0"
+    ]
+   }
+  ]
+ },
+ "volbeat": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/volbeat_layer_0"
+    ]
+   }
+  ]
+ },
+ "walkingwake": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/walkingwake_layer_0"
+    ]
+   }
+  ]
+ },
+ "watchog": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/watchog_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/watchog_layer_1"
+    ]
+   }
+  ]
+ },
+ "yamask": {
+  "normal": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/yamask_layer_0"
+    ]
+   }
+  ],
+  "shiny": [
+   {
+    "emissive": true,
+    "frames": [
+     "capipimon:entity/yamask_layer_1"
+    ]
+   }
+  ]
+ }
+}

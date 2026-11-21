@@ -40,30 +40,40 @@
    "name": "Counter",
    "type": "fighting",
    "category": "physical",
-   "power": 200,
+   "power": 0,
    "shape": "burst",
-   "cooldown": 9.05,
-   "energy": 32,
-   "range": 6.5,
-   "width": 6.5,
-   "windup": 0.5,
+   "cooldown": 11.0,
+   "energy": 30,
+   "range": 1.0,
+   "width": 1.0,
+   "windup": 0.0,
    "anim": "physical",
-   "particle": "minecraft:crit"
+   "particle": "minecraft:crit",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
   },
   {
    "id": "mirrorcoat",
    "name": "Mirror Coat",
    "type": "psychic",
    "category": "special",
-   "power": 200,
+   "power": 0,
    "shape": "burst",
-   "cooldown": 9.05,
-   "energy": 32,
-   "range": 6.5,
-   "width": 6.5,
-   "windup": 0.5,
+   "cooldown": 11.0,
+   "energy": 30,
+   "range": 1.0,
+   "width": 1.0,
+   "windup": 0.0,
    "anim": "special",
-   "particle": "minecraft:enchant"
+   "particle": "minecraft:enchant",
+   "form": "burst",
+   "tele": 0.4,
+   "support": {
+    "target": "self"
+   }
   },
   {
    "id": "psychic",

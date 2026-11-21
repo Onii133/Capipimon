@@ -34,8 +34,7 @@
    "windup": 0.0,
    "anim": "special",
    "particle": "minecraft:splash",
-   "form": "beam",
-   "tele": 0.0
+   "form": "beam"
   },
   {
    "id": "rapidspin",
@@ -51,8 +50,7 @@
    "windup": 0.0,
    "anim": "physical",
    "particle": "minecraft:crit",
-   "form": "dash",
-   "tele": 0.0
+   "form": "dash"
   },
   {
    "id": "sig:f_soak1",

@@ -31109,6 +31109,38 @@
    "prio": 0,
    "flags": 8
   },
+  "typhlosionhisui": {
+   "move": {
+    "id": "sig:typhlosionhisui",
+    "name": "Infernal Parade",
+    "type": "ghost",
+    "category": "special",
+    "power": 130,
+    "shape": "beam",
+    "range": 20.7,
+    "width": 2.07,
+    "cooldown": 16.0,
+    "energy": 35.0,
+    "windup": 0.0,
+    "anim": "special",
+    "particle": "minecraft:soul"
+   },
+   "form": "beam",
+   "mech": [
+    "knock",
+    "launch"
+   ],
+   "motif": "smoke",
+   "rgb2": [
+    0.35,
+    1.0,
+    0.7
+   ],
+   "grand": true,
+   "base": 0.4,
+   "prio": 0,
+   "flags": 8
+  },
   "tyranitar": {
    "move": {
     "id": "sig:tyranitar",

@@ -172,7 +172,11 @@ pub fn heard(f: &[&str]) -> bool {
         ["dex", "rewards", rows @ ..] => v.rewards = rows.iter().take(80).filter_map(|r| row(r)).collect(),
         ["dex", "open", played, total, ..] => {
             v.server = (played.parse().unwrap_or(0), total.parse().unwrap_or(0));
-            v.open = true;
+            if !v.open && menus::server_may_open(menus::Menu::Dex) {
+                v.open = true;
+                drop(v);
+                menus::opening(menus::Menu::Dex);
+            }
         }
         _ => {}
     }
@@ -187,12 +191,9 @@ pub fn is_open() -> bool {
     VIEW.lock().unwrap().open
 }
 
-/// Standing still while the book is open (WASD move the cursor).
-pub fn movement_input(event: &mut MovementInputEvent) {
-    if is_open() {
-        event.forward = 0.0;
-        event.strafe = 0.0;
-    }
+/// Closes the book (another menu is opening).
+pub fn shut() {
+    VIEW.lock().unwrap().open = false;
 }
 
 /// The entries on `page`, as indexes into `entries`.
@@ -230,7 +231,7 @@ pub fn key(key: &str) -> bool {
         return false;
     }
     match key {
-        "key.keyboard.escape" | "key.keyboard.backspace" | "key.keyboard.x" => v.open = false,
+        "key.keyboard.backspace" | "key.keyboard.x" => v.open = false,
         "key.keyboard.r" => {
             v.show_rewards = !v.show_rewards;
             v.scroll = 0;
@@ -321,7 +322,7 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
     let (x, y) = ((b.width - w) / 2.0, (b.height - h) / 2.0);
     pill(host, b, x, y, w, h, BOOK);
     pill(host, b, x + 3.0, y + 3.0, w - 6.0, 14.0, BOOK_HEAD);
-    ball(host, b, x + 11.0, y + 10.0, 4.5);
+    emblem(host, b, x + 11.0, y + 10.0, 4.5);
     let (have, evolving) = tally(&v, &list);
     let head = if v.show_rewards { "Capipidex  \u{2022}  Rewards".to_string() } else { format!("Capipidex  \u{2022}  {}  ({}/{} seen)", page_name(v.page), have[0], list.len()) };
     host.text(b, &head, [x + 19.0, y + 6.0], 0xFFFFFF, true);
@@ -345,11 +346,15 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
         pill(host, b, sx, sy, cw - 4.0, ch - 4.0, SLOT);
         let bits = v.marks.get(&e.species).map_or(0, |m| m.0);
         let seen = bits & SEEN != 0;
-        // A type-coloured disc once seen, grey before; the marks as pips down the left edge.
-        let col = if seen { 0xFF00_0000 | e.types.first().map_or(0xA0A0A0, |t| type_color(t)) } else { UNSEEN };
-        rect(host, b, sx + cw / 2.0 - 7.0, sy + 3.0, 10.0, 10.0, col);
-        if let Some(t2) = e.types.get(1).filter(|_| seen) {
-            rect(host, b, sx + cw / 2.0 - 2.0, sy + 3.0, 5.0, 10.0, 0xFF00_0000 | type_color(t2));
+        // Its head once seen, as in the PC (Onii, 2026-11-20); a type-coloured disc when there's no
+        // picture, grey before it's seen. The marks as pips down the left edge.
+        let pictured = seen && crate::portraits::head(host, b, &e.species, [sx + (cw - 4.0) / 2.0 - 7.0, sy, 14.0, 14.0]);
+        if !pictured {
+            let col = if seen { 0xFF00_0000 | e.types.first().map_or(0xA0A0A0, |t| type_color(t)) } else { UNSEEN };
+            rect(host, b, sx + cw / 2.0 - 7.0, sy + 3.0, 10.0, 10.0, col);
+            if let Some(t2) = e.types.get(1).filter(|_| seen) {
+                rect(host, b, sx + cw / 2.0 - 2.0, sy + 3.0, 5.0, 10.0, 0xFF00_0000 | type_color(t2));
+            }
         }
         for (n, (bit, _, colour)) in MARKS.iter().enumerate() {
             if *bit == EVOLVED && !e.evolves {
@@ -407,8 +412,10 @@ mod tests {
     #[test]
     fn every_playable_species_has_one_entry_in_pokedex_order() {
         let all = entries();
-        assert_eq!(all.len(), 989);
-        assert!(all.windows(2).all(|w| w[0].number < w[1].number), "numbers rise and never repeat");
+        assert_eq!(all.len(), 990);
+        // A regional form shares its species' number and comes right after it (tools/forms.py).
+        assert!(all.windows(2).all(|w| (w[0].number, &w[0].species) < (w[1].number, &w[1].species)), "numbers rise, forms after their species");
+        assert_eq!(index("typhlosionhisui"), index("typhlosion").map(|i| i + 1));
         assert_eq!(all[0].species, "bulbasaur");
         assert_eq!(index("pikachu").map(|i| all[i].number), Some(25));
         assert_eq!(index("missingno"), None);
@@ -461,6 +468,7 @@ mod tests {
 
     #[test]
     fn messages_fill_the_book() {
+        let _g = menus::test_lock();
         forget();
         assert!(!heard(&["xp", "1"]));
         assert!(heard(&["dex", "marks", "pikachu:3:40,charizard:f:100,notapokemon:1:0,bad"]));

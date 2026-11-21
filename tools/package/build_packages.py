@@ -100,7 +100,7 @@ def wanted_in_bundle(rel):
     if rel.startswith("tools/") or rel.endswith("Cargo.lock"):
         return False
     # Private server parts (docs/CLIENT_SERVER_SPLIT.md), in case this runs on the private repo.
-    if rel.startswith(("server-marker/", "api/src/server/", "api/data/server/")):
+    if rel.startswith(("server-marker/", "dev-mcp-marker/", "api/src/server/", "api/data/server/")):
         return False
     parts = rel.split("/")
     return rel.endswith((".rs", ".toml")) or "data" in parts[:2]

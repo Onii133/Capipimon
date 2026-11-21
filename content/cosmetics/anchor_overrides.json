@@ -1,0 +1,6 @@
+{
+  "_note": "Hand fixes over tools/cosmetics/gen_anchors.py, which always win. Melmetal: its head is the hex-nut ring (platform2), not the arm the fallback picked. Vanilluxe: on the right scoop's own hat locator, not the thin plate between the two scoops. Crustle: on its rock at the model's own hat locator; its head is under the rock.",
+  "melmetal": {"b": "platform2", "p": [0.0, 56.45, 0.0], "s": 1.4, "q": [0.0, 0.0, 0.0, 1.0], "ok": true},
+  "crustle": {"b": "torso", "p": [0.2, 29.2, 0.0], "s": 1.5, "q": [0.0, 0.0, 0.0, 1.0]},
+  "vanilluxe": {"b": "head_right", "p": [5.5, 28.5, 0.0], "s": 1.25, "q": [0.0, 0.0, 0.0, 1.0]}
+}

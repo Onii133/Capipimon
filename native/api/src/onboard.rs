@@ -6,15 +6,15 @@
 //! without them behaves exactly as before: no hatch, no tutorial, no bounds.
 //!
 //! Saved per player in `<world>/capipimon-players.json` (doc fields only): `tutorial_done`,
-//! `starter_species`, `unlocked_lines`, `last_nest`. When that file is first made, every player
+//! `starter_species`, `unlocked_lines`, `last_nest`, and each owned line's level (`levels`). When that file is first made, every player
 //! the world already knows (`players/data`) is counted as done, so nobody on a live server is
 //! dropped into the Meadow by an update.
 //!
 //! Wire (channel `capipimon:play`):
 //! - server → client: `hatch\t<name>\t<species>\t<secs>` / `hatch\t<name>\t-` (everyone: draw an
 //!   egg in place of that player), `hatchme\t<secs>` / `hatchme\t-` (owner: skip prompt),
-//!   `card\t<species>` / `card\t-`, `confirm\t<species>`, `struggle\t1` / `struggle\t0`.
-//! - client → server: `skip`, `use` (F), `struggle\tok`.
+//!   `card\t<species>` / `card\t-`, `confirm\t<species>`.
+//! - client → server: `skip`, `use` (F).
 
 #[cfg(feature = "capipimon_server")]
 use crate::play::prof;
@@ -36,6 +36,10 @@ pub mod pc;
 /// Levels, XP, evolution, research (GDD 4, 3.8, 2.3).
 #[path = "progress.rs"]
 pub mod progress;
+/// Per-Pokémon levels: each owned line's level and XP, migration, brackets (docs/LEVELS.md).
+#[cfg(feature = "capipimon_server")]
+#[path = "server/levels.rs"]
+pub mod levels;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/rewards.rs"]
 pub mod rewards;
@@ -54,6 +58,14 @@ pub mod heal;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/groves.rs"]
 pub mod groves;
+/// Phase HQ's hub island and the pads to and from it.
+#[cfg(feature = "capipimon_server")]
+#[path = "server/hub.rs"]
+pub mod hq_hub;
+/// Talent NPCs at the hub's festival stalls and Pippa in the Challenge hall: a line, then the stall's job.
+#[cfg(feature = "capipimon_server")]
+#[path = "server/npc_talk.rs"]
+pub mod npc_talk;
 #[path = "guide.rs"]
 pub mod guide;
 pub mod weather;
@@ -76,10 +88,17 @@ pub mod event;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/legends.rs"]
 pub mod legends;
+#[cfg(feature = "capipimon_server")]
+#[path = "server/shrine_fx.rs"]
+pub mod shrine_fx;
 /// The Tastiest Power Cord, Hunt 3's relic (GDD 6.6).
 #[cfg(feature = "capipimon_server")]
 #[path = "server/relic.rs"]
 pub mod relic;
+/// Z-Crystals: a Z-Move needs one and uses it up (a server event, an uncommon dungeon drop).
+#[cfg(feature = "capipimon_server")]
+#[path = "server/zcrystal.rs"]
+pub mod zcrystal;
 
 /// Live slots and death rotation on Event Nights (GDD 2.4).
 #[cfg(feature = "capipimon_server")]
@@ -90,6 +109,14 @@ pub mod rotation;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/pve.rs"]
 pub mod pve;
+/// Pippennies: the wallet, drops, banks and the PvP steal.
+#[cfg(feature = "capipimon_server")]
+#[path = "server/money.rs"]
+pub mod money;
+/// Mint plants: natures.
+#[cfg(feature = "capipimon_server")]
+#[path = "server/mints.rs"]
+pub mod mints;
 
 /// Daily/weekly quests, first KO of the day (GDD 5.5).
 #[cfg(feature = "capipimon_server")]
@@ -99,10 +126,18 @@ pub mod quests;
 #[cfg(feature = "capipimon_server")]
 #[path = "server/duels.rs"]
 pub mod duels;
+/// The Ranked Arena (roadmap, Season 2).
+#[cfg(feature = "capipimon_server")]
+#[path = "server/ranked.rs"]
+pub mod ranked;
+/// Bracket tournaments (roadmap, Season 2).
+#[cfg(feature = "capipimon_server")]
+#[path = "server/tourney.rs"]
+pub mod tourney;
 /// Hats, auras and trails.
 #[path = "cosmetics.rs"]
 pub mod cosmetics;
-/// Titles, the welcome-back card, the community goal bar and the ignore list (client half).
+/// Titles, the welcome-back news, the community goal and the ignore list (client half).
 #[path = "launch_ui.rs"]
 pub mod launch_ui;
 /// The Capipidex: the entry list, the `/dex` book, and (server) marks and rewards.
@@ -111,9 +146,15 @@ pub mod dex;
 /// Evolution stones and the Move Tutor: the Tutor's menu, and (server) drops, stones and lessons.
 #[path = "tutor.rs"]
 pub mod tutor;
+/// Lumi's Rift menu and the Rift Capsule opening (client half; the server's is `pve::rift_menu`).
+#[path = "riftmenu.rs"]
+pub mod riftmenu;
 /// Photo mode (`/photo`, client only).
 #[path = "photo.rs"]
 pub mod photo;
+/// The Tab menu: everything that isn't a move, F or the four HUD pieces (GDD 3.1 keybinds).
+#[path = "hub.rs"]
+pub mod hub;
 /// Titles, the welcome-back card, the community goal and `/ignore` (server half).
 #[cfg(feature = "capipimon_server")]
 #[path = "server/launch.rs"]
@@ -121,6 +162,9 @@ pub mod launch;
 /// Crews: small player groups with a tag, a banner, a chat, a dex, weekly goals and a season board.
 #[path = "crew.rs"]
 pub mod crew;
+/// One menu at a time; no gameplay input while one is up; held W/S scroll lists.
+#[path = "menus.rs"]
+pub mod menus;
 use std::path::PathBuf;
 use std::sync::Arc;
 
@@ -154,16 +198,13 @@ pub struct ObClient {
     mine: Option<Instant>,
     card: Option<String>,
     confirm: Option<(String, Instant)>,
-    struggle: Option<Instant>,
-    /// A missed Space press, for a moment.
-    missed: Option<Instant>,
 }
 
 pub static OB_CLIENT: LazyLock<Mutex<ObClient>> = LazyLock::new(Default::default);
 
 /// A message for the onboarding client; true when it was one.
 pub fn heard(f: &[&str]) -> bool {
-    if crew::heard(f) || cosmetics::draw::heard(f) || catch::heard(f) || event::heard(f) || pc::heard(f) || progress::heard(f) || weather::heard(f) || worldmap::heard(f) || guide::heard(f) || launch_ui::heard(f) || dex::heard(f) || tutor::heard(f) {
+    if crew::heard(f) || cosmetics::draw::heard(f) || catch::heard(f) || event::heard(f) || pc::heard(f) || progress::heard(f) || weather::heard(f) || worldmap::heard(f) || guide::heard(f) || launch_ui::heard(f) || dex::heard(f) || tutor::heard(f) || riftmenu::heard(f) {
         return true;
     }
     let mut c = OB_CLIENT.lock().unwrap();
@@ -186,7 +227,6 @@ pub fn heard(f: &[&str]) -> bool {
             c.confirm = None;
         }
         ["confirm", species, ..] => c.confirm = Some((species.to_string(), Instant::now())),
-        ["struggle", on, ..] => c.struggle = (*on == "1").then(Instant::now),
         _ => return false,
     }
     true
@@ -195,6 +235,7 @@ pub fn heard(f: &[&str]) -> bool {
 pub fn forget() {
     pc::forget();
     tutor::forget();
+    riftmenu::forget();
     cosmetics::draw::forget();
     progress::forget();
     weather::forget();
@@ -205,6 +246,8 @@ pub fn forget() {
     launch_ui::forget();
     dex::forget();
     photo::forget();
+    hub::forget();
+    menus::forget();
     *OB_CLIENT.lock().unwrap() = ObClient::default();
 }
 
@@ -216,27 +259,35 @@ pub fn hatching_of(name: &str) -> Option<(String, f32)> {
     (t < 1.2).then(|| (s.clone(), t.min(1.0)))
 }
 
-/// A tutorial `struggle ok` sooner than this after the bar appears is ignored: the needle needs
-/// 4.8 ticks to reach the green zone.
-const STRUGGLE_MIN_TICKS: u64 = 4;
-
-/// The struggle needle: 0..1, back and forth every 1.6 s; the green zone is 0.3..0.7 (40%).
-fn needle(at: Instant) -> f32 {
-    let t = (at.elapsed().as_secs_f32() / 0.8) % 2.0;
-    if t < 1.0 { t } else { 2.0 - t }
-}
-const ZONE: (f32, f32) = (0.3, 0.7);
-
-/// Keys for onboarding; true when taken. Move keys skip this client's own hatch; F is "use";
-/// Space is the struggle.
+/// Keys for onboarding; true when taken. Move keys skip this client's own hatch; F is "use".
 pub fn key(host: &mut dyn Host, key: &str) -> bool {
-    if photo::key(key) || dex::key(key) || launch_ui::key(key) {
+    // A capsule opening takes every key before anything else, so Tab (the hub menu) can't cut it
+    // short before the 1 s skip lock (review of item 26).
+    if riftmenu::revealing() {
+        return riftmenu::key(host, key);
+    }
+    if photo::key(key) || hub::key(host, key) || dex::key(key) {
         return true;
     }
-    if crate::emotes::key(host, key, pc::is_open() || cosmetics::draw::is_open() || tutor::is_open()) || catch::key(host, key) || pc::key(host, key) || tutor::key(host, key) || cosmetics::draw::key(host, key) || worldmap::key(host, key) || guide::key(host, key) || progress::key(host, key) {
+    // The open screens first, so X (UI back) closes them before a trainer's X opens the capsule
+    // order wheel. B (emote wheel) and M (map) only open with no other screen up.
+    let busy = menus::any_open();
+    if crate::emotes::key(host, key, busy) || pc::key(host, key) || tutor::key(host, key) || riftmenu::key(host, key) || cosmetics::draw::key(host, key) || guide::key(host, key) {
         return true;
     }
-    let mut c = OB_CLIENT.lock().unwrap();
+    if worldmap::key(host, key, !busy) {
+        return true;
+    }
+    // A menu is up: the keys it didn't use (WASD, Space, Shift on the map or help) do nothing
+    // else either: no moves, dodge, guard, F, items or struggle (play-test #8). The order wheel
+    // is `catch`'s own and takes every key while it's up.
+    if menus::any_open() && !catch::wheel_open() {
+        return true;
+    }
+    if catch::key(host, key) || progress::key(host, key) {
+        return true;
+    }
+    let c = OB_CLIENT.lock().unwrap();
     if c.mine.is_some() && matches!(key, "key.keyboard.1" | "key.keyboard.2" | "key.keyboard.3" | "key.keyboard.4" | "key.keyboard.q" | "key.keyboard.e" | "key.keyboard.r") {
         drop(c);
         let _ = host.net_send_to_server(CHANNEL, b"skip");
@@ -245,6 +296,7 @@ pub fn key(host: &mut dyn Host, key: &str) -> bool {
     match key {
         "key.keyboard.f" => {
             drop(c);
+            menus::asked_any();
             let msg = match super::cam_now() {
                 Some(p) => format!("use\t{:.2}\t{:.2}\t{:.2}", p[0], p[1], p[2]),
                 None => "use".to_string(),
@@ -252,18 +304,21 @@ pub fn key(host: &mut dyn Host, key: &str) -> bool {
             let _ = host.net_send_to_server(CHANNEL, msg.as_bytes());
             true
         }
-        "key.keyboard.space" => {
-            let Some(at) = c.struggle else { return false };
-            let n = needle(at);
-            if (ZONE.0..=ZONE.1).contains(&n) {
-                drop(c);
-                let _ = host.net_send_to_server(CHANNEL, b"struggle\tok");
-            } else {
-                c.missed = Some(Instant::now());
-            }
-            false
-        }
         _ => false,
+    }
+}
+
+/// A Capipimon screen is up that right click closes like X (not photo mode or the capsule order
+/// wheel: X only there).
+pub fn screen_open() -> bool {
+    menus::open_now().is_some_and(|m| !matches!(m, menus::Menu::Photo | menus::Menu::Orders | menus::Menu::Capsule))
+}
+
+/// Right click on an open screen is X (GDD 3.1: X/RMB is UI back). The click hook fires every
+/// tick it's held, so one press is one step.
+pub fn back_click(host: &mut dyn Host) {
+    if hub::fresh_click() {
+        key(host, "key.keyboard.x");
     }
 }
 
@@ -281,10 +336,10 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
     progress::hud(host, b);
     pc::hud(host, b);
     tutor::hud(host, b);
+    riftmenu::hud(host, b);
     cosmetics::draw::hud(host, b);
     catch::hud(host, b);
     event::hud(host, b);
-    launch_ui::hud(host, b);
     dex::hud(host, b);
     crate::emotes::hud(host, b);
     let c = OB_CLIENT.lock().unwrap();
@@ -298,19 +353,6 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
             let w = host.text_width(t);
             host.text(b, t, [cx - w / 2.0, cy + 31.0], 0xC0C8D8, true);
         }
-    }
-    if let Some(at) = c.struggle {
-        let (w, h) = (160.0f32, 10.0f32);
-        let (x, y) = (cx - w / 2.0, cy - 32.0);
-        pill(host, b, x - 2.0, y - 2.0, w + 4.0, h + 4.0, HUD_PANEL);
-        rect(host, b, x, y, w, h, 0xFF40_2020);
-        rect(host, b, x + w * ZONE.0, y, w * (ZONE.1 - ZONE.0), h, 0xFF2F_9E5A);
-        let nx = x + w * needle(at);
-        rect(host, b, nx - 1.0, y - 3.0, 3.0, h + 6.0, 0xFFFF_FFFF);
-        let missed = c.missed.is_some_and(|m| m.elapsed().as_secs_f32() < 0.6);
-        let t = if missed { "Missed! Try again" } else { "Struggle! Press Space in the green" };
-        let tw = host.text_width(t);
-        host.text(b, t, [cx - tw / 2.0, y - 13.0], if missed { 0xFF6060 } else { 0xFFFFFF }, true);
     }
     let Some(species) = c.card.clone() else { return };
     let confirm = c.confirm.as_ref().filter(|(s, at)| *s == species && at.elapsed().as_secs_f32() < CONFIRM_TICKS as f32 / 20.0).is_some();

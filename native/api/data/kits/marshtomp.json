@@ -36,8 +36,7 @@
    "anim": "physical",
    "particle": "minecraft:crit",
    "form": "cone",
-   "cone": 90.0,
-   "tele": 0.0
+   "cone": 90.0
   },
   {
    "id": "sig:f_dig2",

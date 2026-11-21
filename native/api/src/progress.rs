@@ -1,8 +1,8 @@
-//! Persistent progression (GDD 4.1 to 4.5, 3.8): account level and XP, evolution, daily bonus.
+//! Persistent progression (GDD 4.1 to 4.5, 3.8): each Pokémon's level and XP, evolution, daily bonus.
 //!
-//! Saved per player in `capipimon-players.json` (`level`, `xp` into the level, `last_day`,
-//! `streak`, `research`). A player's Pokémon plays at `max(its level, saved level)`, so a test
-//! `/capi become <species> 50` isn't pulled down by a level-up.
+//! Saved per player in `capipimon-players.json` (`levels`: each owned line's level and XP into it,
+//! `last_day`, `streak`, `research`; see docs/LEVELS.md). XP goes to the player's own Pokémon, and
+//! a Pokémon plays at its line's saved level (`/capi become <species> 50` sets that line's).
 //!
 //! XP in: PvP KO (60 x LevelMod, upset bounty, 25% on a repeat victim within 3 min), the survival
 //! tick (5 a minute outside Nests), wild NPC KOs (`6 + 1.5 x level`, PvE diminishing returns),
@@ -51,14 +51,20 @@ struct Evo {
     base: String,
     evo: Vec<(String, u32)>,
     learn: Vec<(u32, String)>,
+    /// Evolutions that only happen at a place: (form, level, gym id). Regional forms (tools/forms.py).
+    #[serde(default)]
+    place: Vec<(String, u32, String)>,
 }
 
 static EVOS: LazyLock<HashMap<String, Evo>> =
     LazyLock::new(|| serde_json::from_str(include_str!("../data/evolutions.json")).unwrap_or_default());
 
-/// What the Nest PC offers: the species' own Q/E/R kit moves, then its learnset so far.
+/// What the Nest PC offers: the species' signature move first (GDD 3.1: it is in the move pool,
+/// not on a key of its own), its own kit moves (the LMB basic attack goes on LMB only), then its
+/// learnset so far.
 pub fn teachable(species: &str, level: u32) -> Vec<Move> {
-    let mut out: Vec<Move> = kit(species).map_or_else(Vec::new, |k| k.moves.iter().skip(1).take(3).cloned().collect());
+    let mut out: Vec<Move> = sig::signature(species).filter(|_| !sig::plain_ditto(species)).map(|s| s.mv.clone()).into_iter().collect();
+    out.extend(kit(species).map_or_else(Vec::new, |k| k.moves.iter().take(4).cloned().collect()));
     for id in unlocked(species, 0, level) {
         if !out.iter().any(|m| m.id == id) {
             out.extend(playable(&id).cloned());
@@ -72,10 +78,7 @@ pub fn teachable(species: &str, level: u32) -> Vec<Move> {
 #[derive(Default)]
 pub struct ProgClient {
     xp: Option<(u32, u64, u64)>,
-    gain: Option<(u64, String, Instant)>,
     evo: Vec<String>,
-    /// The numbered list is open.
-    picking: bool,
     /// The XP multiplier and the server's median level, for the HUD (GDD 11.4).
     mult: f32,
     median: u32,
@@ -83,8 +86,6 @@ pub struct ProgClient {
     f_held: Option<(Instant, bool)>,
     /// A move on offer: id, name, and the Q/E/R moves it could replace.
     learn: Option<(String, String, [String; 3])>,
-    /// The replace list is open.
-    learn_open: bool,
 }
 
 pub static PROG_CLIENT: LazyLock<Mutex<ProgClient>> = LazyLock::new(Default::default);
@@ -92,30 +93,22 @@ pub static PROG_CLIENT: LazyLock<Mutex<ProgClient>> = LazyLock::new(Default::def
 pub fn heard(f: &[&str]) -> bool {
     let mut c = PROG_CLIENT.lock().unwrap();
     match f {
-        ["xp", lvl, xp, need, gain, why, more @ ..] => {
+        ["xp", lvl, xp, need, _gain, _why, more @ ..] => {
             c.mult = more.get(1).and_then(|r| r.parse().ok()).unwrap_or(1.0);
             c.median = more.get(2).and_then(|r| r.parse().ok()).unwrap_or(0);
             c.xp = Some((lvl.parse().unwrap_or(1), xp.parse().unwrap_or(0), need.parse().unwrap_or(60)));
-            let g: u64 = gain.parse().unwrap_or(0);
-            if g > 0 {
-                c.gain = Some((g, why.to_string(), Instant::now()));
-            }
         }
         ["learnoffer", "-", ..] => {
             c.learn = None;
-            c.learn_open = false;
         }
         ["learnoffer", id, name, q, e, r, ..] => {
             c.learn = Some((id.to_string(), name.to_string(), [q.to_string(), e.to_string(), r.to_string()]));
-            c.learn_open = false;
         }
         ["evo", "-", ..] => {
             c.evo.clear();
-            c.picking = false;
         }
         ["evo", to, ..] => {
             c.evo = to.split(',').map(str::to_string).collect();
-            c.picking = false;
         }
         _ => return false,
     }
@@ -126,55 +119,58 @@ pub fn forget() {
     *PROG_CLIENT.lock().unwrap() = ProgClient::default();
 }
 
-pub fn key(host: &mut dyn Host, key: &str) -> bool {
+/// Only F's hold timing is here: picking a move or a form happens in the Tab menu (GDD 3.1 keybinds).
+pub fn key(_host: &mut dyn Host, key: &str) -> bool {
     let mut c = PROG_CLIENT.lock().unwrap();
-    if key == "key.keyboard.n" && c.learn.is_some() {
-        c.learn_open = !c.learn_open;
-        c.picking = false;
-        return true;
-    }
-    if c.learn_open {
-        let Some(n) = key.strip_prefix("key.keyboard.").and_then(|k| k.parse::<u8>().ok()) else {
-            return false;
-        };
-        if (1..=4).contains(&n) {
-            let id = c.learn.as_ref().map_or_else(String::new, |l| l.0.clone());
-            let choice = if n == 4 { "skip".to_string() } else { n.to_string() };
-            c.learn_open = false;
-            drop(c);
-            let _ = host.net_send_to_server(CHANNEL, format!("learnpick\t{id}\t{choice}").as_bytes());
-        }
-        return true;
-    }
-    if c.evo.is_empty() {
-        return false;
-    }
     // F still does what F does (this only times the hold).
     if key == "key.keyboard.f" {
         hold_f(&mut c);
-        return false;
     }
-    if key == "key.keyboard.v" {
-        if c.evo.len() == 1 {
-            drop(c);
-            let _ = host.net_send_to_server(CHANNEL, b"evolve");
-        } else {
-            c.picking = !c.picking;
-        }
-        return true;
-    }
-    if !c.picking {
-        return false;
-    }
-    // Numbers are the list's while it's open: one past the end mustn't cast a move.
-    let Some(i) = picked(key, c.evo.len()) else {
-        return key.strip_prefix("key.keyboard.").and_then(|k| k.parse::<u8>().ok()).is_some();
+    false
+}
+
+/// What's on offer now: (a move to learn, a form to evolve into).
+pub fn offers() -> (bool, bool) {
+    let c = PROG_CLIENT.lock().unwrap();
+    (c.learn.is_some(), !c.evo.is_empty())
+}
+
+/// Your Pokémon's level, XP and XP to the next level, once the server has said.
+pub fn exp() -> Option<(u32, u64, u64)> {
+    PROG_CLIENT.lock().unwrap().xp
+}
+
+/// The move on offer and the Q/E/R moves it could replace.
+pub fn learn_choices() -> Option<(String, [String; 3])> {
+    PROG_CLIENT.lock().unwrap().learn.as_ref().map(|l| (l.1.clone(), l.2.clone()))
+}
+
+/// Teach the offered move over slot `i` (0-2 = Q/E/R), or turn it down (3).
+pub fn pick_learn(host: &mut dyn Host, i: usize) {
+    let id = PROG_CLIENT.lock().unwrap().learn.as_ref().map(|l| l.0.clone());
+    let Some(id) = id else { return };
+    let choice = if i >= 3 { "skip".to_string() } else { (i + 1).to_string() };
+    let _ = host.net_send_to_server(CHANNEL, format!("learnpick	{id}	{choice}").as_bytes());
+}
+
+/// The forms on offer, by name.
+pub fn evo_names() -> Vec<String> {
+    PROG_CLIENT.lock().unwrap().evo.iter().map(|to| kit(to).map_or(to.clone(), |k| k.name.clone())).collect()
+}
+
+/// Start evolving into form `i` of the offer (stay still while it happens).
+pub fn pick_evolve(host: &mut dyn Host, i: usize) {
+    let c = PROG_CLIENT.lock().unwrap();
+    let msg = match c.evo.len() {
+        0 => return,
+        1 => "evolve".to_string(),
+        _ => match c.evo.get(i) {
+            Some(to) => format!("evolve	{to}"),
+            None => return,
+        },
     };
-    let to = c.evo[i].clone();
-    c.picking = false;
     drop(c);
-    let _ = host.net_send_to_server(CHANNEL, format!("evolve\t{to}").as_bytes());
-    true
+    let _ = host.net_send_to_server(CHANNEL, msg.as_bytes());
 }
 
 /// The XP multiplier and the server's median level (0 = not known).
@@ -205,7 +201,8 @@ fn hold_f_tick(host: &mut dyn Host) {
         drop(c);
         let _ = host.net_send_to_server(CHANNEL, b"evolve");
     } else {
-        c.picking = !c.picking;
+        drop(c);
+        super::hub::open_evolve();
     }
 }
 
@@ -224,14 +221,17 @@ pub fn key_up(host: &mut dyn Host, key: &str) {
     }
 }
 
-/// Whether nothing evolves from this species into a playable form: it can have an Ultimate.
+/// Whether nothing evolves from this species into a playable form: it can have a Z-Move.
 pub fn is_final(species: &str) -> bool {
     EVOS.get(species).is_none_or(|e| e.evo.iter().all(|(to, _)| kit(to).is_none()))
 }
 
 /// The playable species this one can evolve into.
 pub fn evolutions(species: &str) -> Vec<String> {
-    EVOS.get(species).map_or(Vec::new(), |e| e.evo.iter().filter(|(to, _)| kit(to).is_some()).map(|(to, _)| to.clone()).collect())
+    EVOS.get(species).map_or(Vec::new(), |e| {
+        let all = e.evo.iter().map(|(to, _)| to).chain(e.place.iter().map(|(to, _, _)| to));
+        all.filter(|to| kit(to).is_some()).cloned().collect()
+    })
 }
 
 /// Every level-up move of this species.
@@ -239,69 +239,31 @@ pub fn learnset(species: &str) -> Vec<String> {
     EVOS.get(species).map_or(Vec::new(), |e| e.learn.iter().map(|(_, id)| id.clone()).collect())
 }
 
-/// The account level this client was last told.
+/// Your Pokémon's level, as this client was last told.
 pub fn client_level() -> u32 {
     PROG_CLIENT.lock().unwrap().xp.map_or(1, |x| x.0)
 }
 
-/// Which option a number key picks, if it's in range.
-fn picked(key: &str, options: usize) -> Option<usize> {
-    let n: usize = key.strip_prefix("key.keyboard.")?.parse().ok()?;
-    (1..=options).contains(&n).then(|| n - 1)
-}
-
-/// The open list's text, four forms to a row so all eight of Eevee's fit.
-fn pick_rows(names: &[String]) -> Vec<String> {
-    let numbered: Vec<String> = names.iter().enumerate().map(|(i, n)| format!("{} {n}", i + 1)).collect();
-    numbered.chunks(4).map(|r| r.join("    ")).collect()
-}
-
-/// The XP bar above the move bar, and the evolution prompt.
+/// The evolve and new-move prompts above the move bar (the EXP bar is on the card, play.rs).
 pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
     hold_f_tick(host);
     let c = PROG_CLIENT.lock().unwrap();
-    let Some((lvl, xp, need)) = c.xp else { return };
-    if !is_pokemon() {
+    if c.xp.is_none() || !is_pokemon() {
         return;
     }
-    let (w, h) = (182.0f32, 3.0f32);
-    let (x, y) = ((b.width - w) / 2.0, b.height - 46.0);
-    rect(host, b, x - 1.0, y - 1.0, w + 2.0, h + 2.0, 0xC010_1418);
-    let frac = (xp as f32 / need.max(1) as f32).clamp(0.0, 1.0);
-    rect(host, b, x, y, w * frac, h, 0xFF7C_E85A);
-    let label = format!("Lv {lvl}");
-    let lw = host.text_width(&label);
-    host.text(b, &label, [x - lw - 4.0, y - 3.0], 0x9CF27A, true);
-    if let Some((g, why, at)) = &c.gain {
-        if at.elapsed().as_secs_f32() < 2.5 {
-            let t = if why == "-" { format!("+{g} XP") } else { format!("+{g} XP  {why}") };
-            host.text(b, &t, [x + w + 4.0, y - 3.0], 0x9CF27A, true);
-        }
-    }
+    let y = b.height - 46.0;
     let names: Vec<String> = c.evo.iter().map(|to| kit(to).map_or(to.clone(), |k| k.name.clone())).collect();
     let mut lines: Vec<String> = match names.as_slice() {
         [] => Vec::new(),
-        [name] => vec![format!("Ready to evolve into {name}!  Hold F (stay still)")],
-        _ if c.picking => {
-            let mut l = vec!["Press a number to evolve (stay still), or hold F to cancel".to_string()];
-            l.extend(pick_rows(&names));
-            l
-        }
-        _ => vec![format!("Ready to evolve: {} forms to choose from!  Hold F", names.len())],
+        [name] => vec![format!("Ready to evolve into {name}!  Hold [F] (stay still)")],
+        _ => vec![format!("Ready to evolve: {} forms to choose from!  Hold [F]", names.len())],
     };
-    if let Some((_, name, [q, e, r])) = &c.learn {
-        if c.learn_open {
-            lines.insert(0, format!("1 {q} (Q)    2 {e} (E)    3 {r} (R)    4 Skip"));
-            lines.insert(0, format!("Teach {name}: pick a move to replace, or [N] to close"));
-        } else {
-            lines.insert(0, format!("New move: {name}!  [N] Learn it"));
-        }
+    if let Some((_, name, _)) = &c.learn {
+        lines.insert(0, format!("New move: {name}!  Learn it from the [Tab] menu"));
     }
     lines.reverse();
     for (i, t) in lines.iter().enumerate() {
-        // The open list sits above the chat lines that appear down here.
-        let lift = if c.picking || c.learn_open { 38.0 } else { 0.0 };
-        let (cx, ly) = (b.width / 2.0, y - 14.0 - lift - 11.0 * i as f32);
+        let (cx, ly) = (b.width / 2.0, y - 14.0 - 11.0 * i as f32);
         super::guide::keyed_centred(host, b, t, cx, ly, 0xFFE9A0);
     }
 }

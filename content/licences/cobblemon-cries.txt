@@ -1,0 +1,20 @@
+Pokémon cries in assets/capipimon/sounds/cries/
+
+What they are: the Pokémon's cries from the Pokémon games. Pokémon and its sounds are (c) Nintendo,
+Creatures Inc. and GAME FREAK inc. Capipimon is not affiliated with or endorsed by them.
+
+Where they come from:
+- Most: Cobblemon (https://gitlab.com/cable-mc/cobblemon), common/src/main/resources/assets/cobblemon/
+  sounds/pokemon/<species>/<species>_cry.ogg at commit 99e0a26d7bd5b0f217aacc41da36a2f0964f3b28,
+  copied byte for byte and renamed to <species>.ogg.
+- A few species Cobblemon only has a silent placeholder for: CobbleCats 1.6 (MIT,
+  https://modrinth.com/datapack/cobble-cats) and MundialMons (MIT, https://modrinth.com/project/mundialmons,
+  licence text in mundialmons.txt), same file layout.
+- cobblemon-cries-sources.txt lists which species came from where, and the species with no real cry
+  found (none is shipped for them).
+
+Terms: no licence file covers these sounds. Cobblemon's code is MPL-2.0 and its models are
+CC BY-NC 3.0 (cobblemon-models.txt), but neither licence names the cries, which the Cobblemon team did
+not author. The add-on packs' MIT licences cover their own work, not Nintendo's audio. They are
+included by the project owner's decision, as other Cobblemon servers ship them, in a mod that is not
+sold, paywalled or monetised. Remove them if a rights holder asks.

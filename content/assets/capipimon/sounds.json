@@ -1,0 +1,5514 @@
+{
+ "cry.abra": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/abra",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.absol": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/absol",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.aegislash": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/aegislash",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.aerodactyl": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/aerodactyl",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.aggron": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/aggron",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.aipom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/aipom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.alakazam": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/alakazam",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.altaria": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/altaria",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.amaura": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/amaura",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ambipom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ambipom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ampharos": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ampharos",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.annihilape": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/annihilape",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.anorith": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/anorith",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.appletun": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/appletun",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.applin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/applin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.araquanid": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/araquanid",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.arbok": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/arbok",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.arcanine": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/arcanine",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.archaludon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/archaludon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.archen": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/archen",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.archeops": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/archeops",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.arctovish": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/arctovish",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.arctozolt": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/arctozolt",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ariados": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ariados",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.armaldo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/armaldo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.armarouge": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/armarouge",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.aromatisse": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/aromatisse",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.aron": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/aron",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.audino": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/audino",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.aurorus": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/aurorus",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.avalugg": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/avalugg",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.axew": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/axew",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bagon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bagon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.banette": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/banette",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.barbaracle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/barbaracle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.barboach": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/barboach",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.basculegion": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/basculegion",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.basculin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/basculin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bastiodon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bastiodon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bayleef": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bayleef",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.beautifly": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/beautifly",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.beedrill": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/beedrill",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.beheeyem": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/beheeyem",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.beldum": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/beldum",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bergmite": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bergmite",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bewear": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bewear",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bibarel": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bibarel",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bidoof": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bidoof",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.binacle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/binacle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.blastoise": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/blastoise",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.blaziken": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/blaziken",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.blipbug": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/blipbug",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.blitzle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/blitzle",
+    "volume": 0.6
+   }
+  ]
+ },
+ "cry.boldore": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/boldore",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.boltund": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/boltund",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bouffalant": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bouffalant",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.braixen": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/braixen",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.brambleghast": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/brambleghast",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bramblin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bramblin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.braviary": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/braviary",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.breloom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/breloom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.brionne": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/brionne",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bronzong": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bronzong",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bronzor": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bronzor",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bruxish": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bruxish",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.budew": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/budew",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.buizel": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/buizel",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bulbasaur": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bulbasaur",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.buneary": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/buneary",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.bunnelby": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/bunnelby",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.butterfree": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/butterfree",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cacnea": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cacnea",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cacturne": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cacturne",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.capsakid": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/capsakid",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.carbink": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/carbink",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.carkol": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/carkol",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.carracosta": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/carracosta",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cascoon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cascoon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.caterpie": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/caterpie",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ceruledge": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ceruledge",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cetitan": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cetitan",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cetoddle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cetoddle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chandelure": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chandelure",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chansey": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chansey",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.charcadet": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/charcadet",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.charizard": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/charizard",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.charjabug": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/charjabug",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.charmander": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/charmander",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.charmeleon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/charmeleon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chatot": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chatot",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cherrim": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cherrim",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cherubi": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cherubi",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chesnaught": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chesnaught",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chespin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chespin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chewtle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chewtle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chikorita": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chikorita",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chimchar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chimchar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chimecho": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chimecho",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.chingling": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/chingling",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cinderace": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cinderace",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.clauncher": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/clauncher",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.clawitzer": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/clawitzer",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.clefable": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/clefable",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.clefairy": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/clefairy",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cleffa": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cleffa",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.clodsire": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/clodsire",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cloyster": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cloyster",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.coalossal": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/coalossal",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cofagrigus": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cofagrigus",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.combee": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/combee",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.combusken": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/combusken",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.conkeldurr": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/conkeldurr",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.copperajah": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/copperajah",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.corphish": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/corphish",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.corsola": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/corsola",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.corviknight": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/corviknight",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.corvisquire": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/corvisquire",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cottonee": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cottonee",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cradily": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cradily",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cranidos": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cranidos",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.crawdaunt": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/crawdaunt",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.crobat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/crobat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.crocalor": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/crocalor",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.croconaw": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/croconaw",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.crustle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/crustle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cubone": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cubone",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cufant": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cufant",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cursola": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cursola",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cyclizar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cyclizar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.cyndaquil": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/cyndaquil",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dachsbun": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dachsbun",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.darmanitan": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/darmanitan",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dartrix": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dartrix",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.darumaka": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/darumaka",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.decidueye": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/decidueye",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dedenne": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dedenne",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.deino": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/deino",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.delcatty": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/delcatty",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.delphox": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/delphox",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dewgong": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dewgong",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dewott": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dewott",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dewpider": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dewpider",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.diggersby": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/diggersby",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.diglett": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/diglett",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dipplin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dipplin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ditto": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ditto",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dodrio": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dodrio",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.doduo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/doduo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dondozo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dondozo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dottler": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dottler",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.doublade": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/doublade",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dracovish": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dracovish",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dracozolt": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dracozolt",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dragalge": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dragalge",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dragapult": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dragapult",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dragonair": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dragonair",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dragonite": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dragonite",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drakloak": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drakloak",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drampa": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drampa",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drapion": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drapion",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dratini": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dratini",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drednaw": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drednaw",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dreepy": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dreepy",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drifblim": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drifblim",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drifloon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drifloon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drilbur": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drilbur",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drizzile": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drizzile",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.drowzee": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/drowzee",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dubwool": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dubwool",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ducklett": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ducklett",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dugtrio": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dugtrio",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.duraludon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/duraludon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dusclops": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dusclops",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dusknoir": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dusknoir",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.duskull": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/duskull",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dustox": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dustox",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.dwebble": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/dwebble",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.eelektrik": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/eelektrik",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.eelektross": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/eelektross",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.eevee": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/eevee",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ekans": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ekans",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.eldegoss": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/eldegoss",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.electabuzz": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/electabuzz",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.electivire": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/electivire",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.electrike": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/electrike",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.electrode": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/electrode",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.elekid": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/elekid",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.elgyem": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/elgyem",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.emboar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/emboar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.empoleon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/empoleon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.espathra": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/espathra",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.espeon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/espeon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.espurr": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/espurr",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.excadrill": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/excadrill",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.farfetchd": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/farfetchd",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.farigiraf": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/farigiraf",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.fearow": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/fearow",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.feebas": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/feebas",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.fennekin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/fennekin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.feraligatr": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/feraligatr",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.fidough": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/fidough",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.finizen": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/finizen",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.finneon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/finneon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.flaaffy": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/flaaffy",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.flabebe": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/flabebe",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.flamigo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/flamigo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.flapple": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/flapple",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.flareon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/flareon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.fletchinder": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/fletchinder",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.fletchling": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/fletchling",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.flittle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/flittle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.floatzel": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/floatzel",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.floette": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/floette",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.floragato": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/floragato",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.florges": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/florges",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.flygon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/flygon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.fomantis": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/fomantis",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.fraxure": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/fraxure",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.froakie": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/froakie",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.frogadier": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/frogadier",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.froslass": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/froslass",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.fuecoco": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/fuecoco",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.furfrou": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/furfrou",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.furret": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/furret",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gabite": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gabite",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gallade": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gallade",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.galvantula": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/galvantula",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.garbodor": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/garbodor",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.garchomp": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/garchomp",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gardevoir": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gardevoir",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.garganacl": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/garganacl",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gastly": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gastly",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gastrodon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gastrodon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gengar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gengar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.geodude": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/geodude",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gholdengo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gholdengo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gible": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gible",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gigalith": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gigalith",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gimmighoul": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gimmighoul",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.girafarig": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/girafarig",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.glaceon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/glaceon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.glalie": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/glalie",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.glameow": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/glameow",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gligar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gligar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.glimmet": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/glimmet",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.glimmora": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/glimmora",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gliscor": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gliscor",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gloom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gloom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gogoat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gogoat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.golbat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/golbat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.goldeen": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/goldeen",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.golduck": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/golduck",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.golem": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/golem",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.golett": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/golett",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.golisopod": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/golisopod",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.golurk": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/golurk",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.goodra": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/goodra",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.goomy": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/goomy",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gossifleur": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gossifleur",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gourgeist": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gourgeist",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.grafaiai": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/grafaiai",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.granbull": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/granbull",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.graveler": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/graveler",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.greedent": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/greedent",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.greninja": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/greninja",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.grimer": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/grimer",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.grimmsnarl": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/grimmsnarl",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.grookey": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/grookey",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.grotle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/grotle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.grovyle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/grovyle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.growlithe": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/growlithe",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.grubbin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/grubbin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.grumpig": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/grumpig",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gulpin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gulpin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gurdurr": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gurdurr",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.gyarados": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/gyarados",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.happiny": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/happiny",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hatenna": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hatenna",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hatterene": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hatterene",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hattrem": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hattrem",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.haunter": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/haunter",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hawlucha": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hawlucha",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.haxorus": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/haxorus",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.heliolisk": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/heliolisk",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.helioptile": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/helioptile",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.herdier": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/herdier",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hippopotas": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hippopotas",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hippowdon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hippowdon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hitmontop": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hitmontop",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.honedge": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/honedge",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hoothoot": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hoothoot",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hoppip": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hoppip",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.horsea": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/horsea",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.houndoom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/houndoom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.houndour": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/houndour",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hydrapple": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hydrapple",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hydreigon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hydreigon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.hypno": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/hypno",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.igglybuff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/igglybuff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.impidimp": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/impidimp",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.incineroar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/incineroar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.infernape": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/infernape",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.inkay": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/inkay",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.inteleon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/inteleon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ivysaur": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ivysaur",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.jigglypuff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/jigglypuff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.jolteon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/jolteon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.joltik": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/joltik",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.jumpluff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/jumpluff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.kabuto": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/kabuto",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.kabutops": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/kabutops",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.kadabra": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/kadabra",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.kakuna": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/kakuna",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.kecleon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/kecleon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.kingdra": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/kingdra",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.kingler": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/kingler",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.kirlia": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/kirlia",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.klang": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/klang",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.klawf": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/klawf",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.klefki": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/klefki",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.klink": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/klink",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.klinklang": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/klinklang",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.koffing": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/koffing",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.komala": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/komala",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.krabby": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/krabby",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.krokorok": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/krokorok",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.krookodile": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/krookodile",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lairon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lairon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lampent": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lampent",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lapras": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lapras",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.larvesta": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/larvesta",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.larvitar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/larvitar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.leafeon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/leafeon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.leavanny": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/leavanny",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lechonk": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lechonk",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ledian": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ledian",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ledyba": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ledyba",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.liepard": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/liepard",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lileep": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lileep",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lilligant": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lilligant",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lillipup": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lillipup",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.litleo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/litleo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.litten": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/litten",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.litwick": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/litwick",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lombre": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lombre",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lopunny": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lopunny",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lotad": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lotad",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lucario": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lucario",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ludicolo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ludicolo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lumineon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lumineon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lunatone": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lunatone",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lurantis": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lurantis",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.lycanroc": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/lycanroc",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mabosstiff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mabosstiff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.machamp": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/machamp",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.machoke": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/machoke",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.machop": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/machop",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.magby": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/magby",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.magikarp": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/magikarp",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.magmar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/magmar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.magmortar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/magmortar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.magnemite": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/magnemite",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.magneton": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/magneton",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.magnezone": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/magnezone",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.malamar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/malamar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mamoswine": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mamoswine",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.manectric": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/manectric",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mankey": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mankey",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mantine": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mantine",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mantyke": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mantyke",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.maractus": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/maractus",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mareanie": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mareanie",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mareep": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mareep",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.marowak": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/marowak",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.marshtomp": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/marshtomp",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.maschiff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/maschiff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.masquerain": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/masquerain",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mawile": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mawile",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.meganium": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/meganium",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.meowscarada": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/meowscarada",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.meowstic": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/meowstic",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.meowth": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/meowth",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.metagross": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/metagross",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.metang": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/metang",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.metapod": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/metapod",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mienfoo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mienfoo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mienshao": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mienshao",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mightyena": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mightyena",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.milotic": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/milotic",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.miltank": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/miltank",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mimikyu": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mimikyu",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.minun": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/minun",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.misdreavus": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/misdreavus",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mismagius": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mismagius",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.monferno": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/monferno",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.morgrem": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/morgrem",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mudbray": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mudbray",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mudkip": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mudkip",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.mudsdale": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/mudsdale",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.muk": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/muk",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.munchlax": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/munchlax",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.munna": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/munna",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.musharna": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/musharna",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nacli": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nacli",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.naclstack": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/naclstack",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nickit": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nickit",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nidoking": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nidoking",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nidoqueen": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nidoqueen",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nidoranf": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nidoranf",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nidoranm": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nidoranm",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nidorina": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nidorina",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nidorino": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nidorino",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.nincada": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/nincada",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ninetales": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ninetales",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ninjask": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ninjask",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.noctowl": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/noctowl",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.noibat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/noibat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.noivern": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/noivern",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.octillery": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/octillery",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.oddish": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/oddish",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.omanyte": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/omanyte",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.omastar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/omastar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.onix": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/onix",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.orbeetle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/orbeetle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.orthworm": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/orthworm",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.oshawott": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/oshawott",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.overqwil": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/overqwil",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.palafin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/palafin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pancham": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pancham",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pangoro": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pangoro",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.panpour": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/panpour",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pansage": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pansage",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pansear": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pansear",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.paras": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/paras",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.parasect": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/parasect",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.patrat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/patrat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.persian": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/persian",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.petilil": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/petilil",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.phantump": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/phantump",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pichu": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pichu",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pidgeot": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pidgeot",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pidgeotto": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pidgeotto",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pidgey": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pidgey",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pidove": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pidove",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pignite": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pignite",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pikachu": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pikachu",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.piloswine": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/piloswine",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pincurchin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pincurchin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pinsir": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pinsir",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.piplup": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/piplup",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.plusle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/plusle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.poliwag": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/poliwag",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.poliwhirl": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/poliwhirl",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.poliwrath": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/poliwrath",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.poltchageist": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/poltchageist",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.polteageist": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/polteageist",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ponyta": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ponyta",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.poochyena": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/poochyena",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.popplio": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/popplio",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.porygon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/porygon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.porygon2": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/porygon2",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.porygonz": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/porygonz",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.primarina": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/primarina",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.primeape": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/primeape",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.prinplup": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/prinplup",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.psyduck": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/psyduck",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pumpkaboo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pumpkaboo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pupitar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pupitar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.purrloin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/purrloin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.purugly": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/purugly",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.pyroar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/pyroar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.quagsire": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/quagsire",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.quaquaval": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/quaquaval",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.quaxly": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/quaxly",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.quaxwell": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/quaxwell",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.quilava": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/quilava",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.quilladin": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/quilladin",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.qwilfish": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/qwilfish",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.raboot": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/raboot",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rabsca": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rabsca",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.raichu": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/raichu",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ralts": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ralts",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rampardos": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rampardos",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rapidash": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rapidash",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.raticate": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/raticate",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rattata": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rattata",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.relicanth": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/relicanth",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rellor": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rellor",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.remoraid": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/remoraid",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.revavroom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/revavroom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rhydon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rhydon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rhyhorn": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rhyhorn",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rhyperior": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rhyperior",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rillaboom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rillaboom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.riolu": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/riolu",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rockruff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rockruff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.roggenrola": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/roggenrola",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rolycoly": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rolycoly",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rookidee": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rookidee",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.roselia": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/roselia",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.roserade": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/roserade",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rowlet": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rowlet",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.rufflet": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/rufflet",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.runerigus": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/runerigus",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.salamence": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/salamence",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.samurott": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/samurott",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sandaconda": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sandaconda",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sandile": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sandile",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sandshrew": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sandshrew",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sandslash": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sandslash",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sawk": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sawk",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.scatterbug": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/scatterbug",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sceptile": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sceptile",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.scolipede": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/scolipede",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.scorbunny": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/scorbunny",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.scovillain": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/scovillain",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.scyther": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/scyther",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.seadra": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/seadra",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.seaking": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/seaking",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sealeo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sealeo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.seel": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/seel",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sentret": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sentret",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.serperior": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/serperior",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.servine": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/servine",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.seviper": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/seviper",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sewaddle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sewaddle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.shedinja": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/shedinja",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.shelgon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/shelgon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.shellder": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/shellder",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.shellos": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/shellos",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.shieldon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/shieldon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.shroodle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/shroodle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.shroomish": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/shroomish",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.shuppet": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/shuppet",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sigilyph": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sigilyph",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.silcoon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/silcoon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.silicobra": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/silicobra",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.simipour": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/simipour",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.simisage": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/simisage",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.simisear": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/simisear",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sinistcha": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sinistcha",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sinistea": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sinistea",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sirfetchd": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sirfetchd",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skarmory": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skarmory",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skeledirge": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skeledirge",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skiddo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skiddo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skiploom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skiploom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skitty": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skitty",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skorupi": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skorupi",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skrelp": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skrelp",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skuntank": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skuntank",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.skwovet": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/skwovet",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.slaking": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/slaking",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.slakoth": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/slakoth",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sliggoo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sliggoo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.slowbro": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/slowbro",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.slowking": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/slowking",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.slowpoke": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/slowpoke",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.slurpuff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/slurpuff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.smeargle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/smeargle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sneasel": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sneasel",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sneasler": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sneasler",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.snivy": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/snivy",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.snorlax": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/snorlax",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.snorunt": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/snorunt",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.snubbull": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/snubbull",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sobble": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sobble",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.solrock": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/solrock",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.spearow": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/spearow",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.spewpa": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/spewpa",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.spheal": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/spheal",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.spinarak": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/spinarak",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.spinda": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/spinda",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.spoink": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/spoink",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sprigatito": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sprigatito",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.spritzee": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/spritzee",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.squawkabilly": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/squawkabilly",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.squirtle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/squirtle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.stantler": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/stantler",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.staraptor": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/staraptor",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.staravia": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/staravia",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.starly": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/starly",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.steelix": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/steelix",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.stonjourner": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/stonjourner",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.stoutland": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/stoutland",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.stufful": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/stufful",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.stunky": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/stunky",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sunflora": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sunflora",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sunkern": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sunkern",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.surskit": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/surskit",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swablu": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swablu",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swadloon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swadloon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swalot": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swalot",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swampert": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swampert",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swanna": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swanna",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swellow": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swellow",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swinub": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swinub",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swirlix": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swirlix",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.swoobat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/swoobat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.sylveon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/sylveon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.taillow": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/taillow",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.talonflame": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/talonflame",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tandemaus": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tandemaus",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tangela": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tangela",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tangrowth": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tangrowth",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tatsugiri": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tatsugiri",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tauros": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tauros",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.teddiursa": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/teddiursa",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tepig": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tepig",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.thievul": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/thievul",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.throh": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/throh",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.thwackey": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/thwackey",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.timburr": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/timburr",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tinkatink": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tinkatink",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tinkaton": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tinkaton",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tinkatuff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tinkatuff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tirtouga": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tirtouga",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.togekiss": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/togekiss",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.togepi": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/togepi",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.togetic": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/togetic",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.torchic": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/torchic",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.torkoal": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/torkoal",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.torracat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/torracat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.torterra": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/torterra",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.totodile": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/totodile",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.toxapex": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/toxapex",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.toxel": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/toxel",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.toxtricity": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/toxtricity",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tranquill": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tranquill",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.trapinch": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/trapinch",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.treecko": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/treecko",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.trevenant": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/trevenant",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tropius": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tropius",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.trubbish": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/trubbish",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.turtwig": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/turtwig",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tynamo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tynamo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.typhlosion": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/typhlosion",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.typhlosionhisui": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/typhlosionhisui",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tyranitar": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tyranitar",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tyrantrum": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tyrantrum",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tyrogue": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tyrogue",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.tyrunt": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/tyrunt",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.umbreon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/umbreon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.unfezant": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/unfezant",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.unown": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/unown",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.ursaring": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/ursaring",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.vaporeon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/vaporeon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.varoom": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/varoom",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.venipede": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/venipede",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.venomoth": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/venomoth",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.venonat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/venonat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.venusaur": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/venusaur",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.vespiquen": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/vespiquen",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.vibrava": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/vibrava",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.vigoroth": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/vigoroth",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.vikavolt": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/vikavolt",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.vileplume": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/vileplume",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.vivillon": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/vivillon",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.volcarona": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/volcarona",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.voltorb": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/voltorb",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.vulpix": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/vulpix",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.walrein": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/walrein",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.wartortle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/wartortle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.watchog": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/watchog",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.weavile": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/weavile",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.weedle": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/weedle",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.weezing": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/weezing",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.whimsicott": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/whimsicott",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.whirlipede": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/whirlipede",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.whiscash": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/whiscash",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.wigglytuff": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/wigglytuff",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.wimpod": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/wimpod",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.wobbuffet": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/wobbuffet",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.woobat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/woobat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.wooloo": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/wooloo",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.wooper": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/wooper",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.wurmple": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/wurmple",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.wynaut": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/wynaut",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.yamask": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/yamask",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.yamper": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/yamper",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.yanma": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/yanma",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.yanmega": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/yanmega",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.zangoose": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/zangoose",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.zebstrika": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/zebstrika",
+    "volume": 0.6
+   }
+  ]
+ },
+ "cry.zeraora": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/zeraora",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.zoroark": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/zoroark",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.zorua": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/zorua",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.zubat": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/zubat",
+    "volume": 0.8
+   }
+  ]
+ },
+ "cry.zweilous": {
+  "sounds": [
+   {
+    "name": "capipimon:cries/zweilous",
+    "volume": 0.8
+   }
+  ]
+ }
+}

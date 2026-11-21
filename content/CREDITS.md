@@ -11,6 +11,8 @@ Changes for Cobblemon 1.8.x (Capipimon):
 
 Install as both a resource pack and a datapack. Not yet tested in game.
 
+Capipimon also uses CobbleCats' cries for 9 species, Zeraora among them (`assets/capipimon/sounds/cries/`; list in `licences/cobblemon-cries-sources.txt`).
+
 # Cobblemon species assets
 
 Pikachu's model, animations and texture (`pikachu.*`, `textures/entity/pikachu.png`) come from **Cobblemon** (https://gitlab.com/cable-mc/cobblemon), whose models are licensed **CC BY-NC 3.0 Unported** by the Cobblemon team (the `license` file in its model folder). Unchanged apart from file names.

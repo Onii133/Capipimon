@@ -3,16 +3,17 @@
 //! tokens").
 //!
 //! The Tutor stands in Phase HQ. F next to it (or `/tutor`) opens its menu: the moves it can teach
-//! the Pokémon you are, what each costs in tokens, and which you already own. W/S choose, 1/2/3
-//! put the move on Q/E/R (buying it first if it isn't yours yet), Esc closes. A bought move also
-//! shows in the Nest PC's Moves list from then on.
+//! the Pokémon you are, what each costs in tokens, and which you already own. W/S choose, 1/2/3/4
+//! put the move on LMB/Q/E/R (hotbar order, as in the PC; buying it first if it isn't yours yet),
+//! X closes. A bought move also shows in the Nest PC's Moves list from then on.
 //!
 //! Wire (channel `capipimon:play`):
-//! - server → client: `tutor\t<tokens>\t<q>\t<e>\t<r>\t<id:cost:owned:level,...  or ->` (open or
-//!   refresh), `tutor\t-` (close), `tutornote\t<text>` (a line under the list),
+//! - server → client: `tutor\t<tokens>\t<q>\t<e>\t<r>\t<id:cost:owned:level,...  or ->\t<lmb>` (open or
+//!   refresh; `<lmb>` comes last so older clients ignore it, older servers leave it out),
+//!   `tutor\t-` (close), `tutornote\t<text>` (a line under the list),
 //!   `tutored\t<id,id,... or ->` (the bought moves the current Pokémon can use; sent with the PC's
 //!   Moves list and after a lesson).
-//! - client → server: `tutor\topen`, `tutor\tteach\t<move id>\t<slot 1-3>`, `tutor\tclose`.
+//! - client → server: `tutor\topen`, `tutor\tteach\t<move id>\t<slot 0-3: LMB, Q, E, R>`, `tutor\tclose`.
 
 use super::*;
 
@@ -32,6 +33,8 @@ struct Row {
 struct View {
     tokens: u32,
     slots: [String; 3],
+    /// The LMB move's name (None from a server that doesn't send it).
+    lmb: Option<String>,
     rows: Vec<Row>,
     sel: usize,
 }
@@ -48,7 +51,9 @@ pub static TUTOR_CLIENT: LazyLock<Mutex<TutorClient>> = LazyLock::new(Default::d
 pub fn heard(f: &[&str]) -> bool {
     match f {
         ["tutor", "-", ..] => TUTOR_CLIENT.lock().unwrap().view = None,
-        ["tutor", tokens, q, e, r, rows, ..] => {
+        // A late refresh of a Tutor this client just closed for another menu.
+        ["tutor", ..] if !is_open() && !menus::server_may_open(menus::Menu::Tutor) => {}
+        ["tutor", tokens, q, e, r, rows, rest @ ..] => {
             let rows: Vec<Row> = rows
                 .split(',')
                 .filter_map(|row| {
@@ -63,9 +68,11 @@ pub fn heard(f: &[&str]) -> bool {
             let mut c = TUTOR_CLIENT.lock().unwrap();
             let fresh = c.view.is_none();
             let sel = c.view.as_ref().map_or(0, |v| v.sel).min(rows.len().saturating_sub(1));
-            c.view = Some(View { tokens: tokens.parse().unwrap_or(0), slots: [q.to_string(), e.to_string(), r.to_string()], rows, sel });
+            c.view = Some(View { tokens: tokens.parse().unwrap_or(0), slots: [q.to_string(), e.to_string(), r.to_string()], lmb: rest.first().map(|l| l.to_string()), rows, sel });
             if fresh {
                 c.note = None;
+                drop(c);
+                menus::opening(menus::Menu::Tutor);
             }
         }
         ["tutornote", text, ..] => TUTOR_CLIENT.lock().unwrap().note = Some((text.to_string(), Instant::now())),
@@ -86,6 +93,11 @@ pub fn is_open() -> bool {
     TUTOR_CLIENT.lock().unwrap().view.is_some()
 }
 
+/// Closes it (another menu is opening); true when it was open.
+pub fn shut() -> bool {
+    TUTOR_CLIENT.lock().unwrap().view.take().is_some()
+}
+
 /// Keys while the Tutor's menu is open (all of them are taken, so moves don't fire).
 pub fn key(host: &mut dyn Host, key: &str) -> bool {
     let mut c = TUTOR_CLIENT.lock().unwrap();
@@ -95,12 +107,12 @@ pub fn key(host: &mut dyn Host, key: &str) -> bool {
     match key {
         "key.keyboard.up" | "key.keyboard.w" => v.sel = (v.sel + len - 1) % len,
         "key.keyboard.down" | "key.keyboard.s" => v.sel = (v.sel + 1) % len,
-        "key.keyboard.1" | "key.keyboard.2" | "key.keyboard.3" => {
-            if let Some(row) = v.rows.get(v.sel) {
-                send = Some(format!("tutor\tteach\t{}\t{}", row.mv.id, &key["key.keyboard.".len()..]));
+        "key.keyboard.1" | "key.keyboard.2" | "key.keyboard.3" | "key.keyboard.4" => {
+            if let (Some(row), Some(slot)) = (v.rows.get(v.sel), pc::slot_for_key(key)) {
+                send = Some(format!("tutor\tteach\t{}\t{slot}", row.mv.id));
             }
         }
-        "key.keyboard.escape" | "key.keyboard.backspace" | "key.keyboard.e" => {
+        "key.keyboard.x" | "key.keyboard.backspace" | "key.keyboard.e" => {
             c.view = None;
             send = Some("tutor\tclose".to_string());
         }
@@ -111,14 +123,6 @@ pub fn key(host: &mut dyn Host, key: &str) -> bool {
         let _ = host.net_send_to_server(CHANNEL, s.as_bytes());
     }
     true
-}
-
-/// Standing still while the menu is open (W/S move the cursor).
-pub fn movement_input(event: &mut MovementInputEvent) {
-    if is_open() {
-        event.forward = 0.0;
-        event.strafe = 0.0;
-    }
 }
 
 // Colours: a warm dojo board, so it never reads as the (blue) PC.
@@ -132,7 +136,7 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
     const SHOWN: usize = 9;
     let c = TUTOR_CLIENT.lock().unwrap();
     let Some(v) = c.view.as_ref() else { return };
-    let (w, h) = (300.0f32, 158.0f32);
+    let (w, h) = (300.0f32, 158.0f32 + pc::INFO_H);
     let (x, y) = ((b.width - w) / 2.0, (b.height - h) / 2.0);
     pill(host, b, x, y, w, h, FRAME);
     pill(host, b, x + 3.0, y + 3.0, w - 6.0, 14.0, HEAD);
@@ -140,7 +144,7 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
     let tokens = format!("{} token{}", v.tokens, if v.tokens == 1 { "" } else { "s" });
     let tw = host.text_width(&tokens);
     host.text(b, &tokens, [x + w - 8.0 - tw, y + 6.0], 0xFFF2B0, true);
-    let bar = format!("Q {}   E {}   R {}", v.slots[0], v.slots[1], v.slots[2]);
+    let bar = format!("{}Q {}   E {}   R {}", v.lmb.as_ref().map_or(String::new(), |l| format!("LMB {l}   ")), v.slots[0], v.slots[1], v.slots[2]);
     host.text(b, &fit(host, &bar, w - 14.0), [x + 7.0, y + 21.0], 0xFFE9A0, true);
     if v.rows.is_empty() {
         let t = "The Tutor has nothing new for this Pokémon.";
@@ -167,7 +171,10 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
         let pw = host.text_width(&price);
         host.text(b, &price, [x + w - 9.0 - pw, ry], col, false);
     }
-    guide::keyed_centred(host, b, "[W] [S] choose  learn onto: [1] Q  [2] E  [3] R  [Esc] close", x + w / 2.0, y + h - 22.0, 0xF4E4D0);
+    if let Some(row) = v.rows.get(v.sel) {
+        pc::info_hud(host, b, x + 8.0, y + 134.0, w - 16.0, &row.mv, 0xE8CCA8, 0xFFFFFF);
+    }
+    guide::keyed_centred(host, b, "[W] [S] choose  learn onto: [1] LMB  [2] Q  [3] E  [4] R  [X] close", x + w / 2.0, y + h - 22.0, 0xF4E4D0);
     if let Some((t, at)) = &c.note {
         if at.elapsed().as_secs_f32() < 5.0 {
             let fitted = fit(host, t, w - 10.0);

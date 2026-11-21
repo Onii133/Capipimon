@@ -1,9 +1,10 @@
-//! Emotes, the client half: the emote wheel on B, the speech bubble over a player's head and the
-//! body motion a Pokémon plays. Free for everyone; nothing here is ever sold or locked.
+//! Emotes, the client half: the emote wheel on B (one of the two keybind exceptions, with M for the
+//! map; Onii 2026-11-13), the list in the Tab menu (`hub.rs`), the speech bubble over a player's
+//! head and the body motion a Pokémon plays. Free for everyone; nothing here is ever sold or locked.
 //!
 //! The server (`emotes_srv.rs`) decides who may emote and tells everyone in range. The only link
 //! between the halves is the wire on `play::CHANNEL`:
-//! - client to server: `emote\t<id>` (the wheel; `/emote <id>` goes through the server's command)
+//! - client to server: `emote\t<id>` (the Tab menu; `/emote <id>` goes through the server's command)
 //! - server to client: `emote\t<name>\t<id>`, `emote\t<name>\t-` (a looping one ended) and
 //!   `emote\t<name>\thighfive\t<other>`.
 //!
@@ -86,8 +87,23 @@ pub fn wheel_pick(key: &str) -> Option<&'static Emote> {
     d.checked_sub(1).and_then(|i| CATALOG.emotes.get(i))
 }
 
-/// Keys, before any other Capipimon key handling. True when taken. `busy`: another screen (PC,
-/// wardrobe) is open, so B doesn't open the wheel over it.
+pub fn wheel_open() -> bool {
+    STATE.lock().unwrap().wheel.is_some_and(|at| at.elapsed().as_secs_f32() < WHEEL_SECS)
+}
+
+/// Opens the wheel, closing any other menu (`menus`).
+pub fn open_wheel() {
+    STATE.lock().unwrap().wheel = Some(Instant::now());
+    crate::play::onboard::menus::opening(crate::play::onboard::menus::Menu::Emotes);
+}
+
+pub fn close_wheel() {
+    STATE.lock().unwrap().wheel = None;
+}
+
+/// Keys, before the other Capipimon screens. True when taken. `busy`: another screen (PC,
+/// wardrobe, map...) is open, so B doesn't open the wheel over it. B or X closes it; Esc is only
+/// the pause menu.
 pub fn key(host: &mut dyn Host, key: &str, busy: bool) -> bool {
     let mut s = STATE.lock().unwrap();
     if s.wheel.is_some_and(|at| at.elapsed().as_secs_f32() >= WHEEL_SECS) {
@@ -95,29 +111,31 @@ pub fn key(host: &mut dyn Host, key: &str, busy: bool) -> bool {
     }
     if s.wheel.is_none() {
         if key == "key.keyboard.b" && !busy {
-            s.wheel = Some(Instant::now());
+            drop(s);
+            open_wheel();
             return true;
         }
         return false;
     }
     match key {
-        "key.keyboard.b" | "key.keyboard.escape" => {
+        "key.keyboard.b" | "key.keyboard.x" => {
             s.wheel = None;
             true
         }
-        // A move closes the wheel and still goes out.
-        "key.keyboard.q" | "key.keyboard.e" | "key.keyboard.r" | "key.keyboard.c" | "key.keyboard.f" => {
+        // A move closes the wheel, and nothing else happens: no gameplay input while a menu is up
+        // (play-test #8).
+        "key.keyboard.q" | "key.keyboard.e" | "key.keyboard.r" | "key.keyboard.z" | "key.keyboard.f" => {
             s.wheel = None;
-            false
+            true
         }
         _ => match wheel_pick(key) {
             Some(e) => {
                 s.wheel = None;
                 drop(s);
-                let _ = host.net_send_to_server(crate::play::CHANNEL, format!("emote\t{}", e.id).as_bytes());
+                let _ = host.net_send_to_server(crate::play::CHANNEL, format!("emote	{}", e.id).as_bytes());
                 true
             }
-            // Movement, jump and guard keep working with the wheel open.
+            // Movement, jump and guard wait for it to close (`menus`).
             None => false,
         },
     }
@@ -346,10 +364,10 @@ pub fn bubble(host: &dyn Host, draw: &mut BlockEntityDraw, name: &str, now: &Now
     draw.pop();
 }
 
-/// The wheel, over everything else in the HUD while open.
+/// The wheel, over everything else in the HUD while open. Only the emotes and their digits: no
+/// hint about B (Onii 2026-11-13: B and M are listed only on the Tab menu's controls page).
 pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
-    let open = STATE.lock().unwrap().wheel.is_some_and(|at| at.elapsed().as_secs_f32() < WHEEL_SECS);
-    if !open {
+    if !wheel_open() {
         return;
     }
     // The Pokémon/quest panels fill about 165 units on the left, so on small
@@ -366,10 +384,6 @@ pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
         panel(host, b, x - w / 2.0 - 4.0, y - 6.0, w + 8.0, 14.0, 0xD818_1A26);
         host.text(b, &t, [x - w / 2.0, y - 3.0], 0xFFFFFF, true);
     }
-    let hint = "[B] close";
-    let w = host.text_width(hint);
-    panel(host, b, cx - w / 2.0 - 4.0, cy - 6.0, w + 8.0, 14.0, 0xA018_1A26);
-    host.text(b, hint, [cx - w / 2.0, cy - 3.0], 0xC0C8D8, true);
 }
 
 fn panel(host: &mut dyn Host, b: &mut HudBatch, x: f32, y: f32, w: f32, h: f32, argb: u32) {
@@ -383,7 +397,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn the_catalog_loads_and_fits_the_number_keys() {
+    fn the_catalog_loads_and_fits_the_menu() {
         assert!((6..=9).contains(&CATALOG.emotes.len()), "{}", CATALOG.emotes.len());
         let mut ids: Vec<&str> = CATALOG.emotes.iter().map(|e| e.id.as_str()).collect();
         ids.sort_unstable();
@@ -398,10 +412,11 @@ mod tests {
 
     #[test]
     fn digits_pick_from_the_wheel_in_order() {
-        assert_eq!(wheel_pick("key.keyboard.1").map(|e| e.id.as_str()), Some("wave"));
-        assert_eq!(wheel_pick("key.keyboard.8").map(|e| e.id.as_str()), Some("sleep"));
+        assert_eq!(wheel_pick("key.keyboard.1").map(|e| e.id.as_str()), Some(CATALOG.emotes[0].id.as_str()));
+        let last = CATALOG.emotes.len();
+        assert_eq!(wheel_pick(&format!("key.keyboard.{last}")).map(|e| e.id.as_str()), Some(CATALOG.emotes[last - 1].id.as_str()));
         assert!(wheel_pick("key.keyboard.0").is_none());
-        assert!(wheel_pick("key.keyboard.9").is_none());
+        assert!(wheel_pick(&format!("key.keyboard.{}", last + 1)).is_none());
         assert!(wheel_pick("key.keyboard.w").is_none());
     }
 
@@ -415,6 +430,7 @@ mod tests {
 
     #[test]
     fn server_lines_start_and_end_emotes() {
+        let _g = crate::play::onboard::menus::test_lock();
         forget();
         assert!(heard(&["emote", "Bob", "wave"]));
         assert!(playing("Bob", false, false).is_some_and(|n| n.bubble == "Hi!"));

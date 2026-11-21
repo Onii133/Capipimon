@@ -35,8 +35,7 @@
    "windup": 0.0,
    "anim": "special",
    "particle": "minecraft:enchanted_hit",
-   "form": "beam",
-   "tele": 0.0
+   "form": "beam"
   },
   {
    "id": "sig:f_fly2",

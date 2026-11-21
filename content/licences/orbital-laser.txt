@@ -5,6 +5,13 @@ Used for: techniques in the Capipimon move effects pass (mods/capipimon-models/a
 rebuilding world position from the depth buffer, and drawing beams as the distance from each
 pixel's view ray to the beam's axis. The effects code is our own; no source files are copied.
 
+Also used for (rechecked 2026-11-14 at commit 6b5eade55c4c35f5129dea1386da9558e86e77b9, still MIT):
+the Z-Move cinematic in the same file, whose staging was inspired by their strikes (a charge-up
+on the target, a pillar of light from the sky, shock rings racing over the ground, a single
+flash, camera shake by distance, booms delayed by the speed of sound, scorch and rising embers).
+Written from their README and docs/HOW-IT-WORKS.md; no code, shaders, sounds or other assets
+are copied. See docs/fx/ZMOVE_CINEMATIC.md in the source repository.
+
 ----
 
 MIT License

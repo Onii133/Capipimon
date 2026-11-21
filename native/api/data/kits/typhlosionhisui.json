@@ -1,0 +1,85 @@
+{
+ "base": {
+  "atk": 84,
+  "def": 78,
+  "hp": 73,
+  "spa": 119,
+  "spd": 85,
+  "spe": 95
+ },
+ "hitbox": {
+  "base_scale": 0.65,
+  "height": 2.65,
+  "width": 1.35
+ },
+ "moves": [
+  {
+   "anim": "special",
+   "category": "special",
+   "cooldown": 1.0,
+   "energy": 0,
+   "id": "ember",
+   "name": "Ember",
+   "particle": "minecraft:flame",
+   "power": 40,
+   "range": 14.0,
+   "shape": "beam",
+   "type": "fire",
+   "width": 1.27,
+   "windup": 0.0
+  },
+  {
+   "anim": "special",
+   "category": "special",
+   "cooldown": 6.7,
+   "energy": 30,
+   "id": "shadowball",
+   "name": "Shadow Ball",
+   "particle": "minecraft:soul",
+   "power": 80,
+   "range": 18.0,
+   "shape": "beam",
+   "type": "ghost",
+   "width": 1.53,
+   "windup": 0.27
+  },
+  {
+   "anim": "special",
+   "category": "special",
+   "cooldown": 7.9,
+   "energy": 35,
+   "id": "heatwave",
+   "name": "Heat Wave",
+   "particle": "minecraft:flame",
+   "power": 95,
+   "range": 5.38,
+   "shape": "burst",
+   "type": "fire",
+   "width": 5.38,
+   "windup": 0.32
+  },
+  {
+   "anim": "special",
+   "category": "special",
+   "cooldown": 8.3,
+   "energy": 35,
+   "id": "inferno",
+   "name": "Inferno",
+   "particle": "minecraft:flame",
+   "power": 100,
+   "range": 20.0,
+   "shape": "beam",
+   "type": "fire",
+   "width": 1.67,
+   "windup": 0.33
+  }
+ ],
+ "name": "Hisuian Typhlosion",
+ "schema": 1,
+ "source": "hand",
+ "species": "typhlosionhisui",
+ "types": [
+  "fire",
+  "ghost"
+ ]
+}

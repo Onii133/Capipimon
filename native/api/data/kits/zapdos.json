@@ -36,8 +36,7 @@
    "anim": "physical",
    "particle": "minecraft:cloud",
    "form": "cone",
-   "cone": 60.0,
-   "tele": 0.0
+   "cone": 60.0
   },
   {
    "id": "sig:f_fly1",

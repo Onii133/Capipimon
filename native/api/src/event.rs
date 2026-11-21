@@ -50,15 +50,16 @@ pub fn forget() {
     *EVENT_CLIENT.lock().unwrap() = None;
 }
 
-/// Whether the Event Night strip is on screen (other top-centre HUD moves under it).
-pub fn showing() -> bool {
-    EVENT_CLIENT.lock().unwrap().is_some()
+/// The Event Night countdown as one line (also on the Tab menu's News page).
+pub fn timer() -> Option<String> {
+    let (label, secs, at) = EVENT_CLIENT.lock().unwrap().clone()?;
+    let left = secs.saturating_sub(at.elapsed().as_secs() as u32);
+    Some(format!("{label}  {}:{:02}", left / 60, left % 60))
 }
 
 pub fn hud(host: &mut dyn Host, b: &mut HudBatch) {
-    let Some((label, secs, at)) = EVENT_CLIENT.lock().unwrap().clone() else { return };
-    let left = secs.saturating_sub(at.elapsed().as_secs() as u32);
-    let t = format!("{label}  {}:{:02}", left / 60, left % 60);
+    let Some(t) = timer() else { return };
+    let label = t.clone();
     let tw = host.text_width(&t);
     let x = b.width / 2.0 - tw / 2.0;
     pill(host, b, x - 6.0, 4.0, tw + 12.0, 14.0, HUD_PANEL);

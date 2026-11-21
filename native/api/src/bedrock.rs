@@ -12,6 +12,17 @@ use glam::{Mat4, Vec3};
 use serde_json::Value;
 use std::collections::HashMap;
 
+/// How far a made-up wing beat (`Model::flap`) swings each wing up and down, file degrees.
+pub const FLAP_DEG: f32 = 18.0;
+
+/// Whether `anim` turns `bone` by more than a few degrees over its length (a beat, not a pose).
+fn moves(anim: &Animation, bone: &str) -> bool {
+    let Some(r) = anim.bones.get(bone).and_then(|t| t.rotation.as_ref()) else { return false };
+    let len = if anim.length > 0.0 { anim.length } else { 2.0 };
+    let first = r.sample(0.0);
+    (1..=16).any(|n| (r.sample(len * n as f32 / 16.0) - first).abs().max_element() > 4.0)
+}
+
 /// One box of a bone, in viewport space (pixels).
 #[derive(Clone, Debug)]
 pub struct Cube {
@@ -57,6 +68,27 @@ pub struct Model {
     pub bones: Vec<Bone>,
     /// Bone indices with every parent before its children.
     order: Vec<usize>,
+    /// Birds with two sets of wings (Pidgeot, Fearow, Zubat): the spread set (`wings_open`) and
+    /// the tucked one (`wings_closed`, `wings_folded`), each with every bone under it. Cobblemon
+    /// shows one set per pose in code, not in the animation files (`Model::hide_wings`).
+    wings_open: Vec<usize>,
+    wings_closed: Vec<usize>,
+}
+
+/// Whether a bone is the top of a wing set: `wings_open` / `open_wings` / `wing_open_left`, or
+/// `wings_closed` / `closed_wings` / `wings_folded` / `wing_folded_left`. Wing bones that are
+/// neither (Moltres' `wing_left`) are the only wings, always shown.
+fn wing_set(key: &str) -> Option<bool> {
+    if !key.contains("wing") {
+        return None;
+    }
+    if key.contains("open") {
+        Some(true)
+    } else if key.contains("closed") || key.contains("folded") {
+        Some(false)
+    } else {
+        None
+    }
 }
 
 fn num(v: &Value) -> f32 {
@@ -209,9 +241,89 @@ impl Model {
                 return Err("bone parents form a loop".into());
             }
         }
-        let mut model = Self { texture, bones, order };
+        // Each wing set with everything under it (a feather or locator may not say "open").
+        let (mut wings_open, mut wings_closed) = (Vec::new(), Vec::new());
+        let mut set: Vec<Option<bool>> = vec![None; bones.len()];
+        for &i in &order {
+            set[i] = wing_set(&bones[i].key).or_else(|| bones[i].parent.and_then(|p| set[p]));
+            match set[i] {
+                Some(true) => wings_open.push(i),
+                Some(false) => wings_closed.push(i),
+                None => {}
+            }
+        }
+        // One set alone is the only wings there are: always shown.
+        if wings_open.is_empty() || wings_closed.is_empty() {
+            wings_open.clear();
+            wings_closed.clear();
+        }
+        let mut model = Self { texture, bones, order, wings_open, wings_closed };
         model.separate_coplanar();
         Ok(model)
+    }
+
+    /// Hides the wing set that doesn't fit: the tucked wings `aloft` (flying, or a model that only
+    /// ever flies), the spread ones on the ground. An animation that scales a set itself (a cast
+    /// that spreads them, a ground idle that already hides them) is left to do so.
+    pub fn hide_wings(&self, pose: &mut [Mat4], anim: Option<&Animation>, aloft: bool) {
+        let hide = if aloft { &self.wings_closed } else { &self.wings_open };
+        let scaled = anim.is_some_and(|a| hide.iter().any(|&i| a.bones.get(&self.bones[i].key).is_some_and(|t| t.scale.is_some())));
+        if scaled {
+            return;
+        }
+        for &i in hide {
+            pose[i] = Mat4::ZERO;
+        }
+    }
+
+    /// A made-up wing beat for a flying animation that holds its wings still (Moltres, Zapdos and
+    /// Articuno's `air_fly` are one still pose: Cobblemon flaps them in code). `(bone, swing in
+    /// file degrees)` for the top bone of each spread wing, the two sides mirrored about z, to swing
+    /// by a sine as `Model::gait` is. Empty when `fly` already moves a wing (Pidgeot, Charizard) or
+    /// the model has no left and right wing.
+    pub fn flap(&self, fly: &Animation) -> Vec<(usize, Vec3)> {
+        let side = |k: &str| if k.contains("left") { Some(1.0) } else if k.contains("right") { Some(-1.0) } else { None };
+        let winglike = |k: &str| k.contains("wing") && !k.contains("locator") && !k.contains("closed") && !k.contains("folded");
+        let mut out = Vec::new();
+        for (i, b) in self.bones.iter().enumerate() {
+            let k = b.key.as_str();
+            let Some(s) = side(k).filter(|_| winglike(k) && !self.wings_closed.contains(&i)) else { continue };
+            // The top of that side's wing: no ancestor is a wing bone of a side already.
+            let mut p = b.parent;
+            let mut top = true;
+            while let Some(j) = p {
+                let pk = self.bones[j].key.as_str();
+                if winglike(pk) && side(pk).is_some() {
+                    top = false;
+                    break;
+                }
+                p = self.bones[j].parent;
+            }
+            // Skip a wing with nothing drawn under it.
+            if top && self.drawn_under(i) {
+                out.push((i, Vec3::new(0.0, 0.0, FLAP_DEG * s)));
+            }
+        }
+        let (l, r) = (out.iter().filter(|(_, d)| d.z > 0.0).count(), out.iter().filter(|(_, d)| d.z < 0.0).count());
+        if l == 0 || r == 0 || out.iter().any(|(i, _)| moves(fly, &self.bones[*i].key)) {
+            return Vec::new();
+        }
+        // Any other wing bone that the animation moves means it already beats its own way.
+        let flaps = self.bones.iter().any(|b| winglike(&b.key) && moves(fly, &b.key));
+        if flaps { Vec::new() } else { out }
+    }
+
+    /// Whether bone `i` or anything under it has a cube.
+    fn drawn_under(&self, i: usize) -> bool {
+        if !self.bones[i].cubes.is_empty() {
+            return true;
+        }
+        self.bones.iter().enumerate().any(|(j, b)| b.parent == Some(i) && self.drawn_under(j))
+    }
+
+    /// Whether this model has two wing sets for `hide_wings` to choose between.
+    pub fn has_wing_sets(&self) -> bool {
+        !self.wings_open.is_empty()
     }
 
     /// Finds faces that lie flush on an earlier cube's face, facing the same way and
@@ -373,13 +485,25 @@ impl Model {
     }
 
     /// `emit` under any matrix to the mob frame: a hat rides on another model's bone this way.
-    pub fn emit_under(&self, pose: &[Mat4], to_mob: Mat4, mut quad: impl FnMut([[f32; 3]; 4], [f32; 4])) {
+    pub fn emit_under(&self, pose: &[Mat4], to_mob: Mat4, quad: impl FnMut([[f32; 3]; 4], [f32; 4])) {
+        self.emit_pushed(pose, to_mob, 0.0, quad);
+    }
+
+    /// `emit` for a texture layer drawn over the base one (Cobblemon's glowing flames and eyes):
+    /// every face a little further out, so it draws in front of the base face under it (half a
+    /// [`LAYER_PUSH`]: still behind a marking that lies flush on that face).
+    pub fn emit_layer(&self, pose: &[Mat4], scale: f32, quad: impl FnMut([[f32; 3]; 4], [f32; 4])) {
+        self.emit_pushed(pose, Self::to_mob(scale), LAYER_PUSH * 0.5, quad);
+    }
+
+    fn emit_pushed(&self, pose: &[Mat4], to_mob: Mat4, push: f32, mut quad: impl FnMut([[f32; 3]; 4], [f32; 4])) {
         let [tw, th] = self.texture;
         for (bi, bone) in self.bones.iter().enumerate() {
             let bone_m = to_mob * pose[bi] * Mat4::from_translation(-bone.pivot);
             for c in &bone.cubes {
                 let m = bone_m * cube_matrix(c);
-                for (_, corners, mut uv) in face_list(c) {
+                for (i, corners, mut uv) in face_list(c) {
+                    let corners = if push == 0.0 { corners } else { corners.map(|p| p + NORMALS[i] * push) };
                     if c.mirror {
                         uv.swap(0, 2);
                     }
@@ -574,11 +698,32 @@ impl Animation {
     /// Every animation in a `*.animation.json`, by its short name (`ground_idle` for
     /// `animation.zeraora.ground_idle`).
     pub fn parse_all(text: &str) -> Result<HashMap<String, Self>, String> {
+        Self::parse_for(text, "")
+    }
+
+    /// `parse_all` for `species`' file. Some files hold a regional form's set too
+    /// (`animation.quilava.*` and `animation.quilava_hisui_bias.*`, Ponyta and Ponyta Galar): of two
+    /// animations with one short name, the one named most like the species wins, then the shorter
+    /// name (the base form). Before 2026-11-20 the last in name order won, so Quilava, Ponyta,
+    /// Vulpix and others moved with their regional form's animations.
+    pub fn parse_for(text: &str, species: &str) -> Result<HashMap<String, Self>, String> {
         let json: Value = serde_json::from_str(text).map_err(|e| e.to_string())?;
         let list = json["animations"].as_object().ok_or("no animations")?;
+        let species: String = species.chars().filter(char::is_ascii_alphanumeric).collect::<String>().to_ascii_lowercase();
+        let rank = |name: &str| {
+            let prefix: String = name.rsplit_once('.').map_or("", |p| p.0).trim_start_matches("animation.").chars().filter(char::is_ascii_alphanumeric).collect::<String>().to_ascii_lowercase();
+            let alike = prefix.chars().zip(species.chars()).take_while(|(a, b)| a == b).count();
+            (alike, std::cmp::Reverse(prefix.len()))
+        };
         let mut out = HashMap::new();
+        let mut ranks = HashMap::new();
         for (name, a) in list {
             let short = name.rsplit('.').next().unwrap_or(name).to_owned();
+            let r = rank(name);
+            if ranks.get(&short).is_some_and(|best| *best >= r) {
+                continue;
+            }
+            ranks.insert(short.clone(), r);
             let mut bones = HashMap::new();
             for (bone, ch) in a["bones"].as_object().into_iter().flatten() {
                 // Bedrock matches bone names case-insensitively.
@@ -685,5 +830,107 @@ mod tests {
         let p0 = m.pose(Some(&a["ground_walk"]), 0.0);
         let p1 = m.pose(Some(&a["ground_walk"]), 0.25);
         assert!(p0.iter().zip(&p1).any(|(x, y)| !x.abs_diff_eq(*y, 1e-4)));
+    }
+
+    fn model_named(name: &str) -> Option<(String, String)> {
+        let dir = std::path::PathBuf::from(std::env::var("CAPI_TEST_CONTENT_DIR").ok()?).join("cobblemon-models");
+        let read = |ext: &str| std::fs::read_to_string(dir.join(format!("{name}.{ext}.json"))).ok();
+        Some((read("geo")?, read("animation")?))
+    }
+
+    /// The bones a pose draws something for: not hidden here, nor scaled to a point by the animation.
+    fn shown(m: &Model, pose: &[Mat4]) -> Vec<String> {
+        let size = |p: &Mat4| p.x_axis.truncate().length() + p.y_axis.truncate().length() + p.z_axis.truncate().length();
+        m.bones.iter().enumerate().filter(|(i, _)| size(&pose[*i]) > 1e-4).map(|(_, b)| b.key.clone()).collect()
+    }
+
+    #[test]
+    fn a_bird_flies_on_one_pair_of_wings() {
+        // Pidgeot flying showed its tucked wings hanging under the spread ones (2026-11-20).
+        let Some((geo, anim)) = model_named("pidgeot") else { return };
+        let m = Model::parse(&geo).unwrap();
+        let a = Animation::parse_all(&anim).unwrap();
+        assert!(m.has_wing_sets());
+        for name in ["air_fly", "air_glide"] {
+            let mut pose = m.pose(Some(&a[name]), 0.3);
+            m.hide_wings(&mut pose, Some(&a[name]), true);
+            let on = shown(&m, &pose);
+            assert!(on.iter().any(|k| k == "wing_open_left4"), "{name}: spread wings shown");
+            assert!(!on.iter().any(|k| k.contains("closed")), "{name}: tucked wings hidden");
+        }
+        // Standing: the tucked pair, none of the spread one.
+        let walk = &a["ground_walk"];
+        let mut pose = m.pose(Some(walk), 0.3);
+        m.hide_wings(&mut pose, Some(walk), false);
+        let on = shown(&m, &pose);
+        assert!(on.iter().any(|k| k == "wing_closed_left3"));
+        assert!(!on.iter().any(|k| k.contains("wing") && k.contains("open")), "{on:?}");
+    }
+
+    #[test]
+    fn one_pair_of_wings_is_always_shown() {
+        // Moltres' own animations already pick a set (ground_idle scales wings_open to nothing,
+        // air_fly wings_closed): left as they are.
+        let Some((geo, anim)) = model_named("moltres") else { return };
+        let m = Model::parse(&geo).unwrap();
+        let a = Animation::parse_all(&anim).unwrap();
+        assert!(m.has_wing_sets());
+        for (name, aloft) in [("ground_idle", false), ("air_fly", true)] {
+            let mut pose = m.pose(Some(&a[name]), 0.3);
+            let before = pose.clone();
+            m.hide_wings(&mut pose, Some(&a[name]), aloft);
+            assert_eq!(pose, before, "{name}");
+        }
+    }
+
+    #[test]
+    fn still_wings_get_a_beat_and_moving_ones_keep_theirs() {
+        // Moltres' air_fly is one still pose: both spread wings beat, mirrored.
+        if let Some((geo, anim)) = model_named("moltres") {
+            let m = Model::parse(&geo).unwrap();
+            let a = Animation::parse_all(&anim).unwrap();
+            let flap = m.flap(&a["air_fly"]);
+            let keys: Vec<&str> = flap.iter().map(|(i, _)| m.bones[*i].key.as_str()).collect();
+            assert!(keys.contains(&"wing_open_left") && keys.contains(&"wing_open_right"), "{keys:?}");
+            assert!(flap.iter().any(|(_, d)| d.z > 0.0) && flap.iter().any(|(_, d)| d.z < 0.0));
+            assert!(!keys.iter().any(|k| k.contains("closed")));
+            // The beat moves the wing tip.
+            let up = m.pose_with(Some(&a["air_fly"]), 0.0, &flap, 1.0);
+            let down = m.pose_with(Some(&a["air_fly"]), 0.0, &flap, -1.0);
+            let tip = m.bones.iter().position(|b| b.key == "wing_open_left4").unwrap();
+            assert!(!up[tip].abs_diff_eq(down[tip], 1e-3));
+        }
+        // Pidgeot's and Charizard's air_fly beat their wings already.
+        for s in ["pidgeot", "charizard"] {
+            let Some((geo, anim)) = model_named(s) else { continue };
+            let m = Model::parse(&geo).unwrap();
+            let a = Animation::parse_all(&anim).unwrap();
+            assert!(m.flap(&a["air_fly"]).is_empty(), "{s}");
+        }
+    }
+
+    #[test]
+    fn a_species_moves_with_its_own_animations_not_its_regional_forms() {
+        let text = r#"{"animations": {
+            "animation.quilava.ground_idle": {"animation_length": 1},
+            "animation.quilava_hisui_bias.ground_idle": {"animation_length": 2},
+            "animation.typhlosion.ground_idle": {"animation_length": 3},
+            "animation.typhlosion_hisuian.ground_idle": {"animation_length": 4}
+        }}"#;
+        assert_eq!(Animation::parse_for(text, "quilava").unwrap()["ground_idle"].length, 1.0);
+        assert_eq!(Animation::parse_for(text, "typhlosion").unwrap()["ground_idle"].length, 3.0);
+        assert_eq!(Animation::parse_for(text, "typhlosionhisui").unwrap()["ground_idle"].length, 4.0);
+        let two = r#"{"animations": {"animation.ponyta.walk": {"animation_length": 1}, "animation.ponyta_galar.walk": {"animation_length": 2}}}"#;
+        assert_eq!(Animation::parse_all(two).unwrap()["walk"].length, 1.0, "no species: the base form");
+    }
+
+    #[test]
+    fn wing_sets_by_name() {
+        assert_eq!(wing_set("wings_open"), Some(true));
+        assert_eq!(wing_set("open_wings"), Some(true));
+        assert_eq!(wing_set("wing_folded_left2"), Some(false));
+        assert_eq!(wing_set("closed_wings"), Some(false));
+        assert_eq!(wing_set("wing_left"), None);
+        assert_eq!(wing_set("eyelid_open"), None);
     }
 }
